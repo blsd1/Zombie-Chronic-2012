@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-# Zombie Chronic 2012 - Counter-Strike 1.6 Mod
+
+# Zombie Chronic 2012 - mode that was on gaming portal
 
 ![Version](https://img.shields.io/badge/Version-4.3-blue.svg)
 ![AMX%20Mod%20X](https://img.shields.io/badge/AMX%20Mod%20X-1.8.2+-green.svg)
