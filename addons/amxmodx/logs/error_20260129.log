@@ -1,0 +1,509 @@
+L 01/29/2026 - 10:06:21: Start of error session.
+L 01/29/2026 - 10:06:21: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 10:06:21: Wrong style of dynamic native
+L 01/29/2026 - 10:06:21: [AMXX] Displaying debug trace (plugin "zp_custom_weapons.amxx", version "1.0")
+L 01/29/2026 - 10:06:21: [AMXX] Run time error 10: native error (native "get_string")
+L 01/29/2026 - 10:06:21: [AMXX]    [0] zp_custom_weapons.sma::native_register_weapon (line 51)
+L 01/29/2026 - 10:06:21: Unhandled dynamic native error
+L 01/29/2026 - 10:06:21: [AMXX] Displaying debug trace (plugin "azp_weapon_ak47l.amxx", version "1.0")
+L 01/29/2026 - 10:06:21: [AMXX] Run time error 10: native error (native "zp_register_custom_weapon")
+L 01/29/2026 - 10:06:21: [AMXX]    [0] azp_weapon_ak47l.sma::plugin_init (line 100)
+L 01/29/2026 - 10:06:28: Plugin called message_begin with an invalid message id (0).
+L 01/29/2026 - 10:06:28: [AMXX] Displaying debug trace (plugin "azp_weapon_ak47l.amxx", version "1.0")
+L 01/29/2026 - 10:06:28: [AMXX] Run time error 10: native error (native "message_begin")
+L 01/29/2026 - 10:06:28: [AMXX]    [0] azp_weapon_ak47l.sma::fw_ak47long_AddToPlayer (line 318)
+L 01/29/2026 - 10:07:52: Start of error session.
+L 01/29/2026 - 10:07:52: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 10:07:52: Wrong style of dynamic native
+L 01/29/2026 - 10:07:52: [AMXX] Displaying debug trace (plugin "zp_custom_weapons.amxx", version "1.0")
+L 01/29/2026 - 10:07:52: [AMXX] Run time error 10: native error (native "get_string")
+L 01/29/2026 - 10:07:52: [AMXX]    [0] zp_custom_weapons.sma::native_register_weapon (line 51)
+L 01/29/2026 - 10:07:52: Unhandled dynamic native error
+L 01/29/2026 - 10:07:52: [AMXX] Displaying debug trace (plugin "azp_weapon_ak47l.amxx", version "1.0")
+L 01/29/2026 - 10:07:52: [AMXX] Run time error 10: native error (native "zp_register_custom_weapon")
+L 01/29/2026 - 10:07:52: [AMXX]    [0] azp_weapon_ak47l.sma::plugin_cfg (line 106)
+L 01/29/2026 - 10:09:08: Start of error session.
+L 01/29/2026 - 10:09:08: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 10:09:08: Wrong style of dynamic native
+L 01/29/2026 - 10:09:08: [AMXX] Displaying debug trace (plugin "zp_custom_weapons.amxx", version "1.0")
+L 01/29/2026 - 10:09:08: [AMXX] Run time error 10: native error (native "get_string")
+L 01/29/2026 - 10:09:08: [AMXX]    [0] zp_custom_weapons.sma::native_register_weapon (line 51)
+L 01/29/2026 - 10:09:08: Unhandled dynamic native error
+L 01/29/2026 - 10:09:08: [AMXX] Displaying debug trace (plugin "azp_weapon_ak47L.amxx", version "1.0")
+L 01/29/2026 - 10:09:08: [AMXX] Run time error 10: native error (native "zp_register_custom_weapon")
+L 01/29/2026 - 10:09:08: [AMXX]    [0] azp_weapon_ak47l.sma::plugin_cfg (line 106)
+L 01/29/2026 - 11:19:08: Start of error session.
+L 01/29/2026 - 11:19:08: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 11:19:08: Function "zp_get_user_hannibal" was not found
+L 01/29/2026 - 11:19:08: [AMXX] Run time error 19 (plugin "hanibal.amxx") - debug not enabled!
+L 01/29/2026 - 11:19:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 11:19:08: [AMXX] Run time error -1 (plugin "hanibal.amxx") - debug not enabled!
+L 01/29/2026 - 11:21:24: Start of error session.
+L 01/29/2026 - 11:21:24: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 11:21:24: [ZP] Invalid Player (0)
+L 01/29/2026 - 11:21:24: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:21:24: [AMXX] Run time error 10: native error (native "zp_get_user_terminator")
+L 01/29/2026 - 11:21:24: [AMXX]    [0] hanibal.sma::zp_extra_item_selected (line 112)
+L 01/29/2026 - 11:21:26: [ZP] Invalid Player (0)
+L 01/29/2026 - 11:21:26: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:21:26: [AMXX] Run time error 10: native error (native "zp_get_user_terminator")
+L 01/29/2026 - 11:21:26: [AMXX]    [0] hanibal.sma::zp_extra_item_selected (line 112)
+L 01/29/2026 - 11:21:30: [ZP] Invalid Player (0)
+L 01/29/2026 - 11:21:30: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:21:30: [AMXX] Run time error 10: native error (native "zp_get_user_terminator")
+L 01/29/2026 - 11:21:30: [AMXX]    [0] hanibal.sma::zp_extra_item_selected (line 112)
+L 01/29/2026 - 11:21:33: [ZP] Invalid Player (0)
+L 01/29/2026 - 11:21:33: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:21:33: [AMXX] Run time error 10: native error (native "zp_get_user_terminator")
+L 01/29/2026 - 11:21:33: [AMXX]    [0] hanibal.sma::zp_extra_item_selected (line 112)
+L 01/29/2026 - 11:21:42: Invalid player id 0
+L 01/29/2026 - 11:21:42: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:21:42: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:21:42: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 221)
+L 01/29/2026 - 11:23:35: Start of error session.
+L 01/29/2026 - 11:23:35: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 11:23:35: [ZP] Invalid Player (0)
+L 01/29/2026 - 11:23:35: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:23:35: [AMXX] Run time error 10: native error (native "zp_get_user_terminator")
+L 01/29/2026 - 11:23:35: [AMXX]    [0] hanibal.sma::zp_extra_item_selected (line 112)
+L 01/29/2026 - 11:26:52: Start of error session.
+L 01/29/2026 - 11:26:52: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 11:26:52: Invalid player id 0
+L 01/29/2026 - 11:26:52: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:26:52: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:26:52: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 231)
+L 01/29/2026 - 11:27:26: Invalid player id 0
+L 01/29/2026 - 11:27:26: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:27:26: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:27:26: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 231)
+L 01/29/2026 - 11:27:27: Invalid player id 0
+L 01/29/2026 - 11:27:27: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:27:27: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:27:27: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 231)
+L 01/29/2026 - 11:27:48: Invalid player id 0
+L 01/29/2026 - 11:27:48: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:27:48: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:27:48: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 231)
+L 01/29/2026 - 11:27:48: Invalid player id 0
+L 01/29/2026 - 11:27:48: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:27:48: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:27:48: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 231)
+L 01/29/2026 - 11:27:51: Invalid player id 0
+L 01/29/2026 - 11:27:51: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:27:51: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:27:51: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 231)
+L 01/29/2026 - 11:28:54: Invalid player id 0
+L 01/29/2026 - 11:28:54: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:28:54: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:28:54: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 231)
+L 01/29/2026 - 11:31:31: Start of error session.
+L 01/29/2026 - 11:31:31: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 11:31:31: Invalid player id 0
+L 01/29/2026 - 11:31:31: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:31:31: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:31:31: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:31:36: Invalid player id 0
+L 01/29/2026 - 11:31:36: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:31:36: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:31:36: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:31:43: Invalid player id 0
+L 01/29/2026 - 11:31:43: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:31:43: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:31:43: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:31:51: Invalid player id 0
+L 01/29/2026 - 11:31:51: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:31:51: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:31:51: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:33:21: Invalid player id 0
+L 01/29/2026 - 11:33:21: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:33:21: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:33:21: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:34:46: Invalid player id 0
+L 01/29/2026 - 11:34:46: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:34:46: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:34:46: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:35:19: Invalid player id 0
+L 01/29/2026 - 11:35:19: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:35:19: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:35:19: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:35:21: Invalid player id 0
+L 01/29/2026 - 11:35:21: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:35:21: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:35:21: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:35:32: Invalid player id 0
+L 01/29/2026 - 11:35:32: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:35:32: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:35:32: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:35:33: Invalid player id 0
+L 01/29/2026 - 11:35:33: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:35:33: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:35:33: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:35:41: Invalid player id 0
+L 01/29/2026 - 11:35:41: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:35:41: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:35:41: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:36:27: Start of error session.
+L 01/29/2026 - 11:36:27: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 11:36:27: Invalid player id 0
+L 01/29/2026 - 11:36:27: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:36:27: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:36:27: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:36:30: Invalid player id 0
+L 01/29/2026 - 11:36:30: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:36:30: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:36:30: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:36:47: Invalid player id 0
+L 01/29/2026 - 11:36:47: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:36:47: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:36:47: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:36:52: Invalid player id 0
+L 01/29/2026 - 11:36:52: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:36:52: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:36:52: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:37:30: Invalid player id 0
+L 01/29/2026 - 11:37:30: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:37:30: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:37:30: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:38:31: Start of error session.
+L 01/29/2026 - 11:38:31: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 11:38:31: Invalid player id 0
+L 01/29/2026 - 11:38:31: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:38:31: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:38:31: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:38:49: Start of error session.
+L 01/29/2026 - 11:38:49: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 11:38:49: Invalid player id 0
+L 01/29/2026 - 11:38:49: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:38:49: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:38:49: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:39:06: Invalid player id 0
+L 01/29/2026 - 11:39:06: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:39:06: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:39:06: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:39:21: Invalid player id 0
+L 01/29/2026 - 11:39:21: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:39:21: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:39:21: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:39:27: Invalid player id 0
+L 01/29/2026 - 11:39:27: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:39:27: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:39:27: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:39:44: Invalid player id 0
+L 01/29/2026 - 11:39:44: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:39:44: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:39:44: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:40:05: Invalid player id 0
+L 01/29/2026 - 11:40:05: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:40:05: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:40:05: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:40:08: Invalid player id 0
+L 01/29/2026 - 11:40:08: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:40:08: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:40:08: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:40:23: Start of error session.
+L 01/29/2026 - 11:40:23: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 11:40:23: Invalid player id 0
+L 01/29/2026 - 11:40:23: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:40:23: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:40:23: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:40:24: Invalid player id 0
+L 01/29/2026 - 11:40:24: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:40:24: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:40:24: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:40:57: Start of error session.
+L 01/29/2026 - 11:40:57: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 11:40:57: Invalid player id 0
+L 01/29/2026 - 11:40:57: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:40:57: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:40:57: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:40:59: Invalid player id 0
+L 01/29/2026 - 11:40:59: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:40:59: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:40:59: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:41:13: Invalid player id 0
+L 01/29/2026 - 11:41:13: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:41:13: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:41:13: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:41:32: Invalid player id 0
+L 01/29/2026 - 11:41:32: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:41:32: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:41:32: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:42:36: Invalid player id 0
+L 01/29/2026 - 11:42:36: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:42:36: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:42:36: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:42:57: Start of error session.
+L 01/29/2026 - 11:42:57: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 11:42:57: Invalid player id 0
+L 01/29/2026 - 11:42:57: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:42:57: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:42:57: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:43:06: Invalid player id 0
+L 01/29/2026 - 11:43:06: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:43:06: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:43:06: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:43:22: Invalid player id 0
+L 01/29/2026 - 11:43:22: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:43:22: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:43:22: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:43:23: Invalid player id 0
+L 01/29/2026 - 11:43:23: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:43:23: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:43:23: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 11:43:33: Invalid player id 0
+L 01/29/2026 - 11:43:33: [AMXX] Displaying debug trace (plugin "hanibal.amxx", version "0.9")
+L 01/29/2026 - 11:43:33: [AMXX] Run time error 10: native error (native "get_user_weapon")
+L 01/29/2026 - 11:43:33: [AMXX]    [0] hanibal.sma::fw_TakeDamage (line 230)
+L 01/29/2026 - 13:10:21: Start of error session.
+L 01/29/2026 - 13:10:21: Info (map "zm_army_tn_beta3") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 13:10:21: String formatted incorrectly - parameter 3 (total 2)
+L 01/29/2026 - 13:10:21: [AMXX] Run time error 25 (plugin "chronic_2012.amxx") - debug not enabled!
+L 01/29/2026 - 13:10:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 14:12:08: Start of error session.
+L 01/29/2026 - 14:12:08: Info (map "de_dust2_1337") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 14:12:08: Function is not present (function "fw_Aura") (plugin "zp_extra_immunity.amxx")
+L 01/29/2026 - 14:12:08: [AMXX] Displaying debug trace (plugin "zp_extra_immunity.amxx", version "3.0")
+L 01/29/2026 - 14:12:08: [AMXX] Run time error 10: native error (native "set_task")
+L 01/29/2026 - 14:12:08: [AMXX]    [0] zp_extra_immunity.sma::zp_extra_item_selected (line 67)
+L 01/29/2026 - 15:42:16: Start of error session.
+L 01/29/2026 - 15:42:16: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 15:42:16: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 15:42:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 15:42:16: [AMXX] Plugin ("cs_team_semiclip.amxx") is setting itself as failed.
+L 01/29/2026 - 15:42:16: [AMXX] Plugin says: Error: This plugin is not for Zombie Plague Mod
+L 01/29/2026 - 15:42:16: [AMXX] Run time error 1 (plugin "cs_team_semiclip.amxx") - forced exit
+L 01/29/2026 - 15:44:30: Start of error session.
+L 01/29/2026 - 15:44:30: Info (map "cs_747") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 15:44:30: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 15:44:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 15:44:31: [AMXX] Plugin ("cs_team_semiclip.amxx") is setting itself as failed.
+L 01/29/2026 - 15:44:31: [AMXX] Plugin says: Error: This plugin is not for Zombie Plague Mod
+L 01/29/2026 - 15:44:31: [AMXX] Run time error 1 (plugin "cs_team_semiclip.amxx") - forced exit
+L 01/29/2026 - 15:47:43: Start of error session.
+L 01/29/2026 - 15:47:43: Info (map "zm_army_tn_beta3") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 15:47:43: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 15:47:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 15:47:43: [AMXX] Plugin ("cs_team_semiclip.amxx") is setting itself as failed.
+L 01/29/2026 - 15:47:43: [AMXX] Plugin says: Error: This plugin is not for Zombie Plague Mod
+L 01/29/2026 - 15:47:43: [AMXX] Run time error 1 (plugin "cs_team_semiclip.amxx") - forced exit
+L 01/29/2026 - 15:48:27: Invalid CVAR pointer
+L 01/29/2026 - 15:48:27: [AMXX] Displaying debug trace (plugin "kill_healed.amxx", version "1.0")
+L 01/29/2026 - 15:48:27: [AMXX] Run time error 10: native error (native "get_pcvar_num")
+L 01/29/2026 - 15:48:27: [AMXX]    [0] kill_healed.sma::death_msg (line 26)
+L 01/29/2026 - 15:48:43: Invalid CVAR pointer
+L 01/29/2026 - 15:48:43: [AMXX] Displaying debug trace (plugin "kill_healed.amxx", version "1.0")
+L 01/29/2026 - 15:48:43: [AMXX] Run time error 10: native error (native "get_pcvar_num")
+L 01/29/2026 - 15:48:43: [AMXX]    [0] kill_healed.sma::death_msg (line 26)
+L 01/29/2026 - 15:51:31: Start of error session.
+L 01/29/2026 - 15:51:31: Info (map "de_dust2_1337") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 15:51:31: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 15:51:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 15:51:31: [AMXX] Plugin ("cs_team_semiclip.amxx") is setting itself as failed.
+L 01/29/2026 - 15:51:31: [AMXX] Plugin says: Error: This plugin is not for Zombie Plague Mod
+L 01/29/2026 - 15:51:31: [AMXX] Run time error 1 (plugin "cs_team_semiclip.amxx") - forced exit
+L 01/29/2026 - 15:54:08: Start of error session.
+L 01/29/2026 - 15:54:08: Info (map "de_dust2_1337") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 15:54:08: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 15:54:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 15:54:09: [AMXX] Plugin ("cs_team_semiclip.amxx") is setting itself as failed.
+L 01/29/2026 - 15:54:09: [AMXX] Plugin says: Error: This plugin is not for Zombie Plague Mod
+L 01/29/2026 - 15:54:09: [AMXX] Run time error 1 (plugin "cs_team_semiclip.amxx") - forced exit
+L 01/29/2026 - 15:55:13: Invalid CVAR pointer
+L 01/29/2026 - 15:55:13: [AMXX] Displaying debug trace (plugin "kill_healed.amxx", version "1.0")
+L 01/29/2026 - 15:55:13: [AMXX] Run time error 10: native error (native "get_pcvar_num")
+L 01/29/2026 - 15:55:13: [AMXX]    [0] kill_healed.sma::death_msg (line 26)
+L 01/29/2026 - 15:55:30: Start of error session.
+L 01/29/2026 - 15:55:30: Info (map "de_dust2_1337") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 15:55:30: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 15:55:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 15:55:31: [AMXX] Plugin ("cs_team_semiclip.amxx") is setting itself as failed.
+L 01/29/2026 - 15:55:31: [AMXX] Plugin says: Error: This plugin is not for Zombie Plague Mod
+L 01/29/2026 - 15:55:31: [AMXX] Run time error 1 (plugin "cs_team_semiclip.amxx") - forced exit
+L 01/29/2026 - 15:58:21: Start of error session.
+L 01/29/2026 - 15:58:21: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 15:58:21: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 15:58:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 15:58:21: [AMXX] Plugin ("cs_team_semiclip.amxx") is setting itself as failed.
+L 01/29/2026 - 15:58:21: [AMXX] Plugin says: Error: This plugin is not for Zombie Plague Mod
+L 01/29/2026 - 15:58:21: [AMXX] Run time error 1 (plugin "cs_team_semiclip.amxx") - forced exit
+L 01/29/2026 - 16:06:38: Start of error session.
+L 01/29/2026 - 16:06:38: Info (map "de_dust2_1337") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:06:38: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:06:38: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:06:38: [AMXX] Plugin ("cs_team_semiclip.amxx") is setting itself as failed.
+L 01/29/2026 - 16:06:38: [AMXX] Plugin says: Error: This plugin is not for Zombie Plague Mod
+L 01/29/2026 - 16:06:38: [AMXX] Run time error 1 (plugin "cs_team_semiclip.amxx") - forced exit
+L 01/29/2026 - 16:08:55: Start of error session.
+L 01/29/2026 - 16:08:55: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:08:55: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:08:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:08:56: [AMXX] Plugin ("cs_team_semiclip.amxx") is setting itself as failed.
+L 01/29/2026 - 16:08:56: [AMXX] Plugin says: Error: This plugin is not for Zombie Plague Mod
+L 01/29/2026 - 16:08:56: [AMXX] Run time error 1 (plugin "cs_team_semiclip.amxx") - forced exit
+L 01/29/2026 - 16:10:26: Start of error session.
+L 01/29/2026 - 16:10:26: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:10:26: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:10:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:10:26: [AMXX] Plugin ("cs_team_semiclip.amxx") is setting itself as failed.
+L 01/29/2026 - 16:10:26: [AMXX] Plugin says: Error: This plugin is not for Zombie Plague Mod
+L 01/29/2026 - 16:10:26: [AMXX] Run time error 1 (plugin "cs_team_semiclip.amxx") - forced exit
+L 01/29/2026 - 16:10:48: Start of error session.
+L 01/29/2026 - 16:10:48: Info (map "de_dust2_1337") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:10:48: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:10:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:10:48: [AMXX] Plugin ("cs_team_semiclip.amxx") is setting itself as failed.
+L 01/29/2026 - 16:10:48: [AMXX] Plugin says: Error: This plugin is not for Zombie Plague Mod
+L 01/29/2026 - 16:10:48: [AMXX] Run time error 1 (plugin "cs_team_semiclip.amxx") - forced exit
+L 01/29/2026 - 16:15:17: Start of error session.
+L 01/29/2026 - 16:15:17: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:15:17: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:15:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:15:18: [AMXX] Plugin ("cs_team_semiclip.amxx") is setting itself as failed.
+L 01/29/2026 - 16:15:18: [AMXX] Plugin says: Error: This plugin is not for Zombie Plague Mod
+L 01/29/2026 - 16:15:18: [AMXX] Run time error 1 (plugin "cs_team_semiclip.amxx") - forced exit
+L 01/29/2026 - 16:17:01: Start of error session.
+L 01/29/2026 - 16:17:01: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:17:01: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:17:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:17:01: [AMXX] Plugin ("cs_team_semiclip.amxx") is setting itself as failed.
+L 01/29/2026 - 16:17:01: [AMXX] Plugin says: Error: This plugin is not for Zombie Plague Mod
+L 01/29/2026 - 16:17:01: [AMXX] Run time error 1 (plugin "cs_team_semiclip.amxx") - forced exit
+L 01/29/2026 - 16:17:39: Start of error session.
+L 01/29/2026 - 16:17:39: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:17:39: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:17:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:19:17: Start of error session.
+L 01/29/2026 - 16:19:17: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:19:17: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:19:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:20:48: Start of error session.
+L 01/29/2026 - 16:20:48: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:20:48: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:20:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:21:19: Start of error session.
+L 01/29/2026 - 16:21:19: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:21:19: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:21:19: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:22:33: Start of error session.
+L 01/29/2026 - 16:22:33: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:22:33: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:22:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:27:10: Start of error session.
+L 01/29/2026 - 16:27:10: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:27:10: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:27:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:37:57: Start of error session.
+L 01/29/2026 - 16:37:57: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:37:57: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:37:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:38:26: Start of error session.
+L 01/29/2026 - 16:38:26: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:38:26: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:38:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:38:40: Start of error session.
+L 01/29/2026 - 16:38:40: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:38:40: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:38:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:39:57: Start of error session.
+L 01/29/2026 - 16:39:57: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:39:57: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:39:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:40:13: Start of error session.
+L 01/29/2026 - 16:40:13: Info (map "zm_five") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:40:13: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:40:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:41:20: Start of error session.
+L 01/29/2026 - 16:41:20: Info (map "zm_2_crazy_tower2x") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:41:20: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:41:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:41:31: Start of error session.
+L 01/29/2026 - 16:41:31: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:41:31: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:41:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:41:53: Start of error session.
+L 01/29/2026 - 16:41:53: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:41:53: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:41:53: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:44:00: Start of error session.
+L 01/29/2026 - 16:44:00: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:44:00: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:44:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:47:48: Start of error session.
+L 01/29/2026 - 16:47:48: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:47:48: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:47:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:48:27: Start of error session.
+L 01/29/2026 - 16:48:27: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:48:27: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:48:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:49:47: Start of error session.
+L 01/29/2026 - 16:49:47: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:49:47: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:49:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:51:02: Start of error session.
+L 01/29/2026 - 16:51:02: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:51:02: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:51:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:52:30: Start of error session.
+L 01/29/2026 - 16:52:30: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:52:30: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:52:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:53:45: Start of error session.
+L 01/29/2026 - 16:53:45: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:53:45: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:53:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:54:31: Start of error session.
+L 01/29/2026 - 16:54:31: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:54:31: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:54:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 16:54:45: Start of error session.
+L 01/29/2026 - 16:54:45: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 16:54:45: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 16:54:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 17:02:28: Start of error session.
+L 01/29/2026 - 17:02:28: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 17:02:28: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 17:02:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 17:04:13: Start of error session.
+L 01/29/2026 - 17:04:13: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 17:04:13: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 17:04:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 17:04:28: Start of error session.
+L 01/29/2026 - 17:04:28: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 17:04:28: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 17:04:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 17:05:13: Start of error session.
+L 01/29/2026 - 17:05:13: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 17:05:13: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 17:05:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 17:06:15: Start of error session.
+L 01/29/2026 - 17:06:15: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 17:06:15: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 17:06:15: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 17:09:18: Start of error session.
+L 01/29/2026 - 17:09:18: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 17:09:18: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 17:09:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 17:09:46: Start of error session.
+L 01/29/2026 - 17:09:46: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 17:09:46: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 17:09:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 17:12:13: Start of error session.
+L 01/29/2026 - 17:12:13: Info (map "zm_2_crazy_tower2x") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 17:12:13: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 17:12:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 17:13:55: Start of error session.
+L 01/29/2026 - 17:13:55: Info (map "de_dust2_1337") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 17:13:55: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 17:13:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 17:20:16: Start of error session.
+L 01/29/2026 - 17:20:16: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 17:20:16: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 17:20:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 17:22:55: Player 1 is not in game.
+L 01/29/2026 - 17:22:55: [AMXX] Run time error 10 (plugin "pluginmenu.amxx") (native "menu_display") - debug not enabled!
+L 01/29/2026 - 17:22:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/29/2026 - 17:22:55: Start of error session.
+L 01/29/2026 - 17:22:55: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260129.log")
+L 01/29/2026 - 17:22:55: [AMXX] Run time error 4 (plugin "wisetone_camera_menu.amxx") - debug not enabled!
+L 01/29/2026 - 17:22:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

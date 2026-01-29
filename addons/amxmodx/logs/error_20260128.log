@@ -1,0 +1,1121 @@
+L 01/28/2026 - 12:05:10: Start of error session.
+L 01/28/2026 - 12:05:10: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 12:05:10: [AMXX] Load error 17 (invalid file format or version) (plugin "statsx.amxx")
+L 01/28/2026 - 12:16:25: Start of error session.
+L 01/28/2026 - 12:16:25: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 12:16:25: [AMXX] Load error 17 (invalid file format or version) (plugin "statsx.amxx")
+L 01/28/2026 - 12:16:25: [AMXX] Load error 17 (invalid file format or version) (plugin "chronic_2012.amxx")
+L 01/28/2026 - 12:16:25: [AMXX] Plugin file open error (plugin "zp_zclasses40.amxx")
+L 01/28/2026 - 12:35:37: Start of error session.
+L 01/28/2026 - 12:35:37: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 12:35:37: [AMXX] Load error 17 (invalid file format or version) (plugin "statsx.amxx")
+L 01/28/2026 - 12:35:37: [AMXX] Load error 17 (invalid file format or version) (plugin "chronic_2012.amxx")
+L 01/28/2026 - 12:35:37: [AMXX] Load error 17 (invalid file format or version) (plugin "ghost_zombie.amxx")
+L 01/28/2026 - 12:44:37: Start of error session.
+L 01/28/2026 - 12:44:37: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 12:44:37: [ZP] Invalid Player (0)
+L 01/28/2026 - 12:44:37: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 12:44:37: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 12:45:03: [ZP] Invalid Player (0)
+L 01/28/2026 - 12:45:03: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 12:45:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 12:50:21: [ZP] Invalid Player (0)
+L 01/28/2026 - 12:50:21: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 12:50:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 12:55:32: [ZP] Invalid Player (0)
+L 01/28/2026 - 12:55:32: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 12:55:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 12:59:25: Start of error session.
+L 01/28/2026 - 12:59:25: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 12:59:25: [ZP] Invalid Player (0)
+L 01/28/2026 - 12:59:25: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 12:59:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 12:59:54: [ZP] Invalid Player (0)
+L 01/28/2026 - 12:59:54: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 12:59:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:05:20: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:05:20: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:05:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:08:22: Start of error session.
+L 01/28/2026 - 13:08:22: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:08:22: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:08:22: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:08:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:10:07: Start of error session.
+L 01/28/2026 - 13:10:07: Info (map "cs_backalley") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:10:07: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:10:07: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:10:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:10:29: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:10:29: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:10:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:11:19: Start of error session.
+L 01/28/2026 - 13:11:19: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:11:19: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:11:19: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:11:19: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:12:24: Start of error session.
+L 01/28/2026 - 13:12:24: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:12:24: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:12:24: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:12:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:15:34: Start of error session.
+L 01/28/2026 - 13:15:34: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:15:34: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:15:34: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:15:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:17:53: Start of error session.
+L 01/28/2026 - 13:17:53: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:17:53: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:17:53: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:17:53: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:21:00: Start of error session.
+L 01/28/2026 - 13:21:00: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:21:00: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:21:00: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:21:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:22:09: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:22:09: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:22:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:27:29: Start of error session.
+L 01/28/2026 - 13:27:29: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:27:29: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:27:29: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:27:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:28:25: Start of error session.
+L 01/28/2026 - 13:28:25: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:28:25: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:28:25: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:28:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:30:31: Start of error session.
+L 01/28/2026 - 13:30:31: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:30:31: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:30:31: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:30:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:34:00: Start of error session.
+L 01/28/2026 - 13:34:00: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:34:00: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:34:00: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:34:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:36:04: Start of error session.
+L 01/28/2026 - 13:36:04: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:36:04: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:36:04: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:36:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:36:29: Start of error session.
+L 01/28/2026 - 13:36:29: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:36:29: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:36:29: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:36:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:36:44: Start of error session.
+L 01/28/2026 - 13:36:44: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:36:44: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:36:44: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:36:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:40:06: Start of error session.
+L 01/28/2026 - 13:40:06: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:40:06: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:40:06: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:40:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:41:11: Start of error session.
+L 01/28/2026 - 13:41:11: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:41:11: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:41:11: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:41:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:46:23: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:46:23: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:46:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:47:03: Start of error session.
+L 01/28/2026 - 13:47:03: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:47:03: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:47:03: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:47:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:48:09: Start of error session.
+L 01/28/2026 - 13:48:09: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:48:09: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:48:09: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:48:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:50:44: Start of error session.
+L 01/28/2026 - 13:50:44: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:50:44: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:50:44: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:50:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:58:47: Start of error session.
+L 01/28/2026 - 13:58:47: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:58:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 13:58:47: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 13:58:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 13:59:57: Start of error session.
+L 01/28/2026 - 13:59:57: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 13:59:57: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 13:59:57: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 13:59:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:00:01: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:00:01: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:00:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:00:13: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:00:13: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:00:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:00:26: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:00:26: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:00:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:00:58: Start of error session.
+L 01/28/2026 - 14:00:58: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:00:58: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:00:58: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:00:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:01:03: Function is not present (function "remove_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:01:03: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:01:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:01:07: Function is not present (function "remove_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:01:07: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:01:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:01:33: Start of error session.
+L 01/28/2026 - 14:01:33: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:01:33: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:01:33: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:01:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:06:26: Start of error session.
+L 01/28/2026 - 14:06:26: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:06:26: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:06:26: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:06:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:06:30: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:06:30: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:06:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:10:50: Start of error session.
+L 01/28/2026 - 14:10:50: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:10:50: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:10:50: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:10:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:10:54: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:10:54: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:10:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:11:30: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:11:30: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:11:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:11:31: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:11:31: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:11:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:13:03: Start of error session.
+L 01/28/2026 - 14:13:03: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:13:03: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:13:03: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:13:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:13:06: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:13:06: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:13:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:14:27: Start of error session.
+L 01/28/2026 - 14:14:27: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:14:27: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:14:27: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:14:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:14:30: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:14:30: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:14:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:18:26: Start of error session.
+L 01/28/2026 - 14:18:26: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:18:26: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:18:26: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:18:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:18:29: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:18:29: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:18:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:19:46: Start of error session.
+L 01/28/2026 - 14:19:46: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:19:46: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:19:46: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:19:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:19:49: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:19:49: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:19:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:21:20: Start of error session.
+L 01/28/2026 - 14:21:20: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:21:20: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:21:20: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:21:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:21:23: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:21:23: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:21:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:21:46: Start of error session.
+L 01/28/2026 - 14:21:46: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:21:46: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:21:46: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:21:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:21:50: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:21:50: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:21:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:22:13: Start of error session.
+L 01/28/2026 - 14:22:13: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:22:13: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:22:13: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:22:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:22:16: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:22:16: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:22:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:23:33: Start of error session.
+L 01/28/2026 - 14:23:33: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:23:33: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:23:33: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:23:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:23:36: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:23:36: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:23:36: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:26:18: Start of error session.
+L 01/28/2026 - 14:26:18: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:26:18: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:26:18: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:26:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:26:21: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:26:21: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:26:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:26:52: Start of error session.
+L 01/28/2026 - 14:26:52: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:26:52: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:26:52: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:26:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:26:54: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:26:54: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:26:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:28:09: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:28:09: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:28:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:28:12: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:28:12: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:28:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:33:20: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:33:20: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:33:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:33:28: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:33:28: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:33:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:34:24: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:34:24: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:34:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:34:26: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:34:26: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:34:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:39:05: Start of error session.
+L 01/28/2026 - 14:39:05: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:39:05: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:39:05: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:39:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:39:09: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:39:09: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:39:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:44:17: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:44:17: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:44:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:46:23: Start of error session.
+L 01/28/2026 - 14:46:23: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:46:23: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:46:23: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:46:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:46:27: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:46:27: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:46:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:47:36: Start of error session.
+L 01/28/2026 - 14:47:36: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:47:36: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:47:36: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:47:36: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:47:51: Start of error session.
+L 01/28/2026 - 14:47:51: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:47:51: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:47:51: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:47:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:48:18: Start of error session.
+L 01/28/2026 - 14:48:18: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:48:18: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:48:18: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:48:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:48:23: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:48:23: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:48:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:49:18: Start of error session.
+L 01/28/2026 - 14:49:18: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:49:18: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:49:18: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:49:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:49:20: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:49:20: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:49:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:54:30: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:54:30: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:54:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:57:33: Start of error session.
+L 01/28/2026 - 14:57:33: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:57:33: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:57:33: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:57:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:57:36: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:57:36: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:57:36: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:58:10: Start of error session.
+L 01/28/2026 - 14:58:10: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:58:10: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:58:10: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:58:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:58:13: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:58:13: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:58:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:58:28: Start of error session.
+L 01/28/2026 - 14:58:28: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:58:28: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:58:28: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:58:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:58:48: Start of error session.
+L 01/28/2026 - 14:58:48: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 14:58:48: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 14:58:48: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 14:58:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 14:58:54: [ZP] Invalid Player (0)
+L 01/28/2026 - 14:58:54: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 14:58:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 15:04:00: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 15:04:00: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 15:04:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 15:08:43: Start of error session.
+L 01/28/2026 - 15:08:43: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 15:08:43: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 15:08:43: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 15:08:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 15:09:03: [ZP] Invalid Player (0)
+L 01/28/2026 - 15:09:03: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 15:09:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 15:09:03: [ZP] Invalid Player (0)
+L 01/28/2026 - 15:09:03: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 15:09:03: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 15:09:03: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 168)
+L 01/28/2026 - 15:11:02: Start of error session.
+L 01/28/2026 - 15:11:02: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 15:11:02: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 15:11:02: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 15:11:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 15:12:00: [ZP] Invalid Player (0)
+L 01/28/2026 - 15:12:00: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 15:12:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 15:12:00: [ZP] Invalid Player (0)
+L 01/28/2026 - 15:12:00: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 15:12:00: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 15:12:00: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 168)
+L 01/28/2026 - 15:15:56: Start of error session.
+L 01/28/2026 - 15:15:56: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 15:15:56: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 15:15:56: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 15:15:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 15:15:59: [ZP] Invalid Player (0)
+L 01/28/2026 - 15:15:59: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 15:15:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 15:15:59: [ZP] Invalid Player (0)
+L 01/28/2026 - 15:15:59: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 15:15:59: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 15:15:59: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 168)
+L 01/28/2026 - 15:21:08: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 15:21:08: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 15:21:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 15:26:19: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 15:26:19: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 15:26:19: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 15:31:30: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 15:31:30: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 15:31:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 15:36:05: Start of error session.
+L 01/28/2026 - 15:36:05: Info (map "de_airstrip") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 15:36:05: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 15:36:05: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 15:36:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 15:41:17: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 15:41:17: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 15:41:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 15:46:28: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 15:46:28: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 15:46:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:22:33: Start of error session.
+L 01/28/2026 - 16:22:33: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 16:22:33: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 16:22:33: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 16:22:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:22:40: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 16:22:40: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 16:22:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:22:57: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:22:57: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:22:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:22:57: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:22:57: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:22:57: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:22:57: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:22:58: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:22:58: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:22:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:22:58: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:22:58: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:22:58: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:22:58: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:22:59: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:22:59: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:22:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:22:59: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:22:59: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:22:59: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:22:59: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:23:02: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:23:02: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:23:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:23:02: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:23:02: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:23:02: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:23:02: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:23:02: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:23:02: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:23:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:23:02: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:23:02: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:23:02: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:23:02: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:23:05: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:23:05: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:23:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:23:05: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:23:05: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:23:05: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:23:05: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:23:06: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:23:06: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:23:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:23:06: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:23:06: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:23:06: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:23:06: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:24:45: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 16:24:45: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 16:24:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:24:50: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:24:50: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:24:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:24:50: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:24:50: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:24:50: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:24:50: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:24:50: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:24:50: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:24:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:24:50: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:24:50: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:24:50: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:24:50: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:24:51: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:24:51: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:24:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:24:51: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:24:51: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:24:51: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:24:51: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:24:51: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:24:51: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:24:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:24:51: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:24:51: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:24:51: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:24:51: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:42:56: Start of error session.
+L 01/28/2026 - 16:42:56: Info (map "zm_vendetta") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 16:42:56: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 16:42:56: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 16:42:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:43:03: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 16:43:03: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 16:43:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:43:42: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:43:42: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:43:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:43:42: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:43:42: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:43:42: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:43:42: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:44:55: Function is not present (function "apply_round_blackscreen") (plugin "chronic_2012.amxx")
+L 01/28/2026 - 16:44:55: [AMXX] Run time error 10 (plugin "chronic_2012.amxx") (native "set_task") - debug not enabled!
+L 01/28/2026 - 16:44:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:47:09: Start of error session.
+L 01/28/2026 - 16:47:09: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 16:47:09: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:47:09: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:47:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:47:09: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:47:09: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:47:09: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:47:09: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:47:35: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:47:35: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:47:35: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:47:35: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:47:35: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:47:35: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:47:35: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:47:35: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:47:35: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:47:35: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:47:35: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:47:35: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:47:35: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:47:35: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:49:39: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:49:39: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:49:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:49:39: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:49:39: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:49:39: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:49:39: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:51:07: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:51:07: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:51:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:51:07: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:51:07: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:51:07: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:51:07: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 16:51:07: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:51:07: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 16:51:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 16:51:07: [ZP] Invalid Player (0)
+L 01/28/2026 - 16:51:07: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 16:51:07: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 16:51:07: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:01:47: Start of error session.
+L 01/28/2026 - 21:01:47: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:01:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:01:47: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:01:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:01:47: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:01:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:01:47: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:01:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:01:47: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:01:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:01:47: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:01:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:01:47: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:01:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:01:47: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:01:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:01:47: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:01:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:01:47: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:01:47: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:01:47: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:01:47: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:11:16: Start of error session.
+L 01/28/2026 - 21:11:16: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:11:16: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:11:16: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:11:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:11:16: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:11:16: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:11:16: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:11:16: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:16:26: Start of error session.
+L 01/28/2026 - 21:16:26: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:16:26: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:16:26: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:16:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:16:26: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:16:26: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:16:26: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:16:26: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:17:40: Start of error session.
+L 01/28/2026 - 21:17:40: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:17:40: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:17:40: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:17:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:17:40: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:17:40: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:17:40: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:17:40: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:18:30: Start of error session.
+L 01/28/2026 - 21:18:30: Info (map "cs_backalley") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:18:30: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:18:30: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:18:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:18:30: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:18:30: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:18:30: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:18:30: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:18:30: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:18:30: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:18:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:18:30: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:18:30: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:18:30: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:18:30: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:18:30: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:18:30: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:18:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:18:30: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:18:30: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:18:30: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:18:30: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:18:30: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:18:30: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:18:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:18:30: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:18:30: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:18:30: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:18:30: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:18:30: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:18:30: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:18:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:18:30: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:18:30: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:18:30: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:18:30: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:19:52: Start of error session.
+L 01/28/2026 - 21:19:52: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:19:52: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:19:52: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:19:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:19:52: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:19:52: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:19:52: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:19:52: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:22:11: Start of error session.
+L 01/28/2026 - 21:22:11: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:22:11: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:22:11: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:22:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:22:11: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:22:11: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:22:11: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:22:11: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:23:26: Start of error session.
+L 01/28/2026 - 21:23:26: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:23:26: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:23:26: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:23:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:23:26: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:23:26: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:23:26: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:23:26: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:24:33: Start of error session.
+L 01/28/2026 - 21:24:33: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:24:33: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:24:33: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:24:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:24:33: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:24:33: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:24:33: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:24:33: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:25:21: Start of error session.
+L 01/28/2026 - 21:25:21: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:25:21: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:25:21: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:25:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:25:21: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:25:21: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:25:21: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:25:21: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:25:29: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:25:29: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:25:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:25:29: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:25:29: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:25:29: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:25:29: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:26:12: Start of error session.
+L 01/28/2026 - 21:26:12: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:26:12: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:26:12: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:26:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:26:12: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:26:12: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:26:12: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:26:12: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:26:43: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:26:43: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:26:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:26:43: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:26:43: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:26:43: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:26:43: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:27:27: Start of error session.
+L 01/28/2026 - 21:27:27: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:27:27: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:27:27: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:27:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:27:27: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:27:27: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:27:27: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:27:27: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:28:57: Start of error session.
+L 01/28/2026 - 21:28:57: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:28:57: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:28:57: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:28:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:28:57: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:28:57: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:28:57: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:28:57: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:29:15: Start of error session.
+L 01/28/2026 - 21:29:15: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:29:15: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:29:15: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:29:15: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:29:15: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:29:15: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:29:15: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:29:15: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:31:16: Start of error session.
+L 01/28/2026 - 21:31:16: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:31:16: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:31:16: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:31:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:31:16: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:31:16: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:31:16: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:31:16: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:31:16: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:31:16: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:31:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:31:16: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:31:16: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:31:16: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:31:16: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:44:11: Start of error session.
+L 01/28/2026 - 21:44:11: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:44:11: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:44:11: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:44:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:44:11: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:44:11: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:44:11: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:44:11: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:45:29: Start of error session.
+L 01/28/2026 - 21:45:29: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:45:29: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:45:29: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:45:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:45:29: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:45:29: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:45:29: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:45:29: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:46:29: Start of error session.
+L 01/28/2026 - 21:46:29: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:46:29: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:46:29: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:46:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:46:29: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:46:29: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:46:29: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:46:29: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:46:40: Start of error session.
+L 01/28/2026 - 21:46:40: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:46:40: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:46:40: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:46:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:46:40: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:46:40: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:46:40: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:46:40: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:48:49: Start of error session.
+L 01/28/2026 - 21:48:49: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:48:49: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:48:49: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:48:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:48:49: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:48:49: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:48:49: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:48:49: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:48:56: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:48:56: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:48:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:48:56: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:48:56: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:48:56: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:48:56: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:49:03: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:49:03: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:49:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:49:03: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:49:03: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:49:03: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:49:03: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:49:03: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:49:03: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:49:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:49:03: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:49:03: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:49:03: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:49:03: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:49:04: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:49:04: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:49:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:49:04: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:49:04: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:49:04: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:49:04: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:49:06: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:49:06: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:49:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:49:06: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:49:06: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:49:06: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:49:06: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:49:55: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:49:55: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:49:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:49:55: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:49:55: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:49:55: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:49:55: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:51:18: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:51:18: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:51:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:51:18: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:51:18: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:51:18: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:51:18: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:52:03: Start of error session.
+L 01/28/2026 - 21:52:03: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:52:03: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:52:03: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:52:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:52:03: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:52:03: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:52:03: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:52:03: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:52:38: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:52:38: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:52:38: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:52:38: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:52:38: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:52:38: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:52:38: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:52:38: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:52:38: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:52:38: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:52:38: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:52:38: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:52:38: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:52:38: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:52:39: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:52:39: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:52:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:52:39: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:52:39: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:52:39: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:52:39: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:52:39: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:52:39: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:52:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:52:39: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:52:39: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:52:39: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:52:39: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:52:40: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:52:40: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:52:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:52:40: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:52:40: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:52:40: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:52:40: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:53:32: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:53:32: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:53:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:53:32: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:53:32: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:53:32: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:53:32: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:53:32: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:53:32: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:53:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:53:32: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:53:32: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:53:32: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:53:32: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:54:12: Start of error session.
+L 01/28/2026 - 21:54:12: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 21:54:12: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:12: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:54:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:54:12: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:12: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:54:12: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:54:12: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:54:18: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:18: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:54:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:54:18: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:18: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:54:18: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:54:18: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:54:26: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:26: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:54:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:54:26: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:26: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:54:26: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:54:26: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:54:26: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:26: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:54:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:54:26: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:26: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:54:26: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:54:26: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:54:26: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:26: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:54:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:54:26: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:26: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:54:26: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:54:26: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:54:27: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:27: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:54:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:54:27: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:27: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:54:27: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:54:27: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:54:27: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:27: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:54:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:54:27: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:27: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:54:27: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:54:27: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:54:28: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:28: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:54:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:54:28: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:28: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:54:28: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:54:28: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:54:30: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:30: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:54:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:54:30: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:30: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:54:30: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:54:30: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:54:31: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:31: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:54:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:54:31: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:31: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:54:31: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:54:31: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:54:32: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:32: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:54:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:54:32: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:32: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:54:32: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:54:32: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:54:33: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:33: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:54:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:54:33: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:54:33: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:54:33: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:54:33: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:55:03: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:55:03: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:55:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:55:03: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:55:03: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:55:03: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:55:03: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:55:04: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:55:04: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:55:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:55:04: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:55:04: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:55:04: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:55:04: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:55:05: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:55:05: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:55:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:55:05: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:55:05: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:55:05: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:55:05: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:55:05: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:55:05: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:55:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:55:05: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:55:05: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:55:05: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:55:05: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:55:05: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:55:05: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:55:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:55:05: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:55:05: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:55:05: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:55:05: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 21:55:45: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:55:45: [AMXX] Run time error 10 (plugin "ghost_zombie.amxx") (native "zp_get_user_zombie_class") - debug not enabled!
+L 01/28/2026 - 21:55:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/28/2026 - 21:55:45: [ZP] Invalid Player (0)
+L 01/28/2026 - 21:55:45: [AMXX] Displaying debug trace (plugin "jump_zombie.amxx", version "1.0")
+L 01/28/2026 - 21:55:45: [AMXX] Run time error 10: native error (native "zp_get_user_zombie_class")
+L 01/28/2026 - 21:55:45: [AMXX]    [0] jump_zombie.sma::zp_user_infected_post (line 195)
+L 01/28/2026 - 22:10:49: Start of error session.
+L 01/28/2026 - 22:10:49: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 22:10:49: Function "Event_CurrentWeapon" was not found
+L 01/28/2026 - 22:10:49: [AMXX] Displaying debug trace (plugin "sleep_zombie.amxx", version "1.0")
+L 01/28/2026 - 22:10:49: [AMXX] Run time error 19: function not found 
+L 01/28/2026 - 22:10:49: [AMXX]    [0] sleep_zombie.sma::plugin_init (line 96)
+L 01/28/2026 - 22:13:12: Start of error session.
+L 01/28/2026 - 22:13:12: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 22:13:12: Function "Event_CurrentWeapon" was not found
+L 01/28/2026 - 22:13:12: [AMXX] Displaying debug trace (plugin "sleep_zombie.amxx", version "1.0")
+L 01/28/2026 - 22:13:12: [AMXX] Run time error 19: function not found 
+L 01/28/2026 - 22:13:12: [AMXX]    [0] sleep_zombie.sma::plugin_init (line 89)
+L 01/28/2026 - 22:14:58: Start of error session.
+L 01/28/2026 - 22:14:58: Info (map "cs_assault") (file "addons/amxmodx/logs/error_20260128.log")
+L 01/28/2026 - 22:14:58: Function "Event_CurrentWeapon" was not found
+L 01/28/2026 - 22:14:58: [AMXX] Displaying debug trace (plugin "sleep_zombie.amxx", version "1.0")
+L 01/28/2026 - 22:14:58: [AMXX] Run time error 19: function not found 
+L 01/28/2026 - 22:14:58: [AMXX]    [0] sleep_zombie.sma::plugin_init (line 89)

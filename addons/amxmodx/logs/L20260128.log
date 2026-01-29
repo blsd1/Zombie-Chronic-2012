@@ -1,0 +1,561 @@
+L 01/28/2026 - 12:05:10: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 12:05:10: [admin.amxx] Login: "Player<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstu") (address "loopback")
+L 01/28/2026 - 12:05:11: [admin.amxx] Login: "Player<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstu") (address "loopback")
+L 01/28/2026 - 12:05:19: [AMXX] Could not free plugin memory, failure 487.
+L 01/28/2026 - 12:16:25: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 12:16:26: [admin.amxx] Login: "Player<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstu") (address "loopback")
+L 01/28/2026 - 12:16:26: [admin.amxx] Login: "Player<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstu") (address "loopback")
+L 01/28/2026 - 12:21:14: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstu") (address "loopback")
+L 01/28/2026 - 12:34:25: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 01/28/2026 - 12:34:40: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_airstrip
+L 01/28/2026 - 12:35:37: [AMXX] Could not free plugin memory, failure 487.
+L 01/28/2026 - 12:35:37: [AMXX] Could not free plugin memory, failure 487.
+L 01/28/2026 - 12:35:37: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 12:35:37: [admin.amxx] Login: "talent<2><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstu") (address "loopback")
+L 01/28/2026 - 12:35:37: [admin.amxx] Login: "talent<2><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstu") (address "loopback")
+L 01/28/2026 - 12:38:33: [AMXX] Could not free plugin memory, failure 487.
+L 01/28/2026 - 12:38:33: [AMXX] Could not free plugin memory, failure 487.
+L 01/28/2026 - 12:38:33: [AMXX] Could not free plugin memory, failure 487.
+L 01/28/2026 - 12:38:55: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 12:38:55: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 12:38:55: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 12:38:55: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 12:38:55: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 12:38:55: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 12:40:59: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 12:40:59: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 12:40:59: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 12:40:59: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 12:40:59: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 12:40:59: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 12:41:31: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 12:41:31: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 12:41:31: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 12:41:31: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 12:41:31: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 12:41:31: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 12:41:56: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 12:41:56: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 12:41:56: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 12:41:56: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 12:41:56: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 12:41:56: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 12:43:54: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 12:43:54: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 12:43:54: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 12:43:54: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 12:43:54: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 12:43:54: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 12:44:24: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 12:44:24: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 12:44:24: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 12:44:24: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 12:44:24: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 12:44:24: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 12:44:25: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 12:44:25: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 12:44:26: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 12:59:20: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 12:59:20: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 12:59:20: [admin.amxx] Login: "talent<2><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 12:59:21: [admin.amxx] Login: "talent<2><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:08:05: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:08:05: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:08:05: [admin.amxx] Login: "talent<3><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:08:05: [admin.amxx] Login: "talent<3><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:09:50: -------- Mapchange to cs_backalley --------
+L 01/28/2026 - 13:09:50: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:09:50: [admin.amxx] Login: "talent<4><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:09:50: [admin.amxx] Login: "talent<4><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:10:54: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:10:54: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:10:54: [admin.amxx] Login: "talent<5><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:10:55: [admin.amxx] Login: "talent<5><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:12:07: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:12:07: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:12:07: [admin.amxx] Login: "talent<6><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:12:08: [admin.amxx] Login: "talent<6><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:15:25: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:15:25: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:15:25: [admin.amxx] Login: "talent<7><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:15:26: [admin.amxx] Login: "talent<7><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:17:44: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:17:44: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:17:44: [admin.amxx] Login: "talent<8><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:17:44: [admin.amxx] Login: "talent<8><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:20:43: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:20:43: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:20:44: [admin.amxx] Login: "talent<9><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:20:44: [admin.amxx] Login: "talent<9><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:25:14: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:25:14: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:25:14: [admin.amxx] Login: "talent<10><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:25:14: [admin.amxx] Login: "talent<10><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:26:43: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:26:43: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:26:43: [admin.amxx] Login: "talent<11><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:26:44: [admin.amxx] Login: "talent<11><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:28:15: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:28:15: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:28:15: [admin.amxx] Login: "talent<12><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:28:16: [admin.amxx] Login: "talent<12><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:30:14: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:30:14: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:30:15: [admin.amxx] Login: "talent<13><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:30:15: [admin.amxx] Login: "talent<13><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:33:43: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:33:43: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:33:44: [admin.amxx] Login: "talent<14><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:33:44: [admin.amxx] Login: "talent<14><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:35:47: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:35:47: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:35:47: [admin.amxx] Login: "talent<15><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:35:47: [admin.amxx] Login: "talent<15><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:36:12: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:36:12: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:36:12: [admin.amxx] Login: "talent<16><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:36:12: [admin.amxx] Login: "talent<16><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:36:35: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:36:35: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:36:35: [admin.amxx] Login: "talent<17><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:36:36: [admin.amxx] Login: "talent<17><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:39:58: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:39:58: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:39:58: [admin.amxx] Login: "talent<18><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:39:58: [admin.amxx] Login: "talent<18><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:40:54: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:40:54: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:40:54: [admin.amxx] Login: "talent<19><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:40:54: [admin.amxx] Login: "talent<19><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:46:59: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:46:59: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:46:59: [admin.amxx] Login: "talent<20><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:47:00: [admin.amxx] Login: "talent<20><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:48:06: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 13:48:06: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 13:48:06: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 13:48:06: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 13:48:06: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:48:06: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 13:48:06: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:48:07: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:48:07: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:50:11: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 13:50:11: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 13:50:11: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 13:50:11: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 13:50:11: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:50:11: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 13:50:41: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 13:50:41: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 13:50:41: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 13:50:41: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 13:50:41: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:50:41: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 13:50:42: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:50:42: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:50:42: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:58:30: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:58:30: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:58:31: [admin.amxx] Login: "talent<2><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:58:31: [admin.amxx] Login: "talent<2><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:59:57: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 13:59:57: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 13:59:57: [admin.amxx] Login: "talent<3><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 13:59:57: [admin.amxx] Login: "talent<3><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:00:58: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:00:58: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:00:58: [admin.amxx] Login: "talent<4><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:00:59: [admin.amxx] Login: "talent<4><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:01:33: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:01:33: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:01:33: [admin.amxx] Login: "talent<5><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:01:34: [admin.amxx] Login: "talent<5><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:04:50: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:04:50: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:05:49: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 14:05:49: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 14:05:49: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 14:05:49: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 14:05:49: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:05:49: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 14:05:49: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:06:01: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 14:06:01: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 14:06:01: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 14:06:01: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 14:06:01: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:06:01: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 14:06:01: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:06:25: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 14:06:25: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 14:06:26: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 14:06:26: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 14:06:26: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:06:26: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 14:06:26: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:06:26: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:06:27: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:10:50: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:10:50: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:10:50: [admin.amxx] Login: "talent<2><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:10:51: [admin.amxx] Login: "talent<2><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:13:03: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:13:03: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:13:03: [admin.amxx] Login: "talent<3><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:13:03: [admin.amxx] Login: "talent<3><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:14:27: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:14:27: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:14:27: [admin.amxx] Login: "talent<4><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:14:27: [admin.amxx] Login: "talent<4><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:18:26: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:18:26: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:18:26: [admin.amxx] Login: "talent<5><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:18:26: [admin.amxx] Login: "talent<5><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:19:46: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:19:46: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:19:46: [admin.amxx] Login: "talent<6><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:19:46: [admin.amxx] Login: "talent<6><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:21:20: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:21:20: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:21:20: [admin.amxx] Login: "talent<7><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:21:21: [admin.amxx] Login: "talent<7><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:21:46: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:21:46: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:21:46: [admin.amxx] Login: "talent<8><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:21:46: [admin.amxx] Login: "talent<8><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:22:13: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:22:13: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:22:13: [admin.amxx] Login: "talent<9><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:22:14: [admin.amxx] Login: "talent<9><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:23:32: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:23:32: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:23:33: [admin.amxx] Login: "talent<10><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:23:33: [admin.amxx] Login: "talent<10><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:26:18: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:26:18: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:26:18: [admin.amxx] Login: "talent<11><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:26:18: [admin.amxx] Login: "talent<11><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:26:52: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:26:52: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:26:52: [admin.amxx] Login: "talent<12><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:26:52: [admin.amxx] Login: "talent<12><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:39:05: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:39:05: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:39:05: [admin.amxx] Login: "talent<13><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:39:06: [admin.amxx] Login: "talent<13><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:46:23: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:46:23: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:46:23: [admin.amxx] Login: "talent<14><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:46:23: [admin.amxx] Login: "talent<14><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:47:36: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:47:36: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:47:36: [admin.amxx] Login: "talent<15><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:47:37: [admin.amxx] Login: "talent<15><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:47:51: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:47:51: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:47:51: [admin.amxx] Login: "talent<16><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:47:52: [admin.amxx] Login: "talent<16><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:48:17: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:48:17: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:48:18: [admin.amxx] Login: "talent<17><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:48:18: [admin.amxx] Login: "talent<17><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:49:17: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:49:18: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:49:18: [admin.amxx] Login: "talent<18><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:49:18: [admin.amxx] Login: "talent<18><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:57:33: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:57:33: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:57:33: [admin.amxx] Login: "talent<19><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:57:33: [admin.amxx] Login: "talent<19><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:58:10: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:58:10: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:58:10: [admin.amxx] Login: "talent<20><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:58:11: [admin.amxx] Login: "talent<20><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:58:28: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:58:28: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:58:28: [admin.amxx] Login: "talent<21><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:58:29: [admin.amxx] Login: "talent<21><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:58:48: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 14:58:48: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 14:58:48: [admin.amxx] Login: "talent<22><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 14:58:48: [admin.amxx] Login: "talent<22><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 15:05:32: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 15:08:42: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 15:08:42: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 15:08:42: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 15:08:42: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 15:08:42: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 15:08:42: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 15:08:42: [jump_zombie.amxx] performance issue. Function plugin_precache executed more than 3.9ms.
+L 01/28/2026 - 15:08:43: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 15:08:43: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 15:08:43: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 15:08:43: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 15:11:01: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 15:11:01: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 15:11:01: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 15:11:02: [admin.amxx] Login: "talent<2><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 15:11:02: [admin.amxx] Login: "talent<2><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 15:15:55: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 15:15:55: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 15:15:55: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 15:15:55: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 15:15:56: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 15:15:56: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 15:15:56: [jump_zombie.amxx] performance issue. Function plugin_precache executed more than 3.8ms.
+L 01/28/2026 - 15:15:56: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 15:15:56: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 15:15:56: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 15:15:57: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 15:22:13: [jump_zombie.amxx] performance issue. Function fw_FM_CmdStart executed more than 1.1ms.
+L 01/28/2026 - 15:36:04: -------- Mapchange to de_airstrip --------
+L 01/28/2026 - 15:36:04: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 15:36:04: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 15:36:05: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 15:36:06: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 16:22:32: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 16:22:32: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 16:22:32: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 16:22:32: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 16:22:32: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 16:22:32: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 16:22:33: [jump_zombie.amxx] performance issue. Function plugin_precache executed more than 5.2ms.
+L 01/28/2026 - 16:22:33: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 16:22:33: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 16:22:33: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 16:22:34: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 16:42:55: -------- Mapchange to zm_vendetta --------
+L 01/28/2026 - 16:42:55: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 16:42:55: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 16:42:56: [admin.amxx] Login: "talent<11><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 16:42:56: [admin.amxx] Login: "talent<11><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 16:43:42: [jump_zombie.amxx] performance issue. Function zp_user_infected_post executed more than 1.2ms.
+L 01/28/2026 - 16:46:59: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 16:46:59: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 16:46:59: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 16:46:59: [admin.amxx] Login: "talent<21><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 16:47:00: [admin.amxx] Login: "talent<21><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 16:47:09: [jump_zombie.amxx] performance issue. Function zp_user_infected_post executed more than 1.1ms.
+L 01/28/2026 - 21:01:22: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 21:01:22: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 21:01:22: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 21:01:22: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 21:01:22: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:01:22: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 21:01:22: [jump_zombie.amxx] performance issue. Function plugin_precache executed more than 3.9ms.
+L 01/28/2026 - 21:01:22: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:01:22: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:01:23: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:01:23: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:01:47: [jump_zombie.amxx] performance issue. Function zp_user_infected_post executed more than 1.0ms.
+L 01/28/2026 - 21:01:47: [jump_zombie.amxx] performance issue. Function zp_user_infected_post executed more than 1.2ms.
+L 01/28/2026 - 21:01:47: [jump_zombie.amxx] performance issue. Function zp_user_infected_post executed more than 1.2ms.
+L 01/28/2026 - 21:10:52: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:10:52: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:10:52: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:10:52: [admin.amxx] Login: "talent<11><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:10:52: [admin.amxx] Login: "talent<11><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:16:02: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:16:02: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:16:02: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:16:02: [admin.amxx] Login: "talent<21><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:16:02: [admin.amxx] Login: "talent<21><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:17:15: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:17:15: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:17:15: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:17:15: [admin.amxx] Login: "talent<31><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:17:16: [admin.amxx] Login: "talent<31><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:18:05: -------- Mapchange to cs_backalley --------
+L 01/28/2026 - 21:18:05: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:18:05: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:18:05: [admin.amxx] Login: "talent<41><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:18:06: [admin.amxx] Login: "talent<41><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:19:27: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:19:27: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:19:27: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:19:28: [admin.amxx] Login: "talent<51><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:19:28: [admin.amxx] Login: "talent<51><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:21:47: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:21:47: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:21:47: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:21:47: [admin.amxx] Login: "talent<61><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:21:47: [admin.amxx] Login: "talent<61><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:23:02: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:23:02: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:23:02: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:23:02: [admin.amxx] Login: "talent<71><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:23:02: [admin.amxx] Login: "talent<71><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:23:31: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:23:31: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:23:31: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:23:31: [admin.amxx] Login: "talent<81><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:23:31: [admin.amxx] Login: "talent<81><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:23:52: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:23:52: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:23:52: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:23:52: [admin.amxx] Login: "talent<91><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:23:52: [admin.amxx] Login: "talent<91><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:24:08: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:24:09: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:24:09: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:24:09: [admin.amxx] Login: "talent<101><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:24:09: [admin.amxx] Login: "talent<101><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:25:18: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:25:18: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:25:18: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:25:18: [admin.amxx] Login: "talent<111><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:25:18: [admin.amxx] Login: "talent<111><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:26:01: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:26:01: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:26:01: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:26:01: [admin.amxx] Login: "talent<121><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:26:01: [admin.amxx] Login: "talent<121><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:27:05: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:27:05: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:27:05: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:27:05: [admin.amxx] Login: "talent<131><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:27:06: [admin.amxx] Login: "talent<131><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:28:32: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:28:33: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:28:33: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:28:33: [admin.amxx] Login: "talent<141><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:28:33: [admin.amxx] Login: "talent<141><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:28:57: [jump_zombie.amxx] performance issue. Function zp_user_infected_post executed more than 1.4ms.
+L 01/28/2026 - 21:28:58: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:28:58: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:28:58: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:28:58: [admin.amxx] Login: "talent<151><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:28:59: [admin.amxx] Login: "talent<151><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:29:24: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:29:24: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:29:24: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:29:24: [admin.amxx] Login: "talent<161><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:29:25: [admin.amxx] Login: "talent<161><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:29:40: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:29:40: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:29:40: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:29:41: [admin.amxx] Login: "talent<171><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:29:41: [admin.amxx] Login: "talent<171><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:29:53: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:29:53: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:29:53: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:29:54: [admin.amxx] Login: "talent<181><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:29:54: [admin.amxx] Login: "talent<181><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:30:17: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:30:17: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:30:17: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:30:18: [admin.amxx] Login: "talent<191><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:30:18: [admin.amxx] Login: "talent<191><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:30:36: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:30:36: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:30:36: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:30:36: [admin.amxx] Login: "talent<201><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:30:36: [admin.amxx] Login: "talent<201><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:30:52: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:30:52: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:30:52: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:30:52: [admin.amxx] Login: "talent<211><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:30:52: [admin.amxx] Login: "talent<211><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:44:01: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:44:01: [speed_zombie.amxx] performance issue. Function plugin_precache executed more than 4.4ms.
+L 01/28/2026 - 21:44:01: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:44:01: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:44:01: [admin.amxx] Login: "talent<221><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:44:02: [admin.amxx] Login: "talent<221><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:45:20: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:45:20: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:45:20: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:45:20: [admin.amxx] Login: "talent<231><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:45:20: [admin.amxx] Login: "talent<231><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:46:05: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:46:05: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:46:05: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:46:05: [admin.amxx] Login: "talent<241><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:46:05: [admin.amxx] Login: "talent<241><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:46:29: [jump_zombie.amxx] performance issue. Function zp_user_infected_post executed more than 1.1ms.
+L 01/28/2026 - 21:46:31: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:46:31: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:46:31: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:46:31: [admin.amxx] Login: "talent<251><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:46:32: [admin.amxx] Login: "talent<251><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:48:45: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:48:45: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:48:45: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:48:45: [admin.amxx] Login: "talent<261><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:48:46: [admin.amxx] Login: "talent<261><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:48:49: [jump_zombie.amxx] performance issue. Function zp_user_infected_post executed more than 1.2ms.
+L 01/28/2026 - 21:49:03: [jump_zombie.amxx] performance issue. Function zp_user_infected_post executed more than 1.1ms.
+L 01/28/2026 - 21:51:18: [jump_zombie.amxx] performance issue. Function zp_user_infected_post executed more than 1.2ms.
+L 01/28/2026 - 21:51:47: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:51:47: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:51:47: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:51:47: [admin.amxx] Login: "talent<271><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:51:48: [admin.amxx] Login: "talent<271><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:53:32: [jump_zombie.amxx] performance issue. Function zp_user_infected_post executed more than 1.1ms.
+L 01/28/2026 - 21:54:08: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:54:08: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:54:08: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:54:09: [admin.amxx] Login: "talent<281><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:54:09: [admin.amxx] Login: "talent<281><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:54:26: [jump_zombie.amxx] performance issue. Function zp_user_infected_post executed more than 1.0ms.
+L 01/28/2026 - 21:54:28: [jump_zombie.amxx] performance issue. Function zp_user_infected_post executed more than 1.1ms.
+L 01/28/2026 - 21:54:31: [jump_zombie.amxx] performance issue. Function zp_user_infected_post executed more than 1.9ms.
+L 01/28/2026 - 21:55:05: [jump_zombie.amxx] performance issue. Function zp_user_infected_post executed more than 1.1ms.
+L 01/28/2026 - 21:57:05: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 21:57:06: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 21:57:06: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 21:57:06: [admin.amxx] Login: "talent<291><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 21:57:06: [admin.amxx] Login: "talent<291><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 22:00:35: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 22:00:35: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 22:00:35: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 22:00:36: [admin.amxx] Login: "talent<301><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 22:00:36: [admin.amxx] Login: "talent<301><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 22:01:49: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 22:01:49: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 22:01:49: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 22:01:49: [admin.amxx] Login: "talent<311><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 22:01:49: [admin.amxx] Login: "talent<311><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 22:09:15: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 22:09:15: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 22:09:15: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 22:09:15: [admin.amxx] Login: "talent<321><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 22:09:15: [admin.amxx] Login: "talent<321><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 22:09:33: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 22:10:03: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 22:10:03: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 22:10:03: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 22:10:03: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 22:10:03: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 22:10:03: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 22:10:03: [jump_zombie.amxx] performance issue. Function plugin_precache executed more than 4.0ms.
+L 01/28/2026 - 22:10:03: [speed_zombie.amxx] performance issue. Function plugin_precache executed more than 3.9ms.
+L 01/28/2026 - 22:10:49: GameConfig CRC computed engine=F7DCFFD9 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\hw.dll)
+L 01/28/2026 - 22:10:49: GameConfig CRC computed server=6BF63A24 (C:\Program Files (x86)\Steam\steamapps\common\Half-Life\cstrike\dlls\mp.dll)
+L 01/28/2026 - 22:10:49: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 22:10:49: GameConfig CRC match for game "*" section "*" library "engine" platform "windows" (F7DCFFD9)
+L 01/28/2026 - 22:10:49: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 22:10:49: GameConfig CRC match for game "*" section "*" library "server" platform "windows" (6BF63A24)
+L 01/28/2026 - 22:10:49: [jump_zombie.amxx] performance issue. Function plugin_precache executed more than 3.9ms.
+L 01/28/2026 - 22:10:49: [speed_zombie.amxx] performance issue. Function plugin_precache executed more than 4.3ms.
+L 01/28/2026 - 22:10:49: [sleep_zombie.amxx] performance issue. Function plugin_precache executed more than 4.7ms.
+L 01/28/2026 - 22:10:49: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 22:10:49: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 22:10:50: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 22:10:50: [admin.amxx] Login: "talent<1><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 22:13:12: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 22:13:12: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 22:13:12: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 22:13:12: [admin.amxx] Login: "talent<11><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 22:13:13: [admin.amxx] Login: "talent<11><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 22:14:58: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 22:14:58: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 22:14:58: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 22:14:58: [admin.amxx] Login: "talent<21><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 22:14:59: [admin.amxx] Login: "talent<21><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 22:16:53: -------- Mapchange to cs_assault --------
+L 01/28/2026 - 22:16:53: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_ghost.txt
+L 01/28/2026 - 22:16:53: [AMXX] Failed to open dictionary file: cstrike\addons\amxmodx\data\lang\zp_zombie_jump.txt
+L 01/28/2026 - 22:16:54: [admin.amxx] Login: "talent<31><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
+L 01/28/2026 - 22:16:54: [admin.amxx] Login: "talent<31><STEAM_ID_LAN><>" became an admin (account "loopback") (access "abcdefghijklmnopqrstuv") (address "loopback")
