@@ -1,0 +1,7 @@
+maps/zm_csgo_train_v2017.res
+models/zm_csgo_train_v2017/boxcar.mdl
+models/zm_csgo_train_v2017/boxcar_wreck.mdl
+models/zm_csgo_train_v2017/engine.mdl
+models/zm_csgo_train_v2017/flatcar.mdl
+models/zm_csgo_train_v2017/orecar.mdl
+models/zm_csgo_train_v2017/tankcar.mdl

@@ -1,0 +1,21 @@
+2026-01-29 08:25:57 (ERROR): Unable to open Graph file for reading (filename: 'addons\yapb\data\graph\zm_energy_neon_fix2.graph').
+2026-01-29 08:49:24 (ERROR): Unable to save Practice file. Empty data. (filename: 'c:\program files (x86)\steam\steamapps\common\half-life\cstrike\addons\yapb\data\train\de_dust2_1337.prc').
+2026-01-29 08:54:24 (ERROR): Unable to save Practice file. Empty data. (filename: 'c:\program files (x86)\steam\steamapps\common\half-life\cstrike\addons\yapb\data\train\de_dust2.prc').
+2026-01-29 12:37:35 (ERROR): Unable to open Graph file for reading (filename: 'addons\yapb\data\graph\zm_dd_evo.graph').
+2026-01-29 12:39:52 (ERROR): Unable to save Practice file. Empty data. (filename: 'c:\program files (x86)\steam\steamapps\common\half-life\cstrike\addons\yapb\data\train\zm_dd_evo.prc').
+2026-01-29 12:39:52 (ERROR): Unable to open Graph file for reading (filename: 'addons\yapb\data\graph\zm_chavo_gs.graph').
+2026-01-29 13:04:18 (ERROR): Unable to open Graph file for reading (filename: 'addons\yapb\data\graph\zm_birioza.graph').
+2026-01-29 13:04:59 (ERROR): Unable to save Practice file. Empty data. (filename: 'c:\program files (x86)\steam\steamapps\common\half-life\cstrike\addons\yapb\data\train\zm_birioza.prc').
+2026-01-29 13:05:18 (ERROR): Unable to save Practice file. Empty data. (filename: 'c:\program files (x86)\steam\steamapps\common\half-life\cstrike\addons\yapb\data\train\zm_birioza.prc').
+2026-01-29 13:07:08 (ERROR): Unable to save Practice file. Empty data. (filename: 'c:\program files (x86)\steam\steamapps\common\half-life\cstrike\addons\yapb\data\train\zm_assault_gamesites.prc').
+2026-01-29 13:11:53 (ERROR): Unable to open Graph file for reading (filename: 'addons\yapb\data\graph\zm_base_humans_final.graph').
+2026-01-29 13:32:30 (ERROR): Unable to save Practice file. Empty data. (filename: 'c:\program files (x86)\steam\steamapps\common\half-life\cstrike\addons\yapb\data\train\zm_2_crazy_tower2x.prc').
+2026-01-29 13:52:48 (ERROR): Unable to save Practice file. Empty data. (filename: 'c:\program files (x86)\steam\steamapps\common\half-life\cstrike\addons\yapb\data\train\zm_cpl_mill_kamp.prc').
+2026-01-29 13:53:46 (ERROR): Unable to save Practice file. Empty data. (filename: 'c:\program files (x86)\steam\steamapps\common\half-life\cstrike\addons\yapb\data\train\zm_2_crazy_tower2x.prc').
+2026-01-29 13:55:00 (ERROR): Unable to save Practice file. Empty data. (filename: 'c:\program files (x86)\steam\steamapps\common\half-life\cstrike\addons\yapb\data\train\zm_2_crazy_tower2x.prc').
+2026-01-29 13:55:07 (ERROR): Unable to save Practice file. Empty data. (filename: 'c:\program files (x86)\steam\steamapps\common\half-life\cstrike\addons\yapb\data\train\zm_birioza.prc').
+2026-01-29 13:55:40 (ERROR): Unable to open Graph file for reading (filename: 'addons\yapb\data\graph\zm_bk_hideout.graph').
+2026-01-29 13:56:30 (ERROR): Unable to save Practice file. Empty data. (filename: 'c:\program files (x86)\steam\steamapps\common\half-life\cstrike\addons\yapb\data\train\zm_bk_hideout.prc').
+2026-01-29 13:59:52 (ERROR): Unable to save Practice file. Empty data. (filename: 'c:\program files (x86)\steam\steamapps\common\half-life\cstrike\addons\yapb\data\train\zm_bk_hideout.prc').
+2026-01-29 14:25:35 (ERROR): Unable to save Practice file. Empty data. (filename: 'c:\program files (x86)\steam\steamapps\common\half-life\cstrike\addons\yapb\data\train\zm_2_crazy_tower2x.prc').
+2026-01-29 14:28:37 (ERROR): Unable to save Practice file. Empty data. (filename: 'c:\program files (x86)\steam\steamapps\common\half-life\cstrike\addons\yapb\data\train\zm_assault_gamesites.prc').
