@@ -437,6 +437,14 @@ native zp_get_survivor_count()
 native zp_register_extra_item(const name[], cost, teams)
 
 /**
+ * Gives a player the Dragon Cannon weapon.
+ *
+ * @param id		Player index.
+ * @return		1 on success, 0 on failure.
+ */
+native give_dragon_cannon(id)
+
+/**
  * Registers a custom class which will be added to the zombie classes menu of ZP.
  *
  * Note: The returned zombie class ID can be later used to identify

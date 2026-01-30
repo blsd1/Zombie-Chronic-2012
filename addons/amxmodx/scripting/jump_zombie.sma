@@ -21,11 +21,12 @@ const Float:zclass_gravity = 0.8 // gravity
 const Float:zclass_knockback = 1.00 // knockback
 
 new i_stealth_time_hud[33]
-new g_cooldown[33]
+new Float:g_ability_cooldown[33]
 new g_infections[33]
 new Float:g_stealth_time[33]
 new i_cooldown_time[33]
 new g_maxplayers
+new g_msgScreenFade, g_msgScreenShake, g_msg_sync
 
 // --- config ------------------------ //
 new Float:g_lower_gravity_ability = 10.0 //first stealth time
@@ -68,6 +69,11 @@ public plugin_init()
 	g_maxplayers = get_maxplayers()
 	register_dictionary("zp_zombie_jump.txt");
 	register_forward(FM_PlayerPreThink, "prethink")
+	
+	// Inicializacia message IDs pre efekty
+	g_msgScreenFade = get_user_msgid("ScreenFade")
+	g_msgScreenShake = get_user_msgid("ScreenShake")
+	g_msg_sync = CreateHudSyncObj()
 }
 
 public prethink(id)
@@ -103,7 +109,7 @@ public roundStart()
 	for (new i = 1; i <= g_maxplayers; i++)
 	{
 		i_cooldown_time[i] = floatround(g_gravity_cooldown)
-		g_cooldown[i] = 0
+		g_ability_cooldown[i] = 0.0
 		remove_task(i)
 		
 	}
@@ -113,33 +119,63 @@ public use_ability_one(id)
 {
 	if(is_valid_ent(id) && is_user_alive(id) && zp_get_user_zombie(id) && !zp_get_user_nemesis(id) && zp_get_user_zombie_class(id) == g_zclass_jump)
 	{
-		if(g_cooldown[id] == 0)
-		{		
-			client_cmd(id, "spk ^"%s^"", JumpAbilityActive)
-			set_task(g_stealth_time[id],"ghost_make_visible",id)
-			set_task(g_gravity_cooldown,"reset_cooldown",id)
-			g_cooldown[id] = 1
-			set_user_gravity(id, 0.3)
+		// Kontrola cooldownu
+		new Float:current_time = get_gametime()
+		if (g_ability_cooldown[id] > current_time)
+		{
+			return // Cooldown je aktívny, ignoruj
+		}
+		
+		// Aktivuj schopnosť
+		client_cmd(id, "spk ^"%s^"", JumpAbilityActive)
+		set_task(g_lower_gravity_ability,"ghost_make_visible",id)
+		set_user_gravity(id, 0.3)
+		
+		// Screen shake efekt
+		message_begin(MSG_ONE, g_msgScreenShake, _, id)
+		write_short(1<<12) // amplitude
+		write_short(1<<10) // duration
+		write_short(1<<12) // frequency
+		message_end()
+		
+		// Orange screen fade pre 3 sekundy
+		message_begin(MSG_ONE, g_msgScreenFade, _, id)
+		write_short(1<<12) // duration (3 seconds)
+		write_short(1<<10) // hold time
+		write_short(0x0000) // fade type (fade in)
+		write_byte(255) // red
+		write_byte(165) // green (orange color)
+		write_byte(0) // blue
+		write_byte(100) // alpha
+		message_end()
 		
 		color_chat(id, "!t[Jump ZOMBIE] !gZISKAL SI NA 10 SEKUND GRAVITACIU")
-			i_cooldown_time[id] = floatround(g_gravity_cooldown)
-			i_stealth_time_hud[id] = floatround(g_stealth_time[id])
-			
-			set_task(1.0, "ShowHUD", id, _, _, "a",i_cooldown_time[id])
-			set_task(1.0, "ShowHUDstealthes", id, _, _, "a",i_stealth_time_hud[id])
-		}
 	}
 }
 
 
 public ShowHUD(id)
 {
-	if(is_valid_ent(id) && is_user_alive(id))
+	if(!is_user_alive(id) || !zp_get_user_zombie(id) || zp_get_user_zombie_class(id) != g_zclass_jump)
 	{
-		i_cooldown_time[id] = i_cooldown_time[id] - 1;
-		set_hudmessage(200, 100, 100, 0.05, 0.92, 0, 1.0, 1.1, 0.0, 0.0, -1)
-		show_hudmessage(id, "Cooldown: %d s",i_cooldown_time[id])
-	}else{
+		remove_task(id)
+		return
+	}
+	
+	new Float:current_time = get_gametime()
+	
+	// Kontrola či cooldown je aktívny
+	if (g_ability_cooldown[id] > current_time)
+	{
+		new remaining_time = floatround(g_ability_cooldown[id] - current_time)
+		
+		// Zobraz cooldown HUD v orange, dole vpravo
+		set_hudmessage(200, 100, 0, 0.76, 0.92, 0, 1.0, 1.1, 0.0, 0.0, -1)
+		ShowSyncHudMsg(id, g_msg_sync, "Cooldown: %d sek", remaining_time)
+	}
+	else
+	{
+		// Cooldown skončil, odstráň task
 		remove_task(id)
 	}
 }
@@ -157,34 +193,31 @@ public ghost_make_visible(id)
 {
 	if(is_valid_ent(id) && zp_get_user_zombie(id) && !zp_get_user_nemesis(id) && zp_get_user_zombie_class(id) == g_zclass_jump)
 	{
-		set_user_gravity(id, 1.0)
-                color_chat(id, "^4[BIG ZOMBIE] ^1Tvoja schopnost vyprsala tvoj problem ty kokot ")
+		set_user_gravity(id, zclass_gravity)
+		color_chat(id, "!t[Jump ZOMBIE] !gSchopnost skoncila!")
 		client_cmd(id, "spk ^"%s^"", JumpAbilityInActive)
 		
+		// Nastav cooldown TEraz (po skonceni ability)
+		new Float:current_time = get_gametime()
+		g_ability_cooldown[id] = current_time + g_gravity_cooldown
+		
+		// Spusti cooldown HUD display
+		set_task(1.0, "ShowHUD", id, _, _, "b")
 	}
 }
 
-public reset_cooldown(id)
-{
-	if(is_valid_ent(id) && zp_get_user_zombie(id) && !zp_get_user_nemesis(id) && zp_get_user_zombie_class(id) == g_zclass_jump)
-	{
-		g_cooldown[id] = 0
-		
-		color_chat(id, "^4[Jump ZOMBIE] ^1SCHOPNOST JE PRIPRAVENA STLAC E")
-		
-	}
-}
+
 
 public zp_user_infected_post(id, infector)
 {
 	if ((zp_get_user_zombie_class(id) == g_zclass_jump) && !zp_get_user_nemesis(id))
 	{
-		color_chat(id, "^4[Jump ZOMBIE] ^1Stisknutim E dostanes gravitaciu ")
+		color_chat(id, "!t[Jump ZOMBIE] !gStlač E pre super jump!")
 		
 		i_cooldown_time[id] = floatround(g_gravity_cooldown)
 		remove_task(id)
 		g_stealth_time[id] = g_lower_gravity_ability
-		g_cooldown[id] = 0
+		g_ability_cooldown[id] = 0.0
 		g_infections[id] = 0
 		
 		zp_override_user_painsound(id, "ch2012/jump_hit1.wav", sizeof(g_hit_sound))
@@ -255,6 +288,17 @@ public fw_FM_CmdStart( id , Handle )
 	{
 		use_ability_one(id)           
 	}
+}
+
+public client_connect(id)
+{
+	g_ability_cooldown[id] = 0.0
+}
+
+public client_disconnected(id)
+{
+	remove_task(id)
+	g_ability_cooldown[id] = 0.0
 }
 
 stock color_chat(const id, const input[], any:...) 

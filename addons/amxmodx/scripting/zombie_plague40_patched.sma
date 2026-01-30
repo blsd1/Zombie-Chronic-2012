@@ -1,9 +1,374 @@
 /*================================================================================
 	
 		*****************************************************
-		************** [Zombie Chronic 2012] **************
+		************** [Zombie Plague Mod 4.3] **************
 		*****************************************************
+	
+	----------------------
+	-*- Licensing Info -*-
+	----------------------
+	
+	Zombie Plague Mod
+	Copyright (C) 2008-2009 by MeRcyLeZZ
+	
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+	
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+	
+	In addition, as a special exception, the author gives permission to
+	link the code of this program with the Half-Life Game Engine ("HL
+	Engine") and Modified Game Libraries ("MODs") developed by Valve,
+	L.L.C ("Valve"). You must obey the GNU General Public License in all
+	respects for all of the code used other than the HL Engine and MODs
+	from Valve. If you modify this file, you may extend this exception
+	to your version of the file, but you are not obligated to do so. If
+	you do not wish to do so, delete this exception statement from your
+	version.
+	
+	-------------------
+	-*- Description -*-
+	-------------------
+	
+	Zombie Plague is a Counter-Strike server side modification, developed as
+	an AMX Mod X plugin, which completely revamps the gameplay, turning the
+	game into an intense "Humans vs Zombies" survival experience.
+	
+	Even though it's strongly based on the classic zombie infection mods, it
+	takes the concept to a new level by introducing:
+	
+	* New Gameplay Modes: Nemesis, Survivor, Multi Infection, Swarm, Plague
+	* Zombie Classes System: allows addding unlimited custom zombie classes
+	* Ammo Packs: awarded to skilled players, can be exchanged for goods
+	* Extra Items System: allows adding unlimited custom items to buy
+	* Custom Grenades: Napalms, Frost Nades, Flares, and Infection Bombs
+	* Deathmatch Mode: where zombies or humans can continually respawn
+	* Admin Menus: to easily perform the included console commands
+	* Special Effects: from the HL Engine, such as dynamic lighting and fog
+	
+	There is plenty of customization as well, which enables you to create
+	several different styles of gameplay. You can:
+	
+	* Set zombies and humans' health, speed, models, rewards, and more
+	* Toggle unlimited ammo and adjustable knockback for weapons
+	* Separately enable and customize the new gameplay modes to your liking
+	* Change overall map lighting (lightnings available for the dark settings)
+	* Set different colors and sizes for flashlight and nightvision
+	* Toggle leap (long jumping) and pain shock free (no damage slowdowns)
+	* Toggle various infection effects, such as sparks and screen shakes
+	* Enable random spawning (CSDM-spawn friendly)
+	* Replace sounds or add some background themes
+	* And many more...
+	
+	-------------
+	-*- Media -*-
+	-------------
+	
+	* Gameplay Video 1: http://www.youtube.com/watch?v=HFUyF7-_uzw
+	* Gameplay Video 2: http://www.youtube.com/watch?v=XByif6Mti-w
+	
+	--------------------
+	-*- Requirements -*-
+	--------------------
+	
+	* Mods: Counter-Strike 1.6 or Condition-Zero
+	* AMXX: Version 1.8.0 or later
+	
+	--------------------
+	-*- Installation -*-
+	--------------------
+	
+	Extract the contents from the .zip file to your server's mod directory
+	("cstrike" or "czero"). Make sure to keep folder structure.
+	
+	-----------------------
+	-*- Official Forums -*-
+	-----------------------
+	
+	For the official Zombie Plague forums visit:
+	http://forums.alliedmods.net/forumdisplay.php?f=126
+	
+	There you can:
+	
+	* Get the latest releases and early betas
+	* Discuss new features and suggestions
+	* Share sub-plugins (expansions) for the mod
+	* Find the support and help you need
+	* Report any bugs you might find
+	* And all that sort of stuff...
+	
+	-------------------------------
+	-*- CVARS and Customization -*-
+	-------------------------------
+	
+	For a complete and in-depth cvar list, look at the zombieplague.cfg file
+	located in the amxmodx\configs directory.
+	
+	Additionally, you can change player models, sounds, weather effects,
+	and some other stuff from the configuration file zombieplague.ini.
+	
+	As for editing attributes of zombie classes or custom extra items, you'll
+	find a zp_zombieclasses.ini and zp_extraitems.ini. These files will be
+	automatically updated as you install new custom classes or items with
+	new entries for you to edit conveniently.
+	
+	---------------
+	-*- History -*-
+	---------------
+	
+	This project started back on late 2007, when the free infection mods
+	around were quite buggy and I wanted to make one on my own. With little
+	to no experience at AMXX scripting, I had to start from the very scratch.
+	
+	Not after spending over a week looking at many plugins (mainly Zombie
+	Swarm) and scarce tutorials, I somehow managed to have all the basic
+	stuff working quite well (even though the code was a real mess). The
+	following months were spent polishing things up and trying to fulfill
+	new original ideas, most of them quite worth the hard work.
+	
+	In the meantime, I got the chance to try the plugin out on a 32 man
+	server. This meant a huge progress on development, and after lots of
+	testing and bug fixing, the mod turned out to be more than the simple
+	infection plugin I had originally planned it to be.
+	
+	The project has come a long way since, and I'm glad to say I'm finally
+	making it freely available. All I'm asking in return is to keep my
+	name in the plugin.
+	
+	-Enjoy!
+	
+	----------------------
+	-*- Infection Mode -*-
+	----------------------
+	
+	On every round players start out as humans, equip themselves with a few
+	weapons and grenades, and head to the closest cover they find, knowing
+	that one of them is infected with the T-Virus, and will suddenly turn
+	into a vicious brain eating creature.
+	
+	Only little time after, the battle for survival begins. The first zombie
+	has to infect as many humans as possible to cluster a numerous zombie
+	horde and take over the world.
+	
+	Maps are set in the dark by default. Humans must use flashlights to light
+	their way and spot any enemies. Zombies, on the other hand, have night
+	vision but can only attack melee.
+	
+	--------------------------
+	-*- New Gameplay Modes -*-
+	--------------------------
+	
+	* Nemesis:
+	   The first zombie may turn into a Nemesis, a powerful fast-moving
+	   beast. His goal is to kill every human while sustaining the gunfire.
+	
+	* Survivor:
+	   Everyone became a zombie except him. The survivor gets a machinegun
+	   with unlimited ammo and has to stop the never-ending army of undead.
+	
+	* Multiple Infection:
+	   The round starts with many humans infected, so the remaining players
+	   will have to act quickly in order to control the situation.
+	
+	* Swarm Mode:
+	   Half of the players turn into zombies, the rest become immune and
+	   cannot be infected. It's a battle to death.
+	
+	* Plague Mode: [bonus]
+	   A full armed Survivor and his soldiers are to face Nemesis and
+	   his zombie minions. The future of the world is in their hands.
+	
+	--------------------
+	-*- In-Game Menu -*-
+	--------------------
+	
+	Players can access the mod menu by typing "zpmenu" on chat, or by
+	pressing the M ("chooseteam") key. The menu allows players to choose
+	their zombie class, buy extra items, get unstuck, or see the ingame
+	help. Admins will find an additional option to easily perform all
+	console commands.
+	
+	----------------------
+	-*- Admin Commands -*-
+	----------------------
+	
+	The following console commands are available:
+	
+	* zp_zombie <target> - Turn someone into a Zombie
+	* zp_human <target> - Turn someone back to Human
+	* zp_nemesis <target> - Turn someone into a Nemesis
+	* zp_survivor <target> - Turn someone into a Survivor
+	* zp_respawn <target> - Respawn someone
+	* zp_swarm - Start Swarm Mode (*)
+	* zp_multi - Start Multi Infection (*)
+	* zp_plague - Start Plague Mode (*)
+	
+	(*) - These commands can only be used at round start, that is, when the
+	T-Virus notice is shown on screen. 
+	
+	------------------
+	-*- Plugin API -*-
+	------------------
+	
+	From version 3.6, some natives and forwards have been added to ease the
+	development of sub-plugins, though you may also find them useful to work
+	out compatibility issues with existing plugins.
+	
+	Look for the zombieplague.inc file in your amxmodx\scripting\include
+	folder for the full documented list.
+	
+	----------------------
+	-*- Zombie Classes -*-
+	----------------------
+	
+	From version 4.0 it is possible to create and add an unlimited number of
+	zombie classes to the main mod. They can be made as separate plugins,
+	by using the provided zombie class API, and easily distributed.
+	
+	By default, five zombie classes are included:
+	
+	* Classic Zombie: well balanced zombie for beginners.
+	* Raptor Zombie: fast moving zombie, but also the weakest.
+	* Poison Zombie: light weighed zombie, jumps higher.
+	* Big Zombie: slow but strong zombie, with lots of hit points.
+	* Leech Zombie: regains additional health when infecting.
+	
+	-------------------
+	-*- Extra Items -*-
+	-------------------
+	
+	From version 4.0 it is possible to add an unlimited number of items
+	which can be purchased through the Extra Items menu. All you need
+	to do is use the provided item registration natives on your custom
+	plugins. You can set the name, the cost in ammo packs, and the team
+	the extra item should be available for.
+	
+	By default there is a number of items already included, listed here:
+	
+	* Night Vision: makes you able to see in the dark for a single round [Human]
+	* T-Virus Antidote: makes you turn back to your human form [Zombie]
+	* Zombie Madness: you develop a powerful shield for a short time [Zombie]
+	* Infection Bomb: infects anyone within its explosion radius [Zombie]
+	
+	You are also able to choose some weapons to act as extra items, and change
+	ammo packs costs in the customization file (zombieplague.ini).
+	
+	---------------
+	-*- Credits -*-
+	---------------
+	
+	* AMXX Dev Team: for all the hard work which made this possible
+	* Imperio LNJ Community: for providing the first server where I
+	   could really test the plugin and for everyone's support
+	* Mini_Midget: for his Zombie Swarm plugin which I used for reference
+	   on earliest stages of development
+	* Avalanche: for the random spawning code I got from GunGame and the
+	   original Frostnades concept that I ported in here
+	* cheap_suit: for some modelchange and knockback codes that I got from
+	   Biohazard
+	* Simon Logic/ConnorMcLeod: for the Pain Shock Free feature
+	* KRoT@L: for some code from Follow the Wounded, used to make the zombie
+	   bleeding feature
+	* VEN: for Fakemeta Utilities and some useful stocks
+	* RaaPuar and Goltark: for the custom grenade models
+	* Orangutanz: for finding the precached modelindex offset
+	* ML Translations: DKs/nunoabc/DarkMarcos (bp), JahMan/KWo (pl), DA (de),
+	   Zombie Lurker (ls), DoPe^ (da), k1nny (fr), NeWbiE' (cz), skymoon (tc),
+	   SUPER MATRIX/Shidla/zDemon/4eRT (ru), zsy314 (cn), lOlIl/Seehank (sk),
+	   Bridgestone (sv), crazyeffect.net/Mave/Wesley (nl), hleV/aaarnas (lt),
+	   darkbad945 (bg), decongamco (vn), beckham9224 (mn), TehGeorge (gr),
+	   shadoww_ro/tuty/georgik57/EastSider (ro)
+	* Beta testers: for all the feedback, bug reports, and suggestions which
+	   constantly help improve this mod further
+	* And to all zombie-mod supporters out there!
+	
+	-----------------
+	-*- Changelog -*-
+	-----------------
+	
+	* v1.0: (Dec 2007)
+	   - First Release: most of the basic stuff done.
+	   - Added: random spawning, HP display on hud, lighting setting,
+	      simple buy menu, custom nightvision, admin commands, Nemesis
+	      and Survivor modes, glow and leap settings for them.
+	
+	* v2.2: (Jan 2008)
+	   - Added: zombie classes, ammo packs system, buying ammo for weapons,
+	      custom flashlight, admin skins setting, zombieplague.cfg file
+	   - Upgraded: weapons menu improved, flashlight and nightvision colors
+	      now customizable, HamSandwich module used to handle damage.
+	   - Fixed various bugs.
+	
+	* v3.0: (Mar 2008)
+	   - Added: door removal setting, unstuck feature, human cvars, armor
+	      cvar for zombies, weapon knockback, zombie bleeding, flares,
+	      extra items (weapons, antidote, infection bomb), pain shock
+	      free setting, Multiple Infection and Swarm modes.
+	   - Upgraded: dumped Engine, Fun and Cstrike modules, code optimized,
+	      new model change method, new gfx effects for zombie infections.
+	   - Fixed a bunch of gameplay bugs.
+	
+	* v3.5: (May 2008)
+	   - Added: deathmatch setting with spawn protection, unlimited ammo
+	      setting, fire and frost grenades, additional customization cvars,
+	      new extra items, help menu.
+	   - Upgraded: better objectives removal method, dropped weapons now
+	      keep their bpammo, code optimized a lot.
+	   - Fixed: no more game commencing bug when last zombie/human leaves,
+	      no more hegrenade infection bug, reduced svc_bad errors, and
+	      many more.
+	
+	* v3.6: (Jun 2008)
+	   - Added: a few natives and forwards for sub-plugins support,
+	      zombie classes can now have their own models, additional
+	      knockback customization, bot support, various CVARs.
+	   - Upgraded: extra items now supporting grenades and pistols, changed
+	      bomb removal method, players can join on survivor/swarm rounds,
+	      extended lightnings support to other dark settings.
+	   - Fixed: a bunch of minor bugs, and a server crash with CZ bots.
+	
+	* v4.0: (Aug 2008)
+	   - Added: new gameplay mode (Plague Mode), option to remember weapon
+	      selection, command to enable/disable the plugin, more CVARs.
+	   - Upgraded: redid all the menus, extra items and zombie classes now
+	      support external additions, survivor can now have its own model,
+	      upgraded model changing method.
+	   - Fixed: some bugs with bots, win sounds not being precached.
+	
+	* v4.1: (Oct 2008)
+	   - Added: more CVARs, more customization, more natives, custom
+	      leap system, admin zombie models support, and more.
+	   - Upgraded: custom grenades compatible with Nade Modes, ambience
+	      sounds specific game mode support, optimized bandwidth usage
+	      for temp ents, admin commands logged with IP and SteamID.
+	   - Fixed: lots of bugs (some minor, some not)
+	
+	* v4.2: (Feb 2009)
+	   - Added various CVARs for customization, improved prevention of
+	      svc_bad in some cases, optimized ammo handling code.
+	   - Fixed server crash with 'msg 35 has not been sent yet' error,
+	      fixed client overflow issues with ambience sounds, resolved
+	      many gameplay bugs.
+	
+	* v4.3: (Apr 2009)
+	   - Customization settings can now be edited through external files,
+	      added support for global and multiple random zombie models,
+	      added even more CVARs for tweaking stuff, extended admin commands'
+	      functionality, greatly extended API capabilities, implemented a
+	      more efficient Pain Shock Free code, reworked some menus.
+	   - Fixed pretty much all reported bugs to the date.
+	
+=================================================================================*/
 
+/*================================================================================
  [Plugin Customization]
 =================================================================================*/
 
@@ -29,11 +394,14 @@ const MAX_STATS_SAVED = 64
 #include <hamsandwich>
 #include <xs>
 
-// Native z dragon cannon pluginu
-native give_dragon_cannon(id)
+/*================================================================================
+ [Constants, Offsets, Macros]
+=================================================================================*/
 
+// Plugin Version
+new const PLUGIN_VERSION[] = "4.3 Fix5a"
 
-new const PLUGIN_VERSION[] = "4.3"
+// Customization file sections
 enum
 {
 	SECTION_NONE = 0,
@@ -55,6 +423,7 @@ enum
 	SECTION_SVC_BAD
 }
 
+// Access flags
 enum
 {
 	ACCESS_ENABLE_MOD = 0,
@@ -74,6 +443,7 @@ enum
 	MAX_ACCESS_FLAGS
 }
 
+// Task offsets
 enum (+= 100)
 {
 	TASK_MODEL = 2000,
@@ -224,10 +594,8 @@ const USE_STOPPED = 0
 const STEPTIME_SILENT = 999
 const BREAK_GLASS = 0x01
 const FFADE_IN = 0x0000
-const FFADE_OUT = 0x0001
 const FFADE_STAYOUT = 0x0004
 const PEV_SPEC_TARGET = pev_iuser2
-
 
 // Max BP ammo for weapons
 new const MAXBPAMMO[] = { -1, 52, -1, 90, 1, 32, 1, 100, 90, 1, 120, 100, 100, 90, 90, 90, 100, 120,
@@ -275,9 +643,6 @@ new const sound_armorhit[] = "player/bhit_helmet-1.wav"
 
 // Explosion radius for custom grenades
 const Float:NADE_EXPLOSION_RADIUS = 240.0
-
-// Hit sound debounce interval (prevent spamming) - set to ~1.5 sec to let pain sound finish
-#define HIT_SOUND_DEBOUNCE_TIME 0.8
 
 // HACK: pev_ field used to store additional ammo on weapons
 const PEV_ADDITIONAL_AMMO = pev_iuser1
@@ -339,8 +704,6 @@ const ZP_PLUGIN_HANDLED = 97
 new g_zombie[33] // is zombie
 new g_nemesis[33] // is nemesis
 new g_survivor[33] // is survivor
-new g_terminator[33] // is terminator
-new g_hannibal[33] // is hannibal
 new g_firstzombie[33] // is first zombie
 new g_lastzombie[33] // is last zombie
 new g_lasthuman[33] // is last human
@@ -356,18 +719,10 @@ new g_flashlight[33] // has custom flashlight turned on
 new g_flashbattery[33] = { 100, ... } // custom flashlight battery
 new g_canbuy[33] // is allowed to buy a new weapon through the menu
 new g_ammopacks[33] // ammo pack count
-new g_spirits[33] // spirit points for zombies (earned by infecting humans)
-new g_ultimate_damage[33] // player has ultimate damage active
-new g_epic_dragon_cannon[33] // player bought dragon cannon from epic menu
-new g_epic_fast_bazooka[33] // player bought fast bazooka from epic menu
-new g_epic_hp_boost[33] // player has +20% HP boost active
-new g_epic_dmg_boost[33] // player has +20% damage boost active
-new g_epic_ultimate_power[33] // player has ultimate power (+50% HP +50% DMG)
 new g_damagedealt_human[33] // damage dealt as human (used to calculate ammo packs reward)
 new g_damagedealt_zombie[33] // damage dealt as zombie (used to calculate ammo packs reward)
 new Float:g_lastleaptime[33] // time leap was last used
 new Float:g_lastflashtime[33] // time flashlight was last toggled
-new Float:g_lastaimhudtime[33] // time aim HUD was last shown
 new g_playermodel[33][32] // current model's short name [player][model]
 new g_menu_data[33][8] // data for some menu handlers
 new g_ent_playermodel[33] // player model entity
@@ -393,7 +748,7 @@ new g_lights_cycle[32] // current lightning cycle
 new g_lights_cycle_len // lightning cycle length
 new Float:g_models_targettime // for adding delays between Model Change messages
 new Float:g_teams_targettime // for adding delays between Team Change messages
-new g_MsgSync, g_MsgSync2, g_MsgSync3 // message sync objects
+new g_MsgSync, g_MsgSync2 // message sync objects
 new g_trailSpr, g_exploSpr, g_flameSpr, g_smokeSpr, g_glassSpr // grenade sprites
 new g_modname[32] // for formatting the mod name
 new g_freezetime // whether CS's freeze time is on
@@ -514,7 +869,7 @@ cvar_respawnonsuicide, cvar_respawnafterlast, cvar_leapsurvivorcooldown, cvar_st
 cvar_swarmminplayers, cvar_multiminplayers, cvar_plagueminplayers, cvar_adminmodelshuman,
 cvar_adminmodelszombie, cvar_nembasehp, cvar_blockpushables, cvar_respawnworldspawnkill,
 cvar_madnessduration, cvar_plaguenemnum, cvar_plaguenemhpmulti, cvar_plaguesurvhpmulti,
-cvar_survweapon, cvar_plaguesurvnum, cvar_infectionscreenshake,
+cvar_survweapon, cvar_plaguesurvnum, cvar_infectionscreenfade, cvar_infectionscreenshake,
 cvar_infectionsparkle, cvar_infectiontracers, cvar_infectionparticles, cvar_infbomblimit,
 cvar_allowrespawnsurv, cvar_flashshowall, cvar_allowrespawninfection, cvar_allowrespawnnem,
 cvar_allowrespawnswarm, cvar_allowrespawnplague, cvar_survinfammo, cvar_nemknockback,
@@ -533,14 +888,6 @@ new g_playername[33][32] // player's name
 new Float:g_zombie_spd[33] // zombie class speed
 new Float:g_zombie_knockback[33] // zombie class knockback
 new g_zombie_classname[33][32] // zombie class name
-new g_zombie_painsound[33][64] // zombie custom pain sound
-new g_zombie_deathsound[33][64] // zombie custom death sound
-new g_zombie_abilitysound[33][64] // zombie custom ability sound
-new g_zombie_spawnsound[33][64] // zombie custom spawn sound
-new g_zombie_painsound_count[33] // number of pain sound variants
-new g_zombie_idlesound[33][64] // zombie custom idle sound
-new g_zombie_idlesound_count[33] // number of idle sound variants
-new Float:g_last_hit_sound_time[33] // last time hit sound was played for this player
 #define is_user_valid_connected(%1) (1 <= %1 <= g_maxplayers && g_isconnected[%1])
 #define is_user_valid_alive(%1) (1 <= %1 <= g_maxplayers && g_isalive[%1])
 #define is_user_valid(%1) (1 <= %1 <= g_maxplayers)
@@ -568,12 +915,6 @@ public plugin_natives()
 	register_native("zp_set_user_zombie_class", "native_set_user_zombie_class", 1)
 	register_native("zp_get_user_ammo_packs", "native_get_user_ammo_packs", 1)
 	register_native("zp_set_user_ammo_packs", "native_set_user_ammo_packs", 1)
-	register_native("zp_get_user_spirits", "native_get_user_spirits", 1)
-	register_native("zp_set_user_spirits", "native_set_user_spirits", 1)
-	register_native("zp_get_user_terminator", "native_get_user_terminator", 1)
-	register_native("zp_set_user_terminator", "native_set_user_terminator", 1)
-	register_native("zp_get_user_hannibal", "native_get_user_hannibal", 1)
-	register_native("zp_set_user_hannibal", "native_set_user_hannibal", 1)
 	register_native("zp_get_zombie_maxhealth", "native_get_zombie_maxhealth", 1)
 	register_native("zp_get_user_batteries", "native_get_user_batteries", 1)
 	register_native("zp_set_user_batteries", "native_set_user_batteries", 1)
@@ -604,14 +945,6 @@ public plugin_natives()
 	register_native("zp_get_extra_item_id", "native_get_extra_item_id", 1)
 	register_native("zp_get_zombie_class_id", "native_get_zombie_class_id", 1)
 	register_native("zp_get_zombie_class_info", "native_get_zombie_class_info", 1)
-	
-	// Sound override natives
-	register_native("zp_override_user_painsound", "native_override_user_painsound", 1)
-	register_native("zp_override_user_deathsound", "native_override_user_deathsound", 1)
-	register_native("zp_override_user_abilitysound", "native_override_user_abilitysound", 1)
-	register_native("zp_override_user_spawnsound", "native_override_user_spawnsound", 1)
-	register_native("zp_override_user_idlesound", "native_override_user_idlesound", 1)
-	register_native("zp_play_user_abilitysound", "native_play_user_abilitysound", 1)
 }
 
 public plugin_precache()
@@ -827,11 +1160,6 @@ public plugin_precache()
 	g_smokeSpr = engfunc(EngFunc_PrecacheModel, sprite_grenade_smoke)
 	g_glassSpr = engfunc(EngFunc_PrecacheModel, sprite_grenade_glass)
 	
-	// First zombie sounds
-	precache_generic("sound/ch2012/zombie_first1.wav")
-	precache_generic("sound/ch2012/zombie_first2.wav")
-	precache_generic("sound/ch2012/zombie_first3.wav")
-	
 	// Custom sounds
 	for (i = 0; i < ArraySize(sound_win_zombies); i++)
 	{
@@ -877,10 +1205,6 @@ public plugin_precache()
 		ArrayGetString(zombie_infect, i, buffer, charsmax(buffer))
 		engfunc(EngFunc_PrecacheSound, buffer)
 	}
-	
-	// Precache custom sirena sound
-	engfunc(EngFunc_PrecacheSound, "sound/ch2012/sirena.wav")
-	
 	for (i = 0; i < ArraySize(zombie_pain); i++)
 	{
 		ArrayGetString(zombie_pain, i, buffer, charsmax(buffer))
@@ -1217,7 +1541,6 @@ public plugin_init()
 	register_menu("Buy Menu 1", KEYSMENU, "menu_buy1")
 	register_menu("Buy Menu 2", KEYSMENU, "menu_buy2")
 	register_menu("Mod Info", KEYSMENU, "menu_info")
-	register_menu("Epic Menu", KEYSMENU, "menu_epic")
 	register_menu("Admin Menu", KEYSMENU, "menu_admin")
 	
 	// CS Buy Menus (to prevent zombies/survivor from buying)
@@ -1417,6 +1740,7 @@ public plugin_init()
 	cvar_fragsinfect = register_cvar("zp_zombie_frags_for_infect", "1")
 	
 	// CVARS - Special Effects
+	cvar_infectionscreenfade = register_cvar("zp_infection_screenfade", "1")
 	cvar_infectionscreenshake = register_cvar("zp_infection_screenshake", "1")
 	cvar_infectionsparkle = register_cvar("zp_infection_sparkle", "1")
 	cvar_infectiontracers = register_cvar("zp_infection_tracers", "1")
@@ -1515,7 +1839,6 @@ public plugin_init()
 	// Create the HUD Sync Objects
 	g_MsgSync = CreateHudSyncObj()
 	g_MsgSync2 = CreateHudSyncObj()
-	g_MsgSync3 = CreateHudSyncObj()
 	
 	// Format mod name
 	formatex(g_modname, charsmax(g_modname), "Zombie Plague %s", PLUGIN_VERSION)
@@ -1600,19 +1923,6 @@ public logevent_round_start()
 {
 	// Freezetime ends
 	g_freezetime = false
-	
-	// Play sirena sound to all players
-	client_cmd(0, "spk ch2012/sirena")
-	
-	// Give armor to all humans (not zombies)
-	for (new id = 1; id <= g_maxplayers; id++)
-	{
-		if (is_user_alive(id) && !g_zombie[id])
-		{
-			// Set armor to 40 (not add, just set)
-			set_pev(id, pev_armorvalue, 40.0)
-		}
-	}
 }
 
 // Log Event Round End
@@ -1842,23 +2152,6 @@ public fw_PlayerSpawn_Post(id)
 		return;
 	}
 	
-	// Apply blackscreen for humans spawning at round start
-	if (g_newround)
-	{
-		// Debug message
-		client_print(id, print_chat, "[DEBUG] Human spawn blackscreen")
-		
-		message_begin(MSG_ONE, g_msgScreenFade, _, id)
-		write_short(UNIT_SECOND * 1) // duration - 2 seconds fadeout
-		write_short(UNIT_SECOND * 2) // hold time - 1 second black
-		write_short(FFADE_IN) // fade type - fade to black
-		write_byte(0) // red
-		write_byte(0) // green
-		write_byte(0) // blue
-		write_byte(255) // alpha - fully black
-		message_end()
-	}
-	
 	// Reset player vars
 	reset_vars(id, 0)
 	g_buytime[id] = get_gametime()
@@ -1868,15 +2161,7 @@ public fw_PlayerSpawn_Post(id)
 		set_task(0.2, "show_menu_buy1", id+TASK_SPAWN)
 	
 	// Set health and gravity
-	new base_hp = get_pcvar_num(cvar_humanhp)
-	
-	// Apply epic menu HP bonuses
-	if (g_epic_hp_boost[id])
-		base_hp = floatround(base_hp * 1.2)
-	if (g_epic_ultimate_power[id])
-		base_hp = floatround(base_hp * 1.5)
-	
-	fm_set_user_health(id, base_hp)
+	fm_set_user_health(id, get_pcvar_num(cvar_humanhp))
 	set_pev(id, pev_gravity, get_pcvar_float(cvar_humangravity))
 	
 	// Set human maxspeed
@@ -2014,7 +2299,7 @@ public fw_PlayerSpawn_Post(id)
 }
 
 // Ham Player Killed Forward
-public fw_PlayerKilled(victim, attacker)
+public fw_PlayerKilled(victim, attacker, shouldgib)
 {
 	// Player killed
 	g_isalive[victim] = false
@@ -2061,30 +2346,24 @@ public fw_PlayerKilled(victim, attacker)
 		remove_task(victim+TASK_BURN)
 	}
 	
+	// Nemesis explodes!
+	if (g_nemesis[victim])
+		SetHamParamInteger(3, 2)
+	
 	// Determine whether the player killed himself
 	static selfkill
 	selfkill = (victim == attacker || !is_user_valid_connected(attacker)) ? true : false
 	
 	// Killed by a non-player entity or self killed
-	if (selfkill) return HAM_IGNORED;
+	if (selfkill) return;
 	
 	// Ignore Nemesis/Survivor Frags?
 	if ((g_nemesis[attacker] && get_pcvar_num(cvar_nemignorefrags)) || (g_survivor[attacker] && get_pcvar_num(cvar_survignorefrags)))
 		RemoveFrags(attacker, victim)
 	
-	// Zombie/nemesis killed human, reward ammo packs and spirits
+	// Zombie/nemesis killed human, reward ammo packs
 	if (g_zombie[attacker] && (!g_nemesis[attacker] || !get_pcvar_num(cvar_nemignoreammo)))
-	{
 		g_ammopacks[attacker] += get_pcvar_num(cvar_ammoinfect)
-		g_spirits[attacker] += 1 // Reward 1 spirit for killing human
-	}
-	
-	// Ultimate damage kill bonus (25% of victim's max HP)
-	if (g_zombie[attacker] && g_ultimate_damage[attacker])
-	{
-		new bonus_hp = floatround(float(pev(attacker, pev_max_health)) * 0.25)
-		fm_set_user_health(attacker, pev(attacker, pev_health) + bonus_hp)
-	}
 	
 	// Human killed zombie, add up the extra frags for kill
 	if (!g_zombie[attacker] && get_pcvar_num(cvar_fragskill) > 1)
@@ -2093,12 +2372,10 @@ public fw_PlayerKilled(victim, attacker)
 	// Zombie killed human, add up the extra frags for kill
 	if (g_zombie[attacker] && get_pcvar_num(cvar_fragsinfect) > 1)
 		UpdateFrags(attacker, victim, get_pcvar_num(cvar_fragsinfect) - 1, 0, 0)
-	
-	return HAM_IGNORED
 }
 
 // Ham Player Killed Post Forward
-public fw_PlayerKilled_Post(victim, attacker)
+public fw_PlayerKilled_Post(victim, attacker, shouldgib)
 {
 	// Last Zombie Check
 	fnCheckLastZombie()
@@ -2152,13 +2429,6 @@ public fw_TakeDamage(victim, inflictor, attacker, Float:damage, damage_type)
 			SetHamParamFloat(4, damage)
 		}
 		
-		// Bonus damage to first zombie (nemesis and regular humans)
-		if (g_firstzombie[victim] && (g_nemesis[victim] || !g_zombie[attacker]))
-		{
-			damage *= 1.36
-			SetHamParamFloat(4, damage)
-		}
-		
 		// Reward ammo packs to humans for damaging zombies?
 		if ((get_pcvar_num(cvar_ammodamage_human) > 0) && (!g_survivor[attacker] || !get_pcvar_num(cvar_survignoreammo)))
 		{
@@ -2190,36 +2460,10 @@ public fw_TakeDamage(victim, inflictor, attacker, Float:damage, damage_type)
 		if (inflictor == attacker)
 		{
 			// Set nemesis damage
-			damage = get_pcvar_float(cvar_nemdamage)
-			
-			// Bonus damage to first zombie
-			if (g_firstzombie[victim])
-				damage *= 1.25
-			
-			SetHamParamFloat(4, damage)
+			SetHamParamFloat(4, get_pcvar_float(cvar_nemdamage))
 		}
 		
 		return HAM_IGNORED;
-	}
-	
-	// Ultimate damage bonus (25% extra damage)
-	if (g_ultimate_damage[attacker])
-	{
-		damage *= 1.25
-		SetHamParamFloat(4, damage)
-	}
-	
-	// Epic menu damage bonuses
-	if (g_epic_dmg_boost[attacker])
-	{
-		damage *= 1.2
-		SetHamParamFloat(4, damage)
-	}
-	
-	if (g_epic_ultimate_power[attacker])
-	{
-		damage *= 1.5
-		SetHamParamFloat(4, damage)
 	}
 	
 	// Reward ammo packs to zombies for damaging humans?
@@ -2239,18 +2483,6 @@ public fw_TakeDamage(victim, inflictor, attacker, Float:damage, damage_type)
 	// Last human or not an infection round
 	if (g_survround || g_nemround || g_swarmround || g_plagueround || fnGetHumans() == 1)
 		return HAM_IGNORED; // human is killed
-	
-	// First zombie kills instead of infecting, and victims respawn
-	if (g_firstzombie[attacker])
-	{
-		// Kill the victim instead of infecting (0 = normal ragdoll)
-		ExecuteHamB(Ham_Killed, victim, attacker, 0)
-		
-		// Respawn the victim after a short delay
-		set_task(2.0, "respawn_player_task", victim+TASK_SPAWN)
-		
-		return HAM_SUPERCEDE;
-	}
 	
 	// Does human armor need to be reduced before infecting?
 	if (get_pcvar_num(cvar_humanarmor))
@@ -2545,24 +2777,15 @@ public client_putinserver(id)
 		// Set bot flag
 		g_isbot[id] = true
 		
-		// Set random zombie class for bots
-		if (get_pcvar_num(cvar_zclasses))
+		// CZ bots seem to use a different "classtype" for player entities
+		// (or something like that) which needs to be hooked separately
+		if (!g_hamczbots && cvar_botquota)
 		{
-			new zclass_count = ArraySize(g_zclass_name)
-			if (zclass_count > 0)
-			{
-				g_zombieclassnext[id] = random_num(0, zclass_count - 1)
-			}
-		}
-	}
-	// CZ bots seem to use a different "classtype" for player entities
-	// (or something like that) which needs to be hooked separately
-	if (!g_hamczbots && cvar_botquota)
-	{
 			// Set a task to let the private data initialize
 			set_task(0.1, "register_ham_czbots", id)
 		}
 	}
+}
 
 // Client leaving
 public fw_ClientDisconnect(id)
@@ -2590,16 +2813,6 @@ public fw_ClientDisconnect(id)
 		// Remove custom model entities
 		fm_remove_model_ents(id)
 	}
-	
-	// Clear custom sound overrides
-	g_zombie_painsound[id][0] = 0
-	g_zombie_painsound_count[id] = 1
-	g_zombie_deathsound[id][0] = 0
-	g_zombie_abilitysound[id][0] = 0
-	g_zombie_spawnsound[id][0] = 0
-	g_zombie_idlesound[id][0] = 0
-	g_zombie_idlesound_count[id] = 1
-	remove_task(id + 30000) // Remove idle sound task
 	
 	// Player left, clear cached flags
 	g_isconnected[id] = false
@@ -2640,44 +2853,7 @@ public fw_EmitSound(id, channel, const sample[], Float:volume, Float:attn, flags
 	// Zombie being hit
 	if (sample[7] == 'b' && sample[8] == 'h' && sample[9] == 'i' && sample[10] == 't')
 	{
-		// Check hit sound debounce
-		new Float:current_time = get_gametime()
-		if (current_time - g_last_hit_sound_time[id] < HIT_SOUND_DEBOUNCE_TIME)
-		{
-			// Too soon since last hit sound, block it
-			return FMRES_SUPERCEDE;
-		}
-		
-		// Update last hit sound time
-		g_last_hit_sound_time[id] = current_time
-		
-		// Check for custom pain sound override first
-		if (g_zombie_painsound[id][0])
-		{
-			// If count > 1, randomly select from multiple sounds by replacing digit
-			if (g_zombie_painsound_count[id] > 1)
-			{
-				new random_sound[64]
-				copy(random_sound, charsmax(random_sound), g_zombie_painsound[id])
-				
-				// Find position before .wav to replace the digit
-				new len = strlen(random_sound)
-				new pos = len - 5 // Position before .wav (e.g., "hit1.wav" -> position of '1')
-				
-				if (pos > 0 && random_sound[pos] >= '0' && random_sound[pos] <= '9')
-				{
-					// Replace digit with random number (1 to count)
-					random_sound[pos] = '0' + random_num(1, g_zombie_painsound_count[id])
-				}
-				
-				emit_sound(id, CHAN_VOICE, random_sound, volume, attn, flags, pitch)
-			}
-			else
-			{
-				emit_sound(id, CHAN_VOICE, g_zombie_painsound[id], volume, attn, flags, pitch)
-			}
-		}
-		else if (g_nemesis[id])
+		if (g_nemesis[id])
 		{
 			ArrayGetString(nemesis_pain, random_num(0, ArraySize(nemesis_pain) - 1), sound, charsmax(sound))
 			emit_sound(id, channel, sound, volume, attn, flags, pitch)
@@ -2725,16 +2901,8 @@ public fw_EmitSound(id, channel, const sample[], Float:volume, Float:attn, flags
 	// Zombie dies
 	if (sample[7] == 'd' && ((sample[8] == 'i' && sample[9] == 'e') || (sample[8] == 'e' && sample[9] == 'a')))
 	{
-		// Check for custom death sound override first
-		if (g_zombie_deathsound[id][0])
-		{
-			emit_sound(id, CHAN_VOICE, g_zombie_deathsound[id], volume, attn, flags, pitch)
-		}
-		else
-		{
-			ArrayGetString(zombie_die, random_num(0, ArraySize(zombie_die) - 1), sound, charsmax(sound))
-			emit_sound(id, channel, sound, volume, attn, flags, pitch)
-		}
+		ArrayGetString(zombie_die, random_num(0, ArraySize(zombie_die) - 1), sound, charsmax(sound))
+		emit_sound(id, channel, sound, volume, attn, flags, pitch)
 		return FMRES_SUPERCEDE;
 	}
 	
@@ -3063,7 +3231,7 @@ public fw_CmdStart(id, handle)
 	
 	// This logic looks kinda weird, but it should work in theory...
 	// p = g_zombie[id], q = g_survivor[id], r = g_cached_customflash
-	// ï¿½(p v q v (ï¿½p ^ r)) <==> ï¿½p ^ ï¿½q ^ (p v ï¿½r)
+	// ¬(p v q v (¬p ^ r)) <==> ¬p ^ ¬q ^ (p v ¬r)
 	if (!g_zombie[id] && !g_survivor[id] && (g_zombie[id] || !g_cached_customflash))
 		return;
 	
@@ -3110,46 +3278,6 @@ public fw_PlayerPreThink(id)
 	// Not alive
 	if (!g_isalive[id])
 		return;
-	
-	// Player info display (aim at target)
-	if (!g_freezetime)
-	{
-		static target, body
-		get_user_aiming(id, target, body, 9999)
-		
-		if (target > 0 && target <= g_maxplayers && g_isalive[target] && target != id)
-		{
-			static Float:gametime
-			gametime = get_gametime()
-			
-			// Refresh kaÅ¾dÃº 1.0 sekundu
-			if (gametime - g_lastaimhudtime[id] < 1.0)
-				return;
-			
-			g_lastaimhudtime[id] = gametime
-			
-			// Zombie aiming at zombie (orange)
-			if (g_zombie[id] && g_zombie[target])
-			{
-				static name[32]
-				get_user_name(target, name, charsmax(name))
-				
-				set_hudmessage(200, 100, 0, -1.0, 0.55, 0, 1.0, 1.0, 0.0, 0.0, 3)
-				ShowSyncHudMsg(id, g_MsgSync3, "^n^n%s^n^nHP: %d | AP: %d", 
-					name, pev(target, pev_health), g_ammopacks[target])
-			}
-			// Human aiming at human (light blue)
-			else if (!g_zombie[id] && !g_zombie[target])
-			{
-				static name[32]
-				get_user_name(target, name, charsmax(name))
-				
-				set_hudmessage(0, 100, 200, -1.0, 0.55, 0, 1.0, 1.0, 0.0, 0.0, 3)
-				ShowSyncHudMsg(id, g_MsgSync3, "^n^n%s^n^nHP: %d |^nAP: %d^n", 
-					name, pev(target, pev_health), g_ammopacks[target])
-			}
-		}
-	}
 	
 	// Enable custom buyzone for player during buytime, unless zombie or survivor or time expired
 	if (g_cached_buytime > 0.0 && !g_zombie[id] && !g_survivor[id] && (get_gametime() < g_buytime[id] + g_cached_buytime))
@@ -3247,7 +3375,7 @@ public clcmd_saymenu(id)
 // Say "/unstuck"
 public clcmd_sayunstuck(id)
 {
-	menu_game(id, 6) // try to get unstuck (key 7 = index 6)
+	menu_game(id, 3) // try to get unstuck
 }
 
 // Nightvision toggle
@@ -3370,18 +3498,18 @@ show_menu_game(id)
 	if (!g_isconnected[id])
 		return;
 	
-	static menu[350], len, userflags
+	static menu[250], len, userflags
 	len = 0
 	userflags = get_user_flags(id)
 	
 	// Title
 	len += formatex(menu[len], charsmax(menu) - len, "\y%s^n^n", g_modname)
 	
-	// 1. Custom Weapons
-	if (g_isalive[id] && !g_zombie[id] && !g_survivor[id])
-		len += formatex(menu[len], charsmax(menu) - len, "\r1.\w Weapons^n", id)
+	// 1. Buy weapons
+	if (get_pcvar_num(cvar_buycustom))
+		len += formatex(menu[len], charsmax(menu) - len, "\r1.\w %L^n", id, "MENU_BUY")
 	else
-		len += formatex(menu[len], charsmax(menu) - len, "\d1. Weapons^n", id)
+		len += formatex(menu[len], charsmax(menu) - len, "\d1. %L^n", id, "MENU_BUY")
 	
 	// 2. Extra items
 	if (get_pcvar_num(cvar_extraitems) && g_isalive[id])
@@ -3395,23 +3523,20 @@ show_menu_game(id)
 	else
 		len += formatex(menu[len], charsmax(menu) - len, "\d3. %L^n", id,"MENU_ZCLASS")
 	
-	// 4. Epic Menu
+	// 4. Unstuck
 	if (g_isalive[id])
-		len += formatex(menu[len], charsmax(menu) - len, "\r4.\w Epic Menu^n", g_spirits[id])
+		len += formatex(menu[len], charsmax(menu) - len, "\r4.\w %L^n", id, "MENU_UNSTUCK")
 	else
-		len += formatex(menu[len], charsmax(menu) - len, "\d4. Epic Menu^n", g_spirits[id])
+		len += formatex(menu[len], charsmax(menu) - len, "\d4. %L^n", id, "MENU_UNSTUCK")
 	
-	// 5. Join spec
-	if (userflags & g_access_flag[ACCESS_ADMIN_MENU])
-		len += formatex(menu[len], charsmax(menu) - len, "\r5.\w %L^n^n^n", id, "MENU_SPECTATOR")
-	else
-		len += formatex(menu[len], charsmax(menu) - len, "\d5. %L^n^n^n", id, "MENU_SPECTATOR")
+	// 5. Help
+	len += formatex(menu[len], charsmax(menu) - len, "\r5.\w %L^n^n", id, "MENU_INFO")
 	
-	// 6. Unstuck
-	if (g_isalive[id])
-		len += formatex(menu[len], charsmax(menu) - len, "\r6.\w %L^n^n", id, "MENU_UNSTUCK")
+	// 6. Join spec
+	if (!g_isalive[id] || !get_pcvar_num(cvar_blocksuicide) || (userflags & g_access_flag[ACCESS_ADMIN_MENU]))
+		len += formatex(menu[len], charsmax(menu) - len, "\r6.\w %L^n^n", id, "MENU_SPECTATOR")
 	else
-		len += formatex(menu[len], charsmax(menu) - len, "\d6. %L^n^n", id, "MENU_UNSTUCK")
+		len += formatex(menu[len], charsmax(menu) - len, "\d6. %L^n^n", id, "MENU_SPECTATOR")
 	
 	// 9. Admin menu
 	if (userflags & g_access_flag[ACCESS_ADMIN_MENU])
@@ -3471,14 +3596,11 @@ public show_menu_buy1(taskid)
 	for (weap = WPN_STARTID; weap < maxloops; weap++)
 		len += formatex(menu[len], charsmax(menu) - len, "\r%d.\w %s^n", weap-WPN_STARTID+1, WEAPONNAMES[ArrayGetCell(g_primary_weaponids, weap)])
 	
-	// 8. Custom Weapons Menu
-	len += formatex(menu[len], charsmax(menu) - len, "^n\r8.\w Custom Weapons \y[$]")
+	// 8. Auto Select
+	len += formatex(menu[len], charsmax(menu) - len, "^n\r8.\w %L \y[%L]", id, "MENU_AUTOSELECT", id, (WPN_AUTO_ON) ? "MOTD_ENABLED" : "MOTD_DISABLED")
 	
-	// 9. Auto Select
-	len += formatex(menu[len], charsmax(menu) - len, "^n\r9.\w %L \y[%L]", id, "MENU_AUTOSELECT", id, (WPN_AUTO_ON) ? "MOTD_ENABLED" : "MOTD_DISABLED")
-	
-	// 0. Next/Back - Exit
-	len += formatex(menu[len], charsmax(menu) - len, "^n^n\r0.\w %L/%L", id, "MENU_NEXT", id, "MENU_BACK")
+	// 9. Next/Back - 0. Exit
+	len += formatex(menu[len], charsmax(menu) - len, "^n^n\r9.\w %L/%L^n^n\r0.\w %L", id, "MENU_NEXT", id, "MENU_BACK", id, "MENU_EXIT")
 	
 	// Fix for AMXX custom menus
 	if (pev_valid(id) == PDATA_SAFE)
@@ -3614,9 +3736,7 @@ public show_menu_zclass(id)
 	// Bots pick their zombie class randomly
 	if (g_isbot[id])
 	{
-		new zclass_count = ArraySize(g_zclass_name)
-		if (zclass_count > 0)
-			g_zombieclassnext[id] = random_num(0, zclass_count - 1)
+		g_zombieclassnext[id] = random_num(0, g_zclass_i - 1)
 		return;
 	}
 	
@@ -3678,221 +3798,6 @@ show_menu_info(id)
 		set_pdata_int(id, OFFSET_CSMENUCODE, 0, OFFSET_LINUX)
 	
 	show_menu(id, KEYSMENU, menu, -1, "Mod Info")
-}
-
-// Epic Menu
-show_menu_epic(id)
-{
-	// Player disconnected?
-	if (!g_isconnected[id])
-		return;
-	
-	// Hannibal nemÃ´Å¾e pouÅ¾iÅ¥ epic menu
-	if (g_hannibal[id])
-	{
-		zp_colored_print(id, "^x04[ZP]^x01 Hannibal nemoze pouzit Epic Menu!")
-		return;
-	}
-	
-	static menu[512], len
-	len = 0
-	
-	// Title
-	len += formatex(menu[len], charsmax(menu) - len, "\yEpic Menu \r[Spirits: %d]^n^n", g_spirits[id])
-	
-	// 1. Dragon Cannon [HUM] - 12x Spirit
-	if (!g_zombie[id] && g_spirits[id] >= 12)
-		len += formatex(menu[len], charsmax(menu) - len, "\r1.\w Dragon Cannon \y[HUM] \r12x Spirit^n")
-	else
-		len += formatex(menu[len], charsmax(menu) - len, "\r1. \wDragon Cannon \y[HUM] \r12x Spirit^n")
-	len += formatex(menu[len], charsmax(menu) - len, "\dweapon with increased damage^n")
-	
-	// 2. Fast Bazooka [HUM] - 12x Spirit
-	if (!g_zombie[id] && g_spirits[id] >= 12)
-		len += formatex(menu[len], charsmax(menu) - len, "\r2.\w Fast Bazooka \y[HUM] \r12x Spirit^n")
-	else
-		len += formatex(menu[len], charsmax(menu) - len, "\r2. \wFast Bazooka \y[HUM] \r12x Spirit^n")
-	len += formatex(menu[len], charsmax(menu) - len, "\dfaster reloading of Bazooka by 5 seconds^n")
-	
-	// 3. +20% HP [HUM/ZM] - 13x Spirit
-	if (g_epic_hp_boost[id])
-		len += formatex(menu[len], charsmax(menu) - len, "\r3. +20%% HP \y[ACTIVE]^n")
-	else if (g_spirits[id] >= 13)
-		len += formatex(menu[len], charsmax(menu) - len, "\r3.\w +20%% HP \y[HUM/ZM] \r13x Spirit^n")
-	else
-		len += formatex(menu[len], charsmax(menu) - len, "\r3. \w +20%% HP \y[HUM/ZM] \r13x Spirit^n")
-	len += formatex(menu[len], charsmax(menu) - len, "\dmore health for humans/zombies all over the map^n")
-	
-	// 4. +20% Damage [HUM/ZM] - 16x Spirit
-	if (g_epic_dmg_boost[id])
-		len += formatex(menu[len], charsmax(menu) - len, "\r4. +20%% Damage \y[ACTIVE]^n")
-	else if (g_spirits[id] >= 16)
-		len += formatex(menu[len], charsmax(menu) - len, "\r4.\w +20%% Damage \y[HUM/ZM] \r16x Spirit^n")
-	else
-		len += formatex(menu[len], charsmax(menu) - len, "\r4. \w+20%% Damage \y[HUM/ZM] \r16x Spirit^n")
-	len += formatex(menu[len], charsmax(menu) - len, "\dincreased damage for humans/zombies all over the map^n")
-	
-	// 5. Ultimate Power [HUM/ZM] - 35x Spirit
-	if (g_epic_ultimate_power[id])
-		len += formatex(menu[len], charsmax(menu) - len, "\r5. Ultimate Power \y[ACTIVE]^n")
-	else if (g_spirits[id] >= 35)
-		len += formatex(menu[len], charsmax(menu) - len, "\r5.\w Ultimate Power \y[HUM/ZM] \r35x Spirit^n")
-	else
-		len += formatex(menu[len], charsmax(menu) - len, "\r5. \w Ultimate Power \y[HUM/ZM] \r35x Spirit^n")
-	len += formatex(menu[len], charsmax(menu) - len, "\d+50%% more HP and +50%% more damage^n")
-	
-	// 0. Exit
-	len += formatex(menu[len], charsmax(menu) - len, "^n\r0.\w Zavriet")
-	
-	// Fix for AMXX custom menus
-	if (pev_valid(id) == PDATA_SAFE)
-		set_pdata_int(id, OFFSET_CSMENUCODE, 0, OFFSET_LINUX)
-	
-	show_menu(id, KEYSMENU, menu, -1, "Epic Menu")
-}
-
-// Epic Menu Handler
-public menu_epic(id, key)
-{
-	// Player disconnected?
-	if (!g_isconnected[id])
-		return PLUGIN_HANDLED;
-	
-	switch (key)
-	{
-		case 0: // Dragon Cannon [HUM]
-		{
-			// Is zombie?
-			if (g_zombie[id])
-			{
-				zp_colored_print(id, "^x04[ZP]^x01 Dragon Cannon je len pre ludzi!")
-				show_menu_epic(id)
-				return PLUGIN_HANDLED;
-			}
-			
-			// Not enough spirits?
-			if (g_spirits[id] < 12)
-			{
-				zp_colored_print(id, "^x04[ZP]^x01 Nemas dostatok Spirits! Potrebujes 12.")
-				show_menu_epic(id)
-				return PLUGIN_HANDLED;
-			}
-			
-			// Deduct spirits and give dragon cannon
-			g_spirits[id] -= 12
-			g_epic_dragon_cannon[id] = true
-			client_cmd(id, "get_outcannonzp")
-			give_dragon_cannon(id)
-			zp_colored_print(id, "^x04[ZP]^x01 Dostal si Dragon Cannon!")
-		}
-		case 1: // Fast Bazooka [HUM]
-		{
-			// Is zombie?
-			if (g_zombie[id])
-			{
-				zp_colored_print(id, "^x04[ZP]^x01 Fast Bazooka je len pre ludzi!")
-				show_menu_epic(id)
-				return PLUGIN_HANDLED;
-			}
-			
-			// Not enough spirits?
-			if (g_spirits[id] < 12)
-			{
-				zp_colored_print(id, "^x04[ZP]^x01 Nemas dostatok Spirits! Potrebujes 12.")
-				show_menu_epic(id)
-				return PLUGIN_HANDLED;
-			}
-			
-			// Deduct spirits and give fast bazooka
-			g_spirits[id] -= 12
-			g_epic_fast_bazooka[id] = true
-			client_cmd(id, "zpzkratittodpocet")
-			zp_colored_print(id, "^x04[ZP]^x01 Dostal si Fast Bazooka! (rychlejsie nabijanie)")
-		}
-		case 2: // +20% HP
-		{
-			// Already active?
-			if (g_epic_hp_boost[id])
-			{
-				zp_colored_print(id, "^x04[ZP]^x01 +20%% HP je uz aktivny!")
-				show_menu_epic(id)
-				return PLUGIN_HANDLED;
-			}
-			
-			// Not enough spirits?
-			if (g_spirits[id] < 13)
-			{
-				zp_colored_print(id, "^x04[ZP]^x01 Nemas dostatok Spirits! Potrebujes 13.")
-				show_menu_epic(id)
-				return PLUGIN_HANDLED;
-			}
-			
-			// Deduct spirits and activate
-			g_spirits[id] -= 13
-			g_epic_hp_boost[id] = true
-			
-			// Apply HP boost immediately
-			new current_hp = pev(id, pev_health)
-			new new_hp = floatround(current_hp * 1.2)
-			set_pev(id, pev_health, float(new_hp))
-			
-			zp_colored_print(id, "^x04[ZP]^x01 +20%% HP aktivovany! Tvoje HP: ^x04%d^x01", new_hp)
-		}
-		case 3: // +20% Damage
-		{
-			// Already active?
-			if (g_epic_dmg_boost[id])
-			{
-				zp_colored_print(id, "^x04[ZP]^x01 +20%% Damage je uz aktivny!")
-				show_menu_epic(id)
-				return PLUGIN_HANDLED;
-			}
-			
-			// Not enough spirits?
-			if (g_spirits[id] < 16)
-			{
-				zp_colored_print(id, "^x04[ZP]^x01 Nemas dostatok Spirits! Potrebujes 16.")
-				show_menu_epic(id)
-				return PLUGIN_HANDLED;
-			}
-			
-			// Deduct spirits and activate
-			g_spirits[id] -= 16
-			g_epic_dmg_boost[id] = true
-			zp_colored_print(id, "^x04[ZP]^x01 +20%% Damage aktivovany!")
-		}
-		case 4: // Ultimate Power
-		{
-			// Already active?
-			if (g_epic_ultimate_power[id])
-			{
-				zp_colored_print(id, "^x04[ZP]^x01 Ultimate Power je uz aktivny!")
-				show_menu_epic(id)
-				return PLUGIN_HANDLED;
-			}
-			
-			// Not enough spirits?
-			if (g_spirits[id] < 35)
-			{
-				zp_colored_print(id, "^x04[ZP]^x01 Nemas dostatok Spirits! Potrebujes 35.")
-				show_menu_epic(id)
-				return PLUGIN_HANDLED;
-			}
-			
-			// Deduct spirits and activate
-			g_spirits[id] -= 35
-			g_epic_ultimate_power[id] = true
-			
-			// Apply HP boost immediately
-			new current_hp = pev(id, pev_health)
-			new new_hp = floatround(current_hp * 1.5)
-			set_pev(id, pev_health, float(new_hp))
-			
-			zp_colored_print(id, "^x04[ZP]^x01 Ultimate Power aktivovany! ^x04+50%% HP^x01 a ^x04+50%% Damage^x01")
-		}
-	}
-	
-	return PLUGIN_HANDLED;
 }
 
 // Admin Menu
@@ -4078,15 +3983,20 @@ public menu_game(id, key)
 	
 	switch (key)
 	{
-		case 0: // Custom Weapons
+		case 0: // Buy Weapons
 		{
-			// Check if player is alive and human
-			if (g_isalive[id] && !g_zombie[id] && !g_survivor[id])
+			// Custom buy menus enabled?
+			if (get_pcvar_num(cvar_buycustom))
 			{
-				client_cmd(id, "say /guns")
+				// Disable the remember selection setting
+				WPN_AUTO_ON = 0
+				zp_colored_print(id, "^x04[ZP]^x01 %L", id, "BUY_ENABLED")
+				
+				// Show menu if player hasn't yet bought anything
+				if (g_canbuy[id]) show_menu_buy1(id)
 			}
 			else
-				zp_colored_print(id, "^x04[ZP]^x01 Musite byt nazivu ako human!")
+				zp_colored_print(id, "^x04[ZP]^x01 %L", id, "CMD_NOT")
 		}
 		case 1: // Extra Items
 		{
@@ -4110,10 +4020,22 @@ public menu_game(id, key)
 			else
 				zp_colored_print(id, "^x04[ZP]^x01 %L", id, "CMD_NOT_ZCLASSES")
 		}
-		case 3: // Epic Menu
+		case 3: // Unstuck
 		{
+			// Check if player is stuck
 			if (g_isalive[id])
-				show_menu_epic(id)
+			{
+				if (is_player_stuck(id))
+				{
+					// Move to an initial spawn
+					if (get_pcvar_num(cvar_randspawn))
+						do_random_spawn(id) // random spawn (including CSDM)
+					else
+						do_random_spawn(id, 1) // regular spawn
+				}
+				else
+					zp_colored_print(id, "^x04[ZP]^x01 %L", id, "CMD_NOT_STUCK")
+			}
 			else
 				zp_colored_print(id, "^x04[ZP]^x01 %L", id, "CMD_NOT")
 		}
@@ -4157,25 +4079,6 @@ public menu_game(id, key)
 			fm_cs_set_user_team(id, FM_CS_TEAM_SPECTATOR)
 			fm_user_team_update(id)
 		}
-		case 6: // Unstuck
-		{
-			// Check if player is stuck
-			if (g_isalive[id])
-			{
-				if (is_player_stuck(id))
-				{
-					// Move to an initial spawn
-					if (get_pcvar_num(cvar_randspawn))
-						do_random_spawn(id) // random spawn (including CSDM)
-					else
-						do_random_spawn(id, 1) // regular spawn
-				}
-				else
-					zp_colored_print(id, "^x04[ZP]^x01 %L", id, "CMD_NOT_STUCK")
-			}
-			else
-				zp_colored_print(id, "^x04[ZP]^x01 %L", id, "CMD_NOT")
-		}
 		case 8: // Admin Menu
 		{
 			// Check if player has the required access
@@ -4200,29 +4103,25 @@ public menu_buy1(id, key)
 	if (g_zombie[id] || g_survivor[id])
 		return PLUGIN_HANDLED;
 	
-	// Key 8 = Custom Weapons Menu
-	if (key == 7)
-	{
-		client_cmd(id, "say /guns")
-		return PLUGIN_HANDLED;
-	}
-	
 	// Special keys / weapon list exceeded
-	if (key >= 8 || WPN_SELECTION >= WPN_MAXIDS)
+	if (key >= MENU_KEY_AUTOSELECT || WPN_SELECTION >= WPN_MAXIDS)
 	{
 		switch (key)
 		{
-			case MENU_KEY_NEXT: // next/back (key 8 = key 0 on keyboard)
+			case MENU_KEY_AUTOSELECT: // toggle auto select
 			{
-				// Check if it's "Next" or "Auto Select"
+				WPN_AUTO_ON = 1 - WPN_AUTO_ON
+			}
+			case MENU_KEY_NEXT: // next/back
+			{
 				if (WPN_STARTID+7 < WPN_MAXIDS)
 					WPN_STARTID += 7
 				else
 					WPN_STARTID = 0
-				
-				// Toggle auto select with key 9
-				if (key == 8)
-					WPN_AUTO_ON = 1 - WPN_AUTO_ON
+			}
+			case MENU_KEY_EXIT: // exit
+			{
+				return PLUGIN_HANDLED;
 			}
 		}
 		
@@ -5279,14 +5178,6 @@ public message_flashbat()
 // Flashbangs should only affect zombies
 public message_screenfade(msg_id, msg_dest, msg_entity)
 {
-	// Get fade type
-	static fadetype
-	fadetype = get_msg_arg_int(3)
-	
-	// Allow blackscreen (FFADE_OUT with black color) and infection screenfades (FFADE_IN)
-	if (fadetype == FFADE_IN || fadetype == FFADE_OUT)
-		return PLUGIN_CONTINUE;
-	
 	if (get_msg_arg_int(4) != 255 || get_msg_arg_int(5) != 255 || get_msg_arg_int(6) != 255 || get_msg_arg_int(7) < 200)
 		return PLUGIN_CONTINUE;
 	
@@ -5309,10 +5200,10 @@ public message_nvgtoggle()
 	return PLUGIN_HANDLED;
 }
 
-// Control gibs in DeathMsg
+// Set correct model on player corpses
 public message_clcorpse()
 {
-	set_msg_arg_string(0, g_playermodel[get_msg_arg_int(12)])
+	set_msg_arg_string(1, g_playermodel[get_msg_arg_int(12)])
 }
 
 // Prevent zombies from seeing any weapon pickup icon
@@ -5831,7 +5722,7 @@ make_a_zombie(mode, id)
 		else
 		{
 			// Show First Zombie HUD notice
-			set_hudmessage(255, 140, 0, HUD_EVENT_X, HUD_EVENT_Y, 0, 0.0, 5.0, 1.0, 1.0, -1)
+			set_hudmessage(255, 0, 0, HUD_EVENT_X, HUD_EVENT_Y, 0, 0.0, 5.0, 1.0, 1.0, -1)
 			ShowSyncHudMsg(0, g_MsgSync, "%L",LANG_PLAYER, "NOTICE_FIRST", g_playername[forward_id])
 			
 			// Mode fully started!
@@ -5865,28 +5756,19 @@ zombieme(id, infector, nemesis, silentmode, rewards)
 	// Pre user infect forward
 	ExecuteForward(g_fwUserInfected_pre, g_fwDummyResult, id, infector, nemesis)
 	
-	// Show zombie class menu if they haven't chosen any (e.g. just connected) - not for bots
-	if (g_zombieclassnext[id] == ZCLASS_NONE && get_pcvar_num(cvar_zclasses) && !g_isbot[id])
+	// Show zombie class menu if they haven't chosen any (e.g. just connected)
+	if (g_zombieclassnext[id] == ZCLASS_NONE && get_pcvar_num(cvar_zclasses))
 		set_task(0.2, "show_menu_zclass", id)
 	
 	// Set selected zombie class
 	g_zombieclass[id] = g_zombieclassnext[id]
-	// If no class selected yet, pick a random one (always for bots)
-	if (g_zombieclass[id] == ZCLASS_NONE || g_isbot[id])
-	{
-		new zclass_count = ArraySize(g_zclass_name)
-		if (zclass_count > 0)
-			g_zombieclass[id] = random_num(0, zclass_count - 1)
-		else
-			g_zombieclass[id] = 0
-	}
+	// If no class selected yet, use the first (default) one
+	if (g_zombieclass[id] == ZCLASS_NONE) g_zombieclass[id] = 0
 	
 	// Way to go...
 	g_zombie[id] = true
 	g_nemesis[id] = false
 	g_survivor[id] = false
-	g_terminator[id] = false
-	g_hannibal[id] = false
 	g_firstzombie[id] = false
 	
 	// Remove survivor's aura (bugfix)
@@ -5909,7 +5791,6 @@ zombieme(id, infector, nemesis, silentmode, rewards)
 		// Reward frags, deaths, health, and ammo packs
 		UpdateFrags(infector, id, get_pcvar_num(cvar_fragsinfect), 1, 1)
 		g_ammopacks[infector] += get_pcvar_num(cvar_ammoinfect)
-		g_spirits[infector] += 1 // Reward 1 spirit for infecting a human
 		fm_set_user_health(infector, pev(infector, pev_health) + get_pcvar_num(cvar_zombiebonushp))
 	}
 	
@@ -5919,6 +5800,7 @@ zombieme(id, infector, nemesis, silentmode, rewards)
 	ArrayGetString(g_zclass_name, g_zombieclass[id], g_zombie_classname[id], charsmax(g_zombie_classname[]))
 	
 	// Set zombie attributes based on the mode
+	static sound[64]
 	if (!silentmode)
 	{
 		if (nemesis)
@@ -5949,17 +5831,6 @@ zombieme(id, infector, nemesis, silentmode, rewards)
 			// First zombie
 			g_firstzombie[id] = true
 			
-			// Play first zombie sound to all players
-			static players[32], pnum, player
-			get_players(players, pnum, "ac")
-			static sound_file[64]
-			formatex(sound_file, charsmax(sound_file), "ch2012/zombie_first%d.wav", random_num(1, 3))
-			for (new i = 0; i < pnum; i++)
-			{
-				player = players[i]
-				client_cmd(player, "spk ^"sound/%s^"", sound_file)
-			}
-			
 			// Set health
 			fm_set_user_health(id, floatround(float(ArrayGetCell(g_zclass_hp, g_zombieclass[id])) * get_pcvar_float(cvar_zombiefirsthp)))
 			
@@ -5969,21 +5840,17 @@ zombieme(id, infector, nemesis, silentmode, rewards)
 			
 			// Set zombie maxspeed
 			ExecuteHamB(Ham_Player_ResetMaxSpeed, id)
+			
+			// Infection sound
+			ArrayGetString(zombie_infect, random_num(0, ArraySize(zombie_infect) - 1), sound, charsmax(sound))
+			emit_sound(id, CHAN_VOICE, sound, 1.0, ATTN_NORM, 0, PITCH_NORM)
 		}
 		else
 		{
 			// Infected by someone
 			
 			// Set health
-			new base_hp = ArrayGetCell(g_zclass_hp, g_zombieclass[id])
-			
-			// Apply epic menu HP bonuses
-			if (g_epic_hp_boost[id])
-				base_hp = floatround(base_hp * 1.2)
-			if (g_epic_ultimate_power[id])
-				base_hp = floatround(base_hp * 1.5)
-			
-			fm_set_user_health(id, base_hp)
+			fm_set_user_health(id, ArrayGetCell(g_zclass_hp, g_zombieclass[id]))
 			
 			// Set gravity, if frozen set the restore gravity value instead
 			if (!g_frozen[id]) set_pev(id, pev_gravity, Float:ArrayGetCell(g_zclass_grav, g_zombieclass[id]))
@@ -5992,9 +5859,17 @@ zombieme(id, infector, nemesis, silentmode, rewards)
 			// Set zombie maxspeed
 			ExecuteHamB(Ham_Player_ResetMaxSpeed, id)
 			
-			// Show red "You have been infected" message in center of screen
-			set_hudmessage(255, 0, 0, -1.0, 0.20, 0, 0.0, 5.0, 1.0, 1.0, -1)
-			ShowSyncHudMsg(id, g_MsgSync, "You have been infected")
+			// Infection sound
+			ArrayGetString(zombie_infect, random_num(0, ArraySize(zombie_infect) - 1), sound, charsmax(sound))
+			emit_sound(id, CHAN_VOICE, sound, 1.0, ATTN_NORM, 0, PITCH_NORM)
+			
+			// Show Infection HUD notice
+			set_hudmessage(255, 0, 0, HUD_INFECT_X, HUD_INFECT_Y, 0, 0.0, 5.0, 1.0, 1.0, -1)
+			
+			if (infector) // infected by someone?
+				ShowSyncHudMsg(0, g_MsgSync, "%L", LANG_PLAYER, "NOTICE_INFECT2", g_playername[id], g_playername[infector])
+			else
+				ShowSyncHudMsg(0, g_MsgSync, "%L", LANG_PLAYER, "NOTICE_INFECT", g_playername[id])
 		}
 	}
 	else
@@ -6002,15 +5877,7 @@ zombieme(id, infector, nemesis, silentmode, rewards)
 		// Silent mode, no HUD messages, no infection sounds
 		
 		// Set health
-		new base_hp = ArrayGetCell(g_zclass_hp, g_zombieclass[id])
-		
-		// Apply epic menu HP bonuses
-		if (g_epic_hp_boost[id])
-			base_hp = floatround(base_hp * 1.2)
-		if (g_epic_ultimate_power[id])
-			base_hp = floatround(base_hp * 1.5)
-		
-		fm_set_user_health(id, base_hp)
+		fm_set_user_health(id, ArrayGetCell(g_zclass_hp, g_zombieclass[id]))
 		
 		// Set gravity, if frozen set the restore gravity value instead
 		if (!g_frozen[id]) set_pev(id, pev_gravity, Float:ArrayGetCell(g_zclass_grav, g_zombieclass[id]))
@@ -6071,8 +5938,6 @@ zombieme(id, infector, nemesis, silentmode, rewards)
 		{
 			if (g_nemesis[id] && get_pcvar_num(cvar_nemglow))
 				fm_set_rendering(g_ent_playermodel[id], kRenderFxGlowShell, 255, 0, 0, kRenderNormal, 25)
-			else if (g_firstzombie[id])
-				fm_set_rendering(g_ent_playermodel[id], kRenderFxGlowShell, 150, 75, 0, kRenderNormal, 25)
 			else
 				fm_set_rendering(g_ent_playermodel[id])
 		}
@@ -6145,34 +6010,13 @@ zombieme(id, infector, nemesis, silentmode, rewards)
 				fm_user_model_update(id+TASK_MODEL)
 		}
 		
-		// Enable spawn protection for zombies spawning mid-round (not when infected by another player, admin menu, or first zombie)
-		if (!g_newround && !silentmode && get_pcvar_float(cvar_spawnprotection) > 0.0 && !infector && !g_firstzombie[id])
+		// Nemesis glow / remove glow, unless frozen
+		if (!g_frozen[id])
 		{
-			// Do not take damage
-			g_nodamage[id] = true
-			
-			// Set red glow for spawn protection
-			if (g_handle_models_on_separate_ent)
-				fm_set_rendering(g_ent_playermodel[id], kRenderFxGlowShell, 255, 0, 0, kRenderNormal, 25)
-			else
+			if (g_nemesis[id] && get_pcvar_num(cvar_nemglow))
 				fm_set_rendering(id, kRenderFxGlowShell, 255, 0, 0, kRenderNormal, 25)
-			
-			// Remove spawn protection after some time
-			remove_task(id+TASK_SPAWN)
-			set_task(get_pcvar_float(cvar_spawnprotection), "remove_spawn_protection", id+TASK_SPAWN)
-		}
-		else
-		{
-			// Nemesis glow / remove glow, unless frozen
-			if (!g_frozen[id])
-			{
-				if (g_nemesis[id] && get_pcvar_num(cvar_nemglow))
-					fm_set_rendering(id, kRenderFxGlowShell, 255, 0, 0, kRenderNormal, 25)
-				else if (g_firstzombie[id])
-					fm_set_rendering(id, kRenderFxGlowShell, 150, 75, 0, kRenderNormal, 25)
-				else
-					fm_set_rendering(id)
-			}
+			else
+				fm_set_rendering(id)
 		}
 	}
 	
@@ -6258,18 +6102,15 @@ zombieme(id, infector, nemesis, silentmode, rewards)
 	if (!g_nemesis[id] && get_pcvar_num(cvar_zombiebleeding))
 		set_task(0.7, "make_blood", id+TASK_BLOOD, _, _, "b")
 	
+	// Idle sounds task
+	if (!g_nemesis[id])
+		set_task(random_float(50.0, 70.0), "zombie_play_idle", id+TASK_BLOOD, _, _, "b")
+	
 	// Turn off zombie's flashlight
 	turn_off_flashlight(id)
 	
 	// Post user infect forward
 	ExecuteForward(g_fwUserInfected_post, g_fwDummyResult, id, infector, nemesis)
-	
-	// Play spawn sound immediately (allows custom sounds to be set)
-	play_zombie_spawn_sound(id)
-	
-	// Idle sounds task - start after 1.0 second delay to let spawn sound play first
-	if (!g_nemesis[id])
-		set_task(1.0, "start_idle_sounds", id)
 	
 	// Last Zombie Check
 	fnCheckLastZombie()
@@ -6301,21 +6142,9 @@ humanme(id, survivor, silentmode)
 	g_zombie[id] = false
 	g_nemesis[id] = false
 	g_survivor[id] = false
-	g_terminator[id] = false
-	g_hannibal[id] = false
 	g_firstzombie[id] = false
 	g_canbuy[id] = true
 	g_buytime[id] = get_gametime()
-	
-	// Clear custom sound overrides
-	g_zombie_painsound[id][0] = 0
-	g_zombie_painsound_count[id] = 1
-	g_zombie_deathsound[id][0] = 0
-	g_zombie_abilitysound[id][0] = 0
-	g_zombie_spawnsound[id][0] = 0
-	g_zombie_idlesound[id][0] = 0
-	g_zombie_idlesound_count[id] = 1
-	remove_task(id + 30000) // Remove idle sound task
 	
 	// Remove survivor's aura (bugfix)
 	set_pev(id, pev_effects, pev(id, pev_effects) &~ EF_BRIGHTLIGHT)
@@ -6391,15 +6220,7 @@ humanme(id, survivor, silentmode)
 		// Human taking an antidote
 		
 		// Set health
-		new base_hp = get_pcvar_num(cvar_humanhp)
-		
-		// Apply epic menu HP bonuses
-		if (g_epic_hp_boost[id])
-			base_hp = floatround(base_hp * 1.2)
-		if (g_epic_ultimate_power[id])
-			base_hp = floatround(base_hp * 1.5)
-		
-		fm_set_user_health(id, base_hp)
+		fm_set_user_health(id, get_pcvar_num(cvar_humanhp))
 		
 		// Set gravity, if frozen set the restore gravity value instead
 		if (!g_frozen[id]) set_pev(id, pev_gravity, get_pcvar_float(cvar_humangravity))
@@ -7970,6 +7791,9 @@ public welcome_msg()
 	zp_colored_print(0, "^x04[ZP]^x01 %L", LANG_PLAYER, "NOTICE_INFO1")
 	if (!get_pcvar_num(cvar_infammo)) zp_colored_print(0, "^x04[ZP]^x01 %L", LANG_PLAYER, "NOTICE_INFO2")
 	
+	// Show T-virus HUD notice
+	set_hudmessage(0, 125, 200, HUD_EVENT_X, HUD_EVENT_Y, 0, 0.0, 3.0, 2.0, 1.0, -1)
+	ShowSyncHudMsg(0, g_MsgSync, "%L", LANG_PLAYER, "NOTICE_VIRUS_FREE")
 }
 
 // Respawn Player Task (deathmatch)
@@ -8308,53 +8132,6 @@ public remove_spawn_protection(taskid)
 	// Remove spawn protection
 	g_nodamage[ID_SPAWN] = false
 	set_pev(ID_SPAWN, pev_effects, pev(ID_SPAWN, pev_effects) & ~EF_NODRAW)
-	
-	// Set correct glow based on zombie type
-	if (g_zombie[ID_SPAWN] && !g_frozen[ID_SPAWN])
-	{
-		if (g_nemesis[ID_SPAWN] && get_pcvar_num(cvar_nemglow))
-			fm_set_rendering(ID_SPAWN, kRenderFxGlowShell, 255, 0, 0, kRenderNormal, 25)
-		else if (g_firstzombie[ID_SPAWN])
-			fm_set_rendering(ID_SPAWN, kRenderFxGlowShell, 255, 255, 0, kRenderNormal, 25)
-		else
-			fm_set_rendering(ID_SPAWN)
-	}
-	else if (!g_zombie[ID_SPAWN])
-	{
-		// Remove glow from humans
-		fm_set_rendering(ID_SPAWN)
-	}
-}
-
-
-// Remove Round Blackscreen Task
-public remove_round_blackscreen(id)
-{
-	// Not connected
-	if (!g_isconnected[id])
-		return;
-	
-	// Debug message
-	client_print(id, print_chat, "[DEBUG] Removing blackscreen with fadeout")
-}
-
-// Remove Infection Blackscreen Task
-public remove_infection_blackscreen(id)
-{
-	// Not connected
-	if (!g_isconnected[id])
-		return;
-	
-	// Fade out black screen
-	message_begin(MSG_ONE, g_msgScreenFade, _, id)
-	write_short(UNIT_SECOND * 2) // duration - 2 seconds fade
-	write_short(0) // hold time
-	write_short(FFADE_IN) // fade type - fade in (removes black)
-	write_byte(0) // red
-	write_byte(0) // green
-	write_byte(0) // blue
-	write_byte(255) // alpha
-	message_end()
 }
 
 // Hide Player's Money Task
@@ -8548,10 +8325,6 @@ frost_explode(ent)
 		if (!is_user_valid_alive(victim) || !g_zombie[victim] || g_frozen[victim] || g_nodamage[victim])
 			continue;
 		
-		// First zombie is immune to frost grenades
-		if (g_firstzombie[victim])
-			continue;
-		
 		// Nemesis shouldn't be frozen
 		if (g_nemesis[victim])
 		{
@@ -8664,8 +8437,6 @@ public remove_freeze(id)
 			fm_set_rendering(g_ent_playermodel[id], kRenderFxGlowShell, 255, 0, 0, kRenderNormal, 25)
 		else if (g_survivor[id] && get_pcvar_num(cvar_survglow))
 			fm_set_rendering(g_ent_playermodel[id], kRenderFxGlowShell, 0, 0, 255, kRenderNormal, 25)
-		else if (g_firstzombie[id])
-			fm_set_rendering(g_ent_playermodel[id], kRenderFxGlowShell, 255, 255, 0, kRenderNormal, 25)
 		else
 			fm_set_rendering(g_ent_playermodel[id])
 	}
@@ -8676,8 +8447,6 @@ public remove_freeze(id)
 			fm_set_rendering(id, kRenderFxGlowShell, 255, 0, 0, kRenderNormal, 25)
 		else if (g_survivor[id] && get_pcvar_num(cvar_survglow))
 			fm_set_rendering(id, kRenderFxGlowShell, 0, 0, 255, kRenderNormal, 25)
-		else if (g_firstzombie[id])
-			fm_set_rendering(id, kRenderFxGlowShell, 255, 255, 0, kRenderNormal, 25)
 		else
 			fm_set_rendering(id)
 	}
@@ -8783,7 +8552,7 @@ replace_weapon_models(id, weaponid)
 					{
 						static clawmodel[100]
 						ArrayGetString(g_zclass_clawmodel, g_zombieclass[id], clawmodel, charsmax(clawmodel))
-						format(clawmodel, charsmax(clawmodel), "models/ch2012/%s", clawmodel)
+						format(clawmodel, charsmax(clawmodel), "models/zombie_plague/%s", clawmodel)
 						set_pev(id, pev_viewmodel2, clawmodel)
 						set_pev(id, pev_weaponmodel2, "")
 					}
@@ -8849,18 +8618,10 @@ reset_vars(id, resetall)
 	g_flashbattery[id] = 100
 	g_canbuy[id] = true
 	g_burning_duration[id] = 0
-	g_last_hit_sound_time[id] = 0.0
-	g_ultimate_damage[id] = false
-	g_epic_dragon_cannon[id] = false
-	g_epic_fast_bazooka[id] = false
-	g_epic_hp_boost[id] = false
-	g_epic_dmg_boost[id] = false
-	g_epic_ultimate_power[id] = false
 	
 	if (resetall)
 	{
 		g_ammopacks[id] = get_pcvar_num(cvar_startammopacks)
-		g_spirits[id] = 0
 		g_zombieclass[id] = ZCLASS_NONE
 		g_zombieclassnext[id] = ZCLASS_NONE
 		g_damagedealt_human[id] = 0
@@ -8924,9 +8685,9 @@ public ShowHUD(taskid)
 	
 	if (g_zombie[id]) // zombies
 	{
-		red = 255
-		green = 255
-		blue = 255
+		red = 200
+		green = 250
+		blue = 0
 		
 		if (g_nemesis[id])
 			formatex(class, charsmax(class), "%L", ID_SHOWHUD, "CLASS_NEMESIS")
@@ -8935,8 +8696,8 @@ public ShowHUD(taskid)
 	}
 	else // humans
 	{
-		red = 255
-		green = 255
+		red = 0
+		green = 0
 		blue = 255
 		
 		if (g_survivor[id])
@@ -8950,13 +8711,13 @@ public ShowHUD(taskid)
 	{
 		// Show name, health, class, and ammo packs
 		set_hudmessage(255, 255, 255, HUD_SPECT_X, HUD_SPECT_Y, 0, 6.0, 1.1, 0.0, 0.0, -1)
-		ShowSyncHudMsg(ID_SHOWHUD, g_MsgSync2, "%L %s^nHP: %d | %L %s | Spirits: %d | %L %d", ID_SHOWHUD, "SPECTATING", g_playername[id], pev(id, pev_health), ID_SHOWHUD, "CLASS_CLASS", class, g_spirits[id], ID_SHOWHUD, "AMMO_PACKS1", g_ammopacks[id])
+		ShowSyncHudMsg(ID_SHOWHUD, g_MsgSync2, "%L %s^nHP: %d - %L %s - %L %d", ID_SHOWHUD, "SPECTATING", g_playername[id], pev(id, pev_health), ID_SHOWHUD, "CLASS_CLASS", class, ID_SHOWHUD, "AMMO_PACKS1", g_ammopacks[id])
 	}
 	else
 	{
 		// Show health, class and ammo packs
 		set_hudmessage(red, green, blue, HUD_STATS_X, HUD_STATS_Y, 0, 6.0, 1.1, 0.0, 0.0, -1)
-		ShowSyncHudMsg(ID_SHOWHUD, g_MsgSync2, "%L: %d | %L %s | Spirits: %d | %L %d", id, "ZOMBIE_ATTRIB1", pev(ID_SHOWHUD, pev_health), ID_SHOWHUD, "CLASS_CLASS", class, g_spirits[ID_SHOWHUD], ID_SHOWHUD, "AMMO_PACKS1", g_ammopacks[ID_SHOWHUD])
+		ShowSyncHudMsg(ID_SHOWHUD, g_MsgSync2, "%L: %d - %L %s - %L %d", id, "ZOMBIE_ATTRIB1", pev(ID_SHOWHUD, pev_health), ID_SHOWHUD, "CLASS_CLASS", class, ID_SHOWHUD, "AMMO_PACKS1", g_ammopacks[ID_SHOWHUD])
 	}
 }
 
@@ -8967,59 +8728,19 @@ public zombie_play_idle(taskid)
 	if (g_endround || g_newround)
 		return;
 	
-	// Only play if custom idle sound is set (from zombie class override)
-	if (!g_zombie_idlesound[ID_BLOOD][0])
-		return;
-	
 	static sound[64]
 	
-	// If count > 1, randomly select from multiple sounds
-	if (g_zombie_idlesound_count[ID_BLOOD] > 1)
+	// Last zombie?
+	if (g_lastzombie[ID_BLOOD])
 	{
-		copy(sound, charsmax(sound), g_zombie_idlesound[ID_BLOOD])
-		
-		// Find position before .wav to replace the digit
-		new len = strlen(sound)
-		new pos = len - 5 // Position before .wav
-		
-		if (pos > 0 && sound[pos] >= '0' && sound[pos] <= '9')
-		{
-			// Replace digit with random number (1 to count)
-			sound[pos] = '0' + random_num(1, g_zombie_idlesound_count[ID_BLOOD])
-		}
-		
+		ArrayGetString(zombie_idle_last, random_num(0, ArraySize(zombie_idle_last) - 1), sound, charsmax(sound))
 		emit_sound(ID_BLOOD, CHAN_VOICE, sound, 1.0, ATTN_NORM, 0, PITCH_NORM)
 	}
 	else
 	{
-		emit_sound(ID_BLOOD, CHAN_VOICE, g_zombie_idlesound[ID_BLOOD], 1.0, ATTN_NORM, 0, PITCH_NORM)
+		ArrayGetString(zombie_idle, random_num(0, ArraySize(zombie_idle) - 1), sound, charsmax(sound))
+		emit_sound(ID_BLOOD, CHAN_VOICE, sound, 1.0, ATTN_NORM, 0, PITCH_NORM)
 	}
-}
-
-// Play zombie spawn sound (called after zp_user_infected_post forward)
-public play_zombie_spawn_sound(id)
-{
-	if (!is_user_alive(id) || !g_zombie[id])
-		return;
-	
-	static sound[64]
-	
-	// Always play infection sound from .ini (ignore spawn sound override)
-	ArrayGetString(zombie_infect, random_num(0, ArraySize(zombie_infect) - 1), sound, charsmax(sound))
-	emit_sound(id, CHAN_VOICE, sound, 1.0, ATTN_NORM, 0, PITCH_NORM)
-}
-
-// Start idle sounds task after spawn sound has played
-public start_idle_sounds(id)
-{
-	if (!is_user_alive(id) || !g_zombie[id] || g_nemesis[id])
-		return;
-	
-	// Play first idle sound immediately
-	zombie_play_idle(id+TASK_BLOOD)
-	
-	// Start the repeating idle sound task (every 50-70 seconds)
-	set_task(random_float(50.0, 70.0), "zombie_play_idle", id+TASK_BLOOD, _, _, "b")
 }
 
 // Madness Over Task
@@ -9461,8 +9182,8 @@ command_zombie(id, player)
 	}
 	else
 	{
-		// Just infect (use admin id as infector to prevent spawn protection)
-		zombieme(player, id, 0, 0, 0)
+		// Just infect
+		zombieme(player, 0, 0, 0, 0)
 	}
 }
 
@@ -9832,81 +9553,6 @@ public native_set_user_ammo_packs(id, amount)
 	}
 	
 	g_ammopacks[id] = amount;
-	return true;
-}
-
-// Native: zp_get_user_spirits
-public native_get_user_spirits(id)
-{
-	if (!is_user_valid(id))
-	{
-		log_error(AMX_ERR_NATIVE, "[ZP] Invalid Player (%d)", id)
-		return -1;
-	}
-	
-	return g_spirits[id];
-}
-
-// Native: zp_set_user_spirits
-public native_set_user_spirits(id, amount)
-{
-	if (!is_user_valid(id))
-	{
-		log_error(AMX_ERR_NATIVE, "[ZP] Invalid Player (%d)", id)
-		return false;
-	}
-	
-	g_spirits[id] = amount;
-	return true;
-}
-
-// Native: zp_get_user_terminator
-public native_get_user_terminator(id)
-{
-	if (!is_user_valid(id))
-	{
-		log_error(AMX_ERR_NATIVE, "[ZP] Invalid Player (%d)", id)
-		return -1;
-	}
-	
-	return g_terminator[id];
-}
-
-// Native: zp_set_user_terminator
-public native_set_user_terminator(id)
-{
-	if (!is_user_valid(id))
-	{
-		log_error(AMX_ERR_NATIVE, "[ZP] Invalid Player (%d)", id)
-		return false;
-	}
-	
-	g_terminator[id] = true;
-	return true;
-}
-
-// Native: zp_get_user_hannibal
-public native_get_user_hannibal(id)
-{
-	if (!is_user_valid(id))
-	{
-		log_error(AMX_ERR_NATIVE, "[ZP] Invalid Player (%d)", id)
-		return -1;
-	}
-	
-	return g_hannibal[id];
-}
-
-// Native: zp_set_user_hannibal
-public native_set_user_hannibal(id)
-{
-	if (!is_user_valid(id))
-	{
-		log_error(AMX_ERR_NATIVE, "[ZP] Invalid Player (%d)", id)
-		return false;
-	}
-	
-	g_hannibal[id] = true;
 	return true;
 }
 
@@ -10550,7 +10196,7 @@ public native_register_zombie_class(const name[], const info[], const model[], c
 		ArraySetString(g_zclass_clawmodel, g_zclass_i, buffer)
 		
 		// Precache clawmodel
-		formatex(prec_mdl, charsmax(prec_mdl), "models/ch2012/%s", buffer)
+		formatex(prec_mdl, charsmax(prec_mdl), "models/zombie_plague/%s", buffer)
 		engfunc(EngFunc_PrecacheModel, prec_mdl)
 		
 		// Replace health
@@ -10587,7 +10233,7 @@ public native_register_zombie_class(const name[], const info[], const model[], c
 		}
 		
 		// Precache default clawmodel
-		formatex(prec_mdl, charsmax(prec_mdl), "models/ch2012/%s", clawmodel)
+		formatex(prec_mdl, charsmax(prec_mdl), "models/zombie_plague/%s", clawmodel)
 		engfunc(EngFunc_PrecacheModel, prec_mdl)
 	}
 	
@@ -10666,173 +10312,6 @@ public native_get_zombie_class_info(classid, info[], len)
 	// Fetch zombie class info
 	ArrayGetString(g_zclass_info, classid, info, len)
 	return true;
-}
-
-// Native: zp_override_user_painsound
-public native_override_user_painsound(id, const sound[], count)
-{
-	// ZP disabled
-	if (!g_pluginenabled)
-		return false;
-	
-	if (!is_user_valid_connected(id))
-	{
-		log_error(AMX_ERR_NATIVE, "[ZP] Invalid Player (%d)", id)
-		return false;
-	}
-	
-	// Strings passed byref
-	param_convert(2)
-	
-	// Store custom pain sound and count (default to 1 if not passed)
-	copy(g_zombie_painsound[id], charsmax(g_zombie_painsound[]), sound)
-	g_zombie_painsound_count[id] = (numargs() >= 3) ? count : 1
-	return true;
-}
-
-// Native: zp_override_user_deathsound
-public native_override_user_deathsound(id, const sound[])
-{
-	// ZP disabled
-	if (!g_pluginenabled)
-		return false;
-	
-	if (!is_user_valid_connected(id))
-	{
-		log_error(AMX_ERR_NATIVE, "[ZP] Invalid Player (%d)", id)
-		return false;
-	}
-	
-	// Strings passed byref
-	param_convert(2)
-	
-	// Store custom death sound
-	copy(g_zombie_deathsound[id], charsmax(g_zombie_deathsound[]), sound)
-	return true;
-}
-
-// Native: zp_override_user_abilitysound
-public native_override_user_abilitysound(id, const sound[])
-{
-	// ZP disabled
-	if (!g_pluginenabled)
-		return false;
-	
-	if (!is_user_valid_connected(id))
-	{
-		log_error(AMX_ERR_NATIVE, "[ZP] Invalid Player (%d)", id)
-		return false;
-	}
-	
-	// Strings passed byref
-	param_convert(2)
-	
-	// Store custom ability sound
-	copy(g_zombie_abilitysound[id], charsmax(g_zombie_abilitysound[]), sound)
-	return true;
-}
-
-// Native: zp_override_user_spawnsound
-public native_override_user_spawnsound(id, const sound[])
-{
-	// ZP disabled
-	if (!g_pluginenabled)
-		return false;
-	
-	if (!is_user_valid_connected(id))
-	{
-		log_error(AMX_ERR_NATIVE, "[ZP] Invalid Player (%d)", id)
-		return false;
-	}
-	
-	// Strings passed byref
-	param_convert(2)
-	
-	// Store custom spawn sound
-	copy(g_zombie_spawnsound[id], charsmax(g_zombie_spawnsound[]), sound)
-	return true;
-}
-
-// Native: zp_override_user_idlesound
-public native_override_user_idlesound(id, const sound[], count)
-{
-	// ZP disabled
-	if (!g_pluginenabled)
-		return false;
-	
-	if (!is_user_valid_connected(id))
-	{
-		log_error(AMX_ERR_NATIVE, "[ZP] Invalid Player (%d)", id)
-		return false;
-	}
-	
-	// Strings passed byref
-	param_convert(2)
-	
-	// Store custom idle sound and count (default to 1 if not passed)
-	copy(g_zombie_idlesound[id], charsmax(g_zombie_idlesound[]), sound)
-	g_zombie_idlesound_count[id] = (numargs() >= 3) ? count : 1
-	
-	return true;
-}
-
-// Native: zp_play_user_abilitysound
-public native_play_user_abilitysound(id)
-{
-	// ZP disabled
-	if (!g_pluginenabled)
-		return false;
-	
-	if (!is_user_valid_connected(id))
-	{
-		log_error(AMX_ERR_NATIVE, "[ZP] Invalid Player (%d)", id)
-		return false;
-	}
-	
-	// Only play ability sound if one is set
-	if (g_zombie_abilitysound[id][0])
-	{
-		emit_sound(id, CHAN_VOICE, g_zombie_abilitysound[id], 1.0, ATTN_NORM, 0, PITCH_NORM)
-		return true;
-	}
-	
-	return false;
-}
-
-// Task: Play idle sound for zombie (every 30 seconds)
-public play_idle_sound(taskid)
-{
-	new id = taskid - 30000
-	
-	// Check if player is still a valid zombie
-	if (!is_user_valid_alive(id) || !g_zombie[id] || !g_zombie_idlesound[id][0])
-	{
-		remove_task(taskid)
-		return
-	}
-	
-	// If count > 1, randomly select from multiple sounds
-	if (g_zombie_idlesound_count[id] > 1)
-	{
-		new random_sound[64]
-		copy(random_sound, charsmax(random_sound), g_zombie_idlesound[id])
-		
-		// Find position before .wav to replace the digit
-		new len = strlen(random_sound)
-		new pos = len - 5 // Position before .wav
-		
-		if (pos > 0 && random_sound[pos] >= '0' && random_sound[pos] <= '9')
-		{
-			// Replace digit with random number (1 to count)
-			random_sound[pos] = '0' + random_num(1, g_zombie_idlesound_count[id])
-		}
-		
-		emit_sound(id, CHAN_VOICE, random_sound, 1.0, ATTN_NORM, 0, PITCH_NORM)
-	}
-	else
-	{
-		emit_sound(id, CHAN_VOICE, g_zombie_idlesound[id], 1.0, ATTN_NORM, 0, PITCH_NORM)
-	}
 }
 
 /*================================================================================
@@ -10925,22 +10404,27 @@ public set_user_flashlight(taskid)
 // Infection special effects
 infection_effects(id)
 {
-	// Blackscreen fade (unless frozen)
-	if (!g_frozen[id])
+	// Screen fade? (unless frozen)
+	if (!g_frozen[id] && get_pcvar_num(cvar_infectionscreenfade))
 	{
-		// Black screen instant
-		message_begin(MSG_ONE, g_msgScreenFade, _, id)
-		write_short(UNIT_SECOND * 1) // duration - 2 seconds fadeout
-		write_short(UNIT_SECOND * 2) // hold time - 3 seconds
-		write_short(FFADE_IN) // fade type - fade to black
-		write_byte(0) // r - black
-		write_byte(0) // g - black
-		write_byte(0) // b - black
-		write_byte(255) // alpha - fully visible
+		message_begin(MSG_ONE_UNRELIABLE, g_msgScreenFade, _, id)
+		write_short(UNIT_SECOND) // duration
+		write_short(0) // hold time
+		write_short(FFADE_IN) // fade type
+		if (g_nemesis[id])
+		{
+			write_byte(get_pcvar_num(cvar_nemnvgcolor[0])) // r
+			write_byte(get_pcvar_num(cvar_nemnvgcolor[1])) // g
+			write_byte(get_pcvar_num(cvar_nemnvgcolor[2])) // b
+		}
+		else
+		{
+			write_byte(get_pcvar_num(cvar_nvgcolor[0])) // r
+			write_byte(get_pcvar_num(cvar_nvgcolor[1])) // g
+			write_byte(get_pcvar_num(cvar_nvgcolor[2])) // b
+		}
+		write_byte (255) // alpha
 		message_end()
-		
-		// Fade out after 3 seconds
-		set_task(3.0, "remove_infection_blackscreen", id)
 	}
 	
 	// Screen shake?

@@ -46,7 +46,7 @@
 
 //================================ Customization starts below ==============================
 #define MAXCLIP			1 // I strictly recommend you to dont change this value!^^
-#define MAXBPAMMO		20 // Bp ammo
+#define MAXBPAMMO		10 // Bp ammo
 #define RELOAD_TIME		3.2 // Don't set this lower that 3.0
 #define REFIRE_RATE		1.5 // Refire rate
 #define TRAIL_RED		255 // (0-255).Red amount in trail
@@ -61,9 +61,9 @@ new const fire_sound [ ] [ ] = { "weapons/m79_fire1.wav", "weapons/m79_fire2.wav
 new const sound_buy [ ] [ ] =  { "items/9mmclip1.wav" }
 //================================ Customization end! =======================================
 // Models
-new const p_m79 [ ] = "models/p_m79.mdl"
-new const v_m79 [ ] = "models/v_m79.mdl" // You should'nt change this model
-new const w_m79 [ ] = "models/w_m79.mdl"
+new const p_m79 [ ] = "models/ch2012/p_m79.mdl"
+new const v_m79 [ ] = "models/ch2012/v_m79.mdl" // You should'nt change this model
+new const w_m79 [ ] = "models/ch2012/w_m79.mdl"
 
 // Little note about sounds listed below.If you are using original weapon models (which are
 // provdied in this plugin) DON'T CHANGE SOUND PATHS, or you'll not hear reload sound.
@@ -72,7 +72,7 @@ new const sound_reload [ ] [ ] = { "weapons/m79_clipin.wav", "weapons/m79_clipon
 // Entities
 new const g_DefaultEntity [ ] = "info_target"
 new const g_GrenadeEntity [ ] = "zp_m79_grenade"
-new const g_AkEntity [ ] = "weapon_ak47"
+new const g_GalilEntity [ ] = "weapon_galil"
 new const g_PlayerEntity [ ] = "player"
 
 // Cached sprite indexes
@@ -85,7 +85,6 @@ new g_CurrentWeapon [ MAXPLAYERS+1 ]
 
 // Global variables
 new g_MaxPlayers, g_Restarted
-new g_ShowingHUD[ 33 ]
 
 // Booleans
 new bool:bIsAlive [ MAXPLAYERS+1 ]
@@ -158,9 +157,9 @@ public plugin_init ( )
 	register_forward ( FM_CmdStart, "fw_CmdStart" )
 	register_forward ( FM_UpdateClientData, "fw_UpdateClientData_Post", 1 )
 	register_forward ( FM_SetModel, "fw_SetModel" )
-	RegisterHam ( Ham_Item_Deploy, g_AkEntity, "fw_LauncherDeploy_Post", 1 )
-	RegisterHam ( Ham_Item_AddToPlayer, g_AkEntity, "fw_LauncherAddToPlayer" )
-	RegisterHam ( Ham_Item_PostFrame, g_AkEntity, "fw_LauncherPostFrame" )
+	RegisterHam ( Ham_Item_Deploy, g_GalilEntity, "fw_LauncherDeploy_Post", 1 )
+	RegisterHam ( Ham_Item_AddToPlayer, g_GalilEntity, "fw_LauncherAddToPlayer" )
+	RegisterHam ( Ham_Item_PostFrame, g_GalilEntity, "fw_LauncherPostFrame" )
 	RegisterHam ( Ham_Spawn, g_PlayerEntity, "fw_PlayerSpawn_Post", 1 )
 	
 	// Touch
@@ -194,13 +193,6 @@ public client_disconnected ( Player )
 	// Update
 	g_hasLauncher [ Player ] = false
 	bIsAlive [ Player ] = false
-	
-	// Odstran task
-	if ( g_ShowingHUD[ Player ] )
-	{
-		remove_task( Player + 1000 )
-		g_ShowingHUD[ Player ] = false
-	}
 }
 
 // User infected post
@@ -240,14 +232,14 @@ public zp_extra_item_selected ( Player, Item )
 		}
 		else
 		{
-			// Drop primary guns
-			drop_primary_weapons ( Player ) 
+			// Neodstraňuj zbrane - nechaj loadout
+			// drop_primary_weapons ( Player ) 
 			
 			// Update array
 			g_hasLauncher [ Player ] = true
 			
 			// Ak47
-			give_item ( Player, g_AkEntity )
+			give_item ( Player, g_GalilEntity )
 			
 			// Wait for entity to be created
 			set_task(0.1, "task_setup_m79", Player)
@@ -257,27 +249,27 @@ public zp_extra_item_selected ( Player, Item )
 	return PLUGIN_CONTINUE
 }
 
-// Setup M79 after giving AK47
+// Setup M79 after giving Galil
 public task_setup_m79(Player)
 {
 	if (!is_user_alive(Player) || !g_hasLauncher[Player])
 		return
 		
 	// Clip ammo
-	new ak = find_ent_by_owner ( NULLENT, g_AkEntity, Player )
+	new galil = find_ent_by_owner ( NULLENT, g_GalilEntity, Player )
 	
 	// Validate entity
-	if (!pev_valid(ak))
+	if (!pev_valid(galil))
 	{
-		log_amx("[M79] ERROR: Invalid AK47 entity for player %d", Player)
+		log_amx("[M79] ERROR: Invalid Galil entity for player %d", Player)
 		g_hasLauncher[Player] = false
 		return
 	}
 	
-	set_pdata_int ( ak, OFFSET_CLIP, MAXCLIP, LINUX_DIFF )
+	set_pdata_int ( galil, OFFSET_CLIP, MAXCLIP, LINUX_DIFF )
 	
 	// BP ammo
-	cs_set_user_bpammo ( Player, CSW_AK47, MAXBPAMMO )
+	cs_set_user_bpammo ( Player, CSW_GALIL, MAXBPAMMO )
 }
 
 // Current weapon player is holding
@@ -285,64 +277,60 @@ public Event_CurrentWeapon ( Player )
 {
 	// Not alive or dont have M79
 	if ( !bIsAlive [ Player ] || !g_hasLauncher [ Player ] )
-	{
-		if ( g_ShowingHUD[ Player ] )
-		{
-			remove_task( Player + 1000 )
-			g_ShowingHUD[ Player ] = false
-		}
 		return PLUGIN_CONTINUE
-	}
 		
 	// Update
 	g_CurrentWeapon [ Player ] = read_data ( 2 )
 		
-	// AK47	
-	if ( g_CurrentWeapon [ Player ] == CSW_AK47 )
+	// GALIL	
+	if ( g_CurrentWeapon [ Player ] == CSW_GALIL )
 	{
 		// Models
 		set_pev ( Player, pev_viewmodel2, v_m79 )
 		set_pev ( Player, pev_weaponmodel2, p_m79 )
 		
-		// Find ak47
-		new ak47 = find_ent_by_owner ( -1, "weapon_ak47", Player )
+		// Find galil
+		new galil = find_ent_by_owner ( -1, "weapon_galil", Player )
 		
 		// Get clip
-		new clip = cs_get_weapon_ammo ( ak47 )
+		new clip = cs_get_weapon_ammo ( galil )
 		
-		// Get bp ammo
-		new bpammo = cs_get_user_bpammo ( Player, CSW_AK47 )
-		
-		// We have more than required
-		if ( clip > MAXCLIP || bpammo > MAXBPAMMO )
+		// We have more than required clip
+		if ( clip > MAXCLIP )
 		{
 			// Return it back
-			cs_set_weapon_ammo ( ak47, MAXCLIP )
-			cs_set_user_bpammo ( Player, CSW_AK47, MAXBPAMMO )
+			cs_set_weapon_ammo ( galil, MAXCLIP )
 			
 			// Call for HUD update
 			update_hud ( Player )
 		}
 		
-		// Spusti opakovany task pre zobrazenie HUD
-		if ( !g_ShowingHUD[ Player ] )
-		{
-			g_ShowingHUD[ Player ] = true
-			set_task( 0.1, "show_m79_hud", Player + 1000, _, _, "b" )
-		}
+		// Zobraz BP ammo cez DHUD - opakuj každú sekundu
+		remove_task(Player + 1000)
+		set_task(1.1, "task_show_ammo", Player + 1000, "", 0, "b")
 	}
 	else
 	{
-		// Zastav task ked nema M79 v ruke
-		if ( g_ShowingHUD[ Player ] )
-		{
-			remove_task( Player + 1000 )
-			g_ShowingHUD[ Player ] = false
-			show_dhudmessage( Player, "" )
-		}
+		// Zmena zbrane - odstráň DHUD
+		remove_task(Player + 1000)
+	}
+	return PLUGIN_CONTINUE
+}
+
+// Ukáž náboje cez DHUD
+public task_show_ammo(taskid)
+{
+	new Player = taskid - 1000
+	
+	if (!is_user_alive(Player) || !g_hasLauncher[Player] || g_CurrentWeapon[Player] != CSW_GALIL)
+	{
+		remove_task(taskid)
+		return
 	}
 	
-	return PLUGIN_CONTINUE
+	new bpammo = cs_get_user_bpammo(Player, CSW_GALIL)
+	set_dhudmessage(200, 100, 0, 0.76, 0.92, 0, 1.0, 1.1, 0.0, 0.0)
+	show_dhudmessage(Player, "M79 Ammo: %d/%d", bpammo, MAXBPAMMO)
 }
 
 // New round started
@@ -365,8 +353,8 @@ public Event_NewRound ( )
 		// Loop
 		for ( new i  = 1; i < g_MaxPlayers; i++ )
 		{
-			// Remove ak47 from inventory
-			ham_strip_user_gun ( i, "weapon_ak47" )
+			// Remove galil from inventory
+			ham_strip_user_gun ( i, "weapon_galil" )
 		}
 	}	
 }
@@ -401,7 +389,7 @@ public Event_DeathMsg ( )
 public fw_CmdStart ( Player, UC_Handle, Seed )
 {
 	// Not alive / dont have m79 / weapon isnt ak47
-	if ( !bIsAlive [ Player ] || !g_hasLauncher [ Player ] || g_CurrentWeapon [ Player ] != CSW_AK47 )
+	if ( !bIsAlive [ Player ] || !g_hasLauncher [ Player ] || g_CurrentWeapon [ Player ] != CSW_GALIL )
 		return FMRES_IGNORED
 		
 	// Get buttons
@@ -419,52 +407,48 @@ public fw_CmdStart ( Player, UC_Handle, Seed )
 			return FMRES_IGNORED
 		
 		// Weapon entity
-		static ak47 ; ak47 = find_ent_by_owner ( NULLENT, g_AkEntity, Player )
+		static galil ; galil = find_ent_by_owner ( NULLENT, g_GalilEntity, Player )
 		
 		// Clip
-		static Clip ; Clip = get_pdata_int ( ak47, OFFSET_CLIP, LINUX_DIFF )
+		static Clip ; Clip = get_pdata_int ( galil, OFFSET_CLIP, LINUX_DIFF )
 		
 		// Out of ammo ?
 		if ( Clip <= 0 ) return FMRES_IGNORED
 		
 		// Reloading ?
-		static Reload ; Reload = get_pdata_int ( ak47, OFFSET_RELOAD, LINUX_DIFF )
+		static Reload ; Reload = get_pdata_int ( galil, OFFSET_RELOAD, LINUX_DIFF )
 		
 		// Don't fire while reloading
 		if ( Reload ) return FMRES_IGNORED
 		
 		// Bp ammo
-		static BpAmmo ; BpAmmo = cs_get_user_bpammo ( Player, CSW_AK47 )
+		static BpAmmo ; BpAmmo = cs_get_user_bpammo ( Player, CSW_GALIL )
 		
 		// Fire!!
-FireGrenade ( Player )
-		
-// Decrease ammo count
-cs_set_weapon_ammo ( ak47, Clip-1 )
-
-// Ak je clip prazdny a mame BP ammo, automaticky dobijeme
-if ( Clip - 1 <= 0 && BpAmmo > 0 )
-{
-	// Zostava nam este BP ammo, takze reload nebude potrebny
-	// Naboje sa automaticky presunu z BP do clip pri dalsom reload cykle
-}
-		
-// Remember last shot time
-g_LastShotTime [ Player ] = get_gametime ( )
-		
-// We are out of ammo
-if ( Clip <= 0 && BpAmmo <= 0 )
-{
-	// Empty sound
-	ExecuteHamB ( Ham_Weapon_PlayEmptySound, ak47 )
-	return FMRES_IGNORED
+		FireGrenade ( Player )
+				
+		// Decrease ammo count
+		cs_set_weapon_ammo ( galil, Clip-1 )
+						
+		// Remember last shot time
+		g_LastShotTime [ Player ] = get_gametime ( )
+				
+		// We are out of ammo
+		if ( Clip <= 0 && BpAmmo <= 0 )
+		{
+			// Empty sound
+			ExecuteHamB ( Ham_Weapon_PlayEmptySound, galil )
+			return FMRES_IGNORED
+		}
+	}
+	return FMRES_HANDLED
 }
 
 // Update client data post
 public fw_UpdateClientData_Post ( Player, SendWeapons, CD_Handle )
 {
-	// Not alive / dont have m79 / weapon isnt ak47
-	if ( !bIsAlive [ Player ] || !g_hasLauncher [ Player ] || g_CurrentWeapon [ Player ] != CSW_AK47 )
+	// Not alive / dont have m79 / weapon isnt galil
+	if ( !bIsAlive [ Player ] || !g_hasLauncher [ Player ] || g_CurrentWeapon [ Player ] != CSW_GALIL )
 		return FMRES_IGNORED
 		
 	// Block default sounds/animations
@@ -479,8 +463,8 @@ public fw_SetModel ( Entity, const Model [ ] )
 	if ( !is_valid_ent ( Entity ) )
 		return FMRES_IGNORED
 		
-	// Not ak47
-	if ( !equal ( Model, "models/w_ak47.mdl" ) ) 
+	// Not galil
+	if ( !equal ( Model, "models/w_galil.mdl" ) ) 
 		return FMRES_IGNORED;
 		
 	// Get classname
@@ -492,22 +476,22 @@ public fw_SetModel ( Entity, const Model [ ] )
 		return FMRES_IGNORED
 	
 	// Some vars
-	static iOwner, iStoredAkID
+	static iOwner, iStoredGalilID
 	
 	// Get owner
 	iOwner = entity_get_edict ( Entity, EV_ENT_owner )
 	
 	// Get drop weapon index
-	iStoredAkID = find_ent_by_owner ( NULLENT, "weapon_ak47", Entity )
+	iStoredGalilID = find_ent_by_owner ( NULLENT, "weapon_galil", Entity )
 	
-	// Entity classname is weaponbox, and ak47 was founded
-	if( g_hasLauncher [ iOwner ] && is_valid_ent ( iStoredAkID ) )
+	// Entity classname is weaponbox, and galil was founded
+	if( g_hasLauncher [ iOwner ] && is_valid_ent ( iStoredGalilID ) )
 	{
 		// Setting weapon options
-		entity_set_int ( iStoredAkID, EV_INT_WEAPONKEY, M79_WEAPONKEY )
+		entity_set_int ( iStoredGalilID, EV_INT_WEAPONKEY, M79_WEAPONKEY )
 		
 		// Save bp ammo
-		set_pev ( iStoredAkID, pev_weaponammo, cs_get_user_bpammo ( iOwner, CSW_AK47 ) )
+		set_pev ( iStoredGalilID, pev_weaponammo, cs_get_user_bpammo ( iOwner, CSW_GALIL ) )
 		
 		// Reset user vars
 		g_hasLauncher [ iOwner ] = false
@@ -545,8 +529,12 @@ public fw_LauncherAddToPlayer ( Launcher, Player )
 		// Update
 		g_hasLauncher [ Player ] = true
 		
-		// BP ammo
-		cs_set_user_bpammo ( Player, CSW_AK47, pev ( Launcher, pev_weaponammo ) )
+		// BP ammo - obmedziť na MAXBPAMMO
+		new stored_ammo = pev ( Launcher, pev_weaponammo )
+		if (stored_ammo > MAXBPAMMO)
+			stored_ammo = MAXBPAMMO
+			
+		cs_set_user_bpammo ( Player, CSW_GALIL, stored_ammo )
 		
 		// Reset weapon options
 		entity_set_int ( Launcher, EV_INT_WEAPONKEY, 0)
@@ -591,7 +579,13 @@ public fw_LauncherPostFrame ( Launcher )
 			set_pdata_int ( Launcher, OFFSET_CLIP, iClip + j, LINUX_DIFF )
 			
 			// Decrease 'x' bullets from backpack(depending on new clip)
-			set_pdata_int ( Player, iAmmoType, iBpAmmo-j, LINUX_DIFF_WPN )
+			new new_bpammo = iBpAmmo - j
+			
+			// Uistíme sa že BP ammo nikdy neprekročí MAXBPAMMO
+			if (new_bpammo > MAXBPAMMO)
+				new_bpammo = MAXBPAMMO
+				
+			set_pdata_int ( Player, iAmmoType, new_bpammo, LINUX_DIFF_WPN )
 			
 			// Not reloding anymore
 			set_pdata_int ( Launcher, OFFSET_RELOAD, 0, LINUX_DIFF )
@@ -832,25 +826,6 @@ public touch_m79nade ( Nade, Other )
 	// Remove grenade
 	engfunc ( EngFunc_RemoveEntity, Nade )
 }
-// Zobrazuj M79 HUD opakovane
-public show_m79_hud( taskid )
-{
-	new Player = taskid - 1000
-	
-	if ( !is_user_connected( Player ) || !bIsAlive[ Player ] || !g_hasLauncher[ Player ] || g_CurrentWeapon[ Player ] != CSW_AK47 )
-	{
-		remove_task( taskid )
-		g_ShowingHUD[ Player ] = false
-		return
-	}
-	
-	// Get bp ammo
-	new bpammo = cs_get_user_bpammo ( Player, CSW_AK47 )
-	
-	// Zobraz BP ammo cez DHUD
-	set_dhudmessage( 200, 100, 0, 0.76, 0.92, 0, 0.0, 0.2, 0.0, 0.0 )
-	show_dhudmessage( Player, "M79 Ammo: %d", bpammo )
-}
 
 // Death message
 public death_message ( Killer, Victim, const Weapon [ ], ScoreBoard )
@@ -960,20 +935,20 @@ stock drop_primary_weapons ( Player )
 stock update_hud ( Player )
 {
 	// Weapon ent
-	new Ent = find_ent_by_owner ( -1,"weapon_ak47", Player )
+	new Ent = find_ent_by_owner ( -1,"weapon_galil", Player )
 	
 	// Clip
 	new clip  = cs_get_weapon_ammo ( Ent )
 	
 	// BP Ammo
-	new bpammo = cs_get_user_bpammo ( Player, CSW_AK47 )
+	new bpammo = cs_get_user_bpammo ( Player, CSW_GALIL )
 	
 	if ( clip != -1 )
 	{
 		// Update HUD
 		message_begin ( MSG_ONE, g_msgCurWeapon, _, Player )
 		write_byte ( 1 )
-		write_byte ( CSW_AK47 )
+		write_byte ( CSW_GALIL )
 		write_byte ( clip )
 		message_end ( )
 	}
@@ -1016,4 +991,3 @@ stock ham_strip_user_gun (id, weapon[])
 
 	return 1
 }
-

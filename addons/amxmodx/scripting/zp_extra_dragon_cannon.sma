@@ -36,6 +36,7 @@ native zp_cs_set_user_money(id, value)
 new g_orig_event_cannon
 
 new kokotcannon[33];
+new bool:g_round_active = true // Track if round is active to prevent crash
 
 new const g_weapon_entity[]="weapon_m249"
 new const g_weapon_event[]="events/m249.sc"
@@ -103,7 +104,8 @@ public plugin_init()
 	register_forward(FM_UpdateClientData, "fwUpdateClientDataPost", 1)
 	register_forward(FM_SetModel, "fwSetModel")
 	register_event( "ResetHUD", "playerSpawn", "be" ) 
-	register_event( "HLTV", "event_round_start", "a", "1=0", "2=0" )	
+	register_event( "HLTV", "event_round_start", "a", "1=0", "2=0" )
+	register_logevent("event_round_end", 2, "1=Round_End")
 	RegisterHam( Ham_Killed, "player", "fw_PlayerKilled" )
 	register_think(g_flame_classname, "fwThink")
 	register_touch(g_flame_classname, "*", "fwTouch")
@@ -114,7 +116,7 @@ public plugin_init()
 	
 	get_pcvar_string(pcvar_item_name, item_name, 63)
 	
-	g_item=zp_register_extra_item(item_name, 120, ZP_TEAM_HUMAN)
+	//g_item=zp_register_extra_item(item_name, 120, ZP_TEAM_HUMAN)
 	register_clcmd( "get_outdragonzp", "get_outdragon" );	
 
 	gMsg_CurWeapon=get_user_msgid("CurWeapon")
@@ -124,6 +126,22 @@ public plugin_init()
 	register_message(gMsg_AmmoX, "Message_AmmoX")
 	register_message(gMsg_CurWeapon, "Message_CurWeapon")
 	register_clcmd("get_spermdartomcannon", "give_cannon")
+}
+
+public plugin_natives()
+{
+	register_native("give_dragon_cannon", "native_give_dragon_cannon")
+}
+
+public native_give_dragon_cannon(plugin_id, num_params)
+{
+	new id = get_param(1)
+	
+	if(!is_user_connected(id))
+		return 0
+	
+	give_cannon(id)
+	return 1
 }
 
 public get_outdragon( id )
@@ -146,8 +164,42 @@ kokotcannon[ player ] = false;
 
 public event_round_start( )
 {
-for (new player; player <= 32; player++)
- kokotcannon[ player ] = false   	
+	g_round_active = true
+	
+	for (new player; player <= 32; player++)
+		kokotcannon[ player ] = false
+	
+	// Remove all flame entities on round start
+	remove_all_flames()
+}
+
+public event_round_end()
+{
+	// Mark round as inactive FIRST to stop all think/touch operations
+	g_round_active = false
+	
+	// Wait a bit then remove all flame entities on round end to prevent crash
+	set_task(0.1, "task_remove_flames")
+}
+
+public task_remove_flames()
+{
+	remove_all_flames()
+}
+
+remove_all_flames()
+{
+	new ent = -1
+	while((ent = engfunc(EngFunc_FindEntityByString, ent, "classname", g_flame_classname)) > 0)
+	{
+		if(pev_valid(ent))
+		{
+			// Stop think before removing to prevent accessing invalid entity
+			set_pev(ent, pev_flags, pev(ent, pev_flags) | FL_KILLME)
+			set_pev(ent, pev_nextthink, 0.0)
+			fm_remove_entity(ent)
+		}
+	}
 }
 
 public fw_PlayerKilled(victim, attacker, shouldgib)
@@ -529,7 +581,15 @@ public CreateFlame(id)
 
 public fwThink(ent)
 {
+	// CRITICAL: Stop immediately if round is not active
+	if(!g_round_active)
+		return
+	
 	if(!pev_valid(ent))
+		return
+	
+	// Check if entity is marked for deletion
+	if(pev(ent, pev_flags) & FL_KILLME)
 		return
 		
 	set_pev(ent, pev_nextthink, get_gametime()+0.035)
@@ -540,6 +600,9 @@ public fwThink(ent)
 	
 	if(amt<=30.0)
 	{
+		// Stop think before removing
+		set_pev(ent, pev_nextthink, 0.0)
+		set_pev(ent, pev_flags, pev(ent, pev_flags) | FL_KILLME)
 		fm_remove_entity(ent)
 		
 		return 
@@ -573,7 +636,15 @@ public fwThink(ent)
 
 public fwTouch(ent, id)
 {
+	// CRITICAL: Stop immediately if round is not active
+	if(!g_round_active)
+		return PLUGIN_CONTINUE
+	
 	if(!pev_valid(ent))
+		return PLUGIN_CONTINUE
+	
+	// Check if entity is marked for deletion
+	if(pev(ent, pev_flags) & FL_KILLME)
 		return PLUGIN_CONTINUE
 		
 	set_pev(ent, pev_movetype, MOVETYPE_NONE)
@@ -584,7 +655,8 @@ public fwTouch(ent, id)
 	
 	new owner=pev(ent, pev_owner)
 	
-	if(!is_user_connected(owner))
+	// Validate owner before using
+	if(!is_user_connected(owner) || !is_user_alive(owner))
 		return PLUGIN_CONTINUE
 	
 	new Float:Origin[3], victim
@@ -594,6 +666,10 @@ public fwTouch(ent, id)
 	while((victim=fm_find_ent_in_sphere(victim, Origin, 20.0))!=0)
 	{	
 		if(!pev_valid(victim))
+			continue
+		
+		// Skip if owner is invalid
+		if(!is_user_connected(owner) || !is_user_alive(owner))
 			continue
 			
 		if(pev(victim, pev_takedamage)!=DAMAGE_NO&&pev(victim, pev_solid)!=SOLID_NOT)
@@ -608,7 +684,11 @@ public fwTouch(ent, id)
 				}
 			}
 			else
-				ExecuteHamB( Ham_TakeDamage, victim , ent ,owner, get_pcvar_float(pcvar_damage), DMG_BURN)
+			{
+				// Additional check before damage on non-player entities
+				if(pev_valid(victim) && pev_valid(owner))
+					ExecuteHamB( Ham_TakeDamage, victim , ent ,owner, get_pcvar_float(pcvar_damage), DMG_BURN)
+			}
 		}
 	}
 	

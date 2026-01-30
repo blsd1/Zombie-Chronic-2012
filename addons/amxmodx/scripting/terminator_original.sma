@@ -81,37 +81,53 @@ public zp_extra_item_selected( human, itemid )
 	{
 		if ( terminator[ human ] )
 		{
-			zp_set_user_ammo_packs( human, zp_get_user_ammo_packs( human ) + TERM_COST )
 			client_print( human, print_center, "Uz mas terminatora!" )
-			return PLUGIN_HANDLED;
+			return ZP_PLUGIN_HANDLED;
 		}
-		if ( itemid == iTerm )
+		
+		if ( !zp_has_round_started( ) )
 		{
-			if ( !zp_has_round_started( ) )
-			{
-				zp_set_user_ammo_packs( human, zp_get_user_ammo_packs( human ) + TERM_COST )
-				client_print( human, print_center, "Musis pockat az bude prvni zombie !" )
-				return PLUGIN_HANDLED;
-			}else{	
-				MaTerma[ human ] = true
-				terminator[ human ] = true
-				zp_set_user_terminator( human );
-				make_user_terminator( human );
-			}
+			client_print( human, print_center, "Musis pockat az bude prvni zombie !" )
+			return ZP_PLUGIN_HANDLED;
 		}
+		
+		MaTerma[ human ] = true
+		terminator[ human ] = true
+		zp_set_user_terminator( human );
+		make_user_terminator( human );
 	}
 	return PLUGIN_CONTINUE;
 }
 	
 public event_round_start( )
 {
-	for( new player; player <= 32; player++ )
+	for(new player = 1; player <= 32; player++)
 	{
-		if( MaTerma[ player ] )
+		if(!is_user_connected(player))
+			continue
+			
+		if(MaTerma[player] && terminator[player])
 		{
-			remove_user_terminator( player )
+			// Ak je stále Terminator a prežil, daj mu HP a armor po freezetime + 3s
+			new Float:freezetime = get_cvar_float("mp_freezetime")
+			set_task(freezetime + 3.0, "task_give_terminator_bonus", player)
+		}
+		else if(MaTerma[player])
+		{
+			remove_user_terminator(player)
 		}
 	}
+}
+
+public task_give_terminator_bonus(player)
+{
+	if(!is_user_alive(player) || !terminator[player] || !MaTerma[player])
+		return
+		
+	set_user_health(player, 350)
+	cs_set_user_armor(player, 350, CS_ARMOR_VESTHELM)
+	
+	client_print(player, print_center, "[ZP] Dostal si bonus za prezitie: 350 HP + 350 Armor!")
 }
 
 make_user_terminator( human )
@@ -180,7 +196,6 @@ public event_death( )
 			}
 			else
 			{
-				client_print( attacker, print_center, "" );
 				set_user_armor( attacker, get_user_armor( attacker ) + TERM_KILLAP );
 			}
 		}

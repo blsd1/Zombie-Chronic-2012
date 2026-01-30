@@ -103,7 +103,7 @@ public plugin_init()
 public plugin_cfg()
 {
 	// Register weapon in custom weapons system (after all plugins loaded)
-	g_itemid_ak47long = zp_register_custom_weapon("AK-47 Legend", 7500, 2) // 2 = Humans only
+	g_itemid_ak47long = zp_register_custom_weapon("AK-47 Long", 3100, 2) // 2 = Humans only
 }
 
 public plugin_precache()

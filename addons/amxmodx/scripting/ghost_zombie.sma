@@ -50,6 +50,8 @@ new const g_hit_sound[][] =
 	"ch2012/ghost_hit2.wav"
 }
 
+new g_sprite_ability
+
 new const g_death_sound[][] = 
 {
 	"ch2012/ghost_death1.wav",
@@ -91,6 +93,9 @@ public prethink(id)
 public plugin_precache()
 {
 	g_zclass_ghost = zp_register_zombie_class(zclass_name, zclass_info, zclass_model, zclass_clawmodel, zclass_health, zclass_speed, zclass_gravity, zclass_knockback)
+	
+	// Precache sprite for ability effect
+	g_sprite_ability = precache_model("sprites/ch2012_ghost.spr")
 	
 	precache_generic(GhostLaugh)
 	precache_generic(GhostVisible)
@@ -143,6 +148,28 @@ public roundStart()
 	}
 }
 
+// Funkcia na vytvorenie viacerých sprite-ov okolo hráča
+stock create_ability_sprites(Float:origin[3], sprite_index, count)
+{
+	for(new i = 0; i < count; i++)
+	{
+		// Náhodný offset pre každý sprite
+		new Float:offset_x = float(random_num(-30, 30))
+		new Float:offset_y = float(random_num(-30, 30))
+		new Float:offset_z = float(random_num(20, 50))
+		
+		message_begin(MSG_BROADCAST, SVC_TEMPENTITY, {0,0,0}, 0)
+		write_byte(TE_SPRITE)
+		write_coord(floatround(origin[0] + offset_x))
+		write_coord(floatround(origin[1] + offset_y))
+		write_coord(floatround(origin[2] + offset_z))
+		write_short(sprite_index)
+		write_byte(random_num(5, 15)) // scale - náhodná veľkosť
+		write_byte(200) // brightness
+		message_end()
+	}
+}
+
 public use_ability_one(id)
 {
 	if(is_valid_ent(id) && is_user_alive(id) && zp_get_user_zombie(id) && !zp_get_user_nemesis(id) && zp_get_user_zombie_class(id) == g_zclass_ghost)
@@ -155,14 +182,25 @@ public use_ability_one(id)
 			static Float:origin[3]
 			pev(id, pev_origin, origin)
 			
-			// TE_IMPLOSION - biele gule vyletujuce z hracka
-			message_begin(MSG_PVS, SVC_TEMPENTITY, origin)
+			// Sprite efekt vyletujúci z hráča
+			message_begin(MSG_BROADCAST, SVC_TEMPENTITY, {0,0,0}, 0)
+			write_byte(TE_SPRITE)
+			write_coord(floatround(origin[0]))
+			write_coord(floatround(origin[1]))
+			write_coord(floatround(origin[2]) + 36)
+			write_short(g_sprite_ability)
+			write_byte(10) // scale
+			write_byte(200) // brightness
+			message_end()
+			
+			// TE_IMPLOSION - 12 bielych gul vyletujucich z hracka
+			message_begin(MSG_BROADCAST, SVC_TEMPENTITY, {0,0,0}, 0)
 			write_byte(TE_IMPLOSION)
 			write_coord(floatround(origin[0])) // x
 			write_coord(floatround(origin[1])) // y
 			write_coord(floatround(origin[2]) + 36) // z (trochu vyssie)
 			write_byte(128) // radius
-			write_byte(20) // count
+			write_byte(12) // count - 12 spritov
 			write_byte(3) // duration
 			message_end()
 			

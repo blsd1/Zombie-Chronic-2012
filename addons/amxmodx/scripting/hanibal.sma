@@ -74,16 +74,22 @@ public plugin_precache( )
 
 public zp_extra_item_selected( player, itemid)
 {
+	if ( itemid != g_ExtraHannibal )
+		return PLUGIN_CONTINUE
+		
 	if (g_hannibal[ player ] )
 	{
 		client_print( player, print_center, "Uz mas hannibala!" )
 		return ZP_PLUGIN_HANDLED;
 	}
-	if( g_M89current == GM89_MAXTEAM )
+	
+	if( g_M89current >= GM89_MAXTEAM )
 	{
 		client_print( player, print_center, "Je vela Hannibalov" );
 		return ZP_PLUGIN_HANDLED;
 	}
+	
+	// Kontrola či existuje terminátor
 	for( new id=1; id<=32; id++ )
 	{
 		if( !is_user_connected(id) )
@@ -99,44 +105,38 @@ public zp_extra_item_selected( player, itemid)
 			}
 			return ZP_PLUGIN_HANDLED;
 		}
-	}	
-	if ( itemid == g_ExtraHannibal )
-	{
-		if ( !zp_has_round_started( ) )
-		{
-			client_print( player, print_center, "Musis pockat az bude prvni zombie !" )
-			return ZP_PLUGIN_HANDLED;
-		}
-		else
-		{
-			client_printcolor( player, "/g[ZP] /yDostanes Hannibala..." );
-			zp_give_user_chainsaw( player );
-			zp_set_user_hannibal( player );
-			client_cmd( player, "get_outbz" );
-			set_user_rendering( player, kRenderFxGlowShell, 255, 105, 180, kRenderNormal, 14 );
-			strip_user_weapons( player );
-			g_M89current += 1;
-			g_Had_gM89[ player ] = true;
-			give_item( player, "weapon_knife" );
-			give_item( player, "weapon_hegrenade" );
-			client_printcolor( player, "/g[ZP] /yAktualny pocet /g%d//y4 Hannibalov", g_M89current );
-			give_item( player, "weapon_flashbang" );
-			give_item( player, "weapon_mac10" );
-			engclient_cmd( player, "weapon_mac10" );
-			set_task( 0.1, "SwitchToChainsaw", player );
-			
-			cs_set_user_bpammo( player, CSW_MAC10, 50 );
-			set_user_health( player, HEALTH_BASIC );
-			g_hannibal[ player ] = true;
-			MaHanibala[ player ] = true;
-			set_user_armor( player, ARMOR_BASIC );
-			Forward_Hud( player );
-			
-			return ZP_PLUGIN_HANDLED;
-		}
 	}
 	
-	return PLUGIN_CONTINUE;
+	if ( !zp_has_round_started( ) )
+	{
+		client_print( player, print_center, "Musis pockat az bude prvni zombie !" )
+		return ZP_PLUGIN_HANDLED;
+	}
+	
+	client_printcolor( player, "/g[ZP] /yDostanes Hannibala..." );
+	zp_give_user_chainsaw( player );
+	zp_set_user_hannibal( player );
+	client_cmd( player, "get_outbz" );
+	set_user_rendering( player, kRenderFxGlowShell, 255, 105, 180, kRenderNormal, 14 );
+	strip_user_weapons( player );
+	g_M89current += 1;
+	g_Had_gM89[ player ] = true;
+	give_item( player, "weapon_knife" );
+	give_item( player, "weapon_hegrenade" );
+	client_printcolor( player, "/g[ZP] /yAktualny pocet /g%d//y4 Hannibalov", g_M89current );
+	give_item( player, "weapon_flashbang" );
+	give_item( player, "weapon_mac10" );
+	engclient_cmd( player, "weapon_mac10" );
+	set_task( 0.1, "SwitchToChainsaw", player );
+	
+	cs_set_user_bpammo( player, CSW_MAC10, 50 );
+	set_user_health( player, HEALTH_BASIC );
+	g_hannibal[ player ] = true;
+	MaHanibala[ player ] = true;
+	set_user_armor( player, ARMOR_BASIC );
+	Forward_Hud( player );
+	
+	return ZP_PLUGIN_HANDLED;
 }
 
 public fw_PlayerKilled( victim, attacker, shouldgib )
@@ -164,13 +164,33 @@ public Forward_Hud( id )
 
 public event_round_start( )
 {
-	for (new player; player <= 32; player++)
+	for (new player = 1; player <= 32; player++)
 	{
-		if( g_hannibal[ player ] )
+		if(!is_user_connected(player))
+			continue
+			
+		if(g_hannibal[player])
 		{
-		 remove_user_hannibal( player )	
+			// Ak je stále Hannibal a prežil, daj mu HP a armor po freezetime + 3s
+			new Float:freezetime = get_cvar_float("mp_freezetime")
+			set_task(freezetime + 3.0, "task_give_hannibal_bonus", player)
+		}
+		else
+		{
+			remove_user_hannibal(player)
 		}
 	}
+}
+
+public task_give_hannibal_bonus(player)
+{
+	if(!is_user_alive(player) || !g_hannibal[player])
+		return
+		
+	set_user_health(player, 600)
+	cs_set_user_armor(player, 600, CS_ARMOR_VESTHELM)
+	
+	client_print(player, print_chat, "[ZP] Dostal si bonus za prezitie: 600 HP + 600 Armor!")
 }
 
 public playerSpawn( player )
@@ -243,11 +263,14 @@ public zp_user_infected_post( id )
 
 public remove_user_hannibal( id )
 {
+	// Kontrola či hráč vôbec mal Hannibala
+	if(!MaHanibala[id])
+		return
+	
 	jumpnum[ id ] = 0
 	dojump[ id ] = false
 	MaHanibala[ id ] = false;
 	g_hannibal[ id ] = false;
-	set_user_armor( id, get_user_armor( id ) + 140 )
 	client_print( id, print_center, "Hannibal ti na nove kolo vyprsel..." );
 	client_cmd( id, "spk ^"%s^"", snd_hanend );
 }

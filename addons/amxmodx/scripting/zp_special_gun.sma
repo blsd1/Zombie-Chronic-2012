@@ -76,7 +76,7 @@ public plugin_init()
 	cvar_reload_time = register_cvar("zp_special_reload_time", "2.5")
 	cvar_light_life = register_cvar("zp_special_light_life", "10")
 	cvar_light_decay = register_cvar("zp_special_light_decay", "9")
-	g_itemid_specialgun = zp_register_extra_item("Special Gun [ExtraVIP]", 300, ZP_TEAM_HUMAN)
+	g_itemid_specialgun = zp_register_extra_item("Special Gun [ExtraVIP]", 180, ZP_TEAM_HUMAN)
         register_clcmd( "get_outspecialzp", "get_outSpecialGun" );
 	g_MaxPlayers = get_maxplayers()
 }
@@ -151,7 +151,8 @@ public fw_SetModel(entity, model[])
 }
 public give_special(id)
 {
-	drop_weapons(id, 1);
+	// Neodstraňuj zbrane - nechaj loadout
+	// drop_weapons(id, 1);
 	new iWep2 = give_item(id,went)
 	if( iWep2 > 0 )
 	{
@@ -165,9 +166,57 @@ public zp_extra_item_selected(id, itemid)
 { 
 	if(itemid == g_itemid_specialgun)
 	{ 
-        client_cmd( id, "get_outcannonzp" );
-	give_special(id)
+		// Ak už má hráč special gun, daj ju random hráčovi v radiuse
+		if(g_has_specialgun[id])
+		{
+			new Float:origin[3], Float:target_origin[3]
+			pev(id, pev_origin, origin)
+			
+			new players[32], num, found_players[32], found_count = 0
+			get_players(players, num, "ach")
+			
+			// Nájdi všetkých hráčov v radiuse 200
+			for(new i = 0; i < num; i++)
+			{
+				new target = players[i]
+				
+				// Preskočiť seba, zombies a hráčov čo už majú special gun
+				if(target == id || zp_get_user_zombie(target) || g_has_specialgun[target])
+					continue
+					
+				pev(target, pev_origin, target_origin)
+				
+				// Kontrola vzdialenosti
+				if(vector_distance(origin, target_origin) <= 200.0)
+				{
+					found_players[found_count++] = target
+				}
+			}
+			
+			// Ak našiel hráčov v radiuse, daj ju náhodnému
+			if(found_count > 0)
+			{
+				new random_target = found_players[random(found_count)]
+				
+				client_print(id, print_chat, "[ZP] Special Gun dany hraci %n (uz ju mas)", random_target)
+				client_print(random_target, print_chat, "[ZP] Dostal si Special Gun od %n", id)
+				
+				client_cmd(random_target, "get_outspecialzp")
+				give_special(random_target)
+				
+				return ZP_PLUGIN_HANDLED
+			}
+			else
+			{
+				client_print(id, print_chat, "[ZP] Uz mas Special Gun a v radiuse 200 nie je ziadny human co by ju nechcel!")
+				return ZP_PLUGIN_HANDLED
+			}
+		}
+		
+		client_cmd(id, "get_outspecialzp")
+		give_special(id)
 	}
+	return PLUGIN_CONTINUE
 }
 public fw_specialgun_AddToPlayer(specialgun, id)
 {

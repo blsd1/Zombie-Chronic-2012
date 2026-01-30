@@ -20,7 +20,7 @@ new g_fwBought
 
 // Classic weapons IDs
 new g_weapon_m4a1, g_weapon_ak47
-new g_weapon_deagle, g_weapon_usp, g_weapon_glock
+new g_weapon_deagle, g_weapon_usp, g_weapon_glock , g_weapon_fiveseven, g_weapon_elite
 
 public plugin_init()
 {
@@ -40,6 +40,8 @@ public plugin_init()
 	g_weapon_deagle = native_register_weapon_internal("Desert Eagle", 0, 2)
 	g_weapon_usp = native_register_weapon_internal("USP", 0, 2)
 	g_weapon_glock = native_register_weapon_internal("Glock", 0, 2)
+	g_weapon_fiveseven = native_register_weapon_internal("Five-SeveN", 0, 2)
+	g_weapon_elite = native_register_weapon_internal("Dual Elites", 0, 2)
 }
 
 public plugin_cfg()
@@ -161,7 +163,7 @@ show_weapons_menu(id, page)
 		return
 	}
 	
-	new menu = menu_create("\r[ZP] \yCustom Zbrane", "weapons_menu_handler")
+	new menu = menu_create("\yVyber Primarnej zbrani", "weapons_menu_handler")
 	
 	new is_zombie = zp_get_user_zombie(id)
 	new player_money = cs_get_user_money(id)
@@ -169,6 +171,10 @@ show_weapons_menu(id, page)
 	new item_text[128], weapon_name[64], cost, team
 	for (new i = 0; i < g_weapon_count; i++)
 	{
+		// Skip secondary weapons in primary menu
+		if (i == g_weapon_deagle || i == g_weapon_usp || i == g_weapon_glock || i == g_weapon_fiveseven || i == g_weapon_elite)
+			continue
+		
 		copy(weapon_name, charsmax(weapon_name), g_weapon_names[i])
 		cost = g_weapon_costs[i]
 		team = g_weapon_teams[i]
@@ -187,9 +193,9 @@ show_weapons_menu(id, page)
 		
 		// Show FREE weapons in white, paid weapons in yellow
 		if (cost == 0)
-			formatex(item_text, charsmax(item_text), "\w%s \r[FREE]", weapon_name)
+			formatex(item_text, charsmax(item_text), "\w%s", weapon_name)
 		else
-			formatex(item_text, charsmax(item_text), "\y%s \r[$%d]", weapon_name, cost)
+			formatex(item_text, charsmax(item_text), "\y%s  \r$%d", weapon_name, cost)
 		
 		new callback = menu_makecallback("weapons_menu_callback")
 		menu_additem(menu, item_text, fmt("%d", i), 0, callback)
@@ -264,7 +270,7 @@ public weapons_menu_handler(id, menu, item)
 		set_task(0.1, "show_secondary_menu", id)
 		return PLUGIN_HANDLED
 	}
-	else if (weapon_id == g_weapon_deagle || weapon_id == g_weapon_usp || weapon_id == g_weapon_glock)
+	else if (weapon_id == g_weapon_deagle || weapon_id == g_weapon_usp || weapon_id == g_weapon_glock || weapon_id == g_weapon_fiveseven || weapon_id == g_weapon_elite)
 	{
 		// Give secondary weapon
 		if (weapon_id == g_weapon_deagle)
@@ -273,6 +279,10 @@ public weapons_menu_handler(id, menu, item)
 			give_weapon(id, CSW_USP)
 		else if (weapon_id == g_weapon_glock)
 			give_weapon(id, CSW_GLOCK18)
+		else if (weapon_id == g_weapon_fiveseven)
+			give_weapon(id, CSW_FIVESEVEN)
+		else if (weapon_id == g_weapon_elite)
+			give_weapon(id, CSW_ELITE)
 	}
 	else
 	{
@@ -290,12 +300,14 @@ public show_secondary_menu(id)
 	if (!is_user_alive(id))
 		return
 	
-	new menu = menu_create("\r[ZP] \wSecondary Zbrane", "secondary_menu_handler")
+	new menu = menu_create("\yVyber Sekundarnej zbrani", "secondary_menu_handler")
 	
 	// All secondary weapons are FREE
-	menu_additem(menu, "\wDesert Eagle \r[FREE]", "0")
-	menu_additem(menu, "\wUSP \r[FREE]", "1")
-	menu_additem(menu, "\wGlock \r[FREE]", "2")
+	menu_additem(menu, "\wDesert Eagle", "0")
+	menu_additem(menu, "\wUSP", "1")
+	menu_additem(menu, "\wGlock", "2")
+	menu_additem(menu, "\wFiveseveN", "3")
+	menu_additem(menu, "\wElite duals", "4")
 	
 	menu_setprop(menu, MPROP_EXITNAME, "Zatvorit")
 	menu_display(id, menu, 0)
@@ -319,6 +331,8 @@ public secondary_menu_handler(id, menu, item)
 		case 0: give_weapon(id, CSW_DEAGLE)
 		case 1: give_weapon(id, CSW_USP)
 		case 2: give_weapon(id, CSW_GLOCK18)
+		case 3: give_weapon(id, CSW_FIVESEVEN)
+		case 4: give_weapon(id, CSW_ELITE)
 	}
 	
 	client_print(id, print_chat, "[ZP] Dostali ste sekundarnu zbran zadarmo!")
@@ -352,7 +366,7 @@ give_weapon(id, csw_id)
 			}
 		}
 		// Secondary weapons
-		else if (csw_id == CSW_DEAGLE || csw_id == CSW_USP || csw_id == CSW_GLOCK18)
+		else if (csw_id == CSW_DEAGLE || csw_id == CSW_USP || csw_id == CSW_GLOCK18 || csw_id == CSW_FIVESEVEN || csw_id == CSW_ELITE)
 		{
 			if ((1<<weapons[i]) & ((1<<CSW_P228)|(1<<CSW_ELITE)|(1<<CSW_FIVESEVEN)|(1<<CSW_USP)|(1<<CSW_GLOCK18)|(1<<CSW_DEAGLE)))
 			{
@@ -374,6 +388,8 @@ give_weapon(id, csw_id)
 		case CSW_DEAGLE: cs_set_user_bpammo(id, CSW_DEAGLE, 35)
 		case CSW_USP: cs_set_user_bpammo(id, CSW_USP, 100)
 		case CSW_GLOCK18: cs_set_user_bpammo(id, CSW_GLOCK18, 120)
+		case CSW_FIVESEVEN: cs_set_user_bpammo(id, CSW_FIVESEVEN, 120)
+		case CSW_ELITE: cs_set_user_bpammo(id, CSW_ELITE, 120)
 	}
 	
 	// Give grenades for primary weapons

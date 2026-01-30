@@ -43,6 +43,8 @@ new const g_spawn_sound[][] =
 	"ch2012/big_active1.wav"
 }
 
+new g_sprite_ability
+
 new const g_hit_sound[][] = 
 {
 	"ch2012/big_hit1.wav",
@@ -83,6 +85,9 @@ public prethink(id)
 public plugin_precache()
 {
 	g_zclass_biger = zp_register_zombie_class(zclass_name, zclass_info, zclass_model, zclass_clawmodel, zclass_health, zclass_speed, zclass_gravity, zclass_knockback)
+	
+	// Precache sprite for ability effect
+	g_sprite_ability = precache_model("sprites/ch2012_big_active.spr")
 	
 	// Precache custom biger sounds
 	for (new i = 0; i < sizeof(g_ability_sound); i++)
@@ -158,6 +163,28 @@ public roundStart()
 	}
 }
 
+// Funkcia na vytvorenie viacerých sprite-ov okolo hráča
+stock create_ability_sprites(Float:origin[3], g_sprite_ability, count)
+{
+	for(new i = 0; i < count; i++)
+	{
+		// Náhodný offset pre každý sprite
+		new Float:offset_x = float(random_num(-30, 30))
+		new Float:offset_y = float(random_num(-30, 30))
+		new Float:offset_z = float(random_num(20, 50))
+		
+		message_begin(MSG_BROADCAST, SVC_TEMPENTITY, {0,0,0}, 0)
+		write_byte(TE_SPRITE)
+		write_coord(floatround(origin[0] + offset_x))
+		write_coord(floatround(origin[1] + offset_y))
+		write_coord(floatround(origin[2] + offset_z))
+		write_short(g_sprite_ability)
+		write_byte(random_num(5, 15)) // scale - náhodná veľkosť
+		write_byte(200) // brightness
+		message_end()
+	}
+}
+
 public use_ability_hp(id)
 {
 	if (is_valid_ent(id) && is_user_alive(id) && zp_get_user_zombie(id) && !zp_get_user_nemesis(id) && zp_get_user_zombie_class(id) == g_zclass_biger)
@@ -168,6 +195,12 @@ public use_ability_hp(id)
 			new sound_to_play[64]
 			copy(sound_to_play, charsmax(sound_to_play), g_ability_sound[random_num(0, sizeof(g_ability_sound) - 1)])
 			emit_sound(id, CHAN_VOICE, sound_to_play, 1.0, ATTN_NORM, 0, PITCH_NORM)
+			
+			// Vytvor 12 sprite efektov okolo hráča
+			static Float:origin[3]
+			pev(id, pev_origin, origin)
+			
+			create_ability_sprites(origin, g_sprite_ability, 12)
 			
 			// Pridaj HP
 			new current_hp = pev(id, pev_health)

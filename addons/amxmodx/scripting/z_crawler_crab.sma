@@ -161,9 +161,8 @@ public cmd_fade9(id)
 }
 
 public zp_user_infect_attempt(id) {
-	
-	if(is_user_bot(id))
-		zp_set_user_zombie_class(id, 0)
+	// Allow bots to be crab, but they will have different behavior
+	// Don't force class change anymore
 }
 public zp_user_infected_post(id, infector, nemesis)
 {		
@@ -173,11 +172,20 @@ public zp_user_infected_post(id, infector, nemesis)
 		g_headcrab[id][0] = true
 		g_headcrab[id][1] = true
 		
-		if(!is_user_bot(id))
+		// Bots: standing position with slower speed
+		if(is_user_bot(id))
+		{
+			// Bots stand normally (no duck) but move slower
+			set_pev(id, pev_maxspeed, 300.0)
+		}
+		else
+		{
+			// Players: duck mode with fast speed
 			client_cmd(id, "cl_forwardspeed 2000; cl_backspeed 2000; cl_sidespeed 2000")
-			
-		set_pev(id, pev_bInDuck, 1)
-		console_cmd(id, "+duck")
+			set_pev(id, pev_bInDuck, 1)
+			console_cmd(id, "+duck")
+		}
+		
 		set_user_hitzones(0, id, 200)
 		set_user_footsteps(id, 1)
 		
@@ -202,7 +210,7 @@ public zp_user_humanized_post(id)
 }
 public client_PreThink(id)
 {
-	if(g_headcrab[id][0]) {
+	if(g_headcrab[id][0] && !is_user_bot(id)) {
 		set_pev(id, pev_bInDuck, 1)
 		console_cmd(id, "+duck")
 	}

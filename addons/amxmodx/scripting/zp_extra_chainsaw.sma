@@ -67,7 +67,7 @@ public plugin_init()
 	
 	cvar_enable = register_cvar("zp_chainsaw_enable", "1")
 	cvar_sounds = register_cvar("zp_chainsaw_custom_sounds", "1")
-	cvar_dmgmult = register_cvar("zp_chainsaw_damage_mult", "8.4")
+	cvar_dmgmult = register_cvar("zp_chainsaw_damage_mult", "14.19")
 	cvar_dmggore = register_cvar("zp_chainsaw_gore_in_damage", "1")
 	cvar_oneround = register_cvar("zp_chainsaw_oneround", "0")
 	cvar_dropflags = register_cvar("zp_chainsaw_drop_flags", "abcd")
