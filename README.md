@@ -1,5 +1,10 @@
 
 missing:
+
 ghost: sprite effect
+
 bigger: sprite effect
-buy menu: few weapons for money
+
+buy menu: 
+few weapons for money
+
