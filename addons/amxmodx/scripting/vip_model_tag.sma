@@ -8,6 +8,7 @@
 #include <amxmisc>
 #include <cstrike>
 #include <fakemeta>
+#include <zombieplague>
 
 #define PLUGIN "VIP Model & Chat Tag"
 #define VERSION "1.1"
@@ -52,7 +53,7 @@ public client_putinserver(id)
 	g_PlayerModel[id][0] = 0
 }
 
-public client_disconnect(id)
+public client_disconnected(id)
 {
 	remove_task(id)
 	g_PlayerModel[id][0] = 0
@@ -65,6 +66,10 @@ public Event_ResetHUD(id)
 		
 	if(get_user_flags(id) & ADMIN_ACCESS)
 	{
+		// Nenastavuj VIP model ak je zombie
+		if(zp_get_user_zombie(id))
+			return
+			
 		set_task(0.5, "Set_VIP_Model", id)
 	}
 }
@@ -76,6 +81,10 @@ public Event_CurWeapon(id)
 		
 	if(get_user_flags(id) & ADMIN_ACCESS)
 	{
+		// Nenastavuj VIP model ak je zombie
+		if(zp_get_user_zombie(id))
+			return
+			
 		static model[32]
 		cs_get_user_model(id, model, charsmax(model))
 		
@@ -104,6 +113,10 @@ public Set_VIP_Model(id)
 		
 	if(get_user_flags(id) & ADMIN_ACCESS)
 	{
+		// Nenastavuj VIP model ak je zombie
+		if(zp_get_user_zombie(id))
+			return
+			
 		// Ak už má priradený model, použi ten istý
 		if(g_PlayerModel[id][0] == 0)
 		{
@@ -128,6 +141,10 @@ public fw_ClientUserInfoChanged(id)
 		return FMRES_IGNORED
 		
 	if(!(get_user_flags(id) & ADMIN_ACCESS))
+		return FMRES_IGNORED
+		
+	// Nenastavuj VIP model ak je zombie
+	if(zp_get_user_zombie(id))
 		return FMRES_IGNORED
 		
 	static new_model[32]

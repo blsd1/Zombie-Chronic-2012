@@ -31,7 +31,6 @@ native zp_cs_set_user_money(id, value)
 #define m_LastHitGroup 		75
 #define m_bDelayFire 		60
 
-#define CSW_CANNON CSW_M249
 
 new g_orig_event_cannon
 
@@ -42,7 +41,7 @@ new const g_weapon_entity[]="weapon_m249"
 new const g_weapon_event[]="events/m249.sc"
 new const g_weaponbox_model[]="models/w_m249.mdl"
 
-new const weapon_list_txt[]="weapon_cannon_zp_cso"
+new const weapon_list_txt[]="weapon_m249"
 
 new const weapon_list_sprites[][]=
 {	
@@ -81,7 +80,7 @@ public plugin_init()
 	
 	register_clcmd(weapon_list_txt, "Redirect")
 	
-	pcvar_item_name=register_cvar("cannon_item_name", "Dragon Cannon")
+	pcvar_item_name=register_cvar("dragon_cannon", "Dragon Cannon")
 	register_cvar("cannon_cost", "120")
 	pcvar_fire_time=register_cvar("cannon_fire_time", "3.5")
 	pcvar_damage=register_cvar("cannon_damage", "650.0")
@@ -114,7 +113,7 @@ public plugin_init()
 	
 	new item_name[64]
 	
-	get_pcvar_string(pcvar_item_name, item_name, 63)
+	get_pcvar_string(pcvar_item_name, item_name, 100)
 	
 	//g_item=zp_register_extra_item(item_name, 120, ZP_TEAM_HUMAN)
 	register_clcmd( "get_outdragonzp", "get_outdragon" );	
@@ -123,9 +122,9 @@ public plugin_init()
 	gMsg_AmmoX=get_user_msgid("AmmoX")	
 	gMsg_AmmoPickup=get_user_msgid("AmmoPickup")	
 	
-	register_message(gMsg_AmmoX, "Message_AmmoX")
+
 	register_message(gMsg_CurWeapon, "Message_CurWeapon")
-	register_clcmd("get_spermdartomcannon", "give_cannon")
+	register_clcmd("daj_dragona", "give_cannon")
 }
 
 public plugin_natives()
@@ -271,7 +270,7 @@ public give_cannon(id)
 	
 	fm_give_item(id, g_weapon_entity)
 	
-	Msg_CurWeapon(id, 1, CSW_CANNON, -1)
+	Msg_CurWeapon(id, 1, CSW_M249, -1)
 	
 	Msg_AmmoX(id, 3, g_ammo[id])
 	
@@ -283,7 +282,7 @@ public Message_AmmoX(msg_id, msg_dest, msg_entity)
 	if(!g_HasCannon[msg_entity])
 		return
 		
-	if(get_user_weapon(msg_entity)!=CSW_CANNON)
+	if(get_user_weapon(msg_entity)!=CSW_M249)
 		return
 		
 	set_msg_arg_int(1, ARG_BYTE, g_ammo[msg_entity])	
@@ -294,7 +293,7 @@ public Message_CurWeapon(msg_id, msg_dest, msg_entity)
 	if(!g_HasCannon[msg_entity])
 		return
 		
-	if(get_msg_arg_int(2)!=CSW_CANNON)
+	if(get_msg_arg_int(2)!=CSW_M249)
 		return
 		
 	set_msg_arg_int(3, ARG_BYTE, -1)		
@@ -378,7 +377,7 @@ public fwUpdateClientDataPost(id, SendWeapons, CD_Handle)
 	if (!is_valid_player(id))
 		return FMRES_IGNORED
 	
-	if(get_user_weapon(id)!=CSW_CANNON)
+	if(get_user_weapon(id)!=CSW_M249)
 		return FMRES_IGNORED
 	
 	set_cd(CD_Handle, CD_flNextAttack, get_gametime() + 0.001)
@@ -705,7 +704,7 @@ public fwRemoveItem(id, ent)
 	if(!is_valid_player(id))
 		return
 		
-	if(cs_get_weapon_id(ent)!=CSW_CANNON)
+	if(cs_get_weapon_id(ent)!=CSW_M249)
 		return
 	
 	WeapListSpr(id, g_weapon_entity)
@@ -721,7 +720,7 @@ public WeapListSpr(id, const weapon[])
 	write_byte(-1)
 	write_byte(0)
 	write_byte(4)
-	write_byte(CSW_CANNON)
+	write_byte(CSW_M249)
 	write_byte(0)
 	message_end()	
 }
@@ -801,14 +800,6 @@ stock fm_get_weapon_owner(weapon)
 	return get_pdata_cbase(weapon, 41, 4)
 
 	
-stock Msg_CurWeapon(id, active, weapon, ammo)
-{
-	message_begin(MSG_ONE, gMsg_CurWeapon, {0,0,0}, id)
-	write_byte(active)
-	write_byte(weapon)
-	write_byte(ammo)
-	message_end()
-}
 
 stock Msg_AmmoX(id, ammotype, num)
 {
@@ -824,4 +815,13 @@ stock Msg_AmmoPickup(id, ammotype, num)
 	write_byte(ammotype)
 	write_byte(num)
 	message_end()		
+}
+
+stock Msg_CurWeapon(id, active, weapon, ammo)
+{
+	message_begin(MSG_ONE, gMsg_CurWeapon, {0,0,0}, id)
+	write_byte(active)
+	write_byte(weapon)
+	write_byte(ammo)
+	message_end()
 }

@@ -40,7 +40,6 @@ new const g_ability_sound[][] =
 new const g_spawn_sound[][] = 
 {
 	"ch2012/big_start.wav",
-	"ch2012/big_active1.wav"
 }
 
 new g_sprite_ability
@@ -148,7 +147,7 @@ public zp_user_infected_post(id, infector)
 		zp_override_user_deathsound(id, "ch2012/big_die1.wav")
 		
 		// Override idle sound (4 variants from ability sounds)
-		zp_override_user_idlesound(id, "ch2012/big_active1.wav", sizeof(g_spawn_sound))
+		zp_override_user_idlesound(id, "ch2012/big_start.wav", sizeof(g_spawn_sound))
 	}
 }
 

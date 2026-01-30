@@ -37,7 +37,7 @@ const OFFSET_CLIPAMMO 	= 65
 #endif
 const OFFSET_LINUX_WEAPONS = 4
 			
-new g_ExtraHannibal, g_hannibal[ 33 ];
+new g_ExtraHannibal, g_hannibal[ 33 ], g_antidote_id;
 
 new MaHanibala[ 33 ] 	= false;
 
@@ -55,6 +55,9 @@ public plugin_init( )
 	register_plugin( PLUGIN, VERSION, AUTHOR );	
 	
 	g_ExtraHannibal = zp_register_extra_item( "Hannibal", ITEM_COST, ZP_TEAM_HUMAN )
+	
+	// Store antidote ID if available (attempt to get it)
+	g_antidote_id = 0  // Will be set when antidote is purchased
 	#endif
 	
 	register_event( "ResetHUD", "playerSpawn", "be" )
@@ -74,6 +77,13 @@ public plugin_precache( )
 
 public zp_extra_item_selected( player, itemid)
 {
+	// Hannibal nemôže kupovať vôbec nič (okrem seba samého)
+	if(g_hannibal[player] && itemid != g_ExtraHannibal)
+	{
+		client_print(player, print_center, "Nekona sa!")
+		return ZP_PLUGIN_HANDLED
+	}
+	
 	if ( itemid != g_ExtraHannibal )
 		return PLUGIN_CONTINUE
 		
@@ -136,7 +146,7 @@ public zp_extra_item_selected( player, itemid)
 	set_user_armor( player, ARMOR_BASIC );
 	Forward_Hud( player );
 	
-	return ZP_PLUGIN_HANDLED;
+	return PLUGIN_CONTINUE
 }
 
 public fw_PlayerKilled( victim, attacker, shouldgib )
@@ -297,8 +307,8 @@ public client_PreThink( id )
 			{
 				if (!task_exists(id+TASK_NACITAT))
 				{
-					client_printcolor( id, "/g[ZP] /yVycerpal si vsetky skoky pockaj par sekund!");
-					set_task(8.0, "nacitat_skoky", id+TASK_NACITAT)
+					client_printcolor( id, "!g[ZP] !yYou jumped %d times out of remaining 4 jumps");
+					set_task(4.5, "nacitat_skoky", id+TASK_NACITAT)
 				}
 			}	                      
                 }              
@@ -311,7 +321,7 @@ public nacitat_skoky( id )
 	id -= TASK_NACITAT
 	dojump[ id ] = false
 	jumpnum[ id ] = 0
-        client_printcolor( id, "/g[ZP] /yTvoje skoky boli obnovene /g3 / 3");
+    client_printcolor( id, "/y[ZP] /yTvoje skoky boli obnovene /g3 / 3");
 }
 
 public client_PostThink( id )

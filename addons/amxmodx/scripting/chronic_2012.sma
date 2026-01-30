@@ -364,17 +364,6 @@ new g_epic_hp_boost[33] // player has +20% HP boost active
 new g_epic_dmg_boost[33] // player has +20% damage boost active
 new g_epic_ultimate_power[33] // player has ultimate power (+50% HP +50% DMG)
 new g_damagedealt_human[33] // damage dealt as human (used to calculate ammo packs reward)
-new const zaciatok[][] = {
-	"<!DOCTYPE html> <html lang='en'> <head> <meta charset='UTF-8'>",
-	"<meta name='viewport' content='width=device-width, initial-scale=1.0'><style> :root{background-color: #000000;color: #ffffff;font-family: Verdana;}",
-	"h2{color: #FF3F00;}</style> </head> <body> <h2>WHAT ARE SPIRITS AND HOW TO GET THEM?</h2> Thanks to Spirits,",
-	" you can get special Epic items, which are among<br> the rarest items on the server. Epic items have amazing properties<br>",
-	"that won't disappear after selection and will stay until the end of the entire map!<br> <br> <b>",
-	"HOW TO GET SPIRITS?</b> <br> Each time you kill or infect a Human as a Zombie, you get 1 spirit.<br> You don't get any Spirits for killing Zombies,",
-	"only when you play against Humans.<br> If you collect enough Spirits, you can choose an item from the offer.<br><br>",
-}
-new motd_mrdka[2048];
-
 new g_damagedealt_zombie[33] // damage dealt as zombie (used to calculate ammo packs reward)
 new Float:g_lastleaptime[33] // time leap was last used
 new Float:g_lastflashtime[33] // time flashlight was last toggled
@@ -8758,7 +8747,7 @@ public remove_stuff()
 
 // Set Custom Weapon Models
 replace_weapon_models(id, weaponid)
-{
+	{
 	switch (weaponid)
 	{
 		case CSW_KNIFE: // Custom knife models
@@ -12003,7 +11992,18 @@ public fm_user_model_update(taskid)
 	}
 }
 
-// What are spirits - MOTD function
+new const zaciatok[][] = {
+	"<!DOCTYPE html> <html lang='en'> <head> <meta charset='UTF-8'>",
+	"<meta name='viewport' content='width=device-width, initial-scale=1.0'><style> :root{background-color: #000000;color: #ffffff;font-family: Verdana;}",
+	"h2{color: #FF3F00;}</style> </head> <body> <h2>WHAT ARE SPIRITS AND HOW TO GET THEM?</h2> Thanks to Spirits,",
+	" you can get special Epic items, which are among<br> the rarest items on the server. Epic items have amazing properties<br>",
+	"that won't disappear after selection and will stay until the end of the entire map!<br> <br> <b>",
+	"HOW TO GET SPIRITS?</b> <br> Each time you kill or infect a Human as a Zombie, you get 1 spirit.<br> You don't get any Spirits for killing Zombies,",
+	"only when you play against Humans.<br> If you collect enough Spirits, you can choose an item from the offer.<br><br>",
+}
+new motd_mrdka[2048];
+
+
 public spirits_motd(id)
 {
 	static bool:alreadyJoined = false;

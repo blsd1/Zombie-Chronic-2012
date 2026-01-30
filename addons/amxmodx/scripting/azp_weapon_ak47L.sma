@@ -6,10 +6,11 @@
 #include <xs>
 #include <cstrike>
 #include <zombieplague>
+#include <zp_weapons>
 
 #define ENG_NULLENT			-1
 #define EV_INT_WEAPONKEY	EV_INT_impulse
-#define m14ebr_WEAPONKEY 	811
+#define ak47long_WEAPONKEY 		834
 #define MAX_PLAYERS  		32
 #define IsValidUser(%1) (1 <= %1 <= g_MaxPlayers)
 
@@ -28,25 +29,26 @@ const OFFSET_LINUX_WEAPONS = 4
 #define PLAYER_LINUX_XTRA_OFF	5
 #define m_flNextAttack				83
 
-#define M14EBR_RELOAD_TIME	2.8
-#define M14EBR_RELOAD		1
-#define M14EBR_DRAW			2
-#define M14EBR_SHOOT		3
+#define ak47long_RELOAD_TIME 	3.3
+#define ak47long_RELOAD			1
+#define ak47long_DRAW			2
+#define ak47long_SHOOT1			3
+#define ak47long_SHOOT2			4
 
 #define write_coord_f(%1)	engfunc(EngFunc_WriteCoord,%1)
 
-new const Fire_Sounds[][] = { "weapons/special-1.wav" }
+new const Fire_Sounds[][] = { "weapons/aklong1.wav" }
 
-new m14ebr_V_MODEL[64] = "models/ch2012/v_special.mdl"
-new m14ebr_P_MODEL[64] = "models/ch2012/p_special.mdl"
-new m14ebr_W_MODEL[64] = "models/ch2012/w_special.mdl"
+new ak47long_V_MODEL[64] = "models/ch2012/v_ak47_long.mdl"
+new ak47long_P_MODEL[64] = "models/ch2012/p_ak47_long.mdl"
+new ak47long_W_MODEL[64] = "models/ch2012/w_ak47_long.mdl"
 
 new const GUNSHOT_DECALS[] = { 41, 42, 43, 44, 45 }
 
-new cvar_dmg_m14ebr, cvar_recoil_m14ebr, g_itemid_m14ebr, cvar_clip_m14ebr, cvar_spd_m14ebr, cvar_m14ebr_ammo , cvar_light_life, cvar_light_decay
-new g_MaxPlayers, g_orig_event_m14ebr, g_IsInPrimaryAttack
+new cvar_dmg_ak47long, cvar_recoil_ak47long, g_itemid_ak47long, cvar_clip_ak47long, cvar_spd_ak47long, cvar_ak47long_ammo
+new g_MaxPlayers, g_orig_event_ak47long, g_IsInPrimaryAttack
 new Float:cl_pushangle[MAX_PLAYERS + 1][3], m_iBlood[2]
-new g_has_m14ebr[33], g_clip_ammo[33], g_m14ebr_TmpClip[33], oldweap[33]
+new g_has_ak47long[33], g_clip_ammo[33], g_ak47long_TmpClip[33], oldweap[33]
 new gmsgWeaponList
 
 const PRIMARY_WEAPONS_BIT_SUM = 
@@ -60,23 +62,21 @@ new const WEAPONENTNAMES[][] = { "", "weapon_p228", "", "weapon_scout", "weapon_
 
 public plugin_init()
 {
-	register_plugin("[ZP] Special Gun 2012", "2.0", "ketamine")
-	register_clcmd("weapon_special", "weapon_hook")
-	register_forward(FM_PrecacheEvent, "fwPrecacheEvent_Post", 1)
+	register_plugin("[ZP] Extra: Leader ak47long", "1.0", "Crock / =) (Poprogun4ik) / LARS-DAY[BR]EAKER")
 	register_message(get_user_msgid("DeathMsg"), "message_DeathMsg")
 	register_event("CurWeapon","CurrentWeapon","be","1=1")
-	RegisterHam(Ham_Item_AddToPlayer, "weapon_ak47", "fw_m14ebr_AddToPlayer")
+	RegisterHam(Ham_Item_AddToPlayer, "weapon_sg552", "fw_ak47long_AddToPlayer")
 	RegisterHam(Ham_Use, "func_tank", "fw_UseStationary_Post", 1)
 	RegisterHam(Ham_Use, "func_tankmortar", "fw_UseStationary_Post", 1)
 	RegisterHam(Ham_Use, "func_tankrocket", "fw_UseStationary_Post", 1)
 	RegisterHam(Ham_Use, "func_tanklaser", "fw_UseStationary_Post", 1)
 	for (new i = 1; i < sizeof WEAPONENTNAMES; i++)
 	if (WEAPONENTNAMES[i][0]) RegisterHam(Ham_Item_Deploy, WEAPONENTNAMES[i], "fw_Item_Deploy_Post", 1)
-	RegisterHam(Ham_Weapon_PrimaryAttack, "weapon_ak47", "fw_m14ebr_PrimaryAttack")
-	RegisterHam(Ham_Weapon_PrimaryAttack, "weapon_ak47", "fw_m14ebr_PrimaryAttack_Post", 1)
-	RegisterHam(Ham_Item_PostFrame, "weapon_ak47", "m14ebr_ItemPostFrame")
-	RegisterHam(Ham_Weapon_Reload, "weapon_ak47", "m14ebr_Reload")
-	RegisterHam(Ham_Weapon_Reload, "weapon_ak47", "m14ebr_Reload_Post", 1)
+	RegisterHam(Ham_Weapon_PrimaryAttack, "weapon_sg552", "fw_ak47long_PrimaryAttack")
+	RegisterHam(Ham_Weapon_PrimaryAttack, "weapon_sg552", "fw_ak47long_PrimaryAttack_Post", 1)
+	RegisterHam(Ham_Item_PostFrame, "weapon_sg552", "ak47long_ItemPostFrame")
+	RegisterHam(Ham_Weapon_Reload, "weapon_sg552", "ak47long_Reload")
+	RegisterHam(Ham_Weapon_Reload, "weapon_sg552", "ak47long_Reload_Post", 1)
 	RegisterHam(Ham_TakeDamage, "player", "fw_TakeDamage")
 	register_forward(FM_SetModel, "fw_SetModel")
 	register_forward(FM_UpdateClientData, "fw_UpdateClientData_Post", 1)
@@ -90,39 +90,46 @@ public plugin_init()
 	RegisterHam(Ham_TraceAttack, "func_plat", "fw_TraceAttack", 1)
 	RegisterHam(Ham_TraceAttack, "func_rotating", "fw_TraceAttack", 1)
 
-	cvar_dmg_m14ebr = register_cvar("zp_m14ebr_dmg", "1.29")
-	cvar_recoil_m14ebr = register_cvar("zp_m14ebr_recoil", "0.96")
-	cvar_clip_m14ebr = register_cvar("zp_m14ebr_clip", "20")
-	cvar_spd_m14ebr = register_cvar("zp_m14ebr_spd", "1.03")
-	cvar_m14ebr_ammo = register_cvar("zp_m14ebr_ammo", "180")
-	cvar_light_life = register_cvar("zp_special_light_life", "10")
-	cvar_light_decay = register_cvar("zp_special_light_decay", "9")
+	cvar_dmg_ak47long = register_cvar("zp_ak47long_dmg", "1.1")
+	cvar_recoil_ak47long = register_cvar("zp_ak47long_recoil", "1.0")
+	cvar_clip_ak47long = register_cvar("zp_ak47long_clip", "30")
+	cvar_spd_ak47long = register_cvar("zp_ak47long_spd", "0.5")
+	cvar_ak47long_ammo = register_cvar("zp_ak47long_ammo", "18")
 	
-	g_itemid_m14ebr = zp_register_extra_item("Special Gun [ExtraVIP]", 18, ZP_TEAM_HUMAN)
 	g_MaxPlayers = get_maxplayers()
 	gmsgWeaponList = get_user_msgid("WeaponList")
 }
 
+public plugin_cfg()
+{
+	// Register weapon in custom weapons system (after all plugins loaded)
+	g_itemid_ak47long = zp_register_custom_weapon("AK-47 Long", 3100, 2) // 2 = Humans only
+}
+
 public plugin_precache()
 {
-	precache_model(m14ebr_V_MODEL)
-	precache_model(m14ebr_P_MODEL)
-	precache_model(m14ebr_W_MODEL)
+	precache_model(ak47long_V_MODEL)
+	precache_model(ak47long_P_MODEL)
+	precache_model(ak47long_W_MODEL)
 	for(new i = 0; i < sizeof Fire_Sounds; i++)
 	precache_sound(Fire_Sounds[i])	
+	precache_generic("weapons/ak47_draw.wav")
+	precache_generic("weapons/ak47_clipin.wav")
+	precache_generic("weapons/ak47_clipout.wav")
 	m_iBlood[0] = precache_model("sprites/blood.spr")
 	m_iBlood[1] = precache_model("sprites/bloodspray.spr")
+	precache_generic("sprites/weapon_ak47l.txt")
+   	precache_generic("sprites/640hud32.spr")
+    	precache_generic("sprites/640hud7.spr")
 	
-	precache_generic("sprites/weapon_special.txt")
-   	precache_generic("sprites/640hud47.spr")
-    precache_generic("sprites/640hud7.spr")
-	
+        register_clcmd("weapon_ak47long", "weapon_hook")	
 
+	register_forward(FM_PrecacheEvent, "fwPrecacheEvent_Post", 1)
 }
 
 public weapon_hook(id)
 {
-    	engclient_cmd(id, "weapon_ak47")
+    	engclient_cmd(id, "weapon_sg552")
     	return PLUGIN_HANDLED
 }
 
@@ -133,9 +140,9 @@ public fw_TraceAttack(iEnt, iAttacker, Float:flDamage, Float:fDir[3], ptr, iDama
 
 	new g_currentweapon = get_user_weapon(iAttacker)
 
-	if(g_currentweapon != CSW_AK47) return
+	if(g_currentweapon != CSW_SG552) return
 	
-	if(!g_has_m14ebr[iAttacker]) return
+	if(!g_has_ak47long[iAttacker]) return
 
 	static Float:flEnd[3]
 	get_tr2(ptr, TR_vecEndPos, flEnd)
@@ -173,23 +180,23 @@ public fw_TraceAttack(iEnt, iAttacker, Float:flDamage, Float:fDir[3], ptr, iDama
 
 public zp_user_humanized_post(id)
 {
-	g_has_m14ebr[id] = false
+	g_has_ak47long[id] = false
 }
 
 public plugin_natives ()
 {
-	register_native("give_weapon_special", "native_give_weapon_add", 1)
+	register_native("give_weapon_ak47long", "native_give_weapon_add", 1)
 }
 public native_give_weapon_add(id)
 {
-	give_m14ebr(id)
+	give_ak47long(id)
 }
 
 public fwPrecacheEvent_Post(type, const name[])
 {
-	if (equal("events/ak47.sc", name))
+	if (equal("events/sg552.sc", name))
 	{
-		g_orig_event_m14ebr = get_orig_retval()
+		g_orig_event_ak47long = get_orig_retval()
 		return FMRES_HANDLED
 	}
 	return FMRES_IGNORED
@@ -197,19 +204,19 @@ public fwPrecacheEvent_Post(type, const name[])
 
 public client_connect(id)
 {
-	g_has_m14ebr[id] = false
+	g_has_ak47long[id] = false
 }
 
-public client_disconnected(id)
+public client_disconnect(id)
 {
-	g_has_m14ebr[id] = false
+	g_has_ak47long[id] = false
 }
 
 public zp_user_infected_post(id)
 {
 	if (zp_get_user_zombie(id))
 	{
-		g_has_m14ebr[id] = false
+		g_has_ak47long[id] = false
 	}
 }
 
@@ -228,22 +235,22 @@ public fw_SetModel(entity, model[])
 	
 	iOwner = entity_get_edict(entity, EV_ENT_owner)
 	
-	if(equal(model, "models/w_ak47.mdl"))
+	if(equal(model, "models/w_sg552.mdl"))
 	{
 		static iStoredAugID
 		
-		iStoredAugID = find_ent_by_owner(ENG_NULLENT, "weapon_ak47", entity)
+		iStoredAugID = find_ent_by_owner(ENG_NULLENT, "weapon_sg552", entity)
 	
 		if(!is_valid_ent(iStoredAugID))
 			return FMRES_IGNORED
 	
-		if(g_has_m14ebr[iOwner])
+		if(g_has_ak47long[iOwner])
 		{
-			entity_set_int(iStoredAugID, EV_INT_WEAPONKEY, m14ebr_WEAPONKEY)
+			entity_set_int(iStoredAugID, EV_INT_WEAPONKEY, ak47long_WEAPONKEY)
 			
-			g_has_m14ebr[iOwner] = false
+			g_has_ak47long[iOwner] = false
 			
-			entity_set_model(entity, m14ebr_W_MODEL)
+			entity_set_model(entity, ak47long_W_MODEL)
 			
 			return FMRES_SUPERCEDE
 		}
@@ -251,58 +258,60 @@ public fw_SetModel(entity, model[])
 	return FMRES_IGNORED
 }
 
-public give_m14ebr(id)
+public give_ak47long(id)
 {
-	new iWep2 = give_item(id,"weapon_ak47")
+	drop_weapons(id, 1)
+	new iWep2 = give_item(id,"weapon_sg552")
 	if( iWep2 > 0 )
 	{
-		cs_set_weapon_ammo(iWep2, get_pcvar_num(cvar_clip_m14ebr))
-		cs_set_user_bpammo (id, CSW_AK47, get_pcvar_num(cvar_m14ebr_ammo))	
-		UTIL_PlayWeaponAnimation(id, M14EBR_DRAW)
+		cs_set_weapon_ammo(iWep2, get_pcvar_num(cvar_clip_ak47long))
+		cs_set_user_bpammo (id, CSW_SG552, get_pcvar_num(cvar_ak47long_ammo))	
+		UTIL_PlayWeaponAnimation(id, ak47long_DRAW)
 		set_pdata_float(id, m_flNextAttack, 1.0, PLAYER_LINUX_XTRA_OFF)
 
 		message_begin(MSG_ONE, gmsgWeaponList, {0,0,0}, id)
-		write_string("weapon_special")
-		write_byte(2)
+		write_string("weapon_ak47long")
+		write_byte(4)
 		write_byte(90)
 		write_byte(-1)
 		write_byte(-1)
 		write_byte(0)
-		write_byte(1)
-		write_byte(CSW_AK47)
+		write_byte(10)
+		write_byte(CSW_SG552)
 		message_end()
 	}
-	g_has_m14ebr[id] = true
+	g_has_ak47long[id] = true
 }
 
-public zp_extra_item_selected(id, itemid)
+// Forward from zp_custom_weapons when weapon is bought
+public zp_custom_weapon_bought(id, weapon_id)
 {
-	if(itemid != g_itemid_m14ebr)
+	if (weapon_id != g_itemid_ak47long)
 		return
-
-	give_m14ebr(id)
+	
+	give_ak47long(id)
 }
 
-public fw_m14ebr_AddToPlayer(m14ebr, id)
+public fw_ak47long_AddToPlayer(ak47long, id)
 {
-	if(!is_valid_ent(m14ebr) || !is_user_connected(id))
+	if(!is_valid_ent(ak47long) || !is_user_connected(id))
 		return HAM_IGNORED
 	
-	if(entity_get_int(m14ebr, EV_INT_WEAPONKEY) == m14ebr_WEAPONKEY)
+	if(entity_get_int(ak47long, EV_INT_WEAPONKEY) == ak47long_WEAPONKEY)
 	{
-		g_has_m14ebr[id] = true
+		g_has_ak47long[id] = true
 		
-		entity_set_int(m14ebr, EV_INT_WEAPONKEY, 0)
+		entity_set_int(ak47long, EV_INT_WEAPONKEY, 0)
 
 		message_begin(MSG_ONE, gmsgWeaponList, {0,0,0}, id)
-		write_string("weapon_special")
-		write_byte(2)
+		write_string("weapon_ak47long")
+		write_byte(4)
 		write_byte(90)
 		write_byte(-1)
 		write_byte(-1)
 		write_byte(0)
-		write_byte(1)
-		write_byte(CSW_AK47)
+		write_byte(10)
+		write_byte(CSW_SG552)
 		message_end()
 		
 		return HAM_HANDLED
@@ -310,14 +319,14 @@ public fw_m14ebr_AddToPlayer(m14ebr, id)
 	else
 	{
 		message_begin(MSG_ONE, gmsgWeaponList, {0,0,0}, id)
-		write_string("weapon_ak47")
-		write_byte(2)
+		write_string("weapon_sg552")
+		write_byte(4)
 		write_byte(90)
 		write_byte(-1)
 		write_byte(-1)
 		write_byte(0)
-		write_byte(1)
-		write_byte(CSW_AK47)
+		write_byte(10)
+		write_byte(CSW_SG552)
 		message_end()
 	}
 	return HAM_IGNORED
@@ -344,12 +353,12 @@ public CurrentWeapon(id)
 {
      replace_weapon_models(id, read_data(2))
 
-     if(read_data(2) != CSW_AK47 || !g_has_m14ebr[id])
+     if(read_data(2) != CSW_SG552 || !g_has_ak47long[id])
           return
      
      static Float:iSpeed
-     if(g_has_m14ebr[id])
-          iSpeed = get_pcvar_float(cvar_spd_m14ebr)
+     if(g_has_ak47long[id])
+          iSpeed = get_pcvar_float(cvar_spd_ak47long)
      
      static weapon[32],Ent
      get_weaponname(read_data(2),weapon,31)
@@ -369,29 +378,29 @@ replace_weapon_models(id, weaponid)
 {
 	switch (weaponid)
 	{
-		case CSW_AK47:
+		case CSW_SG552:
 		{
 			if (zp_get_user_zombie(id) || zp_get_user_survivor(id))
 				return
 			
-			if(g_has_m14ebr[id])
+			if(g_has_ak47long[id])
 			{
-				set_pev(id, pev_viewmodel2, m14ebr_V_MODEL)
-				set_pev(id, pev_weaponmodel2, m14ebr_P_MODEL)
-				if(oldweap[id] != CSW_AK47) 
+				set_pev(id, pev_viewmodel2, ak47long_V_MODEL)
+				set_pev(id, pev_weaponmodel2, ak47long_P_MODEL)
+				if(oldweap[id] != CSW_SG552) 
 				{
-					UTIL_PlayWeaponAnimation(id, M14EBR_DRAW)
+					UTIL_PlayWeaponAnimation(id, ak47long_DRAW)
 					set_pdata_float(id, m_flNextAttack, 1.0, PLAYER_LINUX_XTRA_OFF)
 
 					message_begin(MSG_ONE, gmsgWeaponList, {0,0,0}, id)
-					write_string("weapon_special")
-					write_byte(2)
+					write_string("weapon_ak47long")
+					write_byte(4)
 					write_byte(90)
 					write_byte(-1)
 					write_byte(-1)
 					write_byte(0)
-					write_byte(1)
-					write_byte(CSW_AK47)
+					write_byte(10)
+					write_byte(CSW_SG552)
 					message_end()
 				}
 			}
@@ -402,18 +411,18 @@ replace_weapon_models(id, weaponid)
 
 public fw_UpdateClientData_Post(Player, SendWeapons, CD_Handle)
 {
-	if(!is_user_alive(Player) || (get_user_weapon(Player) != CSW_AK47 || !g_has_m14ebr[Player]))
+	if(!is_user_alive(Player) || (get_user_weapon(Player) != CSW_SG552 || !g_has_ak47long[Player]))
 		return FMRES_IGNORED
 	
 	set_cd(CD_Handle, CD_flNextAttack, halflife_time () + 0.001)
 	return FMRES_HANDLED
 }
 
-public fw_m14ebr_PrimaryAttack(Weapon)
+public fw_ak47long_PrimaryAttack(Weapon)
 {
 	new Player = get_pdata_cbase(Weapon, 41, 4)
 	
-	if (!g_has_m14ebr[Player])
+	if (!g_has_ak47long[Player])
 		return
 	
 	g_IsInPrimaryAttack = 1
@@ -424,7 +433,7 @@ public fw_m14ebr_PrimaryAttack(Weapon)
 
 public fwPlaybackEvent(flags, invoker, eventid, Float:delay, Float:origin[3], Float:angles[3], Float:fparam1, Float:fparam2, iParam1, iParam2, bParam1, bParam2)
 {
-	if ((eventid != g_orig_event_m14ebr) || !g_IsInPrimaryAttack)
+	if ((eventid != g_orig_event_ak47long) || !g_IsInPrimaryAttack)
 		return FMRES_IGNORED
 	if (!(1 <= invoker <= g_MaxPlayers))
     return FMRES_IGNORED
@@ -433,7 +442,7 @@ public fwPlaybackEvent(flags, invoker, eventid, Float:delay, Float:origin[3], Fl
 	return FMRES_SUPERCEDE
 }
 
-public fw_m14ebr_PrimaryAttack_Post(Weapon)
+public fw_ak47long_PrimaryAttack_Post(Weapon)
 {
 	g_IsInPrimaryAttack = 0
 	new Player = get_pdata_cbase(Weapon, 41, 4)
@@ -444,7 +453,7 @@ public fw_m14ebr_PrimaryAttack_Post(Weapon)
 	if(!is_user_alive(Player))
 		return
 
-	if(g_has_m14ebr[Player])
+	if(g_has_ak47long[Player])
 	{
 		if (!g_clip_ammo[Player])
 			return
@@ -453,43 +462,12 @@ public fw_m14ebr_PrimaryAttack_Post(Weapon)
 		pev(Player,pev_punchangle,push)
 		xs_vec_sub(push,cl_pushangle[Player],push)
 		
-		xs_vec_mul_scalar(push,get_pcvar_float(cvar_recoil_m14ebr),push)
+		xs_vec_mul_scalar(push,get_pcvar_float(cvar_recoil_ak47long),push)
 		xs_vec_add(push,cl_pushangle[Player],push)
 		set_pev(Player,pev_punchangle,push)
 		
 		emit_sound(Player, CHAN_WEAPON, Fire_Sounds[0], VOL_NORM, ATTN_NORM, 0, PITCH_NORM)
-		UTIL_PlayWeaponAnimation(Player, M14EBR_SHOOT)
-		
-		new Float:fStart[3], Float:fEnd[3], Float:fResult[3]
-		pev(Player, pev_origin, fStart)
-		pev(Player, pev_view_ofs, fEnd)
-		xs_vec_add(fStart, fEnd, fStart)
-		
-		new Float:fViewAngles[3], Float:fForward[3]
-		pev(Player, pev_v_angle, fViewAngles)
-		engfunc(EngFunc_MakeVectors, fViewAngles)
-		global_get(glb_v_forward, fForward)
-		
-		xs_vec_mul_scalar(fForward, 8192.0, fForward)
-		xs_vec_add(fStart, fForward, fEnd)
-		
-		new trace = create_tr2()
-		engfunc(EngFunc_TraceLine, fStart, fEnd, DONT_IGNORE_MONSTERS, Player, trace)
-		get_tr2(trace, TR_vecEndPos, fResult)
-		free_tr2(trace)
-		
-		message_begin(MSG_BROADCAST, SVC_TEMPENTITY)
-		write_byte(TE_DLIGHT)
-		write_coord(floatround(fResult[0]))
-		write_coord(floatround(fResult[1]))
-		write_coord(floatround(fResult[2]))
-		write_byte(8)
-		write_byte(0)
-		write_byte(255)
-		write_byte(0)
-		write_byte(get_pcvar_num(cvar_light_life))
-		write_byte(get_pcvar_num(cvar_light_decay))
-		message_end()
+		UTIL_PlayWeaponAnimation(Player, random_num(ak47long_SHOOT1, ak47long_SHOOT2))
 	}
 }
 
@@ -497,10 +475,10 @@ public fw_TakeDamage(victim, inflictor, attacker, Float:damage)
 {
 	if (victim != attacker && is_user_connected(attacker))
 	{
-		if(get_user_weapon(attacker) == CSW_AK47)
+		if(get_user_weapon(attacker) == CSW_SG552)
 		{
-			if(g_has_m14ebr[attacker])
-				SetHamParamFloat(4, damage * get_pcvar_float(cvar_dmg_m14ebr))
+			if(g_has_ak47long[attacker])
+				SetHamParamFloat(4, damage * get_pcvar_float(cvar_dmg_ak47long))
 		}
 	}
 }
@@ -517,10 +495,10 @@ public message_DeathMsg(msg_id, msg_dest, id)
 	if(!is_user_connected(iAttacker) || iAttacker == iVictim)
 		return PLUGIN_CONTINUE
 	
-	if(equal(szTruncatedWeapon, "ak47") && get_user_weapon(iAttacker) == CSW_AK47)
+	if(equal(szTruncatedWeapon, "sg552") && get_user_weapon(iAttacker) == CSW_SG552)
 	{
-		if(g_has_m14ebr[iAttacker])
-			set_msg_arg_string(4, "ak47")
+		if(g_has_ak47long[iAttacker])
+			set_msg_arg_string(4, "sg552")
 	}
 	return PLUGIN_CONTINUE
 }
@@ -545,21 +523,21 @@ stock UTIL_PlayWeaponAnimation(const Player, const Sequence)
 	message_end()
 }
 
-public m14ebr_ItemPostFrame(weapon_entity) 
+public ak47long_ItemPostFrame(weapon_entity) 
 {
      new id = pev(weapon_entity, pev_owner)
      if (!is_user_connected(id))
           return HAM_IGNORED
 
-     if (!g_has_m14ebr[id])
+     if (!g_has_ak47long[id])
           return HAM_IGNORED
 
      static iClipExtra
      
-     iClipExtra = get_pcvar_num(cvar_clip_m14ebr)
+     iClipExtra = get_pcvar_num(cvar_clip_ak47long)
      new Float:flNextAttack = get_pdata_float(id, m_flNextAttack, PLAYER_LINUX_XTRA_OFF)
 
-     new iBpAmmo = cs_get_user_bpammo(id, CSW_AK47)
+     new iBpAmmo = cs_get_user_bpammo(id, CSW_SG552)
      new iClip = get_pdata_int(weapon_entity, m_iClip, WEAP_LINUX_XTRA_OFF)
 
      new fInReload = get_pdata_int(weapon_entity, m_fInReload, WEAP_LINUX_XTRA_OFF) 
@@ -569,7 +547,7 @@ public m14ebr_ItemPostFrame(weapon_entity)
 	     new j = min(iClipExtra - iClip, iBpAmmo)
 	
 	     set_pdata_int(weapon_entity, m_iClip, iClip + j, WEAP_LINUX_XTRA_OFF)
-	     cs_set_user_bpammo(id, CSW_AK47, iBpAmmo-j)
+	     cs_set_user_bpammo(id, CSW_SG552, iBpAmmo-j)
 		
 	     set_pdata_int(weapon_entity, m_fInReload, 0, WEAP_LINUX_XTRA_OFF)
 	     fInReload = 0
@@ -577,23 +555,23 @@ public m14ebr_ItemPostFrame(weapon_entity)
      return HAM_IGNORED
 }
 
-public m14ebr_Reload(weapon_entity) 
+public ak47long_Reload(weapon_entity) 
 {
      new id = pev(weapon_entity, pev_owner)
      if (!is_user_connected(id))
           return HAM_IGNORED
 
-     if (!g_has_m14ebr[id])
+     if (!g_has_ak47long[id])
           return HAM_IGNORED
 
      static iClipExtra
 
-     if(g_has_m14ebr[id])
-          iClipExtra = get_pcvar_num(cvar_clip_m14ebr)
+     if(g_has_ak47long[id])
+          iClipExtra = get_pcvar_num(cvar_clip_ak47long)
 
-     g_m14ebr_TmpClip[id] = -1
+     g_ak47long_TmpClip[id] = -1
 
-     new iBpAmmo = cs_get_user_bpammo(id, CSW_AK47)
+     new iBpAmmo = cs_get_user_bpammo(id, CSW_SG552)
      new iClip = get_pdata_int(weapon_entity, m_iClip, WEAP_LINUX_XTRA_OFF)
 
      if (iBpAmmo <= 0)
@@ -602,32 +580,32 @@ public m14ebr_Reload(weapon_entity)
      if (iClip >= iClipExtra)
           return HAM_SUPERCEDE
 
-     g_m14ebr_TmpClip[id] = iClip
+     g_ak47long_TmpClip[id] = iClip
 
      return HAM_IGNORED
 }
 
-public m14ebr_Reload_Post(weapon_entity) 
+public ak47long_Reload_Post(weapon_entity) 
 {
 	new id = pev(weapon_entity, pev_owner)
 	if (!is_user_connected(id))
 		return HAM_IGNORED
 
-	if (!g_has_m14ebr[id])
+	if (!g_has_ak47long[id])
 		return HAM_IGNORED
 
-	if (g_m14ebr_TmpClip[id] == -1)
+	if (g_ak47long_TmpClip[id] == -1)
 		return HAM_IGNORED
 
-	set_pdata_int(weapon_entity, m_iClip, g_m14ebr_TmpClip[id], WEAP_LINUX_XTRA_OFF)
+	set_pdata_int(weapon_entity, m_iClip, g_ak47long_TmpClip[id], WEAP_LINUX_XTRA_OFF)
 
-	set_pdata_float(weapon_entity, m_flTimeWeaponIdle, M14EBR_RELOAD_TIME, WEAP_LINUX_XTRA_OFF)
+	set_pdata_float(weapon_entity, m_flTimeWeaponIdle, ak47long_RELOAD_TIME, WEAP_LINUX_XTRA_OFF)
 
-	set_pdata_float(id, m_flNextAttack, M14EBR_RELOAD_TIME, PLAYER_LINUX_XTRA_OFF)
+	set_pdata_float(id, m_flNextAttack, ak47long_RELOAD_TIME, PLAYER_LINUX_XTRA_OFF)
 
 	set_pdata_int(weapon_entity, m_fInReload, 1, WEAP_LINUX_XTRA_OFF)
 
-	UTIL_PlayWeaponAnimation(id, M14EBR_RELOAD)
+	UTIL_PlayWeaponAnimation(id, ak47long_RELOAD)
 
 	return HAM_IGNORED
 }
