@@ -8,3 +8,4 @@ bigger: sprite effect
 buy menu: 
 few weapons for money
 
+### pozor zitra
