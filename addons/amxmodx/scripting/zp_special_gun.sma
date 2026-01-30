@@ -289,6 +289,8 @@ public fwPlaybackEvent(flags, invoker, eventid, Float:delay, Float:origin[3], Fl
 }
 public fw_PlayerKilled(victim, attacker, shouldgib)
 {
+	// Only explode if killed by special gun
+	if (is_user_connected(attacker) && g_has_specialgun[attacker] && get_user_weapon(attacker) == wId)
 		SetHamParamInteger(3, 2) // Body Explodes
 }
 
