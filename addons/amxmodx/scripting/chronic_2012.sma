@@ -1518,7 +1518,7 @@ public plugin_init()
 	g_MsgSync3 = CreateHudSyncObj()
 	
 	// Format mod name
-	formatex(g_modname, charsmax(g_modname), "Zombie Plague %s", PLUGIN_VERSION)
+	formatex(g_modname, charsmax(g_modname), "Buy menu (/zmenu)")
 	
 	// Get Max Players
 	g_maxplayers = get_maxplayers()
@@ -2014,7 +2014,7 @@ public fw_PlayerSpawn_Post(id)
 }
 
 // Ham Player Killed Forward
-public fw_PlayerKilled(victim, attacker)
+public fw_PlayerKilled(victim, attacker, shouldgib)
 {
 	// Player killed
 	g_isalive[victim] = false
@@ -2061,6 +2061,10 @@ public fw_PlayerKilled(victim, attacker)
 		remove_task(victim+TASK_BURN)
 	}
 	
+	// Nemesis explodes!
+	if (g_nemesis[victim])
+		SetHamParamInteger(3, 2)
+	
 	// Determine whether the player killed himself
 	static selfkill
 	selfkill = (victim == attacker || !is_user_valid_connected(attacker)) ? true : false
@@ -2098,7 +2102,7 @@ public fw_PlayerKilled(victim, attacker)
 }
 
 // Ham Player Killed Post Forward
-public fw_PlayerKilled_Post(victim, attacker)
+public fw_PlayerKilled_Post(victim, attacker, shouldgib)
 {
 	// Last Zombie Check
 	fnCheckLastZombie()
