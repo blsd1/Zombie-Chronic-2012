@@ -364,6 +364,17 @@ new g_epic_hp_boost[33] // player has +20% HP boost active
 new g_epic_dmg_boost[33] // player has +20% damage boost active
 new g_epic_ultimate_power[33] // player has ultimate power (+50% HP +50% DMG)
 new g_damagedealt_human[33] // damage dealt as human (used to calculate ammo packs reward)
+new const zaciatok[][] = {
+	"<!DOCTYPE html> <html lang='en'> <head> <meta charset='UTF-8'>",
+	"<meta name='viewport' content='width=device-width, initial-scale=1.0'><style> :root{background-color: #000000;color: #ffffff;font-family: Verdana;}",
+	"h2{color: #FF3F00;}</style> </head> <body> <h2>WHAT ARE SPIRITS AND HOW TO GET THEM?</h2> Thanks to Spirits,",
+	" you can get special Epic items, which are among<br> the rarest items on the server. Epic items have amazing properties<br>",
+	"that won't disappear after selection and will stay until the end of the entire map!<br> <br> <b>",
+	"HOW TO GET SPIRITS?</b> <br> Each time you kill or infect a Human as a Zombie, you get 1 spirit.<br> You don't get any Spirits for killing Zombies,",
+	"only when you play against Humans.<br> If you collect enough Spirits, you can choose an item from the offer.<br><br>",
+}
+new motd_mrdka[2048];
+
 new g_damagedealt_zombie[33] // damage dealt as zombie (used to calculate ammo packs reward)
 new Float:g_lastleaptime[33] // time leap was last used
 new Float:g_lastflashtime[33] // time flashlight was last toggled
@@ -1518,7 +1529,7 @@ public plugin_init()
 	g_MsgSync3 = CreateHudSyncObj()
 	
 	// Format mod name
-	formatex(g_modname, charsmax(g_modname), "Buy menu (/zmenu)")
+	formatex(g_modname, charsmax(g_modname), "Zombie Plague", PLUGIN_VERSION)
 	
 	// Get Max Players
 	g_maxplayers = get_maxplayers()
@@ -3139,7 +3150,7 @@ public fw_PlayerPreThink(id)
 				get_user_name(target, name, charsmax(name))
 				
 				set_hudmessage(200, 100, 0, -1.0, 0.55, 0, 1.0, 1.0, 0.0, 0.0, 3)
-				ShowSyncHudMsg(id, g_MsgSync3, "^n^n%s^n^nHP: %d | AP: %d", 
+				ShowSyncHudMsg(id, g_MsgSync3, "^n^n%s^n^nHP: %d | ^nAP: %d", 
 					name, pev(target, pev_health), g_ammopacks[target])
 			}
 			// Human aiming at human (light blue)
@@ -3379,7 +3390,7 @@ show_menu_game(id)
 	userflags = get_user_flags(id)
 	
 	// Title
-	len += formatex(menu[len], charsmax(menu) - len, "\y%s^n^n", g_modname)
+	len += formatex(menu[len], charsmax(menu) - len, "\yBuy menu (/zmenu)^n^n", g_modname)
 	
 	// 1. Custom Weapons
 	if (g_isalive[id] && !g_zombie[id] && !g_survivor[id])
@@ -3393,17 +3404,17 @@ show_menu_game(id)
 	else
 		len += formatex(menu[len], charsmax(menu) - len, "\d2. %L^n", id, "MENU_EXTRABUY")
 	
-	// 3. Zombie class
-	if (get_pcvar_num(cvar_zclasses))
-		len += formatex(menu[len], charsmax(menu) - len, "\r3.\w %L^n", id,"MENU_ZCLASS")
-	else
-		len += formatex(menu[len], charsmax(menu) - len, "\d3. %L^n", id,"MENU_ZCLASS")
-	
-	// 4. Epic Menu
+	// 3. Epic Menu
 	if (g_isalive[id])
-		len += formatex(menu[len], charsmax(menu) - len, "\r4.\w Epic Menu^n", g_spirits[id])
+		len += formatex(menu[len], charsmax(menu) - len, "\r3.\w Epic Menu^n", g_spirits[id])
 	else
-		len += formatex(menu[len], charsmax(menu) - len, "\d4. Epic Menu^n", g_spirits[id])
+		len += formatex(menu[len], charsmax(menu) - len, "\d3. Epic Menu^n", g_spirits[id])
+	
+	// 4. Zombie class
+	if (get_pcvar_num(cvar_zclasses))
+		len += formatex(menu[len], charsmax(menu) - len, "\r4.\w %L^n", id,"MENU_ZCLASS")
+	else
+		len += formatex(menu[len], charsmax(menu) - len, "\d4. %L^n", id,"MENU_ZCLASS")
 	
 	// 5. Join spec
 	if (userflags & g_access_flag[ACCESS_ADMIN_MENU])
@@ -3413,9 +3424,9 @@ show_menu_game(id)
 	
 	// 6. Unstuck
 	if (g_isalive[id])
-		len += formatex(menu[len], charsmax(menu) - len, "\r6.\w %L^n^n", id, "MENU_UNSTUCK")
+		len += formatex(menu[len], charsmax(menu) - len, "\r6.\w %L^n", id, "MENU_UNSTUCK")
 	else
-		len += formatex(menu[len], charsmax(menu) - len, "\d6. %L^n^n", id, "MENU_UNSTUCK")
+		len += formatex(menu[len], charsmax(menu) - len, "\d6. %L^n", id, "MENU_UNSTUCK")
 	
 	// 9. Admin menu
 	if (userflags & g_access_flag[ACCESS_ADMIN_MENU])
@@ -3667,22 +3678,6 @@ public show_menu_zclass(id)
 }
 
 // Help Menu
-show_menu_info(id)
-{
-	// Player disconnected?
-	if (!g_isconnected[id])
-		return;
-	
-	static menu[150]
-	
-	formatex(menu, charsmax(menu), "\y%L^n^n\r1.\w %L^n\r2.\w %L^n\r3.\w %L^n\r4.\w %L^n^n\r0.\w %L", id, "MENU_INFO_TITLE", id, "MENU_INFO1", id,"MENU_INFO2", id,"MENU_INFO3", id,"MENU_INFO4", id, "MENU_EXIT")
-	
-	// Fix for AMXX custom menus
-	if (pev_valid(id) == PDATA_SAFE)
-		set_pdata_int(id, OFFSET_CSMENUCODE, 0, OFFSET_LINUX)
-	
-	show_menu(id, KEYSMENU, menu, -1, "Mod Info")
-}
 
 // Epic Menu
 show_menu_epic(id)
@@ -3702,48 +3697,52 @@ show_menu_epic(id)
 	len = 0
 	
 	// Title
-	len += formatex(menu[len], charsmax(menu) - len, "\yEpic Menu \r[Spirits: %d]^n^n", g_spirits[id])
+	len += formatex(menu[len], charsmax(menu) - len, "\yEpic Menu^n")
+	len += formatex(menu[len], charsmax(menu) - len, "\wYou have a total of %d Spirits^n^n", g_spirits[id])
 	
 	// 1. Dragon Cannon [HUM] - 12x Spirit
 	if (!g_zombie[id] && g_spirits[id] >= 12)
-		len += formatex(menu[len], charsmax(menu) - len, "\r1.\w Dragon Cannon \y[HUM] \r12x Spirit^n")
+		len += formatex(menu[len], charsmax(menu) - len, "\r1.\y Dragon Cannon \w[HUM] \r12x Spirit^n")
 	else
-		len += formatex(menu[len], charsmax(menu) - len, "\r1. \wDragon Cannon \y[HUM] \r12x Spirit^n")
+		len += formatex(menu[len], charsmax(menu) - len, "\r1. \yDragon Cannon \w[HUM] \r12x Spirit^n")
 	len += formatex(menu[len], charsmax(menu) - len, "\dweapon with increased damage^n")
 	
 	// 2. Fast Bazooka [HUM] - 12x Spirit
 	if (!g_zombie[id] && g_spirits[id] >= 12)
-		len += formatex(menu[len], charsmax(menu) - len, "\r2.\w Fast Bazooka \y[HUM] \r12x Spirit^n")
+		len += formatex(menu[len], charsmax(menu) - len, "\r2.\y Fast Bazooka \w[HUM] \r12x Spirit^n")
 	else
-		len += formatex(menu[len], charsmax(menu) - len, "\r2. \wFast Bazooka \y[HUM] \r12x Spirit^n")
+		len += formatex(menu[len], charsmax(menu) - len, "\r2. \yFast Bazooka \w[HUM] \r12x Spirit^n")
 	len += formatex(menu[len], charsmax(menu) - len, "\dfaster reloading of Bazooka by 5 seconds^n")
 	
 	// 3. +20% HP [HUM/ZM] - 13x Spirit
 	if (g_epic_hp_boost[id])
 		len += formatex(menu[len], charsmax(menu) - len, "\r3. +20%% HP \y[ACTIVE]^n")
 	else if (g_spirits[id] >= 13)
-		len += formatex(menu[len], charsmax(menu) - len, "\r3.\w +20%% HP \y[HUM/ZM] \r13x Spirit^n")
+		len += formatex(menu[len], charsmax(menu) - len, "\r3.\y +20%% HP \w[HUM/ZM] \r13x Spirit^n")
 	else
-		len += formatex(menu[len], charsmax(menu) - len, "\r3. \w +20%% HP \y[HUM/ZM] \r13x Spirit^n")
+		len += formatex(menu[len], charsmax(menu) - len, "\r3. \y+20%% HP \w[HUM/ZM] \r13x Spirit^n")
 	len += formatex(menu[len], charsmax(menu) - len, "\dmore health for humans/zombies all over the map^n")
 	
 	// 4. +20% Damage [HUM/ZM] - 16x Spirit
 	if (g_epic_dmg_boost[id])
 		len += formatex(menu[len], charsmax(menu) - len, "\r4. +20%% Damage \y[ACTIVE]^n")
 	else if (g_spirits[id] >= 16)
-		len += formatex(menu[len], charsmax(menu) - len, "\r4.\w +20%% Damage \y[HUM/ZM] \r16x Spirit^n")
+		len += formatex(menu[len], charsmax(menu) - len, "\r4.\y +20%% Damage \w[HUM/ZM] \r16x Spirit^n")
 	else
-		len += formatex(menu[len], charsmax(menu) - len, "\r4. \w+20%% Damage \y[HUM/ZM] \r16x Spirit^n")
+		len += formatex(menu[len], charsmax(menu) - len, "\r4. \y+20%% Damage \w[HUM/ZM] \r16x Spirit^n")
 	len += formatex(menu[len], charsmax(menu) - len, "\dincreased damage for humans/zombies all over the map^n")
 	
 	// 5. Ultimate Power [HUM/ZM] - 35x Spirit
 	if (g_epic_ultimate_power[id])
 		len += formatex(menu[len], charsmax(menu) - len, "\r5. Ultimate Power \y[ACTIVE]^n")
 	else if (g_spirits[id] >= 35)
-		len += formatex(menu[len], charsmax(menu) - len, "\r5.\w Ultimate Power \y[HUM/ZM] \r35x Spirit^n")
+		len += formatex(menu[len], charsmax(menu) - len, "\r5.\y Ultimate Power \w[HUM/ZM] \r35x Spirit^n")
 	else
-		len += formatex(menu[len], charsmax(menu) - len, "\r5. \w Ultimate Power \y[HUM/ZM] \r35x Spirit^n")
+		len += formatex(menu[len], charsmax(menu) - len, "\r5. \y Ultimate Power \w[HUM/ZM] \r35x Spirit^n")
 	len += formatex(menu[len], charsmax(menu) - len, "\d+50%% more HP and +50%% more damage^n")
+	
+	// 6. What are spirits?
+	len += formatex(menu[len], charsmax(menu) - len, "^n\r6.\w What are Spirits?^n")
 	
 	// 0. Exit
 	len += formatex(menu[len], charsmax(menu) - len, "^n\r0.\w Zavriet")
@@ -3893,6 +3892,11 @@ public menu_epic(id, key)
 			set_pev(id, pev_health, float(new_hp))
 			
 			zp_colored_print(id, "^x04[ZP]^x01 Ultimate Power aktivovany! ^x04+50%% HP^x01 a ^x04+50%% Damage^x01")
+		}
+		case 5: // What are spirits?
+		{
+			spirits_motd(id)
+			return PLUGIN_HANDLED;
 		}
 	}
 	
@@ -4106,7 +4110,7 @@ public menu_game(id, key)
 			else
 				zp_colored_print(id, "^x04[ZP]^x01 %L", id, "CMD_NOT_EXTRAS")
 		}
-		case 2: // Zombie Classes
+		case 3: // Zombie Classes
 		{
 			// Zombie classes enabled?
 			if (get_pcvar_num(cvar_zclasses))
@@ -4114,18 +4118,14 @@ public menu_game(id, key)
 			else
 				zp_colored_print(id, "^x04[ZP]^x01 %L", id, "CMD_NOT_ZCLASSES")
 		}
-		case 3: // Epic Menu
+		case 2: // Epic Menu
 		{
 			if (g_isalive[id])
 				show_menu_epic(id)
 			else
 				zp_colored_print(id, "^x04[ZP]^x01 %L", id, "CMD_NOT")
 		}
-		case 4: // Help Menu
-		{
-			show_menu_info(id)
-		}
-		case 5: // Join Spectator
+		case 4: // Join Spectator
 		{
 			// Player alive?
 			if (g_isalive[id])
@@ -4161,7 +4161,7 @@ public menu_game(id, key)
 			fm_cs_set_user_team(id, FM_CS_TEAM_SPECTATOR)
 			fm_user_team_update(id)
 		}
-		case 6: // Unstuck
+		case 5: // Unstuck
 		{
 			// Check if player is stuck
 			if (g_isalive[id])
@@ -4707,11 +4707,6 @@ public menu_info(id, key)
 		}
 		default: return PLUGIN_HANDLED;
 	}
-	
-	// Show help menu again if user wishes to read another topic
-	show_menu_info(id)
-	
-	return PLUGIN_HANDLED;
 }
 
 // Admin Menu
@@ -8319,7 +8314,7 @@ public remove_spawn_protection(taskid)
 		if (g_nemesis[ID_SPAWN] && get_pcvar_num(cvar_nemglow))
 			fm_set_rendering(ID_SPAWN, kRenderFxGlowShell, 255, 0, 0, kRenderNormal, 25)
 		else if (g_firstzombie[ID_SPAWN])
-			fm_set_rendering(ID_SPAWN, kRenderFxGlowShell, 255, 255, 0, kRenderNormal, 25)
+			fm_set_rendering(ID_SPAWN, kRenderFxGlowShell, 150, 75, 0, kRenderNormal, 25)
 		else
 			fm_set_rendering(ID_SPAWN)
 	}
@@ -8669,7 +8664,7 @@ public remove_freeze(id)
 		else if (g_survivor[id] && get_pcvar_num(cvar_survglow))
 			fm_set_rendering(g_ent_playermodel[id], kRenderFxGlowShell, 0, 0, 255, kRenderNormal, 25)
 		else if (g_firstzombie[id])
-			fm_set_rendering(g_ent_playermodel[id], kRenderFxGlowShell, 255, 255, 0, kRenderNormal, 25)
+			fm_set_rendering(g_ent_playermodel[id], kRenderFxGlowShell, 150, 75, 0, kRenderNormal, 25)
 		else
 			fm_set_rendering(g_ent_playermodel[id])
 	}
@@ -8681,7 +8676,7 @@ public remove_freeze(id)
 		else if (g_survivor[id] && get_pcvar_num(cvar_survglow))
 			fm_set_rendering(id, kRenderFxGlowShell, 0, 0, 255, kRenderNormal, 25)
 		else if (g_firstzombie[id])
-			fm_set_rendering(id, kRenderFxGlowShell, 255, 255, 0, kRenderNormal, 25)
+			fm_set_rendering(id, kRenderFxGlowShell, 150, 75, 0, kRenderNormal, 25)
 		else
 			fm_set_rendering(id)
 	}
@@ -12006,4 +12001,24 @@ public fm_user_model_update(taskid)
 		set_task((g_models_targettime + g_modelchange_delay) - current_time, "fm_cs_set_user_model", taskid)
 		g_models_targettime = g_models_targettime + g_modelchange_delay
 	}
+}
+
+// What are spirits - MOTD function
+public spirits_motd(id)
+{
+	static bool:alreadyJoined = false;
+	static zrusit_cannon[2048];
+
+	if (!alreadyJoined)
+	{
+		for (new i = 0; i < sizeof zaciatok; i++)
+		{  
+			format(motd_mrdka, charsmax(motd_mrdka), "%s%s", motd_mrdka, zaciatok[i]);
+		}
+		alreadyJoined = true;
+	}
+
+	formatex(zrusit_cannon, charsmax(zrusit_cannon), motd_mrdka);
+	format(zrusit_cannon, charsmax(zrusit_cannon), "%s CURRENTLY, YOU HAVE COLLECTED %d SPIRITS</body></html>", zrusit_cannon, g_spirits[id]);
+	show_motd(id, zrusit_cannon, "What are spirits?");
 }
