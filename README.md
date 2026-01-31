@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Zombie Chronic 2012 - Counter-Strike 1.6 Mod
 
 ![Version](https://img.shields.io/badge/Version-4.3-blue.svg)
