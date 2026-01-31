@@ -16,7 +16,7 @@ The mod features several exciting game modes that are randomly selected:
 - **Nemesis Mode** 
 - **Survivor Mode**
 - **Zombies vs Humans**
-- **Multi Infection**
+- **Multiple Infection**
 - **Nemesis is coming**
 
 ## 🧟 Zombie Classes
