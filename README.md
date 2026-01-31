@@ -12,12 +12,12 @@
 
 The mod features several exciting game modes that are randomly selected:
 
-- **Infection Mode** - 
-- **Nemesis Mode** - 
-- **Survivor Mode** - 
-- **Zombies vs Humans** -
-- **Multi Infection** -
-- **Plague Mode** 
+- **Infection Mode**
+- **Nemesis Mode** 
+- **Survivor Mode**
+- **Zombies vs Humans**
+- **Multi Infection**
+- **Nemesis is coming**
 
 ## 🧟 Zombie Classes
 
