@@ -1,7 +1,7 @@
 # Zombie Chronic 2012 - Counter-Strike 1.6 Mod
 
-![Version](https://img.shields.io/badge/Version-4.3-blue.svg)
-![AMX%20Mod%20X](https://img.shields.io/badge/AMX%20Mod%20X-1.8.2+-green.svg)
+![Version](https://img.shields.io/badge/Version-4.3-green.svg)
+![AMX%20Mod%20X](https://img.shields.io/badge/AMX%20Mod%20X-1.10.0+-blue.svg)
 ![CS](https://img.shields.io/badge/CS-1.6-orange.svg)
 
 ## 📋 Overview
