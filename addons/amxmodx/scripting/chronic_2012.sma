@@ -29,7 +29,6 @@ const MAX_STATS_SAVED = 64
 #include <hamsandwich>
 #include <xs>
 
-// Native z dragon cannon pluginu
 native give_dragon_cannon(id)
 
 

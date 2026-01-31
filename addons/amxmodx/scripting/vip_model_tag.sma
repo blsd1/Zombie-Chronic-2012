@@ -1,8 +1,4 @@
-/*
-	VIP Model & Chat Tag Plugin
-	- Hráči s admin_level_H dostanou VIP model
-	- VIP tag v chatu
-*/
+
 
 #include <amxmodx>
 #include <amxmisc>
@@ -29,8 +25,6 @@ public plugin_init()
 	
 	register_event("ResetHUD", "Event_ResetHUD", "be")
 	register_event("CurWeapon", "Event_CurWeapon", "be", "1=1")
-	
-	// Hook say commands pre VIP tag
 	register_clcmd("say", "hook_say")
 	register_clcmd("say_team", "hook_say_team")
 	
@@ -81,14 +75,12 @@ public Event_CurWeapon(id)
 		
 	if(get_user_flags(id) & ADMIN_ACCESS)
 	{
-		// Nenastavuj VIP model ak je zombie
 		if(zp_get_user_zombie(id))
 			return
 			
 		static model[32]
 		cs_get_user_model(id, model, charsmax(model))
 		
-		// Kontrola či má jeden z VIP modelov
 		new bool:has_vip_model = false
 		for(new i = 0; i < sizeof(VIP_MODELS); i++)
 		{
@@ -113,19 +105,15 @@ public Set_VIP_Model(id)
 		
 	if(get_user_flags(id) & ADMIN_ACCESS)
 	{
-		// Nenastavuj VIP model ak je zombie
 		if(zp_get_user_zombie(id))
 			return
 			
-		// Ak už má priradený model, použi ten istý
 		if(g_PlayerModel[id][0] == 0)
 		{
-			// Inak vyber náhodný
 			new random_index = random(sizeof(VIP_MODELS))
 			copy(g_PlayerModel[id], charsmax(g_PlayerModel[]), VIP_MODELS[random_index])
 		}
 		
-		// Nastav VIP model pomocou engfunc
 		engfunc(EngFunc_SetClientKeyValue, id, engfunc(EngFunc_GetInfoKeyBuffer, id), "model", g_PlayerModel[id])
 		
 		// Debug log

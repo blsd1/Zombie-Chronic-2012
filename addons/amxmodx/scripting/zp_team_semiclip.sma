@@ -1,14 +1,14 @@
 /*================================================================================
 	
-		***********************************************
-		********* [CS/CZ Team Semiclip 3.3.1] *********
-		***********************************************
+		**********************************************
+		********* [ZP43 Team Semiclip 3.3.1] *********
+		**********************************************
 	
 	----------------------
 	-*- Licensing Info -*-
 	----------------------
 	
-	CS/CZ Team Semiclip
+	ZP43 Team Semiclip
 	by schmurgel1983(@msn.com)
 	Copyright (C) 2010-2017 Stefan "schmurgel1983" Focke
 	
@@ -47,7 +47,6 @@ const Float:CVAR_INTERVAL  = 6.0		/* ¬ 6.0 */
 const Float:SPEC_INTERVAL  = 0.2		/* ¬ 0.2 */
 const Float:RANGE_INTERVAL = 0.1		/* It's like a 10 FPS server ¬ 0.1 */
 
-#define MAX_HOSTAGE     4	/* Have seen maps with more as 4 hostages ¬ 4 */
 #define MAX_PLAYERS     32	/* Server slots ¬ 32 */
 #define MAX_REG_SPAWNS	24	/* Max cached regular spawns per team ¬ 24 */
 #define MAX_CSDM_SPAWNS 60	/* CSDM 2.1.2 value if you have more increase it ¬ 60 */
@@ -62,10 +61,38 @@ const Float:RANGE_INTERVAL = 0.1		/* It's like a 10 FPS server ¬ 0.1 */
 #pragma dynamic 8192
 
 #include <amxmodx>
-#include <cstrike>
 #include <engine>
 #include <fakemeta>
 #include <hamsandwich>
+
+/*================================================================================
+ [Zombie Plague 3.6+ Includes]
+=================================================================================*/
+
+#include <zombieplague>
+
+/*================================================================================
+ [Zombie Plague Nightmare 2.7.1+ Support]
+=================================================================================*/
+
+native zpnm_get_round_mode()
+
+enum
+{
+	ZP_MODE_INFECTION = 1,
+	ZP_MODE_NEMESIS,
+	ZP_MODE_SURVIVOR,
+	ZP_MODE_SWARM,
+	ZP_MODE_MULTI,
+	ZP_MODE_PLAGUE,
+	NM_MODE_SNIPER,
+	NM_MODE_ASSASSIN,
+	NM_MODE_ARMAGEDDON,
+	NM_MODE_VERSUS,
+	NM_MODE_APOCALYPSE,
+	NM_MODE_HUNT,
+	NM_MODE_NIGHTMARE
+}
 
 /*================================================================================
  [TODO]
@@ -78,9 +105,9 @@ const Float:RANGE_INTERVAL = 0.1		/* It's like a 10 FPS server ¬ 0.1 */
  [Constants, Offsets and Defines]
 =================================================================================*/
 
-new const PLUGIN_VERSION[]        = "3.3.1"
-new const CT_SPAWN_ENTITY_NAME[]  = "info_player_start"
-new const TER_SPAWN_ENTITY_NAME[] = "info_player_deathmatch"
+new const PLUGIN_VERSION[]           = "3.3.1"
+new const HUMAN_SPAWN_ENTITY_NAME[]  = "info_player_start"
+new const ZOMBIE_SPAWN_ENTITY_NAME[] = "info_player_deathmatch"
 
 #if AMXX_VERSION_NUM < 183
 const Float:ANTI_BOOST_DISTANCE = 85.10 /* do not change this! ¬ 85.041169 */
@@ -88,7 +115,6 @@ const Float:ANTI_BOOST_DISTANCE = 85.10 /* do not change this! ¬ 85.041169 */
 
 const pev_spec_mode     = pev_iuser1
 const pev_spec_target   = pev_iuser2
-const pev_hostage_index = pev_iuser3 /* hostage: pev_iuser1 and pev_iuser2 get reseted every frame... */
 
 const m_hObserverTarget  = 447
 const m_pPlayer          = 41
@@ -109,8 +135,6 @@ enum (+= 35)
 {
 	TASK_SPECTATOR = 5000,
 	TASK_RANGE,
-	TASK_DURATION,
-	TASK_PREPARATION,
 	TASK_CVARS,
 	TASK_CSBOTS
 }
@@ -127,23 +151,16 @@ enum
 /* semiclip_color_* cvars */
 enum
 {
-	COLOR_CT = 0,
-	COLOR_TER,
-	COLOR_ADMIN_CT,
-	COLOR_ADMIN_TER,
-	COLOR_HOSTAGE,
-	COLOR_VIP,
+	COLOR_HUMAN = 0,
+	COLOR_ZOMBIE,
+	COLOR_ADMIN_HUMAN,
+	COLOR_ADMIN_ZOMBIE,
 	MAX_COLORS
 }
 
 /* Teams */
-enum
-{
-	SC_TEAM_UNASSIGNED = 0,
-	SC_TEAM_T,
-	SC_TEAM_CT,
-	SC_TEAM_SPECTATOR
-}
+#define ZP_TEAM_UNASSIGNED 0
+#define ZP_TEAM_SPECTATOR  3
 
 #define OUT_OF_RANGE -1
 
@@ -155,6 +172,7 @@ enum
 new cvar_iSemiclip,
 	cvar_iSemiclipUnstuck,
 	cvar_iBotQuota,
+	cvar_iZombiePlague,
 	cvar_szSemiclipColors[MAX_COLORS]
 
 #if AMXX_VERSION_NUM < 183
@@ -165,7 +183,6 @@ new cvar_iSemiclipBlockTeam,
 	cvar_iSemiclipButtonAntiBoost,
 	cvar_iSemiclipButtonAntiStuck,
 	cvar_iSemiclipUnstuckRender,
-	cvar_iSemiclipHostage,
 	cvar_iSemiclipKnifeTrace,
 	cvar_iSemiclipRender,
 	cvar_iSemiclipRender3rdPlugins,
@@ -179,11 +196,36 @@ new cvar_iSemiclipBlockTeam,
 	cvar_iSemiclipFadeSpec,
 	cvar_flSemiclipRadius,
 	cvar_flSemiclipUnstuckDelay,
-	cvar_flSemiclipPreparation,
-	cvar_flSemiclipDuration,
 	cvar_flSemiclipFadeMin,
 	cvar_flSemiclipFadeMax,
-	cvar_szSemiclipColorFlag
+	cvar_szSemiclipColorFlag,
+	cvar_iDisableInfection,
+	cvar_iDisableMultiple,
+	cvar_iDisableNemesis,
+	cvar_iDisableSurvivor,
+	cvar_iDisableSwarm,
+	cvar_iDisablePlague,
+	cvar_iDisableSniper,
+	cvar_iDisableAssassin,
+	cvar_iDisableArmageddon,
+	cvar_iDisableVersus,
+	cvar_iDisableApocalypse,
+	cvar_iDisableHunt,
+	cvar_iDisableNightmare
+#else
+new c_iDisableInfection,
+	c_iDisableMultiple,
+	c_iDisableNemesis,
+	c_iDisableSurvivor,
+	c_iDisableSwarm,
+	c_iDisablePlague,
+	c_iDisableSniper,
+	c_iDisableAssassin,
+	c_iDisableArmageddon,
+	c_iDisableVersus,
+	c_iDisableApocalypse,
+	c_iDisableHunt,
+	c_iDisableNightmare
 #endif
 
 /* Cvar cached */
@@ -194,7 +236,6 @@ new c_iSemiclip,
 	c_iButtonTrigger,
 	c_iButtonAntiBoost,
 	c_iButtonAntiStuck,
-	c_iHostage,
 	c_iUnstuck,
 	c_iUnstuckRender,
 	c_iKnifeTrace,
@@ -211,8 +252,6 @@ new c_iSemiclip,
 
 new Float:c_flRadius,
 	Float:c_flUnstuckDelay,
-	Float:c_flSemiclipPreparation,
-	Float:c_flSemiclipDuration,
 	Float:c_flFadeMin,
 	Float:c_flFadeMax
 
@@ -220,8 +259,9 @@ new c_iColorFlag,
 	c_iColors[MAX_COLORS][3]
 
 /* Server global */
-new bool:g_bPreparation,
-	bool:g_bZpReallyRunning
+new bool:g_bZpReallyRunning,
+	bool:g_bNightmareReallyRunning,
+	bool:g_bDisableOnGamemode
 
 new g_iAddToFullPack,
 	g_iStartFrame,
@@ -232,16 +272,14 @@ new g_iAddToFullPack,
 	g_iPlayerClashing,
 	g_iHamCsBots,
 	g_iCvarEntity,
-	g_iSpawnCountCTs,
-	g_iSpawnCountTer,
+	g_iSpawnCountHuman,
+	g_iSpawnCountZombie,
 	g_iSpawnCountCSDM,
-	g_iHostage[MAX_HOSTAGE],
-	g_iHostageCount,
 	g_iFuncNum,
 	g_iLastClashed
 
-new Float:g_flSpawnsCTs[MAX_REG_SPAWNS][3],
-	Float:g_flSpawnsTer[MAX_REG_SPAWNS][3],
+new Float:g_flSpawnsHuman[MAX_REG_SPAWNS][3],
+	Float:g_flSpawnsZombie[MAX_REG_SPAWNS][3],
 	Float:g_flSpawnsCSDM[MAX_CSDM_SPAWNS][3]
 
 new Trie:TrieFunctions = Invalid_Trie
@@ -251,9 +289,7 @@ new HamHook:g_iHamFuncForwards[16] /* Max supported entity classes ¬ 16 */
 /* Client global */
 new g_iTeam[MAX_PLAYERS+1],
 	g_iRange[MAX_PLAYERS+1][MAX_PLAYERS+1],
-	g_iHostageRange[MAX_PLAYERS+1][MAX_HOSTAGE],
 	g_iSpectating[MAX_PLAYERS+1],
-	g_iSpectatingTeam[MAX_PLAYERS+1],
 	g_iAntiBoost[MAX_PLAYERS+1][MAX_PLAYERS+1],
 	g_iRender3rdPlugins[MAX_PLAYERS+1][MAX_RENDER],
 	g_iRenderSpecial[MAX_PLAYERS+1][MAX_RENDER],
@@ -266,7 +302,6 @@ new Float:g_flAbsMin[MAX_PLAYERS+1][3],
 new bs_IsConnected,
 	bs_IsAlive,
 	bs_IsBot,
-	bs_IsVip,
 	bs_IsAdmin,
 	bs_InSemiclip,
 	bs_IsSolid,
@@ -279,11 +314,7 @@ new bs_IsConnected,
 	bs_IsAbsStored
 
 /* Bitsum array */
-new bs_IsHostage[MAX_ENT_ARRAY],
-	bs_HostageIsSolid[MAX_ENT_ARRAY],
-	bs_HostageIsRescued[MAX_ENT_ARRAY],
-	bs_HostageIsKilled[MAX_ENT_ARRAY],
-	bs_IgnoreEntity[MAX_ENT_ARRAY],
+new bs_IgnoreEntity[MAX_ENT_ARRAY],
 	bs_EntityDamage[MAX_ENT_ARRAY]
 
 /*================================================================================
@@ -304,12 +335,12 @@ new g_iMaxPlayers
 #define ID_RANGE		(taskid - TASK_RANGE)
 
 #define get_bitsum(%1,%2)   (%1 &   (1<<((%2-1)&31)))
-#define add_bitsum(%1,%2)    %1 |=  (1<<((%2-1)&31));
-#define del_bitsum(%1,%2)    %1 &= ~(1<<((%2-1)&31));
+#define add_bitsum(%1,%2)    %1 |=  (1<<((%2-1)&31))
+#define del_bitsum(%1,%2)    %1 &= ~(1<<((%2-1)&31))
 
 #define get_bitsum_array(%1,%2)   (%1[(%2-1)/32] &   (1<<((%2-1)&31)))
-#define add_bitsum_array(%1,%2)    %1[(%2-1)/32] |=  (1<<((%2-1)&31));
-#define del_bitsum_array(%1,%2)    %1[(%2-1)/32] &= ~(1<<((%2-1)&31));
+#define add_bitsum_array(%1,%2)    %1[(%2-1)/32] |=  (1<<((%2-1)&31))
+#define del_bitsum_array(%1,%2)    %1[(%2-1)/32] &= ~(1<<((%2-1)&31))
 
 #define UTIL_Vector_Add(%1,%2,%3)	(%3[0] = %1[0] + %2[0], %3[1] = %1[1] + %2[1], %3[2] = %1[2] + %2[2])
 #define TSC_Vector_MA(%1,%2,%3,%4)	(%4[0] = %2[0] * %3 + %1[0], %4[1] = %2[1] * %3 + %1[1])
@@ -323,8 +354,6 @@ new g_iMaxPlayers
  [Natives, Init and Cfg]
 =================================================================================*/
 
-native zp_has_round_started()
-
 public plugin_natives()
 {
 	/* TODO: maybe more? */
@@ -333,15 +362,22 @@ public plugin_natives()
 	register_native("tsc_get_user_semiclip", "fn_get_user_semiclip")
 	register_native("tsc_get_user_anti_boost", "fn_get_user_anti_boost")
 	register_native("scm_load_ini_file", "fn_load_ini_file") /* for scm_entity_editor.amxx only */
-	register_library("cs_team_semiclip")
+	register_library("zp_team_semiclip")
 	
 	set_native_filter("native_filter")
 }
 public native_filter(name[], index, trap)
 {
+	/* Zombie Plague */
 	if (equal(name, "zp_has_round_started") && trap)
 	{
 		g_bZpReallyRunning = false
+		return PLUGIN_HANDLED
+	}
+	/* Nightmare */
+	if (equal(name, "zpnm_get_round_mode") && trap)
+	{
+		g_bNightmareReallyRunning = false
 		return PLUGIN_HANDLED
 	}
 	
@@ -357,12 +393,10 @@ public plugin_init()
 	CheckMaxEntities()
 	
 	register_event("HLTV", "EventRoundStart", "a", "1=0", "2=0")
-	register_event("SendAudio", "EventHostageRescued", "a", "2&%!MRAD_rescued", "2&%!MRAD_escaped")
 	
 	register_logevent("LogEventRoundStart", 2, "1=Round_Start")
-	register_logevent("EventBecameVip", 3, "1=triggered", "2=Became_VIP")
-	register_logevent("EventHostageKilled", 3, "1=triggered", "2=Killed_A_Hostage")
 	
+	RegisterHam(Ham_Spawn, "player", "fw_PlayerSpawn_Pre", false)
 	RegisterHam(Ham_Spawn, "player", "fw_PlayerSpawn_Post", true)
 	RegisterHam(Ham_Killed, "player", "fw_PlayerKilled", false)
 	RegisterHam(Ham_Player_SemiclipStart, "player", "fw_PlayerSemiclip_Start", true)
@@ -383,6 +417,7 @@ public plugin_init()
 	register_message(get_user_msgid("ClCorpse"), "MessageClCorpse")
 	
 	cvar_iBotQuota = get_cvar_pointer("bot_quota")
+	cvar_iZombiePlague = get_cvar_pointer("zp_on")
 	
 	#if AMXX_VERSION_NUM >= 183
 	/* General */
@@ -402,13 +437,25 @@ public plugin_init()
 	bind_pcvar_num(create_cvar("semiclip_unstuck_render", "1", _, _, true, 0.0, true, 1.0), c_iUnstuckRender)
 	bind_pcvar_float(create_cvar("semiclip_unstuck_delay", "0", _, _, true, 0.0, true, 65535.0), c_flUnstuckDelay)
 	
-	/* Hostage */
-	bind_pcvar_num(create_cvar("semiclip_hostage", "0", _, _, true, 0.0, true, 3.0), c_iHostage)
+	/* Gamemodes */
+	bind_pcvar_num(create_cvar("semiclip_disable_on_infection", "0", _, _, true, 0.0, true, 1.0), c_iDisableInfection)
+	bind_pcvar_num(create_cvar("semiclip_disable_on_multiple", "0", _, _, true, 0.0, true, 1.0), c_iDisableMultiple)
+	bind_pcvar_num(create_cvar("semiclip_disable_on_nemesis", "0", _, _, true, 0.0, true, 1.0), c_iDisableNemesis)
+	bind_pcvar_num(create_cvar("semiclip_disable_on_survivor", "0", _, _, true, 0.0, true, 1.0), c_iDisableSurvivor)
+	bind_pcvar_num(create_cvar("semiclip_disable_on_swarm", "0", _, _, true, 0.0, true, 1.0), c_iDisableSwarm)
+	bind_pcvar_num(create_cvar("semiclip_disable_on_plague", "0", _, _, true, 0.0, true, 1.0), c_iDisablePlague)
+	
+	/* Nightmare */
+	bind_pcvar_num(create_cvar("semiclip_disable_on_sniper", "0", _, _, true, 0.0, true, 1.0), c_iDisableSniper)
+	bind_pcvar_num(create_cvar("semiclip_disable_on_assassin", "0", _, _, true, 0.0, true, 1.0), c_iDisableAssassin)
+	bind_pcvar_num(create_cvar("semiclip_disable_on_armageddon", "0", _, _, true, 0.0, true, 1.0), c_iDisableArmageddon)
+	bind_pcvar_num(create_cvar("semiclip_disable_on_versus", "0", _, _, true, 0.0, true, 1.0), c_iDisableVersus)
+	bind_pcvar_num(create_cvar("semiclip_disable_on_apocalypse", "0", _, _, true, 0.0, true, 1.0), c_iDisableApocalypse)
+	bind_pcvar_num(create_cvar("semiclip_disable_on_hunt", "0", _, _, true, 0.0, true, 1.0), c_iDisableHunt)
+	bind_pcvar_num(create_cvar("semiclip_disable_on_nightmare", "0", _, _, true, 0.0, true, 1.0), c_iDisableNightmare)
 	
 	/* Other */
 	bind_pcvar_num(create_cvar("semiclip_knife_trace", "0", _, _, true, 0.0, true, 3.0), c_iKnifeTrace)
-	bind_pcvar_float(create_cvar("semiclip_preparation", "0", _, _, true, 0.0, true, 65535.0), c_flSemiclipPreparation)
-	bind_pcvar_float(create_cvar("semiclip_duration", "0", _, _, true, 0.0, true, 65535.0), c_flSemiclipDuration)
 	
 	/* Render */
 	bind_pcvar_num(create_cvar("semiclip_render", "0", _, _, true, 0.0, true, 2.0), c_iRender)
@@ -430,12 +477,10 @@ public plugin_init()
 	
 	/* Color */
 	hook_cvar_change(create_cvar("semiclip_color_admin_flag", "b"), "fw_ColorFlagChange")
-	hook_cvar_change(cvar_szSemiclipColors[COLOR_ADMIN_TER] = create_cvar("semiclip_color_admin_ter", "255 63 63"), "fw_ColorChange")
-	hook_cvar_change(cvar_szSemiclipColors[COLOR_ADMIN_CT] = create_cvar("semiclip_color_admin_ct", "153 204 255"), "fw_ColorChange")
-	hook_cvar_change(cvar_szSemiclipColors[COLOR_TER] = create_cvar("semiclip_color_ter", "255 63 63"), "fw_ColorChange")
-	hook_cvar_change(cvar_szSemiclipColors[COLOR_CT] = create_cvar("semiclip_color_ct", "153 204 255"), "fw_ColorChange")
-	hook_cvar_change(cvar_szSemiclipColors[COLOR_HOSTAGE] = create_cvar("semiclip_color_hos", "192 148 32"), "fw_ColorChange")
-	hook_cvar_change(cvar_szSemiclipColors[COLOR_VIP] = create_cvar("semiclip_color_vip", "192 148 32"), "fw_ColorChange")
+	hook_cvar_change(cvar_szSemiclipColors[COLOR_ADMIN_ZOMBIE] = create_cvar("semiclip_color_admin_zombies", "255 63 63"), "fw_ColorChange")
+	hook_cvar_change(cvar_szSemiclipColors[COLOR_ADMIN_HUMAN] = create_cvar("semiclip_color_admin_humans", "153 204 255"), "fw_ColorChange")
+	hook_cvar_change(cvar_szSemiclipColors[COLOR_ZOMBIE] = create_cvar("semiclip_color_zombies", "255 63 63"), "fw_ColorChange")
+	hook_cvar_change(cvar_szSemiclipColors[COLOR_HUMAN] = create_cvar("semiclip_color_humans", "153 204 255"), "fw_ColorChange")
 	#else
 	/* General */
 	cvar_iSemiclip = register_cvar("semiclip", "1")
@@ -454,13 +499,25 @@ public plugin_init()
 	cvar_iSemiclipUnstuckRender = register_cvar("semiclip_unstuck_render", "1")
 	cvar_flSemiclipUnstuckDelay = register_cvar("semiclip_unstuck_delay", "0")
 	
-	/* Hostage */
-	cvar_iSemiclipHostage = register_cvar("semiclip_hostage", "0")
+	/* Gamemodes */
+	cvar_iDisableInfection = register_cvar("semiclip_disable_on_infection", "0")
+	cvar_iDisableMultiple = register_cvar("semiclip_disable_on_multiple", "0")
+	cvar_iDisableNemesis = register_cvar("semiclip_disable_on_nemesis", "0")
+	cvar_iDisableSurvivor = register_cvar("semiclip_disable_on_survivor", "0")
+	cvar_iDisableSwarm = register_cvar("semiclip_disable_on_swarm", "0")
+	cvar_iDisablePlague = register_cvar("semiclip_disable_on_plague", "0")
+	
+	/* Nightmare */
+	cvar_iDisableSniper = register_cvar("semiclip_disable_on_sniper", "0")
+	cvar_iDisableAssassin = register_cvar("semiclip_disable_on_assassin", "0")
+	cvar_iDisableArmageddon = register_cvar("semiclip_disable_on_armageddon", "0")
+	cvar_iDisableVersus = register_cvar("semiclip_disable_on_versus", "0")
+	cvar_iDisableApocalypse = register_cvar("semiclip_disable_on_apocalypse", "0")
+	cvar_iDisableHunt = register_cvar("semiclip_disable_on_hunt", "0")
+	cvar_iDisableNightmare = register_cvar("semiclip_disable_on_nightmare", "0")
 	
 	/* Other */
 	cvar_iSemiclipKnifeTrace = register_cvar("semiclip_knife_trace", "0")
-	cvar_flSemiclipPreparation = register_cvar("semiclip_preparation", "0")
-	cvar_flSemiclipDuration = register_cvar("semiclip_duration", "0")
 	
 	/* Render */
 	cvar_iSemiclipRender = register_cvar("semiclip_render", "0")
@@ -482,12 +539,10 @@ public plugin_init()
 	
 	/* Color */
 	cvar_szSemiclipColorFlag = register_cvar("semiclip_color_admin_flag", "b")
-	cvar_szSemiclipColors[COLOR_ADMIN_TER] = register_cvar("semiclip_color_admin_ter", "255 63 63")
-	cvar_szSemiclipColors[COLOR_ADMIN_CT] = register_cvar("semiclip_color_admin_ct", "153 204 255")
-	cvar_szSemiclipColors[COLOR_TER] = register_cvar("semiclip_color_ter", "255 63 63")
-	cvar_szSemiclipColors[COLOR_CT] = register_cvar("semiclip_color_ct", "153 204 255")
-	cvar_szSemiclipColors[COLOR_HOSTAGE] = register_cvar("semiclip_color_hos", "192 148 32")
-	cvar_szSemiclipColors[COLOR_VIP] = register_cvar("semiclip_color_vip", "192 148 32")
+	cvar_szSemiclipColors[COLOR_ADMIN_ZOMBIE] = register_cvar("semiclip_color_admin_zombies", "255 63 63")
+	cvar_szSemiclipColors[COLOR_ADMIN_HUMAN] = register_cvar("semiclip_color_admin_humans", "153 204 255")
+	cvar_szSemiclipColors[COLOR_ZOMBIE] = register_cvar("semiclip_color_zombies", "255 63 63")
+	cvar_szSemiclipColors[COLOR_HUMAN] = register_cvar("semiclip_color_humans", "153 204 255")
 	
 	g_iMaxPlayers = get_maxplayers()
 	#endif
@@ -501,17 +556,6 @@ public plugin_cfg()
 	new szConfigDir[64]
 	get_configsdir(szConfigDir, charsmax(szConfigDir))
 	server_cmd("exec %s/scm/main.cfg", szConfigDir)
-	
-	new iEnt = -1
-	while ((iEnt = find_ent_by_class(iEnt, "hostage_entity")) != 0)
-	{
-		g_iHostage[g_iHostageCount] = iEnt
-		add_bitsum_array(bs_IsHostage, iEnt)
-		set_pev(iEnt, pev_hostage_index, g_iHostageCount)
-		
-		if (++g_iHostageCount >= MAX_HOSTAGE)
-			break
-	}
 	
 	CreateCvarEntityTask()
 	set_task(0.50, "LoadSpawns")
@@ -533,25 +577,9 @@ public plugin_pause()
 	g_iEntityMovingEnd = 0
 	
 	remove_task(TASK_CVARS)
-	remove_task(TASK_DURATION)
-	remove_task(TASK_PREPARATION)
 	
 	if (g_iCvarEntity && pev_valid(g_iCvarEntity))
 		remove_entity(g_iCvarEntity)
-	
-	if (g_iHostageCount)
-	{
-		for (new i, iHos; i < g_iHostageCount; i++)
-		{
-			iHos = g_iHostage[i]
-			
-			if (get_bitsum_array(bs_HostageIsRescued, iHos) || get_bitsum_array(bs_HostageIsKilled, iHos) || get_bitsum_array(bs_HostageIsSolid, iHos))
-				continue
-			
-			set_pev(iHos, pev_solid, SOLID_SLIDEBOX)
-			add_bitsum_array(bs_HostageIsSolid, iHos)
-		}
-	}
 	
 	for (new id = 1; id <= g_iMaxPlayers; id++)
 	{
@@ -582,37 +610,27 @@ public plugin_unpause()
 	g_iBlocked = register_forward(FM_Blocked, "fw_Blocked", false)
 	g_iCmdStart = register_forward(FM_CmdStart, "fw_CmdStart_Post", true)
 	
-	if (g_iHostageCount)
+	/* Zombie Plague 4.3 */
+	if (cvar_iZombiePlague && get_pcvar_num(cvar_iZombiePlague))
 	{
-		for (new i, iHos; i < g_iHostageCount; i++)
+		if (g_bDisableOnGamemode)
 		{
-			iHos = g_iHostage[i]
+			g_bDisableOnGamemode = false
 			
-			if (!get_bitsum_array(bs_HostageIsRescued, iHos) && pev(iHos, pev_effects) & EF_NODRAW)
-			{
-				add_bitsum_array(bs_HostageIsRescued, iHos)
-			}
-			else if (!get_bitsum_array(bs_HostageIsKilled, iHos) && !pev(iHos, pev_health))
-			{
-				add_bitsum_array(bs_HostageIsKilled, iHos)
-			}
-			else
-			{
-				del_bitsum_array(bs_HostageIsRescued, iHos)
-				del_bitsum_array(bs_HostageIsKilled, iHos)
-				
-				set_pev(iHos, pev_solid, SOLID_SLIDEBOX)
-				add_bitsum_array(bs_HostageIsSolid, iHos)
-				
-				continue
-			}
-			
-			set_pev(iHos, pev_solid, SOLID_NOT)
-			del_bitsum_array(bs_HostageIsSolid, iHos)
+			set_pcvar_num(cvar_iSemiclip, 1)
+			c_iSemiclip = 1
+		}
+		
+		/* Game mode running? */
+		if (zp_has_round_started() == 1)
+		{
+			/* Nightmare */
+			if (g_bNightmareReallyRunning) zp_round_started(zpnm_get_round_mode(), 1)
+			/* Can not check infection or multi infection round... */
+			else zp_round_started(zp_is_nemesis_round() ? MODE_NEMESIS : zp_is_survivor_round() ? MODE_SURVIVOR : zp_is_swarm_round() ? MODE_SWARM : zp_is_plague_round() ? MODE_PLAGUE : 0, 1)
 		}
 	}
 	
-	bs_IsVip = 0
 	for (new id = 1; id <= g_iMaxPlayers; id++)
 	{
 		/* disconnected while pausing? */
@@ -621,7 +639,7 @@ public plugin_unpause()
 		
 		/* do all other staff */
 		client_putinserver(id)
-		g_iTeam[id] = _:cs_get_user_team(id)
+		g_iTeam[id] = zp_get_user_zombie(id) ? ZP_TEAM_ZOMBIE : ZP_TEAM_HUMAN
 		g_iSpectating[id] = id
 		
 		if (is_user_alive(id))
@@ -630,9 +648,6 @@ public plugin_unpause()
 			
 			add_bitsum(bs_IsAlive, id)
 			add_bitsum(bs_IsSolid, id)
-			
-			if (cs_get_user_vip(id))
-				add_bitsum(bs_IsVip, id)
 		}
 		else if (pev(id, pev_deadflag) == DEAD_DYING)
 		{
@@ -641,7 +656,7 @@ public plugin_unpause()
 			add_bitsum(bs_IsAlive, id)
 			add_bitsum(bs_IsDying, id)
 		}
-		else g_iTeam[id] = SC_TEAM_SPECTATOR /* anything else is already set */
+		else g_iTeam[id] = ZP_TEAM_SPECTATOR /* anything else is already set */
 	}
 }
 
@@ -656,7 +671,7 @@ public plugin_end()
 
 public client_authorized(id)
 {
-	if (!g_iHamCsBots && cvar_iBotQuota && get_pcvar_num(cvar_iBotQuota) && is_user_bot(id))
+	if (is_user_bot(id) && !g_iHamCsBots && cvar_iBotQuota && get_pcvar_num(cvar_iBotQuota))
 	{
 		set_task(0.1, "StopCsBotForward", TASK_CSBOTS) /* Fake Bot? */
 		g_iHamCsBots = register_forward(FM_SetClientKeyValue, "fw_SetClientKeyValue", false)
@@ -682,8 +697,6 @@ public client_putinserver(id)
  [Main Events]
 =================================================================================*/
 
-/* Hostage is SOLID_NOT and in EF_NODRAW when rescued.
-   Hostage have no health when killed. */
 public EventRoundStart()
 {
 	for (new i; i < g_iFuncNum; i++)
@@ -693,92 +706,108 @@ public EventRoundStart()
 	unregister_forward(FM_Player_Clashing, g_iPlayerClashing, false)
 	g_iEntityMovingEnd = 0
 	
-	remove_task(TASK_DURATION)
-	remove_task(TASK_PREPARATION)
-	
-	/* Duration */
-	if (c_flSemiclipDuration >= 0.1)
+	if (cvar_iZombiePlague && get_pcvar_num(cvar_iZombiePlague))
 	{
-		set_pcvar_num(cvar_iSemiclip, 1)
-		#if AMXX_VERSION_NUM < 183
-		c_iSemiclip = 1
-		#endif
-		g_bPreparation = true
-		
-		set_task(c_flSemiclipDuration, "DisableTask", TASK_DURATION)
-	}
-	
-	/* Preparation */
-	if (c_flSemiclipPreparation >= 0.1)
-	{
-		g_bPreparation = true
-		
-		set_task(c_flSemiclipPreparation, "DisableTask", TASK_PREPARATION)
+		if (g_bDisableOnGamemode)
+		{
+			g_bDisableOnGamemode = false
+			
+			set_pcvar_num(cvar_iSemiclip, 1)
+			#if AMXX_VERSION_NUM < 183
+			c_iSemiclip = 1
+			#endif
+		}
 	}
 }
 
-/* It's dosen't matter if freezetime is 0, all hostage values are already set. thanks valve :) */
 public LogEventRoundStart()
 {
 	for (new i; i < g_iFuncNum; i++)
 		EnableHamForward(g_iHamFuncForwards[i])
-	
-	if (g_iHostageCount)
+}
+
+/*================================================================================
+ [Zombie Plague Forwards]
+=================================================================================*/
+
+public zp_round_started(gamemode, id)
+{
+	switch (gamemode)
 	{
-		for (new i, iHos; i < g_iHostageCount; i++)
+		#if AMXX_VERSION_NUM >= 183
+		case ZP_MODE_INFECTION: if (!c_iDisableInfection) return
+		case ZP_MODE_NEMESIS: if (!c_iDisableNemesis) return
+		case ZP_MODE_SURVIVOR: if (!c_iDisableSurvivor) return
+		case ZP_MODE_SWARM: if (!c_iDisableSwarm) return
+		case ZP_MODE_MULTI: if (!c_iDisableMultiple) return
+		case ZP_MODE_PLAGUE: if (!c_iDisablePlague) return
+		case NM_MODE_SNIPER: if (!c_iDisableSniper) return
+		case NM_MODE_ASSASSIN: if (!c_iDisableAssassin) return
+		case NM_MODE_ARMAGEDDON: if (!c_iDisableArmageddon) return
+		case NM_MODE_VERSUS: if (!c_iDisableVersus) return
+		case NM_MODE_APOCALYPSE: if (!c_iDisableApocalypse) return
+		case NM_MODE_HUNT: if (!c_iDisableHunt) return
+		case NM_MODE_NIGHTMARE: if (!c_iDisableNightmare) return
+		#else
+		case ZP_MODE_INFECTION: if (!get_pcvar_num(cvar_iDisableInfection)) return
+		case ZP_MODE_NEMESIS: if (!get_pcvar_num(cvar_iDisableNemesis)) return
+		case ZP_MODE_SURVIVOR: if (!get_pcvar_num(cvar_iDisableSurvivor)) return
+		case ZP_MODE_SWARM: if (!get_pcvar_num(cvar_iDisableSwarm)) return
+		case ZP_MODE_MULTI: if (!get_pcvar_num(cvar_iDisableMultiple)) return
+		case ZP_MODE_PLAGUE: if (!get_pcvar_num(cvar_iDisablePlague)) return
+		case NM_MODE_SNIPER: if (!get_pcvar_num(cvar_iDisableSniper)) return
+		case NM_MODE_ASSASSIN: if (!get_pcvar_num(cvar_iDisableAssassin)) return
+		case NM_MODE_ARMAGEDDON: if (!get_pcvar_num(cvar_iDisableArmageddon)) return
+		case NM_MODE_VERSUS: if (!get_pcvar_num(cvar_iDisableVersus)) return
+		case NM_MODE_APOCALYPSE: if (!get_pcvar_num(cvar_iDisableApocalypse)) return
+		case NM_MODE_HUNT: if (!get_pcvar_num(cvar_iDisableHunt)) return
+		case NM_MODE_NIGHTMARE: if (!get_pcvar_num(cvar_iDisableNightmare)) return
+		#endif
+		default: return
+	}
+	g_bDisableOnGamemode = true
+	
+	set_pcvar_num(cvar_iSemiclip, 0)
+	c_iSemiclip = 0
+	
+	for (id = 1; id <= g_iMaxPlayers; id++)
+	{
+		if (!get_bitsum(bs_IsAlive, id) || get_bitsum(bs_IsDying, id))
+			continue
+		
+		if (!get_bitsum(bs_IsSolid, id))
 		{
-			iHos = g_iHostage[i]
-			
-			del_bitsum_array(bs_HostageIsRescued, iHos)
-			del_bitsum_array(bs_HostageIsKilled, iHos)
-			add_bitsum_array(bs_HostageIsSolid, iHos)
+			set_pev(id, pev_solid, SOLID_SLIDEBOX)
+			add_bitsum(bs_IsSolid, id)
 		}
+		
+		if (is_player_stuck(id))
+			DoRandomSpawn(id, (c_iUnstuck == 4) ? 3 : c_iUnstuck)
 	}
 }
 
-public EventHostageRescued()
+public zp_user_humanized_post(id)
 {
-	for (new i, iHos; i < g_iHostageCount; i++)
+	g_iTeam[id] = ZP_TEAM_HUMAN
+	g_iSpectating[id] = id
+	
+	if (TeamInfoUnstuck(id))
 	{
-		iHos = g_iHostage[i]
-		
-		if (!get_bitsum_array(bs_HostageIsRescued, iHos) && pev(iHos, pev_effects) & EF_NODRAW)
-		{
-			add_bitsum_array(bs_HostageIsRescued, iHos)
-		}
-		else continue
-		
-		set_pev(iHos, pev_solid, SOLID_NOT)
-		del_bitsum_array(bs_HostageIsSolid, iHos)
+		if (c_flUnstuckDelay >= 0.1) set_task(c_flUnstuckDelay, "RandomSpawnDelay", id)
+		else DoRandomSpawn(id, c_iUnstuck)
 	}
 }
 
-public EventHostageKilled()
+public zp_user_infected_post(id)
 {
-	for (new i, iHos; i < g_iHostageCount; i++)
+	g_iTeam[id] = ZP_TEAM_ZOMBIE
+	g_iSpectating[id] = id
+	
+	if (TeamInfoUnstuck(id))
 	{
-		iHos = g_iHostage[i]
-		
-		if (!get_bitsum_array(bs_HostageIsKilled, iHos) && !pev(iHos, pev_health))
-		{
-			add_bitsum_array(bs_HostageIsKilled, iHos)
-		}
-		else continue
-		
-		set_pev(iHos, pev_solid, SOLID_NOT)
-		del_bitsum_array(bs_HostageIsSolid, iHos)
+		if (c_flUnstuckDelay >= 0.1) set_task(c_flUnstuckDelay, "RandomSpawnDelay", id)
+		else DoRandomSpawn(id, c_iUnstuck)
 	}
-}
-
-public EventBecameVip()
-{
-	bs_IsVip = 0
-	
-	new szLogUser[80], szName[32]
-	read_logargv(0, szLogUser, charsmax(szLogUser))
-	parse_loguser(szLogUser, szName, charsmax(szName))
-	
-	add_bitsum(bs_IsVip, get_user_index(szName))
 }
 
 /*================================================================================
@@ -788,6 +817,12 @@ public EventBecameVip()
 public fw_StartFrame()
 {
 	bs_IsAbsStored = 0
+}
+
+public fw_PlayerSpawn_Pre(id)
+{
+	/* For ZP Deathmatch support */
+	g_iTeam[id] = ZP_TEAM_HUMAN
 }
 
 public fw_PlayerSpawn_Post(id)
@@ -827,21 +862,6 @@ public fw_PlayerSemiclip_Start(id)
 		del_bitsum(bs_IsSolid, i)
 		add_bitsum(bs_InSemiclip, id)
 	}
-	
-	if (g_iHostageCount && (c_iHostage == 3 || c_iHostage == g_iTeam[id]))
-	{
-		static iHos
-		for (i = 0; i < g_iHostageCount; i++)
-		{
-			iHos = g_iHostage[i]
-			
-			if (!get_bitsum_array(bs_HostageIsSolid, iHos))
-				continue
-			
-			set_pev(iHos, pev_solid, SOLID_NOT)
-			del_bitsum_array(bs_HostageIsSolid, iHos)
-		}
-	}
 }
 
 public fw_PlayerSemiclip_End(id)
@@ -864,21 +884,6 @@ public fw_PlayerSemiclip_End(id)
 		
 		set_pev(i, pev_solid, SOLID_SLIDEBOX)
 		add_bitsum(bs_IsSolid, i)
-	}
-	
-	if (c_iHostage && g_iHostageCount)
-	{
-		static iHos
-		for (i = 0; i < g_iHostageCount; i++)
-		{
-			iHos = g_iHostage[i]
-			
-			if (get_bitsum_array(bs_HostageIsRescued, iHos) || get_bitsum_array(bs_HostageIsKilled, iHos) || get_bitsum_array(bs_HostageIsSolid, iHos))
-				continue
-			
-			set_pev(iHos, pev_solid, SOLID_SLIDEBOX)
-			add_bitsum_array(bs_HostageIsSolid, iHos)
-		}
 	}
 }
 
@@ -1005,50 +1010,10 @@ public fw_ClientDisconnect(id)
 
 public fw_AddToFullPack_Post(es_handle, e, ent, host, flags, player, pSet)
 {
-	if (!c_iSemiclip)
+	if (!c_iSemiclip || !player || host == ent)
 		return
 	
-	if (c_iHostage && g_iHostageCount && is_user_valid(host) && get_bitsum_array(bs_IsHostage, ent))
-	{
-		if (get_bitsum_array(bs_HostageIsRescued, ent) || (c_iHostage != 3 && c_iHostage != g_iSpectatingTeam[host]))
-			return
-		
-		static iHost, iEnt
-		iHost = g_iSpectating[host]
-		iEnt = pev(ent, pev_hostage_index)
-		
-		set_es(es_handle, ES_Solid, SOLID_NOT)
-		
-		if (g_iHostageRange[iHost][iEnt] == OUT_OF_RANGE)
-			return
-		
-		if (c_i3rdPlugins && (get_es(es_handle, ES_RenderAmt) || get_es(es_handle, ES_RenderFx) || get_es(es_handle, ES_RenderMode)))
-			return
-		
-		switch (c_iRender)
-		{
-			case 1: /* Normal */
-			{
-				set_es(es_handle, ES_RenderMode, c_iNormalMode)
-				set_es(es_handle, ES_RenderFx, c_iNormalFx)
-			}
-			case 2: /* Fade */
-			{
-				set_es(es_handle, ES_RenderMode, c_iFadeMode)
-				set_es(es_handle, ES_RenderFx, c_iFadeFx)
-			}
-			default: return
-		}
-		
-		set_es(es_handle, ES_RenderAmt, g_iHostageRange[iHost][iEnt])
-		set_es(es_handle, ES_RenderColor, c_iColors[COLOR_HOSTAGE])
-		return
-	}
-	
-	if (!player || host == ent)
-		return
-	
-	if (g_iTeam[host] == SC_TEAM_SPECTATOR)
+	if (g_iTeam[host] == ZP_TEAM_SPECTATOR)
 	{
 		if (!c_iRender || get_bitsum(bs_IsBot, host) || !get_bitsum(bs_IsAlive, ent))
 			return
@@ -1059,7 +1024,7 @@ public fw_AddToFullPack_Post(es_handle, e, ent, host, flags, player, pSet)
 		if (!iHost || !get_bitsum(bs_IsAlive, iHost) || g_iRange[iHost][ent] == OUT_OF_RANGE || !AllowSemiclip(iHost, ent))
 			return
 		
-		if (!c_iUnstuckRender && !g_bPreparation && c_iUnstuck == 4 && !c_iEnemies && !is_same_team(ent, iHost))
+		if (!c_iUnstuckRender && c_iUnstuck == 4 && !c_iEnemies && !is_same_team(ent, iHost))
 			return
 		
 		if (c_i3rdPlugins && (g_iRender3rdPlugins[ent][RENDER_AMT] || g_iRender3rdPlugins[ent][RENDER_FX] || g_iRender3rdPlugins[ent][RENDER_MODE]))
@@ -1096,8 +1061,8 @@ public fw_AddToFullPack_Post(es_handle, e, ent, host, flags, player, pSet)
 		set_es(es_handle, ES_RenderAmt, g_iRange[iHost][ent])
 		switch (g_iTeam[ent])
 		{
-			case 1: get_bitsum(bs_IsAdmin, ent) ? set_es(es_handle, ES_RenderColor, c_iColors[COLOR_ADMIN_TER]) : set_es(es_handle, ES_RenderColor, c_iColors[COLOR_TER])
-			case 2: get_bitsum(bs_IsVip, ent) ? set_es(es_handle, ES_RenderColor, c_iColors[COLOR_VIP]) : get_bitsum(bs_IsAdmin, ent) ? set_es(es_handle, ES_RenderColor, c_iColors[COLOR_ADMIN_CT]) : set_es(es_handle, ES_RenderColor, c_iColors[COLOR_CT])
+			case 1: get_bitsum(bs_IsAdmin, ent) ? set_es(es_handle, ES_RenderColor, c_iColors[COLOR_ADMIN_ZOMBIE]) : set_es(es_handle, ES_RenderColor, c_iColors[COLOR_ZOMBIE])
+			case 2: get_bitsum(bs_IsAdmin, ent) ? set_es(es_handle, ES_RenderColor, c_iColors[COLOR_ADMIN_HUMAN]) : set_es(es_handle, ES_RenderColor, c_iColors[COLOR_HUMAN])
 		}
 		return
 	}
@@ -1107,7 +1072,7 @@ public fw_AddToFullPack_Post(es_handle, e, ent, host, flags, player, pSet)
 	
 	set_es(es_handle, ES_Solid, SOLID_NOT)
 	
-	if (!c_iRender || g_iRange[host][ent] == OUT_OF_RANGE || (!c_iUnstuckRender && !g_bPreparation && c_iUnstuck == 4 && !c_iEnemies && !is_same_team(ent, host)))
+	if (!c_iRender || g_iRange[host][ent] == OUT_OF_RANGE || (!c_iUnstuckRender && c_iUnstuck == 4 && !c_iEnemies && !is_same_team(ent, host)))
 		return
 	
 	if (c_i3rdPlugins && (g_iRender3rdPlugins[ent][RENDER_AMT] || g_iRender3rdPlugins[ent][RENDER_FX] || g_iRender3rdPlugins[ent][RENDER_MODE]))
@@ -1148,8 +1113,8 @@ public fw_AddToFullPack_Post(es_handle, e, ent, host, flags, player, pSet)
 	set_es(es_handle, ES_RenderAmt, g_iRange[host][ent])
 	switch (g_iTeam[ent])
 	{
-		case 1: get_bitsum(bs_IsAdmin, ent) ? set_es(es_handle, ES_RenderColor, c_iColors[COLOR_ADMIN_TER]) : set_es(es_handle, ES_RenderColor, c_iColors[COLOR_TER])
-		case 2: get_bitsum(bs_IsVip, ent) ? set_es(es_handle, ES_RenderColor, c_iColors[COLOR_VIP]) : get_bitsum(bs_IsAdmin, ent) ? set_es(es_handle, ES_RenderColor, c_iColors[COLOR_ADMIN_CT]) : set_es(es_handle, ES_RenderColor, c_iColors[COLOR_CT])
+		case 1: get_bitsum(bs_IsAdmin, ent) ? set_es(es_handle, ES_RenderColor, c_iColors[COLOR_ADMIN_ZOMBIE]) : set_es(es_handle, ES_RenderColor, c_iColors[COLOR_ZOMBIE])
+		case 2: get_bitsum(bs_IsAdmin, ent) ? set_es(es_handle, ES_RenderColor, c_iColors[COLOR_ADMIN_HUMAN]) : set_es(es_handle, ES_RenderColor, c_iColors[COLOR_HUMAN])
 	}
 }
 
@@ -1226,6 +1191,7 @@ public fw_SetClientKeyValue(id, infobuffer[], key[], value[])
 		unregister_forward(FM_SetClientKeyValue, g_iHamCsBots, false)
 		remove_task(TASK_CSBOTS)
 		
+		RegisterHamFromEntity(Ham_Spawn, id, "fw_PlayerSpawn_Pre", false)
 		RegisterHamFromEntity(Ham_Spawn, id, "fw_PlayerSpawn_Post", true)
 		RegisterHamFromEntity(Ham_Killed, id, "fw_PlayerKilled", false)
 		RegisterHamFromEntity(Ham_Player_SemiclipStart, id, "fw_PlayerSemiclip_Start", true)
@@ -1242,7 +1208,7 @@ public fw_ColorFlagChange(pcvar, const old_value[], const new_value[])
 public fw_ColorChange(pcvar, const old_value[], const new_value[])
 {
 	static i, szRed[4], szGreen[4], szBlue[4]
-	for (i = COLOR_CT; i < MAX_COLORS; i++)
+	for (i = COLOR_HUMAN; i < MAX_COLORS; i++)
 	{
 		if (cvar_szSemiclipColors[i] == pcvar)
 		{
@@ -1381,8 +1347,7 @@ CheckMods()
 {
 	new szModName[8]
 	get_modname(szModName, charsmax(szModName))
-	if (equal(szModName, "cstrike")) register_plugin("[CS] Team Semiclip", PLUGIN_VERSION, "schmurgel1983")
-	else if (equal(szModName, "czero")) register_plugin("[CZ] Team Semiclip", PLUGIN_VERSION, "schmurgel1983")
+	if (equal(szModName, "cstrike") || equal(szModName, "czero")) register_plugin("[ZP] Team Semiclip", PLUGIN_VERSION, "schmurgel1983")
 	else
 	{
 		register_plugin("[??] Team Semiclip", PLUGIN_VERSION, "schmurgel1983")
@@ -1444,12 +1409,7 @@ public CacheCvars(entity)
 	c_iUnstuckRender = !!get_pcvar_num(cvar_iSemiclipUnstuckRender)
 	c_flUnstuckDelay = floatclamp(get_pcvar_float(cvar_flSemiclipUnstuckDelay), 0.0, 65535.0)
 	
-	c_iHostage = clamp(get_pcvar_num(cvar_iSemiclipHostage), 0, 3)
-	
 	c_iKnifeTrace = clamp(get_pcvar_num(cvar_iSemiclipKnifeTrace), 0, 3)
-	c_flSemiclipDuration = floatclamp(get_pcvar_float(cvar_flSemiclipDuration), 0.0, 65535.0)
-	c_flSemiclipPreparation = floatclamp(get_pcvar_float(cvar_flSemiclipPreparation), 0.0, 65535.0)
-	
 	
 	c_iRender = clamp(get_pcvar_num(cvar_iSemiclipRender), 0, 2)
 	c_i3rdPlugins = !!get_pcvar_num(cvar_iSemiclipRender3rdPlugins)
@@ -1471,7 +1431,7 @@ public CacheCvars(entity)
 	c_iColorFlag = read_flags(szFlags)
 	
 	new szColors[12], szRed[4], szGreen[4], szBlue[4]
-	for (new i = COLOR_CT; i < MAX_COLORS; i++)
+	for (new i = COLOR_HUMAN; i < MAX_COLORS; i++)
 	{
 		get_pcvar_string(cvar_szSemiclipColors[i], szColors, charsmax(szColors))
 		parse(szColors, szRed, charsmax(szRed), szGreen, charsmax(szGreen), szBlue, charsmax(szBlue))
@@ -1509,24 +1469,33 @@ public CacheCvars(entity)
 
 public LoadSpawns()
 {
-	/* Check if Zombie Plague is running */
+	/* Check if Zombie Plague is not running */
 	if (LibraryExists("zp50_core", LibType_Library))
 	{
 		Label_FailState:
 		plugin_pause()
-		set_fail_state("Error: This plugin is not for Zombie Plague Mod")
+		set_fail_state("Error: This plugin is for Zombie Plague 3.6 to 4.3 only")
 	}
-	else if (get_cvar_pointer("zp_on")) /* Cvar is registered! */
+	else if (cvar_iZombiePlague) /* Cvar is registered! */
 	{
 		/* Check if ZP is really running! */
-		g_bZpReallyRunning = true
-		zp_has_round_started()
-		
-		if (g_bZpReallyRunning)
-			goto Label_FailState
+		if (get_pcvar_num(cvar_iZombiePlague))
+		{
+			g_bZpReallyRunning = true
+			zp_has_round_started()
+			
+			if (!g_bZpReallyRunning)
+				goto Label_FailState
+			
+			/* Check Nightmare */
+			g_bNightmareReallyRunning = true
+			zpnm_get_round_mode()
+		}
+		else goto Label_FailState
 	}
+	else goto Label_FailState
 	
-	/* Zombie Plague is not running */
+	/* Zombie Plague 3.6 to 4.3 is running */
 	new szConfigDir[32], szMapName[32], szFilePath[100], szLineData[64]
 	
 	get_configsdir(szConfigDir, charsmax(szConfigDir))
@@ -1570,31 +1539,31 @@ public LoadSpawns()
 	}
 	
 	Label_Collect:
-	/* CT */
+	/* HUMANS */
 	new iEnt = -1
-	while ((iEnt = find_ent_by_class(iEnt, CT_SPAWN_ENTITY_NAME)) != 0)
+	while ((iEnt = find_ent_by_class(iEnt, HUMAN_SPAWN_ENTITY_NAME)) != 0)
 	{
 		new Float:flOrigin[3]
 		pev(iEnt, pev_origin, flOrigin)
-		g_flSpawnsCTs[g_iSpawnCountCTs][0] = flOrigin[0]
-		g_flSpawnsCTs[g_iSpawnCountCTs][1] = flOrigin[1]
-		g_flSpawnsCTs[g_iSpawnCountCTs][2] = flOrigin[2]
+		g_flSpawnsHuman[g_iSpawnCountHuman][0] = flOrigin[0]
+		g_flSpawnsHuman[g_iSpawnCountHuman][1] = flOrigin[1]
+		g_flSpawnsHuman[g_iSpawnCountHuman][2] = flOrigin[2]
 		
-		if (++g_iSpawnCountCTs >= sizeof g_flSpawnsCTs)
+		if (++g_iSpawnCountHuman >= sizeof g_flSpawnsHuman)
 			break
 	}
 	
-	/* TERROR */
+	/* ZOMBIES */
 	iEnt = -1
-	while ((iEnt = find_ent_by_class(iEnt, TER_SPAWN_ENTITY_NAME)) != 0)
+	while ((iEnt = find_ent_by_class(iEnt, ZOMBIE_SPAWN_ENTITY_NAME)) != 0)
 	{
 		new Float:flOrigin[3]
 		pev(iEnt, pev_origin, flOrigin)
-		g_flSpawnsTer[g_iSpawnCountTer][0] = flOrigin[0]
-		g_flSpawnsTer[g_iSpawnCountTer][1] = flOrigin[1]
-		g_flSpawnsTer[g_iSpawnCountTer][2] = flOrigin[2]
+		g_flSpawnsZombie[g_iSpawnCountZombie][0] = flOrigin[0]
+		g_flSpawnsZombie[g_iSpawnCountZombie][1] = flOrigin[1]
+		g_flSpawnsZombie[g_iSpawnCountZombie][2] = flOrigin[2]
 		
-		if (++g_iSpawnCountTer >= sizeof g_flSpawnsTer)
+		if (++g_iSpawnCountZombie >= sizeof g_flSpawnsZombie)
 			break
 	}
 }
@@ -1619,21 +1588,21 @@ DoRandomSpawn(id, type)
 		{
 			switch (g_iTeam[id])
 			{
-				case SC_TEAM_T: /* TERRORIST */
+				case ZP_TEAM_ZOMBIE: /* ZOMBIES */
 				{
-					if (!g_iSpawnCountTer)
+					if (!g_iSpawnCountZombie)
 						return
 					
-					iSpawnPoint = random_num(0, g_iSpawnCountTer - 1)
+					iSpawnPoint = random_num(0, g_iSpawnCountZombie - 1)
 					
 					for (i = iSpawnPoint + 1; /*no condition*/; i++)
 					{
-						if (i >= g_iSpawnCountTer)
+						if (i >= g_iSpawnCountZombie)
 							i = 0
 						
-						if (is_hull_vacant(g_flSpawnsTer[i], iHull))
+						if (is_hull_vacant(g_flSpawnsZombie[i], iHull))
 						{
-							engfunc(EngFunc_SetOrigin, id, g_flSpawnsTer[i])
+							engfunc(EngFunc_SetOrigin, id, g_flSpawnsZombie[i])
 							break
 						}
 						
@@ -1641,21 +1610,21 @@ DoRandomSpawn(id, type)
 							break
 					}
 				}
-				case SC_TEAM_CT: /* CT */
+				case ZP_TEAM_HUMAN: /* HUMANS */
 				{
-					if (!g_iSpawnCountCTs)
+					if (!g_iSpawnCountHuman)
 						return
 					
-					iSpawnPoint = random_num(0, g_iSpawnCountCTs - 1)
+					iSpawnPoint = random_num(0, g_iSpawnCountHuman - 1)
 					
 					for (i = iSpawnPoint + 1; /*no condition*/; i++)
 					{
-						if (i >= g_iSpawnCountCTs)
+						if (i >= g_iSpawnCountHuman)
 							i = 0
 						
-						if (is_hull_vacant(g_flSpawnsCTs[i], iHull))
+						if (is_hull_vacant(g_flSpawnsHuman[i], iHull))
 						{
-							engfunc(EngFunc_SetOrigin, id, g_flSpawnsCTs[i])
+							engfunc(EngFunc_SetOrigin, id, g_flSpawnsHuman[i])
 							break
 						}
 						
@@ -1792,20 +1761,6 @@ public RangeCheck(taskid)
 		}
 	}
 	del_bitsum(bs_WasInButton, ID_RANGE)
-	
-	if (c_iHostage && g_iHostageCount)
-	{
-		static iHos
-		for (id = 0; id < g_iHostageCount; id++)
-		{
-			iHos = g_iHostage[id]
-			
-			if (get_bitsum_array(bs_HostageIsRescued, iHos))
-				continue
-			
-			g_iHostageRange[ID_RANGE][id] = CalculateAmount(ID_RANGE, iHos)
-		}
-	}
 }
 
 SetBoosting(iBooster, iOther, bool:Set)
@@ -1850,7 +1805,6 @@ public SpectatorCheck(taskid)
 	{
 		Label_SetTarget:
 		g_iSpectating[ID_SPECTATOR] = iTarget
-		g_iSpectatingTeam[ID_SPECTATOR] = g_iTeam[iTarget]
 		return
 	}
 	
@@ -1886,7 +1840,7 @@ CalculateAmount(host, ent)
 
 AllowSemiclip(host, ent)
 {
-	if (g_bPreparation || g_iAntiBoost[host][ent])
+	if (g_iAntiBoost[host][ent])
 		return 1
 	
 	switch (c_iButton)
@@ -1901,7 +1855,7 @@ AllowSemiclip(host, ent)
 			else if (QueryEnemies(host, ent))
 				return 0
 		}
-		case 1, 2: /* CT or TERROR */
+		case 1, 2: /* HUMANS or ZOMBIES */
 		{
 			if (get_bitsum(bs_InButton, host) && c_iButton == g_iTeam[host] && c_iButton == g_iTeam[ent])
 			{
@@ -1932,87 +1886,6 @@ QueryEnemies(host, ent)
 	}
 	
 	return 0
-}
-
-public DisableTask(taskid)
-{
-	g_bPreparation = false
-	
-	if (taskid != TASK_DURATION)
-	{
-		new id, bs_IsStucking, iCts, iTerrorists, iTeam, iEnemy
-		for (id = 1; id <= g_iMaxPlayers; id++)
-		{
-			if (!get_bitsum(bs_IsAlive, id) || get_bitsum(bs_IsDying, id) || !is_player_stuck(id))
-				continue
-			
-			add_bitsum(bs_IsStucking, id)
-			
-			switch (g_iTeam[id])
-			{
-				case SC_TEAM_T: iTerrorists++
-				case SC_TEAM_CT: iCts++
-			}
-		}
-		
-		if (iCts == iTerrorists) iTeam = random_num(SC_TEAM_T, SC_TEAM_CT)
-		else if (iTerrorists > iCts) iTeam = SC_TEAM_T
-		else iTeam = SC_TEAM_CT
-		
-		for (id = 1; id <= g_iMaxPlayers; id++)
-		{
-			if (!get_bitsum(bs_IsStucking, id))
-				continue
-			
-			if (g_iTeam[id] == iTeam)
-			{
-				if (!get_bitsum(bs_InButton, id) && (c_iButton == iTeam || c_iButton == 3))
-					DoRandomSpawn(id, c_iUnstuck)
-				
-				continue
-			}
-			
-			if (c_iButton)
-			{
-				if (!c_iEnemies || (iEnemy && !get_bitsum(bs_InButton, id)))
-				{
-					DoRandomSpawn(id, c_iUnstuck)
-					continue
-				}
-				else if (iEnemy && !get_bitsum(bs_InButton, iEnemy))
-					DoRandomSpawn(iEnemy, c_iUnstuck)
-				
-				iEnemy = id
-				continue
-			}
-			
-			if (!c_iEnemies)
-				DoRandomSpawn(id, c_iUnstuck)
-		}
-		return
-	}
-	
-	/* Duration has higher priority as Preparation */
-	remove_task(TASK_PREPARATION)
-	set_pcvar_num(cvar_iSemiclip, 0)
-	#if AMXX_VERSION_NUM < 183
-	c_iSemiclip = 0
-	#endif
-	
-	for (new id = 1; id <= g_iMaxPlayers; id++)
-	{
-		if (!get_bitsum(bs_IsAlive, id) || get_bitsum(bs_IsDying, id))
-			continue
-		
-		if (!get_bitsum(bs_IsSolid, id))
-		{
-			set_pev(id, pev_solid, SOLID_SLIDEBOX)
-			add_bitsum(bs_IsSolid, id)
-		}
-		
-		if (is_player_stuck(id))
-			DoRandomSpawn(id, c_iUnstuck)
-	}
 }
 
 TeamInfoUnstuck(id)
@@ -2057,14 +1930,12 @@ SetUserCvars(id)
 	del_bitsum(bs_InSemiclip, id)
 	del_bitsum(bs_IsSolid, id)
 	del_bitsum(bs_InKnifeSecAtk, id)
-	g_iTeam[id] = SC_TEAM_UNASSIGNED
+	g_iTeam[id] = ZP_TEAM_UNASSIGNED
 	
 	del_bitsum(bs_RenderSpecial, id)
-	del_bitsum(bs_IsVip, id)
 	
 	arrayset(g_iAntiBoost[id], 0, MAX_PLAYERS+1)
 	arrayset(g_iRange[id], OUT_OF_RANGE, MAX_PLAYERS+1)
-	arrayset(g_iHostageRange[id], OUT_OF_RANGE, MAX_HOSTAGE+1)
 }
 
 public LoadSemiclipFile()
@@ -2174,44 +2045,19 @@ public MessageTeamInfo(msg_id, msg_dest)
 	id = get_msg_arg_int(1)
 	get_msg_arg_string(2, szTeam, charsmax(szTeam))
 	
-	switch (szTeam[0])
+	if (szTeam[0] == 'S')
 	{
-		case 'T': g_iTeam[id] = SC_TEAM_T
-		case 'C': g_iTeam[id] = SC_TEAM_CT
-		case 'S':
+		if (get_bitsum(bs_IsDying, id))
 		{
-			if (get_bitsum(bs_IsDying, id))
-			{
-				del_bitsum(bs_IsAlive, id)
-				del_bitsum(bs_IsDying, id)
-				
-				g_iSpectatingTeam[id] = g_iTeam[id]
-				
-				if (!get_bitsum(bs_IsBot, id))
-					set_task(SPEC_INTERVAL, "SpectatorCheck", id+TASK_SPECTATOR, _, _, "b")
-			}
-			else
-			{
-				g_iSpectatingTeam[id] = c_iHostage
-			}
+			del_bitsum(bs_IsAlive, id)
+			del_bitsum(bs_IsDying, id)
 			
-			g_iSpectating[id] = id
-			g_iTeam[id] = SC_TEAM_SPECTATOR
-			return
+			if (!get_bitsum(bs_IsBot, id))
+				set_task(SPEC_INTERVAL, "SpectatorCheck", id+TASK_SPECTATOR, _, _, "b")
 		}
-		default:
-		{
-			g_iTeam[id] = SC_TEAM_UNASSIGNED
-			return
-		}
-	}
-	g_iSpectating[id] = id
-	g_iSpectatingTeam[id] = g_iTeam[id]
-	
-	if (TeamInfoUnstuck(id))
-	{
-		if (c_flUnstuckDelay >= 0.1) set_task(c_flUnstuckDelay, "RandomSpawnDelay", id)
-		else DoRandomSpawn(id, c_iUnstuck)
+		
+		g_iSpectating[id] = id
+		g_iTeam[id] = ZP_TEAM_SPECTATOR
 	}
 }
 
@@ -2227,7 +2073,7 @@ public MessageClCorpse(msg_id, msg_dest)
 	{
 		del_bitsum(bs_IsAlive, id)
 		del_bitsum(bs_IsDying, id)
-		g_iTeam[id] = SC_TEAM_SPECTATOR
+		g_iTeam[id] = ZP_TEAM_SPECTATOR
 		
 		if (!get_bitsum(bs_IsBot, id))
 			set_task(SPEC_INTERVAL, "SpectatorCheck", id+TASK_SPECTATOR, _, _, "b")
@@ -2275,13 +2121,13 @@ public fn_set_user_rendering(plugin_id, num_params)
 		{
 			add_bitsum(bs_RenderSpecial, id)
 			
-			g_iRenderSpecial[id][RENDER_FX] = clamp(get_param(3), kRenderFxNone, kRenderFxClampMinScale)
+			g_iRenderSpecial[id][RENDER_FX] = clamp(get_param(3), 0, 20)
 			
 			g_iRenderSpecialColor[id][0] = clamp(get_param(4), 0, 255)
 			g_iRenderSpecialColor[id][1] = clamp(get_param(5), 0, 255)
 			g_iRenderSpecialColor[id][2] = clamp(get_param(6), 0, 255)
 			
-			g_iRenderSpecial[id][RENDER_MODE] = clamp(get_param(7), kRenderNormal, kRenderTransAdd)
+			g_iRenderSpecial[id][RENDER_MODE] = clamp(get_param(7), 0, 5)
 			g_iRenderSpecial[id][RENDER_AMT] = clamp(get_param(8), 0, 255)
 			
 			return 1
