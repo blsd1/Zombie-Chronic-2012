@@ -76,12 +76,12 @@ The mod features several exciting game modes that are randomly selected:
 | **Chainsaw** | 10 AP | Powerful melee weapon with 8.4x damage multiplier |
 | **MiniGUN [VIP]** | 120 AP | Heavy machine gun with high fire rate |
 | **Bazooka [VIP]** | 120 AP 
-| **M79 Grenade Launcher** | 200 AP | Explosive weapon |
-| **Special Gun** [ExtraVIP] | 200 AP | High-powered weapon for EVIP players |
-| **Immunity** [ExtraVIP] | 180 AP | Temporary protection from infection |
-| **AntiDote Nade** [ExtraVIP] | 200 AP | Restore health |
-| **Terminator** [ExtraVIP] | 200 AP | Special Class, armor + hp + 5 armor per kill |
-| **Hannibal Lector** [ExtraVIP] | 200 AP | Restore health |
+| **M79 Grenade Launcher [ExtraVIP]** | 200 AP | Explosive weapon |
+| **Special Gun [ExtraVIP]** | 200 AP | High-powered weapon for EVIP players |
+| **Immunity [ExtraVIP]** | 180 AP | Temporary protection from infection |
+| **AntiDote Nade [ExtraVIP]** | 200 AP | Restore health |
+| **Terminator [ExtraVIP]** | 200 AP | Special Class, armor + hp + 5 armor per kill |
+| **Hannibal Lector [ExtraVIP]** | 200 AP | Restore health |
 
 
 ### Zombie Extra Items
