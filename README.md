@@ -56,6 +56,7 @@ The mod features several exciting game modes that are randomly selected:
   - Cost: 200 Ammo Packs
   - Health: 550 HP
   - Armor: 550
+  - Gains 5 armor per kill
   - Multiple jumps: 4 jumps
 
 - **Hannibal** [ExtraVIP]
@@ -63,7 +64,8 @@ The mod features several exciting game modes that are randomly selected:
   - Health: 999 HP
   - Armor: 999 (max)
   - Multiple jumps: 4 jumps
-  - Gains 5 armor per kill
+  - Gains 5 armor per hit with chainsaw
+  - Gains 30 armor per kill
 
 ## 🔫 Extra Items & Weapons
 
@@ -78,6 +80,8 @@ The mod features several exciting game modes that are randomly selected:
 | **Special Gun** [ExtraVIP] | 200 AP | High-powered weapon for EVIP players |
 | **Immunity** [ExtraVIP] | 180 AP | Temporary protection from infection |
 | **AntiDote Nade** [ExtraVIP] | 200 AP | Restore health |
+| **Terminator** [ExtraVIP] | 200 AP | Special Class, armor + hp + 5 armor per kill |
+| **Hannibal Lector** [ExtraVIP] | 200 AP | Restore health |
 
 
 ### Zombie Extra Items
