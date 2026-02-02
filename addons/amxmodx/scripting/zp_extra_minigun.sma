@@ -13,9 +13,9 @@
 #define SHAKE_FORCE		-5.0 //(must be negative value)
 new const GUNSHOT_DECALS[] = {41, 42, 43, 44, 45}	// Gunshot decal list
 // Plugin information
-new const PLUGIN[] = "[ZP] Minigun"
-new const VERSION[] = "1.0"
-new const AUTHOR[] = "ketamine"
+new const PLUGIN[] = "[ZP] WPN Minigun"
+new const VERSION[] = "1.65"
+new const AUTHOR[] = "CLLlAgOB"
 // Weapon information
 new const g_item_name[] = { "MiniGUN!" }
 const g_item_cost = 30
@@ -33,12 +33,11 @@ const OFFSET_CSTEAMS = 114
 // Linux diff's
 const OFFSET_LINUX = 5 // offsets 5 higher in Linux builds
 // Models
-new P_MODEL[] = "models/ch2012/p_m134.mdl"
-new V_MODEL[] = "models/ch2012/v_m134_hum.mdl"
-new V_MODEL_SURV[] = "models/ch2012/v_m134_surv.mdl"
-new W_MODEL[] = "models/ch2012/w_m134.mdl"
+new P_MODEL[] = "models/wpnmod/m134/p_minigun.mdl"
+new V_MODEL[] = "models/wpnmod/m134/v_minigun.mdl"
+new W_MODEL[] = "models/wpnmod/m134/w_minigun.mdl"
 // Sounds
-new m_SOUND[][] = {"weapons/m134-1.wav", "weapons/m134_spinup.wav", "weapons/m134_spinup.wav", "wpnmod/minigun/hw_spindown.wav"}
+new m_SOUND[][] = {"wpnmod/minigun/hw_shoot1.wav", "wpnmod/minigun/hw_spin.wav", "wpnmod/minigun/hw_spinup.wav", "wpnmod/minigun/hw_spindown.wav"}
 new g_noammo_sounds[][] = {"weapons/dryfire_rifle.wav"}
 //no recoil
 new const g_guns_events[][] = {"events/m249.sc"}
@@ -69,7 +68,6 @@ enum {
 public plugin_precache() {
 	precache_model(P_MODEL)
 	precache_model(V_MODEL)
-	precache_model(V_MODEL_SURV)
 	precache_model(W_MODEL)
 	precache_sound(m_SOUND[0])
 	precache_sound(m_SOUND[1])
@@ -82,10 +80,10 @@ public plugin_precache() {
 
 public plugin_init() {
 	register_plugin(PLUGIN, VERSION, AUTHOR)
-	clipstart = register_cvar("amx_ammo_m249","2000")
+	clipstart = register_cvar("amx_ammo_m249","600")
 	clipstartsuv = register_cvar("amx_ammosuv_m249","10000")
-	m249 = 		register_cvar("amx_minigun_speed","0.9")
-	DMGMG =		register_cvar("amx_minigun_damage","0.5")
+	m249 = 		register_cvar("amx_minigun_speed","0.7")
+	DMGMG =		register_cvar("amx_minigun_damage","0.35")
 	oneround = 	register_cvar("amx_oneround","0")
 	g_itemid_minigun = zp_register_extra_item(g_item_name, g_item_cost, ZP_TEAM_HUMAN)
 	register_event("CurWeapon","event_curweapon","be", "1=1")
@@ -369,10 +367,7 @@ public event_curweapon(id){
 		write_byte(0) 
 		message_end()
 		if(!haswhpnnmg[id]){
-			if(zp_get_user_survivor(id))
-				entity_set_string(id,EV_SZ_viewmodel,V_MODEL_SURV)
-			else
-				entity_set_string(id,EV_SZ_viewmodel,V_MODEL)
+			entity_set_string(id,EV_SZ_viewmodel,V_MODEL)
 			entity_set_string(id,EV_SZ_weaponmodel,P_MODEL)
 			haswhpnnmg[id] = true
 		}
