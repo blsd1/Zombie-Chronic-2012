@@ -29,7 +29,7 @@ The mod features several exciting game modes that are randomly selected:
 | **Spider Zombie** | 1100 HP | 240 | 1.49 | 1.0 | hook |
 | **Crab Zombie** | 600 HP | 900 | 0.60 | 1.13 | crit damage |
 | **Jump Zombie** | 2100 HP | 280 | 0.80 | 1.0 | high jumps |
-| **Speed Zombie** | 2100 HP | 300 | 1.0 | 2.49 | speed boost) |
+| **Speed Zombie** | 2100 HP | 300 | 1.0 | 2.49 | speed boost |
 | **Sleep Zombie** | 2000 HP | 280 | 0.68 | 0.23 | blinding humans |
 | **Biger Zombie** | 2700 HP | 250 | 1.0 | 1.0 | hp boost |
 
