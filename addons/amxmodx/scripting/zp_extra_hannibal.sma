@@ -126,7 +126,6 @@ public zp_extra_item_selected( player, itemid)
 	client_printcolor( player, "/g[ZP] /yDostanes Hannibala..." );
 	zp_give_user_chainsaw( player );
 	zp_set_user_hannibal( player );
-	client_cmd( player, "get_outbz" );
 	set_user_rendering( player, kRenderFxGlowShell, 255, 105, 180, kRenderNormal, 14 );
 	strip_user_weapons( player );
 	g_M89current += 1;
@@ -169,7 +168,7 @@ public Forward_Hud( id )
 	
 	client_cmd( id, "spk ^"%s^"", snd_hanstr );	
 	set_hudmessage( 209, 70, 220, 0.05, 0.45, 1, 0.0, 5.0, 0.9, 0.9, -1 );
-	ShowSyncHudMsg( 0, g_HudHanibal, "%s je Hannibal Lector!!", hName );
+	ShowSyncHudMsg( 0, g_HudHanibal, "%s je Hannibal Lector", hName );
 }
 
 public event_round_start( )
