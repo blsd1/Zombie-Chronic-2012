@@ -1,0 +1,391 @@
+### abd.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:            560 bytes
+Code size:             2560 bytes
+Data size:              948 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   20452 bytes
+Done.
+### chronic_2012.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+chronic_2012.sma(4698) : warning 209: function "menu_info" should return a value
+Header size:           8640 bytes
+Code size:           348108 bytes
+Data size:           232204 bytes
+Stack/heap size:      16384 bytes
+Total requirements:  605336 bytes
+
+1 Warning.
+Done.
+### kill_healed.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+kill_healed.sma(19) : warning 204: symbol is assigned a value that is never used: "maxplayers"
+Header size:            612 bytes
+Code size:             1268 bytes
+Data size:              648 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   18912 bytes
+
+1 Warning.
+Done.
+### vip_model_tag.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:            996 bytes
+Code size:             5416 bytes
+Data size:             6384 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   29180 bytes
+Done.
+### zp_body_rewards.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:            640 bytes
+Code size:             1328 bytes
+Data size:              648 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   19000 bytes
+Done.
+### zp_c_biger_zombie.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:           1732 bytes
+Code size:             8416 bytes
+Data size:             4576 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   31108 bytes
+Done.
+### zp_c_crab_zombie.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+zp_c_crab_zombie.sma(54) : warning 209: function "zprava" should return a value
+Header size:           1552 bytes
+Code size:             7588 bytes
+Data size:             4480 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   30004 bytes
+
+1 Warning.
+Done.
+### zp_c_ghost_zombie.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+zp_c_ghost_zombie.sma(64) : warning 203: symbol is never used: "g_idle_sound"
+Header size:           2044 bytes
+Code size:            11872 bytes
+Data size:             5964 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   36264 bytes
+
+1 Warning.
+Done.
+### zp_c_jump_zombie.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+zp_c_jump_zombie.sma(24) : warning 203: symbol is never used: "i_stealth_time_hud"
+Header size:           1992 bytes
+Code size:             9376 bytes
+Data size:             4424 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   32176 bytes
+
+1 Warning.
+Done.
+### zp_c_sleep_zombie.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:           1432 bytes
+Code size:             5852 bytes
+Data size:             3616 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   27284 bytes
+Done.
+### zp_c_speed_zombie.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:           1740 bytes
+Code size:             8004 bytes
+Data size:             4904 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   31032 bytes
+Done.
+### zp_c_spider_zombie.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:           1732 bytes
+Code size:            13276 bytes
+Data size:             6812 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   38204 bytes
+Done.
+### zp_cash_weapons.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:           1828 bytes
+Code size:            21772 bytes
+Data size:            12376 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   52360 bytes
+Done.
+### zp_custom_weapons.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+zp_custom_weapons.sma(171) : warning 204: symbol is assigned a value that is never used: "player_money"
+Header size:           1388 bytes
+Code size:            10232 bytes
+Data size:            13256 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   41260 bytes
+
+1 Warning.
+Done.
+### zp_extra_antidotenade.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+zp_extra_antidotenade.sma(72) : warning 217: loose indentation
+Header size:           1692 bytes
+Code size:            12180 bytes
+Data size:             2504 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   32760 bytes
+
+1 Warning.
+Done.
+### zp_extra_bazooka.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+zp_extra_bazooka.sma(61) : warning 217: loose indentation
+zp_extra_bazooka.sma(62) : warning 217: loose indentation
+zp_extra_bazooka.sma(132) : warning 217: loose indentation
+zp_extra_bazooka.sma(133) : warning 217: loose indentation
+zp_extra_bazooka.sma(151) : warning 217: loose indentation
+zp_extra_bazooka.sma(152) : warning 217: loose indentation
+zp_extra_bazooka.sma(154) : warning 217: loose indentation
+zp_extra_bazooka.sma(204) : warning 217: loose indentation
+zp_extra_bazooka.sma(205) : warning 217: loose indentation
+zp_extra_bazooka.sma(206) : warning 217: loose indentation
+zp_extra_bazooka.sma(421) : warning 217: loose indentation
+zp_extra_bazooka.sma(424) : warning 217: loose indentation
+zp_extra_bazooka.sma(62) : warning 204: symbol is assigned a value that is never used: "Saytxt"
+Header size:           2416 bytes
+Code size:            23132 bytes
+Data size:             8204 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   50136 bytes
+
+13 Warnings.
+Done.
+### zp_extra_chainsaw.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:           2576 bytes
+Code size:            13540 bytes
+Data size:             8632 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   41132 bytes
+Done.
+### zp_extra_dragon_cannon.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:           2612 bytes
+Code size:            21916 bytes
+Data size:             6016 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   46928 bytes
+Done.
+### zp_extra_hannibal.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+zp_extra_hannibal.sma(324) : warning 217: loose indentation
+zp_extra_hannibal.sma(62) : warning 204: symbol is assigned a value that is never used: "g_antidote_id"
+Header size:           2028 bytes
+Code size:             9308 bytes
+Data size:             4640 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   32360 bytes
+
+2 Warnings.
+Done.
+### zp_extra_hp_1000.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:            564 bytes
+Code size:              984 bytes
+Data size:             1364 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   19296 bytes
+Done.
+### zp_extra_immunity.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:           1096 bytes
+Code size:             4628 bytes
+Data size:             2668 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   24776 bytes
+Done.
+### zp_extra_m79.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:           3336 bytes
+Code size:            20584 bytes
+Data size:             6172 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   46476 bytes
+Done.
+### zp_extra_mine.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+zp_extra_mine.sma(105) : warning 233: symbol "client_disconnect" is marked as deprecated: Use client_disconnected() instead.
+zp_extra_mine.sma(639) : warning 203: symbol is never used: "TotalDeployedCount"
+Header size:           2076 bytes
+Code size:            26296 bytes
+Data size:             4424 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   49180 bytes
+
+2 Warnings.
+Done.
+### zp_extra_minigun.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:           3004 bytes
+Code size:            24504 bytes
+Data size:             7860 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   51752 bytes
+Done.
+### zp_extra_special_gun.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+zp_extra_special_gun.sma(118) : warning 217: loose indentation
+Header size:           2808 bytes
+Code size:            18404 bytes
+Data size:             9508 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   47104 bytes
+
+1 Warning.
+Done.
+### zp_extra_terminator.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:           1636 bytes
+Code size:             7916 bytes
+Data size:             3884 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   29820 bytes
+Done.
+### zp_knife_knockback.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:           1080 bytes
+Code size:             5760 bytes
+Data size:             1308 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   24532 bytes
+Done.
+### zp_knockback_bomb_zm.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+zp_knockback_bomb_zm.sma(322) : warning 217: loose indentation
+Header size:           1880 bytes
+Code size:            10556 bytes
+Data size:             8240 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   37060 bytes
+
+1 Warning.
+Done.
+### zp_parachute.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:            940 bytes
+Code size:             7088 bytes
+Data size:             1368 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   25780 bytes
+Done.
+### zp_team_semiclip.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:           3748 bytes
+Code size:            62044 bytes
+Data size:            29100 bytes
+Stack/heap size:      32768 bytes
+Total requirements:  127660 bytes
+Done.
+### zp_vratbody.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:            492 bytes
+Code size:              696 bytes
+Data size:              864 bytes
+Stack/heap size:      16384 bytes
+Total requirements:   18436 bytes
+Done.

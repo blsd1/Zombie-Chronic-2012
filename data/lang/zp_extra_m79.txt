@@ -1,0 +1,11 @@
+[en]
+M79_ALREADY_HAVE = Already have M79 Grenade Launcher
+M79_AMMO_HUD = M79 Ammo: %d/%d
+
+[cz]
+M79_ALREADY_HAVE = M79 Grenade Launcher uz vlastnis
+M79_AMMO_HUD = M79 Naboje: %d/%d
+
+[sk]
+M79_ALREADY_HAVE = M79 Grenade Launcher uz vlastnis
+M79_AMMO_HUD = M79 Naboje: %d/%d

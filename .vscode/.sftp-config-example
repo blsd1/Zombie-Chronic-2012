@@ -1,0 +1,20 @@
+# SFTP Configuration - Fill in your server details
+# ================================================
+
+# SERVER KKT
+HOST=ovh.zkill.top
+
+# MENO NAJDES NA PTREO
+USER=KKT
+
+# TU DAJ HESLO OD SFTP
+PASSWORD='HESLOHOVNOKLESLO'
+
+# KAM SA UPLOADUJU PLUGINY?
+REMOTE_PATH=/cstrike/addons/amxmodx/plugins
+
+# SSH Key toto ignoruj lebo to pravdepodobne ani nevies co je
+SSH_KEY=
+
+# Port (default 22)
+PORT=2022

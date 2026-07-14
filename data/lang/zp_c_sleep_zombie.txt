@@ -1,0 +1,14 @@
+[en]
+SLEEP_ABILITY_READY = Ability is ready
+SLEEP_COOLDOWN = Cooldown: %d
+SLEEP_ABILITY_INFO = When someone shoots you, they may go blind!
+
+[cz]
+SLEEP_ABILITY_READY = Schopnost je pripravena
+SLEEP_COOLDOWN = Nabijeni: %d
+SLEEP_ABILITY_INFO = Kdyz do tebe nekdo vystreli, muze oslepnout!
+
+[sk]
+SLEEP_ABILITY_READY = Schopnost je pripravena
+SLEEP_COOLDOWN = Nabijanie: %d
+SLEEP_ABILITY_INFO = Ked do teba niekto vystreli, moze oslepnut!

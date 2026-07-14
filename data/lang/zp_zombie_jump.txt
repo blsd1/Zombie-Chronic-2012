@@ -1,0 +1,18 @@
+[en]
+ABILITY_TIME = Ability time: %d sec.
+GRAVITY_GAINED = You gained low gravity for 10 seconds!
+COOLDOWN_HUD = Cooldown: %d sec.
+ABILITY_ENDED = Ability ended!
+PRESS_E_JUMP = Press E for super jump!
+[cz]
+ABILITY_TIME = Cas schopnosti: %d sek.
+GRAVITY_GAINED = Ziskal jsi na 10 sekund gravitaci!
+COOLDOWN_HUD = Cooldown: %d sek.
+ABILITY_ENDED = Schopnost skoncila!
+PRESS_E_JUMP = Stiskni E pro super skok!
+[sk]
+ABILITY_TIME = Cas schopnosti: %d sek.
+GRAVITY_GAINED = Ziskal si na 10 sekund gravitaciu!
+COOLDOWN_HUD = Cooldown: %d sek.
+ABILITY_ENDED = Schopnost skoncila!
+PRESS_E_JUMP = Stlac E pre super skok!

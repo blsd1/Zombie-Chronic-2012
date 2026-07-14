@@ -1,0 +1,63 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "shell": {
+            "executable": "/bin/bash",
+            "args": ["-c"]
+        }
+    },
+    "tasks": [
+        {
+            "label": "Compile AMXX Plugin",
+            "type": "shell",
+            "command": "${workspaceFolder}/compiler/run-amxxpc.sh",
+            "args": [
+                "-i${workspaceFolder}/compiler/include",
+                //"-i${workspaceFolder}/compiler/old-include",
+                "-i${workspaceFolder}/compiler/reapi-include",
+                "-i${workspaceFolder}/zp_corey/_include/",
+                "-o${workspaceFolder}/.out/${fileBasenameNoExtension}.amxxx",
+                "${file}"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Upload AMXX Plugin",
+            "type": "shell",
+            "command": "${workspaceFolder}/compiler/upload.sh",
+            "args": [
+                "${workspaceFolder}/.out/${fileBasenameNoExtension}.amxx"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Compile & Upload AMXX Plugin",
+            "type": "shell",
+            "dependsOn": [
+                "Compile AMXX Plugin"
+            ],
+            "command": "${workspaceFolder}/compiler/upload.sh",
+            "args": [
+                "${workspaceFolder}/.out/${fileBasenameNoExtension}.amxx"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

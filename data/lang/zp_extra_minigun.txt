@@ -1,0 +1,8 @@
+[en]
+MINIGUN_AMMO = Ammo: %d
+
+[cz]
+MINIGUN_AMMO = Naboje: %d
+
+[sk]
+MINIGUN_AMMO = Naboje: %d

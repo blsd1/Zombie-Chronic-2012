@@ -1,0 +1,26 @@
+[en]
+BAZ_COOLDOWN_ROUND = Cooldown 60 seconds at the start of the round!
+BAZ_ALREADY_HAVE = You already have a rocket!
+BAZ_FIRE_HINT = Left mouse button - Fire
+BAZ_GOT_BAZOOKA = You now have a bazooka, attack while holding knife (reload takes %2.1f seconds)
+BAZ_NO_TARGET = No such player/team
+BAZ_RELOADING = Reloading Bazooka: %d s
+BAZ_ROCKET_LOADED = Rocket loaded!
+
+[cz]
+BAZ_COOLDOWN_ROUND = Cooldown 60 sekund na zacatku kola!
+BAZ_ALREADY_HAVE = Uz raketu mas!
+BAZ_FIRE_HINT = Leve tlacitko mysi - Strelba
+BAZ_GOT_BAZOOKA = Ted mas bazuku, utoc s nozem v ruce (nabijeni potrva %2.1f sekund)
+BAZ_NO_TARGET = Takovy hrac/tym neexistuje
+BAZ_RELOADING = Nabijeni bazuky: %d s
+BAZ_ROCKET_LOADED = Raketa nabita!
+
+[sk]
+BAZ_COOLDOWN_ROUND = Cooldown 60 sekund na zaciatku kola!
+BAZ_ALREADY_HAVE = Uz raketu mas!
+BAZ_FIRE_HINT = Lave tlacidlo mysi - Strelba
+BAZ_GOT_BAZOOKA = Teraz mas bazuku, utoc s nozom v ruke (nabijanie potrva %2.1f sekund)
+BAZ_NO_TARGET = Taky hrac/tim neexistuje
+BAZ_RELOADING = Nabijanie bazuky: %d s
+BAZ_ROCKET_LOADED = Raketa nabita!

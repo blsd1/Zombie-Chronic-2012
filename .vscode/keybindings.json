@@ -1,0 +1,12 @@
+[
+    {
+        "key": "ctrl+shift+f6",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Compile AMXX Plugin"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Compile & Upload AMXX Plugin"
+    }
+]

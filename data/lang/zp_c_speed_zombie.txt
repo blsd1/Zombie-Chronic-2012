@@ -1,0 +1,20 @@
+[en]
+SPEED_BOOST_ACTIVE = SPEED BOOST ACTIVE!
+SPEED_BOOST_ENDED = Speed boost ended
+COOLDOWN = Cooldown: %d s
+ABILITY_READY = ABILITY IS READY
+PRESS_R_HINT = Press R to activate speed boost!
+
+[cz]
+SPEED_BOOST_ACTIVE = SPEED BOOST AKTIVNI!
+SPEED_BOOST_ENDED = Speed boost skoncil
+COOLDOWN = Cooldown: %d s
+ABILITY_READY = SCHOPNOST JE PRIPRAVENA
+PRESS_R_HINT = Stisknutim R aktivujes speed boost!
+
+[sk]
+SPEED_BOOST_ACTIVE = SPEED BOOST AKTIVNY!
+SPEED_BOOST_ENDED = Speed boost skoncil
+COOLDOWN = Cooldown: %d s
+ABILITY_READY = SCHOPNOST JE PRIPRAVENA
+PRESS_R_HINT = Stlacenim R aktivujes speed boost!

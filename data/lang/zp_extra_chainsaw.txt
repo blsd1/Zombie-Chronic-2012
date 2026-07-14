@@ -1,0 +1,12 @@
+[en]
+CHAINSAW_ALREADY = You already have a /gChainsaw
+CHAINSAW_RECEIVED = You now have a /gChainsaw
+CHAINSAW_DISABLED = Chainsaw item has been disabled. /gContact Admin
+[cz]
+CHAINSAW_ALREADY = Uz mas /gmotorovou pilu
+CHAINSAW_RECEIVED = Nyni mas /gmotorovou pilu
+CHAINSAW_DISABLED = Predmet motorova pila byl vypnut. /gKontaktuj admina
+[sk]
+CHAINSAW_ALREADY = Uz mas /gmotorovu pilu
+CHAINSAW_RECEIVED = Teraz mas /gmotorovu pilu
+CHAINSAW_DISABLED = Predmet motorova pila bol vypnuty. /gKontaktuj admina

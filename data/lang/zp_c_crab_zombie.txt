@@ -1,0 +1,11 @@
+[en]
+CRAB_CRIT_DAMAGE = You deal huge damage! Critical bite!
+CRAB_CRIT_BITE = Critical bite!
+
+[cz]
+CRAB_CRIT_DAMAGE = Das obrovske poskozeni! Kriticke kousnuti!
+CRAB_CRIT_BITE = Kriticke kousnuti!
+
+[sk]
+CRAB_CRIT_DAMAGE = Das obrovske poskodenie! Kriticke kousnutie!
+CRAB_CRIT_BITE = Kriticke kousnutie!

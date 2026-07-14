@@ -1,0 +1,23 @@
+[en]
+TERM_ALREADY_HAVE = You already have a terminator!
+TERM_WAIT_FIRST_ZOMBIE = You must wait until there is a first zombie!
+TERM_SURVIVAL_BONUS = You received a survival bonus: 350 HP + 350 Armor!
+TERM_IS_TERMINATOR = %s is a Terminator
+TERM_EXPIRED = Your terminator has expired for the new round...
+TERM_JUMPS = You jumped %d times out of remaining 4 jumps
+
+[cz]
+TERM_ALREADY_HAVE = Uz mas terminatora!
+TERM_WAIT_FIRST_ZOMBIE = Musis pockat az bude prvni zombie!
+TERM_SURVIVAL_BONUS = Dostal jsi bonus za preziti: 350 HP + 350 Armor!
+TERM_IS_TERMINATOR = %s je Terminator
+TERM_EXPIRED = Terminator ti na nove kolo vyprsel...
+TERM_JUMPS = Skocil jsi %d krat ze zbyvajicich 4 skoku
+
+[sk]
+TERM_ALREADY_HAVE = Uz mas terminatora!
+TERM_WAIT_FIRST_ZOMBIE = Musis pockat az bude prvny zombie!
+TERM_SURVIVAL_BONUS = Dostal si bonus za prezitie: 350 HP + 350 Armor!
+TERM_IS_TERMINATOR = %s je Terminator
+TERM_EXPIRED = Terminator ti na nove kolo vyprsal...
+TERM_JUMPS = Skocil si %d krat zo zvysnych 4 skokov

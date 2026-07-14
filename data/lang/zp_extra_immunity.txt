@@ -1,0 +1,27 @@
+[en]
+WAIT = Wait for the round to start!
+IMMUME = You are now immune!
+ALREADY = You already have immunity!
+EXPIRED = Your immunity has expired!
+USED_THIS_ROUND = You already used immunity this round!
+NEED_ZOMBIES = You must wait until there are at least 4 zombies!
+REMAINING = Immunity remaining: %d seconds
+GONE = Immunity expired.
+[cz]
+WAIT = Pockej na zacatek kola!
+IMMUME = Jsi nesmrtelny!
+ALREADY = Uz mas aktivni nesmrtelnost!
+EXPIRED = Tvoje nesmrtelnost skoncila!
+USED_THIS_ROUND = V tomto kole jsi uz nesmrtelnost pouzil!
+NEED_ZOMBIES = Musis pockat az budou alespon 4 zombie!
+REMAINING = Zbyvajici nesmrtelnost: %d sekund
+GONE = Nesmrtelnost skoncila.
+[sk]
+WAIT = Pockaj na zaciatok kola!
+IMMUME = Si nesmrtelny!
+ALREADY = Uz mas aktivnu nesmrtelnost!
+EXPIRED = Tvoja nesmrtelnost skoncila!
+USED_THIS_ROUND = V tomto kole si uz nesmrtelnost pouzil!
+NEED_ZOMBIES = Musis pockat kym budu aspon 4 zombie!
+REMAINING = Zostavajuca nesmrtelnost: %d sekund
+GONE = Nesmrtelnost skoncila.

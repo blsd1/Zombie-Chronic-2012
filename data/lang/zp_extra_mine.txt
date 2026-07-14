@@ -1,0 +1,24 @@
+[en]
+BOUGHT = You Bought LaserMine! Press E to plant
+PLANTED = You successfully planted lasermine, once it explodes, you can place another one
+FREE_MINE = You received a free Lasermine! Press E to plant
+RECEIVED_CENTER = You received a Lasermine!
+MAX_PLANTED = You can only have %d lasermine planted at a time!
+MUST_WALL = LaserMine must be planted on a wall.
+DOOR_CLOSE = Target origin is too close with a door@tripmine.
+[cz]
+BOUGHT = Koupil sis LaserMinu! Stiskni E pro polozeni
+PLANTED = Uspesne jsi polozil laserminu, jakmile vybuchne, muzes polozit dalsi
+FREE_MINE = Dostal jsi laserminu zdarma! Stiskni E pro polozeni
+RECEIVED_CENTER = Dostal jsi Laserminu!
+MAX_PLANTED = Muzes mit polozenou jen %d laserminu naraz!
+MUST_WALL = LaserMina musi byt polozena na stene.
+DOOR_CLOSE = Cil je prilis blizko dveri.
+[sk]
+BOUGHT = Kupil si LaserMinu! Stlac E na polozenie
+PLANTED = Uspesne si polozil laserminu, ked vybuchne, mozes polozit dalsiu
+FREE_MINE = Dostal si laserminu zadarmo! Stlac E na polozenie
+RECEIVED_CENTER = Dostal si Laserminu!
+MAX_PLANTED = Mozes mat polozenu len %d laserminu naraz!
+MUST_WALL = LaserMina musi byt polozena na stene.
+DOOR_CLOSE = Ciel je prilis blizko dveri.

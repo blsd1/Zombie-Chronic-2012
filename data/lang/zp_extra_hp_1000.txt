@@ -1,0 +1,8 @@
+[en]
+HP_LIMIT_REACHED = You already used +1000 HP 5 times in this life!
+
+[cz]
+HP_LIMIT_REACHED = Uz jsi pouzil +1000 HP 5x v tomto zivote!
+
+[sk]
+HP_LIMIT_REACHED = Uz si pouzil +1000 HP 5x v tomto zivote!

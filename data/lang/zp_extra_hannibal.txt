@@ -1,0 +1,44 @@
+[en]
+HAN_CANNOT = Cannot do that!
+HAN_ALREADY_HAVE = You already have Hannibal!
+HAN_TOO_MANY = There are too many Hannibals
+HAN_WAIT_ZOMBIE = You must wait until the first zombie!
+HAN_GET = You will get Hannibal...
+HAN_CURRENT_COUNT = Current count /g%d//y4 Hannibals
+HAN_IS_HANNIBAL = %s is Hannibal Lector
+HAN_SURVIVAL_BONUS = [ZP] You received a survival bonus: 600 HP + 600 Armor!
+HAN_ARMOR_PLUS = + 5 Armor
+HAN_EXPIRED = Your Hannibal has expired for the new round...
+HAN_JUMPED = You jumped /g %d //y 3 jumps
+HAN_JUMPED_OUT = You jumped %d times out of remaining 4 jumps
+HAN_JUMPS_RESTORED = Your jumps have been restored /g3 / 3
+
+[cz]
+HAN_CANNOT = Nelze provest!
+HAN_ALREADY_HAVE = Uz mas Hannibala!
+HAN_TOO_MANY = Je moc Hannibalu
+HAN_WAIT_ZOMBIE = Musis pockat az bude prvni zombie!
+HAN_GET = Dostanes Hannibala...
+HAN_CURRENT_COUNT = Aktualni pocet /g%d//y4 Hannibalu
+HAN_IS_HANNIBAL = %s je Hannibal Lector
+HAN_SURVIVAL_BONUS = [ZP] Dostal jsi bonus za preziti: 600 HP + 600 Armor!
+HAN_ARMOR_PLUS = + 5 Brneni
+HAN_EXPIRED = Hannibal ti pro nove kolo vyprsel...
+HAN_JUMPED = Skocil jsi /g %d //y 3 skoku
+HAN_JUMPED_OUT = Skocil jsi %d krat ze zbyvajicich 4 skoku
+HAN_JUMPS_RESTORED = Tvoje skoky byly obnoveny /g3 / 3
+
+[sk]
+HAN_CANNOT = Nekona sa!
+HAN_ALREADY_HAVE = Uz mas Hannibala!
+HAN_TOO_MANY = Je vela Hannibalov
+HAN_WAIT_ZOMBIE = Musis pockat kym bude prvy zombie!
+HAN_GET = Dostanes Hannibala...
+HAN_CURRENT_COUNT = Aktualny pocet /g%d//y4 Hannibalov
+HAN_IS_HANNIBAL = %s je Hannibal Lector
+HAN_SURVIVAL_BONUS = [ZP] Dostal si bonus za prezitie: 600 HP + 600 Armor!
+HAN_ARMOR_PLUS = + 5 Brnenie
+HAN_EXPIRED = Hannibal ti na nove kolo vyprsal...
+HAN_JUMPED = Skocil si /g %d //y 3 skokov
+HAN_JUMPED_OUT = Skocil si %d krat zo zostavajucich 4 skokov
+HAN_JUMPS_RESTORED = Tvoje skoky boli obnovene /g3 / 3
