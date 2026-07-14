@@ -15,18 +15,16 @@ new g_msgSayText
 new g_M89current = 0;
 #define GM89_MAXTEAM	4
 #define PLUGIN 		"Hannibal Lector"
-#define AUTHOR 		"Laoming"
+#define AUTHOR 		"ketamine"
 #define VERSION 	"0.9"
 
-#define AUTHOR_LAOMING		// Compile my plugin without this variable is impossible .) Lao.
+	// Compile my plugin without this variable is impossible .) Lao.
 
-#define ITEM_COST 	350
+#define ITEM_COST 	200
 #define KILL_ARMOR	5
-#define ARMOR_MAX	900
-#define ARMOR_BASIC	900
-#define HEALTH_BASIC	800	
-
-#define VIP 		ADMIN_LEVEL_G
+#define ARMOR_MAX	999
+#define ARMOR_BASIC	999
+#define HEALTH_BASIC	999	
 
 #define TASK_NACITAT 846465465466
 
@@ -46,12 +44,14 @@ new bool:dojump[ 33 ] 	= false;
 
 new g_HudHanibal;
 
+new HAN_regen_hp, HAN_regen_armor;
+#define TASK_REGEN 100000
+
 new const snd_hanstr[ ] 	 = 	{ "mixa_zombie/term_str.wav" }
 new const snd_hanend[ ]	  = 	{ "mixa_zombie/term_end.wav" }
 
 public plugin_init( )
 {
-	#if defined AUTHOR_LAOMING
 	register_plugin( PLUGIN, VERSION, AUTHOR );
 	register_dictionary( "zp_extra_hannibal.txt" );
 
@@ -59,7 +59,6 @@ public plugin_init( )
 	
 	// Store antidote ID if available (attempt to get it)
 	g_antidote_id = 0  // Will be set when antidote is purchased
-	#endif
 	
 	register_event( "ResetHUD", "playerSpawn", "be" )
 	register_event( "HLTV", "event_round_start", "a", "1=0", "2=0" )
@@ -68,6 +67,10 @@ public plugin_init( )
 
 	g_msgSayText = get_user_msgid("SayText")
 	g_HudHanibal = CreateHudSyncObj( );
+
+	// Kolko HP a armor dostane Hannibal kazde 3 sekundy (nastavitelne)
+	HAN_regen_hp    = register_cvar( "zp_han_regen_hp", "150" )
+	HAN_regen_armor = register_cvar( "zp_han_regen_armor", "150" )
 }
 
 public plugin_precache( )
@@ -132,11 +135,8 @@ public zp_extra_item_selected( player, itemid)
 	g_M89current += 1;
 	g_Had_gM89[ player ] = true;
 	give_item( player, "weapon_knife" );
-	give_item( player, "weapon_hegrenade" );
 	client_printcolor( player, "/g[ZP] /y%L", player, "HAN_CURRENT_COUNT", g_M89current );
-	give_item( player, "weapon_flashbang" );
 	give_item( player, "weapon_mac10" );
-	engclient_cmd( player, "weapon_mac10" );
 	set_task( 0.1, "SwitchToChainsaw", player );
 	
 	cs_set_user_bpammo( player, CSW_MAC10, 50 );
@@ -145,6 +145,9 @@ public zp_extra_item_selected( player, itemid)
 	MaHanibala[ player ] = true;
 	set_user_armor( player, ARMOR_BASIC );
 	Forward_Hud( player );
+
+	remove_task( player + TASK_REGEN )
+	set_task( 3.0, "task_han_regen", player + TASK_REGEN, _, _, "b" )
 	
 	return PLUGIN_CONTINUE
 }
@@ -155,7 +158,8 @@ public fw_PlayerKilled( victim, attacker, shouldgib )
 	{
 		g_M89current -= 1;
 		g_hannibal[ victim ] = false;
-	}	
+		remove_task( victim + TASK_REGEN );
+	}
           
 }
 
@@ -183,7 +187,7 @@ public event_round_start( )
 		{
 			// Ak je stále Hannibal a prežil, daj mu HP a armor po freezetime + 3s
 			new Float:freezetime = get_cvar_float("mp_freezetime")
-			set_task(freezetime + 3.0, "task_give_hannibal_bonus", player)
+			set_task(freezetime + 2.0, "task_reapply_hannibal", player); remove_task(player + TASK_REGEN); set_task(3.0, "task_han_regen", player + TASK_REGEN, _, _, "b")
 		}
 		else
 		{
@@ -203,14 +207,60 @@ public task_give_hannibal_bonus(player)
 	client_print(player, print_chat, "%L", player, "HAN_SURVIVAL_BONUS")
 }
 
+public task_reapply_hannibal(player)
+{
+	if(!is_user_alive(player) || !g_hannibal[player])
+		return
+
+	// Obnov vybavu Hannibala do dalsieho kola
+	set_user_rendering( player, kRenderFxGlowShell, 255, 105, 180, kRenderNormal, 14 );
+	strip_user_weapons( player );
+	zp_give_user_chainsaw( player );
+	give_item( player, "weapon_knife" );
+	give_item( player, "weapon_mac10" );
+	cs_set_user_bpammo( player, CSW_MAC10, 50 );
+	set_task( 0.1, "SwitchToChainsaw", player );
+	set_user_health( player, HEALTH_BASIC );
+	set_user_armor( player, ARMOR_BASIC );
+}
+
+public task_han_regen(taskid)
+{
+	new player = taskid - TASK_REGEN
+	if(!is_user_alive(player) || !g_hannibal[player])
+	{
+		remove_task(taskid)
+		return
+	}
+
+	// HP regeneracia (cvar zp_han_regen_hp), strop = HEALTH_BASIC
+	new addhp = get_pcvar_num(HAN_regen_hp)
+	if(addhp > 0)
+	{
+		new newhp = get_user_health(player) + addhp
+		if(newhp > HEALTH_BASIC)
+			newhp = HEALTH_BASIC
+		set_user_health(player, newhp)
+	}
+
+	// Armor regeneracia (cvar zp_han_regen_armor), strop = ARMOR_MAX
+	new addarmor = get_pcvar_num(HAN_regen_armor)
+	if(addarmor > 0)
+	{
+		new newarmor = get_user_armor(player) + addarmor
+		if(newarmor > ARMOR_MAX)
+			newarmor = ARMOR_MAX
+		cs_set_user_armor(player, newarmor, CS_ARMOR_VESTHELM)
+	}
+}
+
 public playerSpawn( player )
 {
 	if ( MaHanibala[ player ] )
 	{	
 		jumpnum[ player ] = 0
 		dojump[ player ] = false
-		MaHanibala[ player ] = false
-		g_hannibal[ player ] = false;
+		// Hannibal ostava aj do dalsieho kola - status mu tu nemazeme
 	}
 }
 
@@ -276,6 +326,8 @@ public remove_user_hannibal( id )
 	// Kontrola či hráč vôbec mal Hannibala
 	if(!MaHanibala[id])
 		return
+
+	remove_task( id + TASK_REGEN )
 	
 	jumpnum[ id ] = 0
 	dojump[ id ] = false

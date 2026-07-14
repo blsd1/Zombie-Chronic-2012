@@ -64,7 +64,7 @@ new const g_death_sound[][] =
 public plugin_init()
 {   
 	register_plugin(PLUGIN, VERSION, AUTHOR)
-	register_dictionary("zp_c_biger_zombie.txt")
+	register_dictionary("zombie_plague.txt")
 	register_cvar("zp_zclass_biger_zombie", VERSION, FCVAR_SERVER|FCVAR_EXTDLL|FCVAR_UNLOGGED|FCVAR_SPONLY)
 	register_logevent("roundStart", 2, "1=Round_Start")
 	g_maxplayers = get_maxplayers()

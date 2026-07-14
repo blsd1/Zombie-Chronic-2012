@@ -84,7 +84,7 @@ public plugin_precache()
 public plugin_init()
 {
 	register_plugin(PLUGIN, VERSION, AUTHOR)
-	register_dictionary("zp_c_sleep_zombie.txt")
+	register_dictionary("zombie_plague.txt")
 	g_msgScreenFade = get_user_msgid("ScreenFade")
 	g_maxplayers = get_maxplayers()
 	RegisterHam(Ham_TakeDamage, "player", "fw_TakeDamage")
@@ -177,7 +177,7 @@ public zp_user_infected_post(id, infector)
 		is_cooldown[id] = 0
 		is_cooldown_time[id] = floatround(g_revenge_cooldown)
 
-		color_chat(id, "!t[Sleep zombie] !g%L", id, "SLEEP_ABILITY_INFO")
+		color_chat(id, "!t[Sleep zombie] !g%L", id, "SLEEP_ABILITY_INFO"); color_chat(id, "!t[Sleep zombie] !g%L", id, "SLEEP_ABILITY_INFO")
 		
 		// Set custom sounds using ZP natives
 		zp_override_user_painsound(id, "ch2012/sleep_hit1.wav", sizeof(g_hit_sound))

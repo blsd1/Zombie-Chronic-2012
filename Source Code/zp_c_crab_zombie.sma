@@ -35,7 +35,7 @@ public plugin_precache()
 public plugin_init()
 {	
 	register_plugin("[ZP] Headcrab zombie", VERSION, "aaarnas")
-	register_dictionary("zp_c_crab_zombie.txt")
+	register_dictionary("zombie_plague.txt")
 	register_cvar("zp_headcrab_version", VERSION, FCVAR_SERVER|FCVAR_SPONLY)
 	set_cvar_string("zp_headcrab_version", VERSION)
 	RegisterHam(Ham_Spawn, "player", "FwdHamPlayerSpawnPost")
@@ -49,6 +49,7 @@ public zprava(id)
 	if( !is_user_alive( id ) || !zp_get_user_zombie( id ) || zp_get_user_zombie_class( id ) != g_zclass_crab || zp_get_user_nemesis( id )) 
 		return PLUGIN_HANDLED 
 	
+	ChatColor(id, "!t[Crawler] !g%L", id, "CRAB_CRIT_DAMAGE");
 	ChatColor(id, "!t[Crawler] !g%L", id, "CRAB_CRIT_DAMAGE");
 }
 

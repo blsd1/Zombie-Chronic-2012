@@ -14,14 +14,25 @@ AMX Mod X Compiler 1.10.0.5474
 Copyright (c) 1997-2006 ITB CompuPhase
 Copyright (c) 2004-2013 AMX Mod X Team
 
-chronic_2012.sma(4698) : warning 209: function "menu_info" should return a value
+chronic_2012.sma(4716) : warning 209: function "menu_info" should return a value
 Header size:           8640 bytes
-Code size:           348108 bytes
-Data size:           232204 bytes
+Code size:           349724 bytes
+Data size:           232816 bytes
 Stack/heap size:      16384 bytes
-Total requirements:  605336 bytes
+Total requirements:  607564 bytes
 
 1 Warning.
+Done.
+### chronic_2017.sma
+AMX Mod X Compiler 1.10.0.5474
+Copyright (c) 1997-2006 ITB CompuPhase
+Copyright (c) 2004-2013 AMX Mod X Team
+
+Header size:           8932 bytes
+Code size:           350184 bytes
+Data size:           168320 bytes
+Stack/heap size:      16384 bytes
+Total requirements:  543820 bytes
 Done.
 ### kill_healed.sma
 AMX Mod X Compiler 1.10.0.5474
@@ -66,21 +77,21 @@ Copyright (c) 2004-2013 AMX Mod X Team
 
 Header size:           1732 bytes
 Code size:             8416 bytes
-Data size:             4576 bytes
+Data size:             4560 bytes
 Stack/heap size:      16384 bytes
-Total requirements:   31108 bytes
+Total requirements:   31092 bytes
 Done.
 ### zp_c_crab_zombie.sma
 AMX Mod X Compiler 1.10.0.5474
 Copyright (c) 1997-2006 ITB CompuPhase
 Copyright (c) 2004-2013 AMX Mod X Team
 
-zp_c_crab_zombie.sma(54) : warning 209: function "zprava" should return a value
+zp_c_crab_zombie.sma(53) : warning 209: function "zprava" should return a value
 Header size:           1552 bytes
-Code size:             7588 bytes
-Data size:             4480 bytes
+Code size:             7536 bytes
+Data size:             4332 bytes
 Stack/heap size:      16384 bytes
-Total requirements:   30004 bytes
+Total requirements:   29804 bytes
 
 1 Warning.
 Done.
@@ -92,9 +103,9 @@ Copyright (c) 2004-2013 AMX Mod X Team
 zp_c_ghost_zombie.sma(64) : warning 203: symbol is never used: "g_idle_sound"
 Header size:           2044 bytes
 Code size:            11872 bytes
-Data size:             5964 bytes
+Data size:             5956 bytes
 Stack/heap size:      16384 bytes
-Total requirements:   36264 bytes
+Total requirements:   36256 bytes
 
 1 Warning.
 Done.
@@ -106,9 +117,9 @@ Copyright (c) 2004-2013 AMX Mod X Team
 zp_c_jump_zombie.sma(24) : warning 203: symbol is never used: "i_stealth_time_hud"
 Header size:           1992 bytes
 Code size:             9376 bytes
-Data size:             4424 bytes
+Data size:             4440 bytes
 Stack/heap size:      16384 bytes
-Total requirements:   32176 bytes
+Total requirements:   32192 bytes
 
 1 Warning.
 Done.
@@ -117,11 +128,11 @@ AMX Mod X Compiler 1.10.0.5474
 Copyright (c) 1997-2006 ITB CompuPhase
 Copyright (c) 2004-2013 AMX Mod X Team
 
-Header size:           1432 bytes
-Code size:             5852 bytes
-Data size:             3616 bytes
+Header size:           1500 bytes
+Code size:             6764 bytes
+Data size:             4472 bytes
 Stack/heap size:      16384 bytes
-Total requirements:   27284 bytes
+Total requirements:   29120 bytes
 Done.
 ### zp_c_speed_zombie.sma
 AMX Mod X Compiler 1.10.0.5474
@@ -130,9 +141,9 @@ Copyright (c) 2004-2013 AMX Mod X Team
 
 Header size:           1740 bytes
 Code size:             8004 bytes
-Data size:             4904 bytes
+Data size:             4912 bytes
 Stack/heap size:      16384 bytes
-Total requirements:   31032 bytes
+Total requirements:   31040 bytes
 Done.
 ### zp_c_spider_zombie.sma
 AMX Mod X Compiler 1.10.0.5474
@@ -140,10 +151,10 @@ Copyright (c) 1997-2006 ITB CompuPhase
 Copyright (c) 2004-2013 AMX Mod X Team
 
 Header size:           1732 bytes
-Code size:            13276 bytes
-Data size:             6812 bytes
+Code size:            13416 bytes
+Data size:             6668 bytes
 Stack/heap size:      16384 bytes
-Total requirements:   38204 bytes
+Total requirements:   38200 bytes
 Done.
 ### zp_cash_weapons.sma
 AMX Mod X Compiler 1.10.0.5474
@@ -215,11 +226,11 @@ AMX Mod X Compiler 1.10.0.5474
 Copyright (c) 1997-2006 ITB CompuPhase
 Copyright (c) 2004-2013 AMX Mod X Team
 
-Header size:           2576 bytes
-Code size:            13540 bytes
-Data size:             8632 bytes
+Header size:           2612 bytes
+Code size:            13844 bytes
+Data size:             8964 bytes
 Stack/heap size:      16384 bytes
-Total requirements:   41132 bytes
+Total requirements:   41804 bytes
 Done.
 ### zp_extra_dragon_cannon.sma
 AMX Mod X Compiler 1.10.0.5474
@@ -275,10 +286,10 @@ Copyright (c) 1997-2006 ITB CompuPhase
 Copyright (c) 2004-2013 AMX Mod X Team
 
 Header size:           3336 bytes
-Code size:            20584 bytes
+Code size:            20652 bytes
 Data size:             6172 bytes
 Stack/heap size:      16384 bytes
-Total requirements:   46476 bytes
+Total requirements:   46544 bytes
 Done.
 ### zp_extra_mine.sma
 AMX Mod X Compiler 1.10.0.5474

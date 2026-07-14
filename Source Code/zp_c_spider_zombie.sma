@@ -45,7 +45,7 @@ new const g_idle_sound[] = "ch2012/spider_idle.wav"
 public plugin_init()
 {
 	register_plugin("[ZP-Class] Spider", "0.0.1", "DarTom by sefik")
-	register_dictionary("zp_c_spider_zombie.txt")
+	register_dictionary("zombie_plague.txt")
 
 	g_zclass_spider = zp_register_zombie_class(zclass_name, zclass_info, zclass_model, zclass_clawmodel, zclass_health, zclass_speed, zclass_gravity, zclass_knockback)
 	register_concmd("+hook", "hook_on")
@@ -240,7 +240,7 @@ public zp_user_infected_post(id, infector)
 	{
 		if ((zp_get_user_zombie_class(id) == g_zclass_spider) && !zp_get_user_nemesis(id))
 		{
-			ChatColor(id, "!t[Spider zombie] !g%L", id, "SPIDER_INTRO")
+			ChatColor(id, "!t[Spider zombie] !g%L", id, "SPIDER_INTRO"); ChatColor(id, "!t[Spider zombie] !g%L", id, "SPIDER_INTRO")
 			g_pritiahnutia[id] = 3
 			g_kontrola[id] = false
 			hook[id] = false
@@ -416,7 +416,7 @@ public show_cooldown_hud(taskid)
 	if (g_cooldown_time[id] > 0)
 	{
 		set_hudmessage(200, 100, 0, 0.76, 0.92, 0, 1.0, 1.1, 0.0, 0.0, -1)
-		show_hudmessage(id, "%L", id, "COOLDOWN_HUD", g_cooldown_time[id])
+		show_hudmessage(id, "%L", id, "SPIDER_COOLDOWN_HUD", g_cooldown_time[id])
 		g_cooldown_time[id]--
 	}
 	else

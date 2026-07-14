@@ -75,7 +75,7 @@ public plugin_init()
 	register_logevent("roundStart", 2, "1=Round_Start")
 	g_maxplayers = get_maxplayers()
 	g_msgScreenFade = get_user_msgid("ScreenFade")
-	register_dictionary("zp_zombie_ghost.txt");
+	register_dictionary("zombie_plague.txt");
 	register_forward(FM_PlayerPreThink, "prethink")
 }
 
@@ -296,7 +296,7 @@ public zp_user_infected_post(id, infector)
 {
 	if ((zp_get_user_zombie_class(id) == g_zclass_ghost) && !zp_get_user_nemesis(id))
 	{
-		color_chat(id, "!t[Ghost zombie] !g%L", id, "PRESS_E_ACTIVATE")
+		color_chat(id, "!t[Ghost zombie] !g%L", id, "PRESS_E_ACTIVATE"); color_chat(id, "!t[Ghost zombie] !g%L", id, "PRESS_E_ACTIVATE")
 		
 		i_cooldown_time[id] = floatround(g_stealth_cooldown_standart)
 		remove_task(id)

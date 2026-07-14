@@ -67,7 +67,7 @@ public plugin_init()
 	register_forward( FM_CmdStart , "fw_FM_CmdStart" );
 	register_logevent("roundStart", 2, "1=Round_Start")
 	g_maxplayers = get_maxplayers()
-	register_dictionary("zp_zombie_jump.txt");
+	register_dictionary("zombie_plague.txt");
 	register_forward(FM_PlayerPreThink, "prethink")
 	
 	// Inicializacia message IDs pre efekty
@@ -171,7 +171,7 @@ public ShowHUD(id)
 		
 		// Zobraz cooldown HUD v orange, dole vpravo
 		set_hudmessage(200, 100, 0, 0.76, 0.92, 0, 1.0, 1.1, 0.0, 0.0, -1)
-		ShowSyncHudMsg(id, g_msg_sync, "%L", id, "COOLDOWN_HUD", remaining_time)
+		ShowSyncHudMsg(id, g_msg_sync, "%L", id, "JUMP_COOLDOWN_HUD", remaining_time)
 	}
 	else
 	{
@@ -212,7 +212,7 @@ public zp_user_infected_post(id, infector)
 {
 	if ((zp_get_user_zombie_class(id) == g_zclass_jump) && !zp_get_user_nemesis(id))
 	{
-		color_chat(id, "!t[Jump zombie] !g%L", id, "PRESS_E_JUMP")
+		color_chat(id, "!t[Jump zombie] !g%L", id, "PRESS_E_JUMP"); color_chat(id, "!t[Jump zombie] !g%L", id, "PRESS_E_JUMP")
 		
 		i_cooldown_time[id] = floatround(g_gravity_cooldown)
 		remove_task(id)

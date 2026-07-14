@@ -20,7 +20,7 @@ new choosed_weapon[33]
 
 // Event IDs for blocking original weapon sounds
 new g_orig_event_ak47, g_orig_event_galil, g_orig_event_aug, g_orig_event_mac10
-new g_MaxPlayers, g_IsInPrimaryAttack
+new g_MaxPlayers, g_IsInPrimaryAttack[33]
 new g_clip_ammo[33]
 
 new a_model[] = "models/ch2012/v_guitar.mdl"
@@ -76,29 +76,29 @@ public fw_PrimaryAttack(Weapon)
 	// Check if player has custom weapon and set flag
 	if(weaponid == CSW_AK47 && (zbran1[Player] || zbran2[Player] || zbran4[Player] || zbran5[Player]))
 	{
-		g_IsInPrimaryAttack = 1
+		g_IsInPrimaryAttack[Player] = 1
 		g_clip_ammo[Player] = cs_get_weapon_ammo(Weapon)
 	}
 	else if(weaponid == CSW_GALIL && zbran3[Player])
 	{
-		g_IsInPrimaryAttack = 1
+		g_IsInPrimaryAttack[Player] = 1
 		g_clip_ammo[Player] = cs_get_weapon_ammo(Weapon)
 	}
 	else if(weaponid == CSW_AUG && zbran6[Player])
 	{
-		g_IsInPrimaryAttack = 1
+		g_IsInPrimaryAttack[Player] = 1
 		g_clip_ammo[Player] = cs_get_weapon_ammo(Weapon)
 	}
 	else if(weaponid == CSW_MAC10 && zbran7[Player])
 	{
-		g_IsInPrimaryAttack = 1
+		g_IsInPrimaryAttack[Player] = 1
 		g_clip_ammo[Player] = cs_get_weapon_ammo(Weapon)
 	}
 }
 
 public fw_PrimaryAttack_Post(Weapon)
 {
-	g_IsInPrimaryAttack = 0
+	g_IsInPrimaryAttack[get_pdata_cbase(Weapon, 41, 4)] = 0
 	
 	new Player = get_pdata_cbase(Weapon, 41, 4)
 	
@@ -171,7 +171,7 @@ public fw_PrimaryAttack_Post(Weapon)
 
 public fwPlaybackEvent(flags, invoker, eventid, Float:delay, Float:origin[3], Float:angles[3], Float:fparam1, Float:fparam2, iParam1, iParam2, bParam1, bParam2)
 {
-	if(!g_IsInPrimaryAttack)
+	if(!(1 <= invoker <= g_MaxPlayers) || !g_IsInPrimaryAttack[invoker])
 		return FMRES_IGNORED
 		
 	if(!(1 <= invoker <= g_MaxPlayers))
@@ -323,7 +323,7 @@ public Hrac_Damage(victim, inflictor, attacker, Float:damage, damage_bits)
 					SetHamParamFloat(4,damage * 1.5);
 				}
 			}
-			case CSW_SG552:
+			case CSW_AUG:
 			{
 				if(zbran6[attacker] == true)
 				{
@@ -602,7 +602,7 @@ choosed_weapon[id] = 1
 strip_user_weapons(id)
 reset_all_weapons(id)
 zbran6[id] = true
-give_item(id, "weapon_AUG")
+give_item(id, "weapon_aug")
 cs_set_user_bpammo(id, CSW_AUG, 90)
 give_item(id, "weapon_knife")
 give_item(id, "weapon_hegrenade")
@@ -635,7 +635,7 @@ choosed_weapon[id] = 1
 strip_user_weapons(id)
 reset_all_weapons(id)
 zbran7[id] = true
-give_item(id, "weapon_MAC10")
+give_item(id, "weapon_mac10")
 cs_set_user_bpammo(id, CSW_MAC10, 90)
 give_item(id, "weapon_knife")
 give_item(id, "weapon_hegrenade")

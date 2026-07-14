@@ -60,7 +60,7 @@ new const g_death_sound[][] =
 public plugin_init()
 {   
 	register_plugin(PLUGIN, VERSION, AUTHOR)
-	register_dictionary("zp_c_speed_zombie.txt")
+	register_dictionary("zombie_plague.txt")
 	register_cvar("zp_zclass_speed_zombie",VERSION,FCVAR_SERVER|FCVAR_EXTDLL|FCVAR_UNLOGGED|FCVAR_SPONLY)
 	register_forward( FM_CmdStart , "fw_FM_CmdStart" );
 	register_logevent("roundStart", 2, "1=Round_Start")
@@ -187,7 +187,7 @@ public ShowHUD(taskid)
 	{
 		i_cooldown_time[id] = i_cooldown_time[id] - 1;
 		set_hudmessage(200, 100, 0, 0.76, 0.92, 0, 1.0, 1.1, 0.0, 0.0, -1)
-		show_hudmessage(id, "%L", id, "COOLDOWN", i_cooldown_time[id])
+		show_hudmessage(id, "%L", id, "SPEED_COOLDOWN", i_cooldown_time[id])
 	}
 	else
 	{
@@ -214,7 +214,7 @@ public zp_user_infected_post(id, infector)
 {
 	if ((zp_get_user_zombie_class(id) == g_zclass_speed) && !zp_get_user_nemesis(id))
 	{
-		color_chat(id, "!t[Speed zombie] !g%L", id, "PRESS_R_HINT")
+		color_chat(id, "!t[Speed zombie] !g%L", id, "PRESS_R_HINT"); color_chat(id, "!t[Speed zombie] !g%L", id, "PRESS_R_HINT")
 		
 		i_cooldown_time[id] = floatround(g_cooldown_duration)
 		remove_task(id+1000)
