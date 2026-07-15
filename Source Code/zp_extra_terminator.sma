@@ -27,7 +27,7 @@
 
 // Max simultaneous Terminators on a normal round. When this many already exist,
 // the next player who buys Terminator becomes a Nemesis instead.
-#define TERM_MAX 5
+#define TERM_MAX 6
 			
 new iTerm, terminator[ 33 ];
 
