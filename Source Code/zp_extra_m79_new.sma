@@ -120,7 +120,7 @@ new const sound_reload [ ] [ ] = { "weapons/m79_clipin.wav", "weapons/m79_clipon
 // Entities
 new const g_DefaultEntity [ ] = "info_target"
 new const g_GrenadeEntity [ ] = "zp_m79_grenade"
-new const g_AkEntity [ ] = "weapon_ak47"
+new const g_AkEntity [ ] = "weapon_galil"
 new const g_PlayerEntity [ ] = "player"
 
 // Cached sprite indexes
@@ -298,7 +298,7 @@ public zp_extra_item_selected ( Player, Item )
 			set_pdata_int ( ak, OFFSET_CLIP, MAXCLIP, LINUX_DIFF )
 			
 			// BP ammo
-			cs_set_user_bpammo ( Player, CSW_AK47, MAXBPAMMO )
+			cs_set_user_bpammo ( Player, CSW_GALIL, MAXBPAMMO )
 		}
 	}
 	// M79 grenade
@@ -312,7 +312,7 @@ public zp_extra_item_selected ( Player, Item )
 		}
 		
 		// Too many grenades
-		new bpammo = cs_get_user_bpammo ( Player, CSW_AK47 )
+		new bpammo = cs_get_user_bpammo ( Player, CSW_GALIL )
 		if ( bpammo >= MAXBPAMMO )
 		{
 			client_print ( Player, print_chat, "[ZP] You cannot buy more Grenades" )
@@ -330,7 +330,7 @@ public zp_extra_item_selected ( Player, Item )
 			emit_sound ( Player, CHAN_ITEM, sound_buy[random_num(0, sizeof sound_buy-1)], VOL_NORM, ATTN_NORM, 0, PITCH_NORM )
 			
 			// Increase bp ammo
-			cs_set_user_bpammo ( Player, CSW_AK47, bpammo+1 )
+			cs_set_user_bpammo ( Player, CSW_GALIL, bpammo+1 )
 	
 		}
 	}		
@@ -349,27 +349,27 @@ public Event_CurrentWeapon ( Player )
 	g_CurrentWeapon [ Player ] = read_data ( 2 )
 		
 	// AK47	
-	if ( g_CurrentWeapon [ Player ] == CSW_AK47 )
+	if ( g_CurrentWeapon [ Player ] == CSW_GALIL )
 	{
 		// Models
 		set_pev ( Player, pev_viewmodel2, v_m79 )
 		set_pev ( Player, pev_weaponmodel2, p_m79 )
 		
 		// Find ak47
-		new ak47 = find_ent_by_owner ( -1, "weapon_ak47", Player )
+		new ak47 = find_ent_by_owner ( -1, "weapon_galil", Player )
 		
 		// Get clip
 		new clip = cs_get_weapon_ammo ( ak47 )
 		
 		// Get bp ammo
-		new bpammo = cs_get_user_bpammo ( Player, CSW_AK47 )
+		new bpammo = cs_get_user_bpammo ( Player, CSW_GALIL )
 		
 		// We have more than required
 		if ( clip > MAXCLIP || bpammo > MAXBPAMMO )
 		{
 			// Return it back
 			cs_set_weapon_ammo ( ak47, MAXCLIP )
-			cs_set_user_bpammo ( Player, CSW_AK47, MAXBPAMMO )
+			cs_set_user_bpammo ( Player, CSW_GALIL, MAXBPAMMO )
 			
 			// Call for HUD update
 			update_hud ( Player )
@@ -399,7 +399,7 @@ public Event_NewRound ( )
 		for ( new i  = 1; i < g_MaxPlayers; i++ )
 		{
 			// Remove ak47 from inventory
-			ham_strip_user_gun ( i, "weapon_ak47" )
+			ham_strip_user_gun ( i, "weapon_galil" )
 		}
 	}	
 }
@@ -434,7 +434,7 @@ public Event_DeathMsg ( )
 public fw_CmdStart ( Player, UC_Handle, Seed )
 {
 	// Not alive / dont have m79 / weapon isnt ak47
-	if ( !bIsAlive [ Player ] || !g_hasLauncher [ Player ] || g_CurrentWeapon [ Player ] != CSW_AK47 )
+	if ( !bIsAlive [ Player ] || !g_hasLauncher [ Player ] || g_CurrentWeapon [ Player ] != CSW_GALIL )
 		return FMRES_IGNORED
 		
 	// Get buttons
@@ -467,7 +467,7 @@ public fw_CmdStart ( Player, UC_Handle, Seed )
 		if ( Reload ) return FMRES_IGNORED
 		
 		// Bp ammo
-		static BpAmmo ; BpAmmo = cs_get_user_bpammo ( Player, CSW_AK47 )
+		static BpAmmo ; BpAmmo = cs_get_user_bpammo ( Player, CSW_GALIL )
 		
 		// Fire!!
 		FireGrenade ( Player )
@@ -493,7 +493,7 @@ public fw_CmdStart ( Player, UC_Handle, Seed )
 public fw_UpdateClientData_Post ( Player, SendWeapons, CD_Handle )
 {
 	// Not alive / dont have m79 / weapon isnt ak47
-	if ( !bIsAlive [ Player ] || !g_hasLauncher [ Player ] || g_CurrentWeapon [ Player ] != CSW_AK47 )
+	if ( !bIsAlive [ Player ] || !g_hasLauncher [ Player ] || g_CurrentWeapon [ Player ] != CSW_GALIL )
 		return FMRES_IGNORED
 		
 	// Block default sounds/animations
@@ -509,7 +509,7 @@ public fw_SetModel ( Entity, const Model [ ] )
 		return FMRES_IGNORED
 		
 	// Not ak47
-	if ( !equal ( Model, "models/w_ak47.mdl" ) ) 
+	if ( !equal ( Model, "models/w_galil.mdl" ) )
 		return FMRES_IGNORED;
 		
 	// Get classname
@@ -527,7 +527,7 @@ public fw_SetModel ( Entity, const Model [ ] )
 	iOwner = entity_get_edict ( Entity, EV_ENT_owner )
 	
 	// Get drop weapon index
-	iStoredAkID = find_ent_by_owner ( NULLENT, "weapon_ak47", Entity )
+	iStoredAkID = find_ent_by_owner ( NULLENT, "weapon_galil", Entity )
 	
 	// Entity classname is weaponbox, and ak47 was founded
 	if( g_hasLauncher [ iOwner ] && is_valid_ent ( iStoredAkID ) )
@@ -536,7 +536,7 @@ public fw_SetModel ( Entity, const Model [ ] )
 		entity_set_int ( iStoredAkID, EV_INT_WEAPONKEY, M79_WEAPONKEY )
 		
 		// Save bp ammo
-		set_pev ( iStoredAkID, pev_weaponammo, cs_get_user_bpammo ( iOwner, CSW_AK47 ) )
+		set_pev ( iStoredAkID, pev_weaponammo, cs_get_user_bpammo ( iOwner, CSW_GALIL ) )
 		
 		// Reset user vars
 		g_hasLauncher [ iOwner ] = false
@@ -557,7 +557,7 @@ public fw_LauncherDeploy_Post ( Launcher )
 	new Player = get_pdata_cbase ( Launcher, OFFSET_PLAYER, LINUX_DIFF_WPN )
 	
 	// Owns Launcher
-	if ( g_hasLauncher [ Player ] )
+	if ( is_user_connected ( Player ) && g_hasLauncher [ Player ] )
 	{
 		// Deploy animation
 		UTIL_PlayWeaponAnimation ( Player, m79_draw )
@@ -575,7 +575,7 @@ public fw_LauncherAddToPlayer ( Launcher, Player )
 		g_hasLauncher [ Player ] = true
 		
 		// BP ammo
-		cs_set_user_bpammo ( Player, CSW_AK47, pev ( Launcher, pev_weaponammo ) )
+		cs_set_user_bpammo ( Player, CSW_GALIL, pev ( Launcher, pev_weaponammo ) )
 		
 		// Reset weapon options
 		entity_set_int ( Launcher, EV_INT_WEAPONKEY, 0)
@@ -970,20 +970,20 @@ stock drop_primary_weapons ( Player )
 stock update_hud ( Player )
 {
 	// Weapon ent
-	new Ent = find_ent_by_owner ( -1,"weapon_ak47", Player )
+	new Ent = find_ent_by_owner ( -1,"weapon_galil", Player )
 	
 	// Clip
 	new clip  = cs_get_weapon_ammo ( Ent )
 	
 	// BP Ammo
-	new bpammo = cs_get_user_bpammo ( Player, CSW_AK47 )
+	new bpammo = cs_get_user_bpammo ( Player, CSW_GALIL )
 	
 	if ( clip != -1 )
 	{
 		// Update HUD
 		message_begin ( MSG_ONE, g_msgCurWeapon, _, Player )
 		write_byte ( 1 )
-		write_byte ( CSW_AK47 )
+		write_byte ( CSW_GALIL )
 		write_byte ( clip )
 		message_end ( )
 	}
@@ -992,7 +992,7 @@ stock update_hud ( Player )
 	{
 		// Update HUD
 		message_begin ( MSG_ONE, g_msgAmmoX, _, Player )
-		write_byte ( 2 )
+		write_byte ( 4 )
 		write_byte ( bpammo )
 		message_end ( )
 	}

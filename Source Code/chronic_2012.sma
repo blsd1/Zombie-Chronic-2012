@@ -30,6 +30,7 @@ const MAX_STATS_SAVED = 64
 #include <xs>
 
 native give_dragon_cannon(id)
+native zp_open_weapons_menu(id)
 
 
 new const PLUGIN_VERSION[] = "4.3"
@@ -4094,7 +4095,7 @@ public menu_game(id, key)
 			// Check if player is alive and human
 			if (g_isalive[id] && !g_zombie[id] && !g_survivor[id])
 			{
-				client_cmd(id, "say /guns")
+				zp_open_weapons_menu(id)
 			}
 			else
 				zp_colored_print(id, "^x04[ZP]^x01 Musite byt nazivu ako human!")
@@ -4210,7 +4211,7 @@ public menu_buy1(id, key)
 	// Key 8 = Custom Weapons Menu
 	if (key == 7)
 	{
-		client_cmd(id, "say /guns")
+		zp_open_weapons_menu(id)
 		return PLUGIN_HANDLED;
 	}
 	

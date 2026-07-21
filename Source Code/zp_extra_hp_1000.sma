@@ -16,7 +16,7 @@ public plugin_precache()
 	// Register extra item directly (will be overridden by .ini if it exists there)
 	g_itemid_hp2000 = zp_register_extra_item("+2000 HP", 50, ZP_TEAM_ZOMBIE)
 	
-	precache_generic("sound/epic_zombie/zm_buyhealth.wav")
+	//precache_generic("sound/epic_zombie/zm_buyhealth.wav")
 	
 	// Debug log
 	if (g_itemid_hp2000 == -1)

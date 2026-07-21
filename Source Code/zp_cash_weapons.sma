@@ -44,6 +44,9 @@ public plugin_init()
 	register_plugin("Menu zbrani", "1.00", "ketamine") // vela by si chcel mistery
 	
 	register_clcmd("say /guns", "gunmenu")
+	register_clcmd("say_team /guns", "gunmenu")
+	register_clcmd("say /zbrane", "gunmenu")
+	register_clcmd("say_team /zbrane", "gunmenu")
 	
 	RegisterHam(Ham_Spawn, "player", "player_spawn", 2)
 	RegisterHam(Ham_TakeDamage,"player", "Hrac_Damage",0)
@@ -60,8 +63,26 @@ public plugin_init()
 	register_forward(FM_PlaybackEvent, "fwPlaybackEvent")
 	
 	g_MaxPlayers = get_maxplayers()
-	
+
 	return PLUGIN_CONTINUE
+}
+
+public plugin_natives()
+{
+	// Provide the weapons-menu native previously served by zp_custom_weapons.
+	// chronic_2012 calls zp_open_weapons_menu() from its main menu / weapon button.
+	register_native("zp_open_weapons_menu", "native_open_weapons_menu")
+}
+
+public native_open_weapons_menu(plugin_id, num_params)
+{
+	new id = get_param(1)
+
+	if (!is_user_connected(id))
+		return false
+
+	gunmenu(id)
+	return true
 }
 
 public fw_PrimaryAttack(Weapon)

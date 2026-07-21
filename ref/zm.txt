@@ -1,0 +1,5 @@
+spider cooldown - 25 sekund
+jump - 20 sekund
+speed - 14 sekund
+biger - 10 sekund
+sleep - 16 sekund

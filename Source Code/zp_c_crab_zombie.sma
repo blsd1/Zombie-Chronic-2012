@@ -6,7 +6,7 @@
 
 #define VERSION "1.2"
 
-new const zclass_name[] = { "Crab Zombie" }
+new const zclass_name[] = { "Crab zombie" }
 new const zclass_info[] = { "[poskodenie]" }
 new const zclass_model[] = { "ch2012_head" }
 new const zclass_clawmodel[] = { "ch2012_head_hand.mdl" }

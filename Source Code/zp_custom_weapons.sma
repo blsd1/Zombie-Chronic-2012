@@ -57,6 +57,19 @@ public plugin_natives()
 	register_native("zp_get_custom_weapon_name", "native_get_weapon_name")
 	register_native("zp_get_custom_weapon_cost", "native_get_weapon_cost")
 	register_native("zp_get_custom_weapon_team", "native_get_weapon_team")
+	register_native("zp_open_weapons_menu", "native_open_weapons_menu")
+}
+
+// Open the weapons menu directly (avoids server-stuffing "say /guns" to the client)
+public native_open_weapons_menu(plugin_id, num_params)
+{
+	new id = get_param(1)
+
+	if (!is_user_connected(id))
+		return false
+
+	cmd_weapons_menu(id)
+	return true
 }
 
 public native_register_weapon(plugin_id, num_params)

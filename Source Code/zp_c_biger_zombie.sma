@@ -11,7 +11,7 @@
 
 // Zombie Attributes
 new g_zclass_biger
-new const zclass_name[] = "Biger Zombie" // name
+new const zclass_name[] = "Biger zombie" // name
 new const zclass_info[] = "[hp boost]" // description
 new const zclass_model[] = "ch2012_big" // model
 new const zclass_clawmodel[] = "ch2012_big_hand.mdl" // claw model
@@ -27,6 +27,7 @@ new g_maxplayers
 // --- config ------------------------ //
 const hp_boost = 300
 new Float:g_cooldown_duration = 11.0
+#define BALL_AMOUNT 20 // kolko gul vyleti pri ability
 
 // Custom Biger Zombie sounds from ch2012 folder
 new const g_ability_sound[][] = 
@@ -163,26 +164,24 @@ public roundStart()
 	}
 }
 
-// Funkcia na vytvorenie viacerých sprite-ov okolo hráča
-stock create_ability_sprites(Float:origin[3], g_sprite_ability, count)
+// Ball-burst efekt (gule vyletujuce z hraca) - ako Tau Cannon FX_SpriteTrail
+stock FX_SpriteTrail(Float:vecStart[3], Float:vecDest[3], sprite, count, life, scale, vel, rnd)
 {
-	for(new i = 0; i < count; i++)
-	{
-		// Náhodný offset pre každý sprite
-		new Float:offset_x = float(random_num(-30, 30))
-		new Float:offset_y = float(random_num(-30, 30))
-		new Float:offset_z = float(random_num(20, 50))
-		
-		message_begin(MSG_BROADCAST, SVC_TEMPENTITY, {0,0,0}, 0)
-		write_byte(TE_SPRITE)
-		write_coord(floatround(origin[0] + offset_x))
-		write_coord(floatround(origin[1] + offset_y))
-		write_coord(floatround(origin[2] + offset_z))
-		write_short(g_sprite_ability)
-		write_byte(random_num(5, 15)) // scale - náhodná veľkosť
-		write_byte(200) // brightness
-		message_end()
-	}
+	message_begin(MSG_BROADCAST, SVC_TEMPENTITY, {0,0,0}, 0)
+	write_byte(TE_SPRITETRAIL)
+	write_coord(floatround(vecStart[0])) // start X
+	write_coord(floatround(vecStart[1])) // start Y
+	write_coord(floatround(vecStart[2])) // start Z
+	write_coord(floatround(vecDest[0]))  // dest X
+	write_coord(floatround(vecDest[1]))  // dest Y
+	write_coord(floatround(vecDest[2]))  // dest Z
+	write_short(sprite)                  // sprite index
+	write_byte(count)                    // pocet gul
+	write_byte(life)                     // zivotnost (0.1s)
+	write_byte(scale)                    // velkost (0.1x)
+	write_byte(vel)                      // rychlost pozdlz vektora
+	write_byte(rnd)                      // nahodnost rychlosti
+	message_end()
 }
 
 public use_ability_hp(id)
@@ -196,11 +195,24 @@ public use_ability_hp(id)
 			copy(sound_to_play, charsmax(sound_to_play), g_ability_sound[random_num(0, sizeof(g_ability_sound) - 1)])
 			emit_sound(id, CHAN_VOICE, sound_to_play, 1.0, ATTN_NORM, 0, PITCH_NORM)
 			
-			// Vytvor 12 sprite efektov okolo hráča
-			static Float:origin[3]
+			// Spawn ball sprites na random poziciach okolo hraca
+			static Float:origin[3], Float:vecStart[3], Float:vecDest[3]
 			pev(id, pev_origin, origin)
-			
-			create_ability_sprites(origin, g_sprite_ability, 12)
+
+			for (new i = 0; i < BALL_AMOUNT; i++)
+			{
+				// Random pozicia okolo hraca
+				vecStart[0] = origin[0] + float(random_num(-45, 45))
+				vecStart[1] = origin[1] + float(random_num(-45, 45))
+				vecStart[2] = origin[2] + float(random_num(-30, 40))
+
+				// Jemny pohyb hore
+				vecDest[0] = vecStart[0]
+				vecDest[1] = vecStart[1]
+				vecDest[2] = vecStart[2] + 15.0
+
+				FX_SpriteTrail(vecStart, vecDest, g_sprite_ability, 1, 12, 5, 2, 15)
+			}
 			
 			// Pridaj HP
 			new current_hp = pev(id, pev_health)

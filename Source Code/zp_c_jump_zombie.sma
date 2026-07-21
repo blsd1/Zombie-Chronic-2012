@@ -11,7 +11,7 @@
 
 // Zombie Attributes
 new g_zclass_jump
-new const zclass_name[] = "Jump Zombie" // name
+new const zclass_name[] = "Jump zombie" // name
 new const zclass_info[] = "[vysoke skoky]" // description
 new const zclass_model[] = "ch2012_jump" // model
 new const zclass_clawmodel[] = "ch2012_jump_hand.mdl" // claw model

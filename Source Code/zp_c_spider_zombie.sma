@@ -6,7 +6,7 @@
 #include <fun>
 #include <engine>
 
-new const zclass_name[] = "Spider Zombie"
+new const zclass_name[] = "Spider zombie"
 new const zclass_info[] = "[pavucina]"
 new const zclass_model[] = "ch2012_spider"
 new const zclass_clawmodel[] = "ch2012_spider_hand.mdl"

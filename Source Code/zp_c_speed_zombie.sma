@@ -11,7 +11,7 @@
 
 // Zombie Attributes
 new g_zclass_speed
-new const zclass_name[] = "Speed Zombie" // name
+new const zclass_name[] = "Speed zombie" // name
 new const zclass_info[] = "[speed boost]" // description
 new const zclass_model[] = "ch2012_speed" // model
 new const zclass_clawmodel[] = "ch2012_speed_hand.mdl" // claw model

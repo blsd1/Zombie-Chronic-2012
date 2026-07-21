@@ -12,7 +12,7 @@
 #define AUTHOR "ketamine"
 
 
-new const zclass_name[] = { "Sleep Zombie" }
+new const zclass_name[] = { "Sleep zombie" }
 new const zclass_info[] = { "blinding humans" }
 new const zclass_model[] = { "ch2012_sleep" }
 new const zclass_clawmodel[] = { "ch2012_sleep_hand.mdl" }
@@ -116,8 +116,9 @@ public fw_TakeDamage(victim, inflictor, attacker, Float:damage, damagebits)
 			write_byte(255) // alpha
 			message_end()
 			
-			// Bonus +1000 HP for sleep zombie when blinding someone
-			set_pev(victim, pev_health, pev(victim, pev_health) + 1000.0)
+			// Bonus +1000 HP — only for the first (mother) sleep zombie
+			if (zp_get_user_first_zombie(victim))
+				set_pev(victim, pev_health, pev(victim, pev_health) + 1000.0)
 			
 			set_task(4.0,"wake_up",attacker)
 			

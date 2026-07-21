@@ -249,7 +249,10 @@ public fw_CmdStart(id, uc_handle, seed)
 	if(bRoundEnd) return FMRES_IGNORED
 	if(!iPlayerTripmine[id]) return FMRES_IGNORED
 	
-	new buttons = pev(id, pev_button)
+	// Read the CURRENT command's buttons from the usercmd. In a pre-CmdStart
+	// hook pev_button isn't updated yet (it still equals pev_oldbuttons), so
+	// the rising-edge +use check would never fire and planting would do nothing.
+	new buttons = get_uc(uc_handle, UC_Buttons)
 	new oldbuttons = pev(id, pev_oldbuttons)
 	
 	// Stlačenie +Use
